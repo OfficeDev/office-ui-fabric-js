@@ -57,7 +57,23 @@ Use `is-unread` to indicate that the item has not been read.
         <script src="jquery.fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page.
+2. Copy the HTML from one of the samples above into your page. For example:
+    ```
+    <li class="ms-ListItem" tabindex="0">
+        <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+        <span class="ms-ListItem-secondaryText">Meeting notes</span>
+        <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+        <span class="ms-ListItem-metaText">2:42p</span>
+        <div class="ms-ListItem-selectionTarget"></div>
+        <div class="ms-ListItem-actions">
+            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i>
+            </div>
+        </div>
+    </li>
+    ```
 3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Dialog components on the page:
     ```
     <script>

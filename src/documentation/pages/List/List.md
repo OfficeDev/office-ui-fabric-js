@@ -21,7 +21,24 @@ This component has only the default state.
         <link rel="stylesheet" href="fabric.components.min.css">
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page.
+2. Copy the HTML from the sample above into your page. For example: 
+    ```
+    <ul class="ms-List">
+        <li class="ms-ListItem is-unread is-selectable" tabindex="0">
+            <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+            <span class="ms-ListItem-secondaryText">Meeting notes</span>
+            <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+            <span class="ms-ListItem-metaText">2:42p</span>
+            <div class="ms-ListItem-selectionTarget"></div>
+            <div class="ms-ListItem-actions">
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+            </div>
+        </li>
+    </ul>
+    ```
 3. Replace the content with whatever you'd like to display as a list. The samples use `.ms-ListItem` components, but you can place any content within `.ms-List`.
 
 ## Dependencies

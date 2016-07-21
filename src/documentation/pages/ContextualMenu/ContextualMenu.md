@@ -45,9 +45,11 @@ State | Applied to | Result
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
     ```
-    <head>
+    <head> 
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
+        <script src="jquery-2.2.1.min.js"></script>
+        <script src="jquery.fabric.min.js"></script>
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
