@@ -1,6 +1,6 @@
 #Contributing
 
-Office UI Fabric JS is an evolving snapshot of the Office 365 Design Language, provided by the OneDrive and SharePoint Design Studio. This project's core focus is on a framework agnostic set of "vanilla" components that meet the specifications of the Office Design Language.
+Office UI Fabric JS is an evolving snapshot of the Office 365 Design Language's components, provided by the OneDrive and SharePoint Design Studio.
 
 Currently, this set of components is in a **paused** state by the Fabric team while we work on the other control sets, but is still open to contributions that help improve the stability or usability of the components.
 
