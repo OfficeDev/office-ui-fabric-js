@@ -114,9 +114,9 @@ $ms-panel-close-button-height: 40px;
   }
 
   @media (max-width: $ms-screen-md-max) {
-    height: $CommandBarMdHeight;
-    width: $CommandBarMdHeight;
     font-size: $ms-icon-size-l;
+    line-height: $ms-icon-size-l;
+    height: 44px;
     right: 4px;
   }
 }
