@@ -29,10 +29,14 @@ namespace fabric {
   const ARROW_BOTTOM_CLASS = "ms-ContextualHost--arrowBottom";
   const ARROW_RIGHT_CLASS = "ms-ContextualHost--arrowRight";
   const MODIFIER_BASE = "ms-ContextualHost--";
+  const HAS_SUBMENU = "ms-ContextualMenu-item--hasMenu";
   const ARROW_SIZE = 28;
   const ARROW_OFFSET = 8;
 
   export class ContextualHost {
+
+    // tracks all contextualhosts to dismiss them when submenus are dismissed
+    public static hosts: Array<ContextualHost>;
 
     private _contextualHost;
     private _modalWidth;
@@ -41,6 +45,7 @@ namespace fabric {
     private _teHeight;
     private _direction;
     private _container;
+    private _disposalCallback: Function;
     private _targetElement;
     private _matchTargetWidth;
     private _ftl = new FabricTemplateLibrary();
@@ -55,10 +60,11 @@ namespace fabric {
         targetElement: Element,
         hasArrow: boolean = true,
         modifiers?: Array<string>,
-        matchTargetWidth?: boolean
+        matchTargetWidth?: boolean,
+        disposalCallback?: Function
       ) {
       this._resizeAction = this._resizeAction.bind(this);
-      this._disMissAction = this._disMissAction.bind(this);
+      this._dismissAction = this._dismissAction.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
       this._container = this._ftl.ContextualHost();
@@ -72,17 +78,42 @@ namespace fabric {
       this._openModal();
       this._setResizeDisposal();
 
+      if (disposalCallback) {
+        this._disposalCallback = disposalCallback;
+      }
+
       if (modifiers) {
         for (let i = 0; i < modifiers.length; i++) {
           this._container.classList.add(MODIFIER_BASE + modifiers[i]);
         }
       }
+
+      if (!ContextualHost.hosts) {
+        ContextualHost.hosts = [];
+      }
+
+      ContextualHost.hosts.push(this);
     }
 
     public disposeModal(): void {
-      window.removeEventListener("resize", this._resizeAction, false);
-      document.removeEventListener("click", this._disMissAction, true);
-      this._container.parentNode.removeChild(this._container);
+      if (ContextualHost.hosts.length > 0) {
+        window.removeEventListener("resize", this._resizeAction, false);
+        document.removeEventListener("click", this._dismissAction, true);
+        this._container.parentNode.removeChild(this._container);
+        if (this._disposalCallback) {
+          this._disposalCallback();
+        }
+
+        // Dispose of all ContextualHosts
+        let index: number = ContextualHost.hosts.indexOf(this);
+        ContextualHost.hosts.splice(index, 1);
+
+        let i: number = ContextualHost.hosts.length;
+        while (i--) {
+          ContextualHost.hosts[i].disposeModal();
+          ContextualHost.hosts.splice(i, 1);
+        }
+      }
     }
 
     public setChildren(value: ContextualHost): void {
@@ -333,8 +364,8 @@ namespace fabric {
       this._teHeight = this._targetElement.getBoundingClientRect().height;
     }
 
-    private _disMissAction(e): void {
-      // If the elemenet clicked is not INSIDE of searchbox then close seach
+    private _dismissAction(e): void {
+      // If the element clicked is not INSIDE of contextualHost then close contextualHost
       if (!this._container.contains(e.target) && e.target !== this._container) {
         if (this._children !== undefined) {
           let isChild: boolean = false;
@@ -349,14 +380,19 @@ namespace fabric {
         } else {
           this.disposeModal();
         }
+      } else {
+        if (!e.target.parentElement.classList.contains(HAS_SUBMENU)) {
+          this.disposeModal();
+        }
       }
     }
 
     private _setDismissClick() {
-      document.addEventListener("click", this._disMissAction, true);
+      document.addEventListener("click", this._dismissAction, true);
+      document.addEventListener("focus", this._dismissAction, true);
       document.addEventListener("keyup", (e: KeyboardEvent) => {
         if (e.keyCode === 32 || e.keyCode === 27) {
-          this._disMissAction(e);
+          this._dismissAction(e);
         }
       }, true);
     }
