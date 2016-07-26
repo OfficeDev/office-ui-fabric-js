@@ -97,7 +97,7 @@
       border-right: 0;
       border-bottom: 0;
       bottom: -4px;
-      left: 15px;
+      left: 13px;
     }
   }
 }
@@ -148,7 +148,7 @@
 
     // Show the expander icon.
     .ms-PersonaCard-detailExpander::after {
-      content: '\e088';
+      @include ms-Icon--ChevronDown;
     }
   }
 }
@@ -172,7 +172,7 @@
 
   &::after {
     @include ms-Icon;
-    content: '\e087';
+    @include ms-Icon--ChevronUp;
   }
 }
 
