@@ -22,7 +22,7 @@ $ms-panel-close-button-height: 40px;
   @include ms-baseFont;
   background-color: $ms-color-white;
   width: 100%;
-  max-width: $ms-panel-width-sm;
+  max-width: $ms-panel-width-md;
   @include drop-shadow(-30px, 0, 30px, -30px, .2);
   position: absolute;
   top: 0;
