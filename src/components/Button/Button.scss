@@ -16,7 +16,7 @@
   border: 1px solid $ms-color-neutralLighter;
   cursor: pointer;
   display: inline-block;
-  height: 36px;
+  height: 32px;
   min-width: 80px;
   padding: 4px 20px 6px;
 
@@ -136,9 +136,9 @@
     color: $ms-color-themePrimary;
     display: inline-block;
     font-size: $ms-font-size-s;
-    margin-right: 2px;
+    margin-right: 4px;
     position: relative;
-    top: -7px;
+    top: 1px;
     text-align: center;
 
     .ms-Icon {
