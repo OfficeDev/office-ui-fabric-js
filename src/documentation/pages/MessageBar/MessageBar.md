@@ -44,5 +44,30 @@ Use sparingly when there's an exceptional need to tell the use that something we
 {{> MessageBar props=MessageBarExampleProps.success }}
 --->
 
+## Using this component
+1. Confirm that you have references to Fabric's CSS on your page:
+    ```
+    <head>
+        <link rel="stylesheet" href="fabric.min.css">
+        <link rel="stylesheet" href="fabric.components.min.css">
+    </head>
+    ```
+2. Copy the HTML from one of the samples above into your page. For example:
+    ```
+    <div class="ms-MessageBar">
+        <div class="ms-MessageBar-content">
+            <div class="ms-MessageBar-icon">
+                <i class="ms-Icon ms-Icon--infoCircle"></i>
+            </div>
+            <div class="ms-MessageBar-text">
+                Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit. <br />
+                <a href="" class="ms-Link">Hyperlink string</a>
+            </div>
+        </div>
+    </div>
+    ```
+3. Verify that the component is working the same as in the sample above.
+4. Replace the sample HTML content (such as the content of `.ms-MessageBar-text`) with your content.
+
 ## Dependencies
 This component has a dependency on the Link component.

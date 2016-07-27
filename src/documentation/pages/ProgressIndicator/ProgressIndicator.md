@@ -18,7 +18,17 @@ Displays the progress of an operation when the percentage complete can be determ
         <script src="jquery.fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from the sample above into your page.
+2. Copy the HTML from the sample above into your page. For example:
+    ```
+    <div class="ms-ProgressIndicator">
+        <div class="ms-ProgressIndicator-itemName">Example.jpg</div>
+        <div class="ms-ProgressIndicator-itemProgress">
+            <div class="ms-ProgressIndicator-progressTrack"></div>
+            <div class="ms-ProgressIndicator-progressBar""></div>
+        </div>
+        <div class="ms-ProgressIndicator-itemDescription">Example.jpg</div>
+    </div>
+    ```
 3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all ProgressIndicators on the page:
     ```
     <script>

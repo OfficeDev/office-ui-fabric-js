@@ -21,7 +21,29 @@ This component has only the default state.
         <script src="jquery.fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from the sample above into your page.
+2. Copy the HTML from the sample above into your page. For example:
+    ```
+    <div class="ms-MessageBanner">
+        <div class="ms-MessageBanner-content">
+            <div class="ms-MessageBanner-text">
+                <div class="ms-MessageBanner-clipper">
+                    You've reached your total storage on OneDrive. Please upgrade your storage plan if you need more storage.
+                </div>
+            </div>
+            <button class="ms-MessageBanner-expand">
+                <i class="ms-Icon ms-Icon--chevronsDown"></i>
+            </button>
+            <div class="ms-MessageBanner-action">
+                <button class="ms-Button ms-Button--primary">
+                <span class="ms-Button-label">Get More Storage</span>
+                </button>
+            </div>
+        </div>
+        <button class="ms-MessageBanner-close">
+            <i class="ms-Icon ms-Icon--x"></i>
+        </button>
+    </div>
+    ```
 3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Breadcrumbs on the page:
     ```
     <script>
@@ -44,4 +66,3 @@ This component has only the default state.
 
 ## Dependencies
 This component has a dependency on Button.
-

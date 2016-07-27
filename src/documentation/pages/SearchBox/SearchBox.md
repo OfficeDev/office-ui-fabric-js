@@ -28,7 +28,21 @@ A special form field that allows for the input of search text.
         <script src="jquery.fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page.
+2. Copy the HTML from one of the samples above into your page. For example:
+    ```
+    <div class="ms-SearchBox">
+        <input class="ms-SearchBox-field" type="text" value="">
+        <label class="ms-SearchBox-label">
+            <i class="ms-SearchBox-icon ms-Icon ms-Icon--search"></i>
+            <span class="ms-SearchBox-text">Search</span>
+        </label>
+        <div class="ms-CommandButton ms-SearchBox-close ms-CommandButton--noLabel  ">
+            <button class="ms-CommandButton-button">
+            <span class="ms-CommandButton-icon "><i class="ms-Icon ms-Icon--x"></i></span><span class="ms-CommandButton-label"></span> 
+            </button>
+        </div>
+    </div>
+    ```
 3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all SearchBox components on the page:
     ```
     <script>
@@ -40,6 +54,7 @@ A special form field that allows for the input of search text.
     </script>
     ```
 4. Verify that the component is working the same as in the sample above.
+5. Replace the sample HTML content (such as the name within `.ms-SearchBox-text`) with your content.
 
 ## Dependencies
 This component has a dependency on the Label component.

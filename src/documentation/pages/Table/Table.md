@@ -29,7 +29,33 @@ Rows can be selected.
         <link rel="stylesheet" href="fabric.components.min.css">
     </head>
     ```
-2. Copy the HTML from the sample above into your page.
+2. Copy the HTML from the sample above into your page. For example:
+    ```
+    <table class="ms-Table">
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Modified</th>
+                <th>Type</th>
+                <th>File Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Location</td>
+                <td>Modified</td>
+                <td>Type</td>
+                <td>File Name</td>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td>Modified</td>
+                <td>Type</td>
+                <td>File Name</td>
+            </tr>
+        </tbody>
+    </table>
+    ```
 3. Replace the content with your own data. You can add more rows or columns.
 
 ## Dependencies

@@ -54,7 +54,23 @@ State | Applied to | Result
         <script src="jquery.fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from the sample above into your page.
+2. Copy the HTML from the sample above into your page. For example:
+    ```
+    <div class="ms-PanelHost">
+        <div class="ms-Panel">
+            <button class="ms-Panel-closeButton ms-PanelAction-close">
+                <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+            </button>
+            <div class="ms-Panel-contentInner">
+                <p class="ms-Panel-headerText">Panel</p>
+                <div class="ms-Panel-content">
+                    <span class="ms-font-m">Content goes here</span>
+                </div>
+            </div>
+        </div>
+        <div class="ms-Overlay is-visible"></div>
+    </div>
+    ```
 3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Dialog components on the page:
     ```
     <script>
@@ -65,4 +81,4 @@ State | Applied to | Result
     </script>
     ```
 4. Verify that the component is working the same as in the sample above.
-5. Replace the sample HTML content with your content.
+5. Replace the sample HTML content (such as the content of `.ms-Panel-content`) with your content.

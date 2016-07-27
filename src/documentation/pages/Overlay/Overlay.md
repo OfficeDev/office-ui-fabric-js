@@ -21,7 +21,10 @@ Partially obscures the page to create a modal experience and focus the user's at
         <link rel="stylesheet" href="fabric.components.min.css">
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page.
+2. Copy the HTML from one of the samples above into your page. For example:
+    ```
+    <div class="ms-Overlay"></div>
+    ```
 3. Replace the sample HTML content (such as the content of `.ms-Button-label`) with your content.
 
 ## Dependencies

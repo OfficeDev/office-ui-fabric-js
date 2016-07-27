@@ -33,7 +33,10 @@ Displays the progress of an operation when the percentage complete can not be de
         <script src="jquery.fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from the sample above into your page.
+2. Copy the HTML from the sample above into your page. For example:
+    ```
+    <div class="ms-Spinner"></div>
+    ```
 3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Spinners on the page:
     ```
     <script>

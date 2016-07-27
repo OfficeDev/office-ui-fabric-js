@@ -38,7 +38,13 @@ Allows for the input of text. Can be a single line or multiple lines. Typically 
         <link rel="stylesheet" href="fabric.components.min.css">
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page.
+2. Copy the HTML from one of the samples above into your page. For example:
+    ```
+    <div class="ms-TextField">
+        <label class="ms-Label">Name</label>
+        <input class="ms-TextField-field" type="text" value="" placeholder="">
+    </div>
+    ```
 3. Update the `.ms-Label` to contain your label text.
 
 ## Dependencies

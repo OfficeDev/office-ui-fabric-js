@@ -26,7 +26,17 @@ Allows for turning on or off a setting. This is best suited for simple, singular
         <link rel="stylesheet" href="fabric.components.min.css">
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page.
+2. Copy the HTML from one of the samples above into your page. For example:
+    ```
+    <div class="ms-Toggle">
+        <span class="ms-Toggle-description">Let apps use my location</span>
+        <input type="checkbox" id="demo-toggle-3" class="ms-Toggle-input">
+        <label for="demo-toggle-3" class="ms-Toggle-field" tabindex="0">
+            <span class="ms-Label ms-Label--off">Off</span>
+            <span class="ms-Label ms-Label--on">On</span>
+        </label>
+    </div>
+    ```
 3. Update the `.ms-Label` to contain your label text.
 
 ## Dependencies

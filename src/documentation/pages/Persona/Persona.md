@@ -53,7 +53,21 @@ A persona can have one of seven presences: available, away, blocked, busy, do no
         <link rel="stylesheet" href="fabric.components.min.css">
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page.
+2. Copy the HTML from one of the samples above into your page. For example:
+    ```
+    <div class="ms-Persona">
+        <div class="ms-Persona-imageArea">
+            <img class="ms-Persona-image" src="Persona.Person2.png">
+        </div>
+        <div class="ms-Persona-presence">
+            <i class="ms-Persona-presenceIcon ms-Icon ms-Icon--skypeCheck"></i>
+        </div>
+        <div class="ms-Persona-details">
+            <div class="ms-Persona-primaryText">Alton Lafferty</div>
+            <div class="ms-Persona-secondaryText">Accountant</div>
+        </div>
+    </div>
+    ```
 3. Replace the sample HTML content (such as the name within `.ms-Persona-primaryText`) with your content.
 
 ## Dependencies
