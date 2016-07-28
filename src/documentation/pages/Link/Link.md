@@ -20,11 +20,13 @@ This component has only the default state.
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
-    ```
-    <div class="ms-font-m">
-        <a href="#" class="ms-Link">Link to a webpage</a>
-    </div>
-    ```
+<!---
+<pre>
+    <code>
+{{renderPartialPre "Link" "LinkExample" LinkModels.basic false}}
+    </code>
+</pre>
+--->
 3. Replace the sample text with the text of your link.
 
 ## Dependencies
