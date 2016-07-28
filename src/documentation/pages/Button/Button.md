@@ -59,11 +59,13 @@ State | Applied to | Result
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
-    ```
-    <button class="ms-Button">
-        <span class="ms-Button-label">Create account</span>
-    </button>
-    ```
+<!---
+<pre>
+    <code>
+{{renderPartialPre "Button" "ButtonExample" ButtonExampleModel false}}
+    </code>
+</pre>
+--->
 3. Replace the sample HTML content (such as the content of `.ms-Button-label`) with your content.
 
 ## Dependencies

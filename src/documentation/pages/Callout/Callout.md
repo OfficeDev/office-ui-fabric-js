@@ -64,27 +64,17 @@ This component has only the default state.
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
-    ```
-    <div class="ms-Callout ms-Callout--arrowLeft">
-        <div class="ms-Callout-main">
-            <div class="ms-Callout-header">
-                <p class="ms-Callout-title">All of your favorite people</p>
-            </div>
-            <div class="ms-Callout-inner">
-                <div class="ms-Callout-content">
-                    <p class="ms-Callout-subText">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
-                </div>
-                <div class="ms-Callout-actions">
-                    <a href="#" class="ms-Callout-link">Learn more</a>
-                </div>
-            </div>    
-        </div>
-    </div> 
-    ```
+<!---
+<pre>
+    <code>
+{{renderPartialPre "Callout" "CalloutExample" CalloutExampleModel.props false}}
+    </code>
+</pre>
+--->
 3. Replace the sample HTML content (such as the content of `.ms-Callout-title`) with your content.
 
 ## Dependencies
-This component has no dependencies.
+Button, Label, Link, ContextualHost, CommandButton
 
 ## Accessibility
 Focus styles are included for all of the actions (links and buttons) included within a Callout.
