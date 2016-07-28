@@ -47,7 +47,7 @@ Allows for the input of text. Can be a single line or multiple lines. Typically 
     </code>
 </pre>
 --->
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Table components on the page:
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all TextField components on the page:
 <!---
 <pre>
     <code>

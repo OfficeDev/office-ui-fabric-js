@@ -1,4 +1,6 @@
 <script type="text/javascript">
-  var TextFieldHTML = document.querySelector('.docs-TextFieldPlaceholderExample .ms-TextField');
-  var TextField = new fabric['TextField'](TextFieldHTML);
+    var TextFieldElements = document.querySelectorAll(".ms-TextField");
+    for(var i = 0; i < TextFieldElements.length; i++) {
+        new fabric['TextField'](TextFieldElements[i]);
+    }
 </script>
