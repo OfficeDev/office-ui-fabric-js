@@ -37,7 +37,7 @@ State | Applied to | Result
     </code>
 </pre>
 --->
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Breadcrumbs on the page:
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Breadcrumb components on the page:
 <!---
 <pre>
     <code>
