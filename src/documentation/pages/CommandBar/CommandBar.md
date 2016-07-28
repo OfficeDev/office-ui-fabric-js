@@ -38,91 +38,87 @@ State | Applied to | Result
 2. Copy the HTML from the sample above into your page. For example:
     ```
     <div class="ms-CommandBar">
-        <div class="ms-CommandBarSearch">
-            <input class="ms-CommandBarSearch-input" type="text" placeholder="Search" tabindex="1"/>
-            <div class="ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconSearchWrapper">
-            <i class="ms-Icon ms-Icon--search"></i>
-            </div>
-            <div class="ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconClearWrapper ms-font-s">
-            <i class="ms-Icon ms-Icon--x"></i>
-            </div>
-        </div>  
         <div class="ms-CommandBar-sideCommands">
-            <div class="ms-CommandBarItem">
-            <div class="ms-CommandBarItem-linkWrapper">
-                <a class="ms-CommandBarItem-link" tabindex="1">
-                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--reactivate"></span>
-                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Undo</span>
-                <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-                </a>
-            </div>
+            <div class="ms-CommandButton ms-CommandButton--noLabel">
+                <button class="ms-CommandButton-button">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary">
+                <i class="ms-Icon ms-Icon--circleFill"></i>
+                </span>
+                <span class="ms-CommandButton-label"></span> 
+                </button>
             </div>
         </div>
         <div class="ms-CommandBar-mainArea">
-            <div class="ms-CommandBarItem">
-            <div class="ms-CommandBarItem-linkWrapper">
-                <a class="ms-CommandBarItem-link" tabindex="1">
-                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--star"></span>
-                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">New</span>
-                <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-                </a>
+            <div class="ms-SearchBox ms-SearchBox--commandBar">
+                <input class="ms-SearchBox-field" type="text" value="">
+                <label class="ms-SearchBox-label">
+                <i class="ms-SearchBox-icon ms-Icon ms-Icon--search"></i>
+                <span class="ms-SearchBox-text">Search</span>
+                </label>
+                <div class="ms-CommandButton ms-SearchBox-close ms-CommandButton--noLabel">
+                    <button class="ms-CommandButton-button">
+                    <span class="ms-CommandButton-icon"><i class="ms-Icon ms-Icon--x"></i></span><span class="ms-CommandButton-label"></span> 
+                    </button>
+                </div>
             </div>
+            <div class="ms-CommandButton">
+                <button class="ms-CommandButton-button">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--circleFill"></i></span><span class="ms-CommandButton-label">Command</span> 
+                </button>
             </div>
-            <div class="ms-CommandBarItem">
-            <div class="ms-CommandBarItem-linkWrapper">
-                <a class="ms-CommandBarItem-link" tabindex="1">
-                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--save"></span>
-                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Delete</span>
-                </a>
+            <div class="ms-CommandButton">
+                <button class="ms-CommandButton-button">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--circleFill"></i></span><span class="ms-CommandButton-label">New</span><span class="ms-CommandButton-dropdownIcon"><i class="ms-Icon ms-Icon--chevronDown"></i></span>
+                </button>
+                <ul class="ms-ContextualMenu is-opened ms-ContextualMenu--hasIcons">
+                    <li class="ms-ContextualMenu-item">
+                        <a class="ms-ContextualMenu-link" tabindex="1">Folder</a>
+                        <i class="ms-Icon ms-Icon--folder"></i>
+                    </li>
+                    <li class="ms-ContextualMenu-item ms-ContextualMenu-item--divider"></li>
+                    <li class="ms-ContextualMenu-item ">
+                        <a class="ms-ContextualMenu-link " tabindex="1">Plain Text Document</a>
+                        <i class="ms-Icon ms-Icon--document "></i>
+                    </li>
+                    <li class="ms-ContextualMenu-item ">
+                        <a class="ms-ContextualMenu-link " tabindex="1">A Dog</a>
+                        <i class="ms-Icon ms-Icon--dogAlt "></i>
+                    </li>
+                    <li class="ms-ContextualMenu-item ">
+                        <a class="ms-ContextualMenu-link " tabindex="1">The Sun</a>
+                        <i class="ms-Icon ms-Icon--sun "></i>
+                    </li>
+                    <li class="ms-ContextualMenu-item ">
+                        <a class="ms-ContextualMenu-link " tabindex="1">Money</a>
+                        <i class="ms-Icon ms-Icon--money "></i>
+                    </li>
+                </ul>
             </div>
+            <div class="ms-CommandButton">
+                <button class="ms-CommandButton-button">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--circleFill"></i></span><span class="ms-CommandButton-label">Command</span> 
+                </button>
             </div>
-            <div class="ms-CommandBarItem">
-            <div class="ms-CommandBarItem-linkWrapper">
-                <a class="ms-CommandBarItem-link" tabindex="1">
-                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--flag"></span>
-                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Archive</span>
-                </a>
+            <div class="ms-CommandButton">
+                <button class="ms-CommandButton-button">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--circleFill"></i></span><span class="ms-CommandButton-label">Command</span> 
+                </button>
             </div>
+            <div class="ms-CommandButton">
+                <button class="ms-CommandButton-button">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--circleFill"></i></span><span class="ms-CommandButton-label">Command</span> 
+                </button>
             </div>
-            <div class="ms-CommandBarItem ms-CommandBarItem--hasTextOnly">
-            <div class="ms-CommandBarItem-linkWrapper">
-                <a class="ms-CommandBarItem-link" tabindex="1">
-                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Junk</span>
-                </a>
+            <div class="ms-CommandButton ms-CommandBar-overflowButton ms-CommandButton--noLabel is-hidden">
+                <button class="ms-CommandButton-button">
+                <span class="ms-CommandButton-icon "><i class="ms-Icon ms-Icon--ellipsis"></i></span><span class="ms-CommandButton-label"></span> 
+                </button>
+                <ul class="ms-ContextualMenu  is-opened ms-ContextualMenu--hasIcons"></ul>
             </div>
-            </div>
-            <div class="ms-CommandBarItem ms-CommandBarItem--hasTextOnly">
-            <div class="ms-CommandBarItem-linkWrapper">
-                <a class="ms-CommandBarItem-link" tabindex="1">
-                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Move To</span>
-                <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-                </a>
-            </div>
-            </div>
-            <div class="ms-CommandBarItem ms-CommandBarItem--hasTextOnly">
-            <div class="ms-CommandBarItem-linkWrapper">
-                <a class="ms-CommandBarItem-link" tabindex="1">
-                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Categories</span>
-                <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-                </a>
-            </div>
-            </div>
-            <!-- Overflow Command -->
-            <div class="ms-CommandBarItem ms-CommandBarItem--iconOnly ms-CommandBarItem-overflow">
-            <div class="ms-CommandBarItem-linkWrapper">
-                <a class="ms-CommandBarItem-link" tabindex="2">
-                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--ellipsis"></span>
-                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Ellipsis</span>
-                <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-                </a>
-            </div>
-            <ul class="ms-CommandBar-overflowMenu ms-ContextualMenu"></ul>
-            </div>
-            <!-- End Overflow Command -->
         </div>
     </div>
     ```
-3. Add the following `<script>` tag to your page to instantiate all CommandBar components on the page:
+3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all CommandBar on the page:
     ```
     <script type="text/javascript">
         var CommandBarElements = document.querySelectorAll(".ms-CommandBar");

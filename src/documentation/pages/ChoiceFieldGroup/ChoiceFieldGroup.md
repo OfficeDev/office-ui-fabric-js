@@ -50,4 +50,13 @@ Used to indicate a single choice from multiple options.
         </ul>
     </div>
     ```
-3. Replace the sample HTML content (such as the `.ms-Label` elements) with your content.
+3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all ChoiceFieldGroup components on the page:
+    ```
+    <script type="text/javascript">
+        var ChoiceFieldGroupElements = document.querySelectorAll(".ms-ChoiceFieldGroup");
+        for(var i = 0; i < ChoiceFieldGroupElements.length; i++) {
+            new fabric['ChoiceFieldGroup'](ChoiceFieldGroupElements[i]);
+        }
+    </script>
+    ```
+4. Replace the sample HTML content (such as the `.ms-Label` elements) with your content.

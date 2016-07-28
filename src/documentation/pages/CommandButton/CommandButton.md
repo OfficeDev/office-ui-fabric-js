@@ -69,8 +69,11 @@ State | Applied to | Result
 2. Copy the HTML from one of the samples above into your page. For example:
     ```
     <div class="ms-CommandButton">
-      <button class="ms-CommandButton-button">
-          <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--circleFill"></i></span><span class="ms-CommandButton-label">Command</span>
+        <button class="ms-CommandButton-button">
+            <span class="ms-CommandButton-icon ms-fontColor-themePrimary">
+                <i class="ms-Icon ms-Icon--circleFill"></i>
+            </span>
+            <span class="ms-CommandButton-label">Command</span>
       </button>
     </div>
     ```
