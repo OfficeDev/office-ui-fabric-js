@@ -21,13 +21,12 @@ State | Applied to | Result
 `.is-open` | `.ms-Breadcrumb-overflowMenu` | Displays the overflow menu.
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
+1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head> 
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
-        <script src="jquery-2.2.1.min.js"></script>
-        <script src="jquery.fabric.min.js"></script>
+        <script src="fabric.min.js"></script>
     </head>
     ```
 2. Copy the HTML from the sample above into your page. For example:
@@ -68,7 +67,7 @@ State | Applied to | Result
         </ul>
     </div>
     ```
-3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Breadcrumbs on the page:
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Breadcrumbs on the page:
     ```
     <script>
         var BreadCrumbHTML = document.querySelector('.ms-BreadCrumb');
@@ -83,4 +82,3 @@ This component uses a **Contextual Menu** for the overflow menu.
 
 ## Accessibility
 The component's JavaScript will apply the correct `tabindex` values to ensure keyboard accessibility.
- 
