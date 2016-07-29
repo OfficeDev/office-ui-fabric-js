@@ -18,7 +18,6 @@ Used to label form elements such as TextField and Dropdown.
 {{> LabelExampleDisabled props=LabelExampleModel.propsDisabled }}
 --->
 
-
 ## States
 State | Applied to | Result
  --- | --- | ---
@@ -34,11 +33,13 @@ State | Applied to | Result
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
-    ```
-    <label class="ms-Label">
-        Name
-    </label>
-    ```
+<!---
+<pre>
+    <code>
+{{renderPartialPre "Label" "LabelExample" LabelExampleModel.props false}}
+    </code>
+</pre>
+--->
 3. Replace the sample HTML content (such as the content of `.ms-Label`) with your content.
 
 ## Dependencies
