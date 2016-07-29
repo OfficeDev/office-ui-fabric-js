@@ -45,40 +45,25 @@ State | Applied to | Result
 `.is-open` | `.ms-Panel` | The panel is closed by default. Apply this class to open it.
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
+1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
-        <script src="jquery-2.2.1.min.js"></script>
-        <script src="jquery.fabric.min.js"></script>
+        <script src="fabric.min.js"></script>
     </head>
     ```
 2. Copy the HTML from the sample above into your page. For example:
-    ```
-    <div class="ms-PanelHost">
-        <div class="ms-Panel">
-            <button class="ms-Panel-closeButton ms-PanelAction-close">
-                <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
-            </button>
-            <div class="ms-Panel-contentInner">
-                <p class="ms-Panel-headerText">Panel</p>
-                <div class="ms-Panel-content">
-                    <span class="ms-font-m">Content goes here</span>
-                </div>
-            </div>
-        </div>
-        <div class="ms-Overlay is-visible"></div>
-    </div>
-    ```
-3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Dialog components on the page:
-    ```
-    <script>
-        var PanelElements = document.querySelectorAll(".ms-Panel");
-        for(var i = 0; i < PanelElements.length; i++) {
-            new fabric['Panel'](PanelElements[i]);
-        }
-    </script>
-    ```
-4. Verify that the component is working the same as in the sample above.
-5. Replace the sample HTML content (such as the content of `.ms-Panel-content`) with your content.
+<!---
+<pre>
+    <code>
+{{renderPartialPre "Panel" "PanelExample" PanelExampleProps.default false}}
+    </code>
+</pre>
+--->
+3. Verify that the component is working the same as in the sample above.
+4. Replace the sample HTML content (such as the content of `.ms-Panel-content`) with your content.
+
+<!---
+{{> PanelDocExampleJS}}
+--->
