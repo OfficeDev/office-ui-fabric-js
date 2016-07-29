@@ -48,42 +48,30 @@ Use `is-unread` to indicate that the item has not been read.
 --->
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
+1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
-        <script src="jquery-2.2.1.min.js"></script>
-        <script src="jquery.fabric.min.js"></script>
+        <script src="fabric.min.js"></script>
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
-    ```
-    <li class="ms-ListItem" tabindex="0">
-        <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-        <span class="ms-ListItem-secondaryText">Meeting notes</span>
-        <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
-        <span class="ms-ListItem-metaText">2:42p</span>
-        <div class="ms-ListItem-selectionTarget"></div>
-        <div class="ms-ListItem-actions">
-            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
-            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
-            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
-            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i>
-            </div>
-        </div>
-    </li>
-    ```
-3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Dialog components on the page:
-    ```
-    <script>
-        $(document).ready(function() {
-            if ($.fn.ListItem) {
-                $('.ms-ListItem').ListItem();
-            }
-        });
-    </script>
-    ```
+<!---
+<pre>
+    <code>
+{{renderPartialPre "ListItem" "ListItemElem" ListItemModels.basic false}}
+    </code>
+</pre>
+--->
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Dialog components on the page:
+<!---
+<pre>
+    <code>
+{{renderPartialPre "ListItem" "ListItemJS" "" false}}
+    </code>
+</pre>
+--->
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content (such as the content of `.ms-ListItem-primaryText`) with your content.
 
