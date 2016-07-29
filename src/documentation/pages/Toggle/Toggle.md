@@ -19,25 +19,31 @@ Allows for turning on or off a setting. This is best suited for simple, singular
 --->
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS on your page:
+1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
+        <script src="fabric.min.js"></script>
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
-    ```
-    <div class="ms-Toggle">
-        <span class="ms-Toggle-description">Let apps use my location</span>
-        <input type="checkbox" id="demo-toggle-3" class="ms-Toggle-input">
-        <label for="demo-toggle-3" class="ms-Toggle-field" tabindex="0">
-            <span class="ms-Label ms-Label--off">Off</span>
-            <span class="ms-Label ms-Label--on">On</span>
-        </label>
-    </div>
-    ```
-3. Update the `.ms-Label` to contain your label text.
+<!---
+<pre>
+    <code>
+{{renderPartialPre "Toggle" "ToggleElem" ToggleModels.basic false}}
+    </code>
+</pre>
+--->
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Toggle components on the page:
+<!---
+<pre>
+    <code>
+{{renderPartialPre "Toggle" "ToggleJS" "" false}}
+    </code>
+</pre>
+--->
+4. Update the `.ms-Label` to contain your label text.
 
 ## Dependencies
 This component has a dependency on the Label component.
