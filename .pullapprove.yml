@@ -4,12 +4,12 @@ reject_regex: ^Rejected
 reset_on_push: false
 reviewers:
   members:
-    - ericthompson
-    - battletoilet
-    - Jahnp
-    - wdo3650
-    - mikewheaton
-    - atneik
-    - philworthington
+  - ericthompson
+  - battletoilet
+  - Jahnp
+  - wdo3650
+  - mikewheaton
+  - atneik
+  - philworthington
   name: default
   required: 2
