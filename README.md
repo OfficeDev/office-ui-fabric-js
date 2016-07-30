@@ -4,6 +4,8 @@
 
 This framework uses styles from the [Office UI Fabric](https://github.com/OfficeDev/office-ui-fabric/) project. Fabric is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for you to create web experiences using the Office Design Language.
 
+Please note: We are currently removing the core styles (colors, fonts, icons, etc.) from this project as they are part of the core [Office UI Fabric](https://github.com/OfficeDev/office-ui-fabric/) project. If you have any issues related to these core styles, please open them in that project.
+
 ##Contents
 - [Get started](#get-started)
 - [Contribute to Fabric](#contribute-to-fabric)
