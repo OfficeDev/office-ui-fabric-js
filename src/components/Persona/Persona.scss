@@ -657,10 +657,12 @@ $ms-Persona-presenceSizeXl: 28px;
 
     @media screen and (-ms-high-contrast: active) {
       background-color: $ms-color-black;
+      box-shadow: 0 0 0 1px $ms-color-white inset;
     }
 
     @media screen and (-ms-high-contrast: black-on-white) {
       background-color: $ms-color-white;
+      box-shadow: 0 0 0 1px $ms-color-black inset;
     }
   }
 }
