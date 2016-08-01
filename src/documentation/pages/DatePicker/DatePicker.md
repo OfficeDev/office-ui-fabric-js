@@ -16,11 +16,12 @@ State | Applied to | Result
 `.is-pickingMonths` | `.ms-DatePicker` | Displays a set of months to choose from.
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as the PickaDate.js library:
+1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery and PickaDate.js library:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
+        <script src="jquery-2.2.1.min.js"></script>
         <script src="fabric.min.js"></script>
         <script src="PickaDate.js"></script>
     </head>
