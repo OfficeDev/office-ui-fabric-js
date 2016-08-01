@@ -202,11 +202,25 @@ $ms-Persona-presenceSizeXl: 28px;
   bottom: -1px;
   border: 2px solid $ms-color-white;
   text-align: center;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-black;
+      box-shadow: 0 0 0 1px $ms-color-contrastBlackSelected inset;
+      color: $ms-color-black;
+      background-color: $ms-color-white;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-white;
+      box-shadow: 0 0 0 1px $ms-color-contrastWhiteSelected inset;
+      color: $ms-color-white;
+      background-color: $ms-color-black;
+    }
 }
 
 .ms-Persona-presenceIcon {
   color: $ms-color-white;
-  font-size: 9px;
+  font-size: 8px;
   line-height: $ms-Persona-presenceSizeMd;
   vertical-align: top;
 }
@@ -554,6 +568,11 @@ $ms-Persona-presenceSizeXl: 28px;
   .ms-Persona-presence {
     background-color: $ms-color-presence-away;
   }
+
+  .ms-Persona-presenceIcon {
+    position: relative;
+    left: 1px;
+  }
 }
 
 
@@ -609,6 +628,14 @@ $ms-Persona-presenceSizeXl: 28px;
 .ms-Persona.ms-Persona--busy {
   .ms-Persona-presence {
     background-color: $ms-color-presence-busy-average;
+
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      background-color: $ms-color-contrastWhiteSelected;
+    }
   }
 }
 
@@ -627,6 +654,14 @@ $ms-Persona-presenceSizeXl: 28px;
 .ms-Persona.ms-Persona--offline {
   .ms-Persona-presence {
     background-color: $ms-color-presence-offline;
+
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $ms-color-black;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      background-color: $ms-color-white;
+    }
   }
 }
 
