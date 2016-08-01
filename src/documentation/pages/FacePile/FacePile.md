@@ -15,26 +15,30 @@ State | Applied to | Result
 `.is-active` | `.ms-FacePile-itemBtn--overflow` | Makes the overflow item for additional people visible.
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
+1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
-        <script src="jquery-2.2.1.min.js"></script>
-        <script src="jquery.fabric.min.js"></script>
+        <script src="fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from the sample above into your page.
-3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Dialog components on the page:
-    ```
-    <script>
-        $(document).ready(function() {
-            if ($.fn.FacePile) {
-                $('.ms-FacePile').FacePile();
-            }
-        });
-    </script>
-    ```
+2. Copy the HTML from the sample above into your page. For example:
+<!---
+<pre>
+    <code>
+{{renderPartialPre "FacePile" "FacePileElem" FacePileModels.basic false}}
+    </code>
+</pre>
+--->
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all FacePile components on the page:
+<!---
+<pre>
+    <code>
+{{renderPartialPre "FacePile" "FacePileJS" "" false}}
+    </code>
+</pre>
+--->
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content with your content.
 
