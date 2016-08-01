@@ -12,57 +12,36 @@ Presents a message to the user, with an optional call to action. The message is 
 This component has only the default state.
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
+1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
-        <script src="jquery-2.2.1.min.js"></script>
-        <script src="jquery.fabric.min.js"></script>
+        <script src="fabric.min.js"></script>
     </head>
     ```
 2. Copy the HTML from the sample above into your page. For example:
-    ```
-    <div class="ms-MessageBanner">
-        <div class="ms-MessageBanner-content">
-            <div class="ms-MessageBanner-text">
-                <div class="ms-MessageBanner-clipper">
-                    You've reached your total storage on OneDrive. Please upgrade your storage plan if you need more storage.
-                </div>
-            </div>
-            <button class="ms-MessageBanner-expand">
-                <i class="ms-Icon ms-Icon--chevronsDown"></i>
-            </button>
-            <div class="ms-MessageBanner-action">
-                <button class="ms-Button ms-Button--primary">
-                <span class="ms-Button-label">Get More Storage</span>
-                </button>
-            </div>
-        </div>
-        <button class="ms-MessageBanner-close">
-            <i class="ms-Icon ms-Icon--x"></i>
-        </button>
-    </div>
-    ```
-3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Breadcrumbs on the page:
-    ```
-    <script>
-        $(document).ready(function() {
-            if (typeof fabric !== "undefined") {
-                if ('MessageBanner' in fabric) {
-                    var elements = document.querySelectorAll('.ms-MessageBanner');
-                    var i = elements.length;
-                    var component;
-                    while(i--) {
-                        component = new fabric['MessageBanner'](elements[i]);
-                    }
-                }
-            }
-        });
-    </script>
-    ```
+<!---
+<pre>
+    <code>
+{{renderPartialPre "MessageBanner" "MessageBannerExample" MessageBannerExampleModel.props false}}
+    </code>
+</pre>
+--->
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a MessageBanner component on the page:
+<!---
+<pre>
+    <code>
+{{renderPartialPre "MessageBanner" "MessageBannerExampleJS" "" false}}
+    </code>
+</pre>
+--->
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content (such as the text in `.ms-MessageBanner-action`) with your content.
 
 ## Dependencies
 This component has a dependency on Button.
+
+<!---
+{{> MessageBannerExampleJS }}
+--->
