@@ -54,21 +54,22 @@ A persona can have one of seven presences: available, away, blocked, busy, do no
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
-    ```
-    <div class="ms-Persona">
-        <div class="ms-Persona-imageArea">
-            <img class="ms-Persona-image" src="Persona.Person2.png">
-        </div>
-        <div class="ms-Persona-presence">
-            <i class="ms-Persona-presenceIcon ms-Icon ms-Icon--skypeCheck"></i>
-        </div>
-        <div class="ms-Persona-details">
-            <div class="ms-Persona-primaryText">Alton Lafferty</div>
-            <div class="ms-Persona-secondaryText">Accountant</div>
-        </div>
-    </div>
-    ```
-3. Replace the sample HTML content (such as the name within `.ms-Persona-primaryText`) with your content.
+<!---
+<pre>
+    <code>
+{{renderPartialPre "Persona" "PersonaExample" PersonaExampleProps.default false}}
+    </code>
+</pre>
+--->
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ProgressIndicators on the page:
+<!---
+<pre>
+    <code>
+{{renderPartialPre "Persona" "PersonaExampleJS" "" false}}
+    </code>
+</pre>
+--->
+4. Replace the sample HTML content (such as the name within `.ms-Persona-primaryText`) with your content.
 
 ## Dependencies
 This component has no dependencies.
