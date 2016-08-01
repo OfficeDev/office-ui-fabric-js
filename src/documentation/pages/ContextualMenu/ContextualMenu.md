@@ -43,34 +43,30 @@ State | Applied to | Result
 `.is-disabled` | `.ms-ContextualMenu-link` | Disables that item in the menu.
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
+1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head> 
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
-        <script src="jquery-2.2.1.min.js"></script>
-        <script src="jquery.fabric.min.js"></script>
+        <script src="fabric.min.js"></script>
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
-    ```
-    <ul class="ms-ContextualMenu">
-        <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Animals</a></li>
-        <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Books</a></li>
-        <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link is-selected" href="#">Education</a></li>
-        <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Music</a></li>
-        <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link is-disabled" href="#">Sports</a></li>
-    </ul>
-    ```
-3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all ContextualMenu components on the page:
-    ```
-    <script>
-        var ButtonElement = document.querySelector(".ms-Button");
-        var ContextualMenuElement = document.querySelector(".ms-ContextualMenu");
-    
-        var contextualMenu = new fabric['ContextualMenu'](ContextualMenuElement, ButtonElement);
-    </script>
-    ```
+<!---
+<pre>
+    <code>
+{{renderPartialPre "ContextualMenu" "ContextualMenuExample" ContextualMenuExampleModel.basic false}}
+    </code>
+</pre>
+--->
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ContextualMenu components on the page:
+<!---
+<pre>
+    <code>
+{{renderPartialPre "ContextualMenu" "ContextualMenuExampleJS" "" false}}
+    </code>
+</pre>
+--->
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content (such as the `.ms-ContextualMenu-link` elements) with your content.
 
@@ -79,3 +75,7 @@ This component has no dependencies.
 
 ## Accessibility
 More details will be added here.
+
+<!---
+{{> ContextualMenuExampleJS }}
+--->
