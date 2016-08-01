@@ -53,19 +53,13 @@ Use sparingly when there's an exceptional need to tell the use that something we
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
-    ```
-    <div class="ms-MessageBar">
-        <div class="ms-MessageBar-content">
-            <div class="ms-MessageBar-icon">
-                <i class="ms-Icon ms-Icon--infoCircle"></i>
-            </div>
-            <div class="ms-MessageBar-text">
-                Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit. <br />
-                <a href="" class="ms-Link">Hyperlink string</a>
-            </div>
-        </div>
-    </div>
-    ```
+<!---
+<pre>
+    <code>
+{{renderPartialPre "MessageBar" "MessageBarExample" MessageBarExampleProps.default false}}
+    </code>
+</pre>
+--->
 3. Verify that the component is working the same as in the sample above.
 4. Replace the sample HTML content (such as the content of `.ms-MessageBar-text`) with your content.
 
