@@ -30,11 +30,11 @@ Use when a serious failure or error has occured and information may have been lo
 {{> MessageBar props=MessageBarExampleProps.error }}
 --->
 
-### Remove
+### Blocked
 Use when the user is explicitly forbidden from a particular action not because of an error, but because of security restrictions or policy enforcements.
 
 <!---
-{{> MessageBar props=MessageBarExampleProps.remove }}
+{{> MessageBar props=MessageBarExampleProps.blocked }}
 --->
 
 ### Success
@@ -64,4 +64,4 @@ Use sparingly when there's an exceptional need to tell the use that something we
 4. Replace the sample HTML content (such as the content of `.ms-MessageBar-text`) with your content.
 
 ## Dependencies
-This component has a dependency on the Link component.
+Link

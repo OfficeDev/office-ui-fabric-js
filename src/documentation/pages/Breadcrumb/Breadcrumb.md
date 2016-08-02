@@ -1,7 +1,7 @@
 # Breadcrumb
 Breadcrumbs should be used as a navigational aid in your app or site. They indicate the current page’s location within a hierarchy and help the user understand where they are in relation to the rest of that hierarchy. They also afford one-click access to higher levels of that hierarchy. Breadcrumbs are typically placed, in horizontal form, under the masthead or navigation of an experience, above the primary content area.
 
-### Best Practices
+## Best Practices
 Do | Don't
 --- | ---
 Place Breadcrumbs at the top of a page, above a list of items, or above the main content of a page.  |  Don't use Breadcrumbs as a primary way to navigate an app or site.
@@ -47,9 +47,9 @@ State | Applied to | Result
 --->
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content (such as the `.ms-Breadcrumb-listItem` elements) with your content.
- 
+
 ## Dependencies
-This component uses a **Contextual Menu** for the overflow menu.
+ContextualMenu
 
 ## Accessibility
 The component's JavaScript will apply the correct `tabindex` values to ensure keyboard accessibility.

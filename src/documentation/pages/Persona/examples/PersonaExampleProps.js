@@ -3,14 +3,14 @@ var PersonaExampleProps = {
     "image": "Persona.Person2.png",
     "primaryText": "Alton Lafferty",
     "secondaryText": "Accountant",
-    "icon": "skypeCheck"
+    "icon": "SkypeCheck"
   },
   "large": {
     "image": "Persona.Person2.png",
     "primaryText": "Alton Lafferty",
     "secondaryText": "Accountant",
     "tertiaryText": "In a meeting",
-    "icon": "skypeCheck",
+    "icon": "SkypeCheck",
     "modifiers": [
       {
         "name": "lg"
@@ -23,7 +23,7 @@ var PersonaExampleProps = {
     "secondaryText": "Accountant",
     "tertiaryText": "In a meeting",
     "optionalText": "Available at 4:00pm",
-    "icon": "skypeCheck",
+    "icon": "SkypeCheck",
     "modifiers":  [
       {
         "name": "xl"
@@ -34,7 +34,7 @@ var PersonaExampleProps = {
     "image": "Persona.Person2.png",
     "primaryText": "Alton Lafferty",
     "secondaryText": "Accountant",
-    "icon": "skypeCheck",
+    "icon": "SkypeCheck",
     "modifiers":  [
       {
         "name": "sm"
@@ -44,7 +44,7 @@ var PersonaExampleProps = {
   "extraSmall": {
     "image": "Persona.Person2.png",
     "primaryText": "Alton Lafferty",
-    "icon": "skypeCheck",
+    "icon": "SkypeCheck",
     "modifiers":  [
       {
         "name": "xs"
@@ -53,7 +53,7 @@ var PersonaExampleProps = {
   },
   "tiny": {
     "primaryText": "Alton Lafferty",
-    "icon": "skypeCheck",
+    "icon": "SkypeCheck",
     "modifiers":  [
       {
         "name": "tiny"
@@ -64,13 +64,13 @@ var PersonaExampleProps = {
     "initials": "AL",
     "initialsColor": "blue",
     "primaryText": "Alton Lafferty",
-    "icon": "skypeCheck"
+    "icon": "SkypeCheck"
   },
   "presenceAvailable": {
     "image": "Persona.Person2.png",
     "primaryText": "Alton Lafferty",
     "secondaryText": "Accountant",
-    "icon": "skypeCheck",
+    "icon": "SkypeCheck",
     "modifiers":  [
       {
         "name": "available"
@@ -81,7 +81,7 @@ var PersonaExampleProps = {
     "image": "Persona.Person2.png",
     "primaryText": "Alton Lafferty",
     "secondaryText": "Accountant",
-    "icon": "skypeClock",
+    "icon": "SkypeClock",
     "modifiers":  [
       {
         "name": "away"
@@ -112,7 +112,7 @@ var PersonaExampleProps = {
     "image": "Persona.Person2.png",
     "primaryText": "Alton Lafferty",
     "secondaryText": "Accountant",
-    "icon": "skypeMinus",
+    "icon": "SkypeMinus",
     "modifiers":  [
       {
         "name": "dnd"
@@ -133,7 +133,7 @@ var PersonaExampleProps = {
     "image": "Persona.Person2.png",
     "primaryText": "Gerrad Matteu",
     "actionIcon": "x",
-    "icon": "skypeCheck",
+    "icon": "SkypeCheck",
     "modifiers": [
       {
         "name": "token"

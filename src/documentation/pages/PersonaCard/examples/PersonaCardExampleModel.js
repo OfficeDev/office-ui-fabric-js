@@ -16,6 +16,7 @@ var PersonaCardExampleProps = {
       "secondaryText": "Accountant",
       "tertiaryText": "In a meeting",
       "optionalText": "Available at 4:00pm",
+      "icon": "SkypeCheck",
       "modifiers":  [
         {
           "name": "lg"
@@ -33,7 +34,8 @@ var PersonaCardExampleProps = {
                 "initialsColor": "blue",
                 "image": "../persona/Persona.Person2.png",
                 "primaryText": "Russel Miller",
-                "secondaryText": "Sales"
+                "secondaryText": "Sales",
+                "icon": "SkypeCheck"
               }
             },
             {
@@ -43,7 +45,8 @@ var PersonaCardExampleProps = {
                 "initialsColor": "blue",
                 "image": "../persona/Persona.Person2.png",
                 "primaryText": "Douglas Fielder",
-                "secondaryText": "Public Relations"
+                "secondaryText": "Public Relations",
+                "icon": "SkypeCheck"
               }
             }
           ]
@@ -58,7 +61,8 @@ var PersonaCardExampleProps = {
                 "initialsColor": "blue",
                 "image": "../persona/Persona.Person2.png",
                 "primaryText": "Grant Steel",
-                "secondaryText": "Sales"
+                "secondaryText": "Sales",
+                "icon": "SkypeCheck"
               }
             }
           ]
@@ -73,7 +77,8 @@ var PersonaCardExampleProps = {
                 "initialsColor": "blue",
                 "image": "../persona/Persona.Person2.png",
                 "primaryText": "Harvey Wallin",
-                "secondaryText": "Public Relations"
+                "secondaryText": "Public Relations",
+                "icon": "SkypeCheck"
               }
             },
             {
@@ -83,7 +88,8 @@ var PersonaCardExampleProps = {
                 "initialsColor": "blue",
                 "image": "../persona/Persona.Person2.png",
                 "primaryText": "Marcus Lauer",
-                "secondaryText": "Technical Support"
+                "secondaryText": "Technical Support",
+                "icon": "SkypeCheck"
               }
             },
             {
@@ -93,7 +99,8 @@ var PersonaCardExampleProps = {
                 "initialsColor": "blue",
                 "image": "../persona/Persona.Person2.png",
                 "primaryText": "Marcel Groce",
-                "secondaryText": "Delivery"
+                "secondaryText": "Delivery",
+                "icon": "SkypeCheck"
               }
             },
             {
@@ -103,7 +110,8 @@ var PersonaCardExampleProps = {
                 "initialsColor": "blue",
                 "image": "../persona/Persona.Person2.png",
                 "primaryText": "Jessica Fischer",
-                "secondaryText": "Marketing"
+                "secondaryText": "Marketing",
+                "icon": "SkypeCheck"
               }
             }
           ]

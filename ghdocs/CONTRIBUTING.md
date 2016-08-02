@@ -1,12 +1,12 @@
 #Contributing
 
-Office UI Fabric is an evolving snapshot of the Office 365 Design Language, provided by one of the Microsoft Design Studios that works with it. This means that it is updated frequently and exists as a source of truth to help everyone build consistent Office 365 experiences.
+Office UI Fabric JS is an evolving snapshot of the Office 365 Design Language's components, provided by the OneDrive and SharePoint Design Studio.
 
-For this reason, some of the fundamental elements - iconography, typography, animations, and color - aren't intended to be modified unless the official design language changes. You should feel free to modify them for your own projects, but pull requests (PRs) that propose modifications or additions to these elements will likely not be accepted. Otherwise, we will review all PRs, but not all may be accepted.
+Currently, this set of components is in a **paused** state by the Fabric team while we work on the other control sets, but is still open to contributions that help improve the stability or usability of the components.
 
-Missing a glyph in the icon font? Though we don't officially support them, you can use alternative icon font solutions like [Fontello](http://fontello.com/), [Icomoon](https://icomoon.io/app/#/select), or [Fontastic](http://fontastic.me/) to fill in those gaps.
-
-**Don't modify CSS (this is just the output of our Sass) or anything in `dist/`.**
+This project has a few key tenets that are worth noting:
+ - No use of jQuery, please!
+ - TypeScript is used for the components' included functionality
 
 ### Pull requests
 We gladly welcome PRs regarding…
@@ -15,7 +15,7 @@ We gladly welcome PRs regarding…
 - Documentation updates
 - Things we haven't thought of yet :-)
 
-When creating a pull request, please describe in detail the problem you are solving and reference an [open issue](https://github.com/OfficeDev/Office-UI-Fabric/issues) if possible. Screenshots or a [demonstration on CodePen](http://codepen.io/pen?template=gPGzgX) are also appreciated. 
+When creating a pull request, please describe in detail the problem you are solving and reference an [open issue](https://github.com/OfficeDev/Office-UI-Fabric-js/issues) if possible. Screenshots or a [demonstration on CodePen](http://codepen.io/pen?template=gPGzgX) are also appreciated. 
 
 ### Feature requests
 Please be sure to open an issue before starting a hefty PR so we can let you know if we're likely to consider your request--and to make sure we aren't already planning on doing the work.
@@ -27,16 +27,16 @@ This needs to only be done once for any Microsoft open source project.
 
 ### Issue tracker labels
 
-We track community issues via GitHub's [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric/issues). To help us keep track of the different areas, please use the following labels:
+We track community issues via GitHub's [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric-js/issues). To help us keep track of the different areas, please use the following labels:
 
-- `question` - Feel free to ask questions via the question tag.
-- `browser` - Issues that pertain to a specific browser. Screenshots and details are much appreciated!
-- `docs` - Issues pertaining to our documentation.
-- `feature` - Issues requesting a new feature to be added or extended from an existing feature.
-- `gulp` - Issues related to our gulp build process.
-- `js` - Issues that result from the example JavaScript referenced or included.
-- `meta` - issues with the overall project or the Github repository.
-- `components` - Issues specific to our CSS components.
-- `grid` - Issues pertaining to the responsive grid.
-- `type` - Issues pertaining to our typography and related classes.
-- `icons` - Issues pertaining to our iconography and icon related classes.
+- `accessibility` - Issues or PRs that pertain to keyboard support, high contrast mode, screen reader support, etc.
+- `bug` - Issues or PRs that address unexpected behavior or broken components.
+- `build-system` - Issues and PRs related to the build process.
+- `documentation` - Issues and PRs that pertain to the documentation included with the repository.
+- `enhancement` - Issues or PRs that address potential improvements to components.
+- `needs-design` - Issues or PRs that need Design guidance.
+- `needs-discussion` - Issues or PRs that need discussion among the Fabric team.
+- `question` - Issues that don't necessarily require code and usually consist of clarifications.
+- `waiting-for-author` - Issues or PRs that are awaiting a repsonse from the original author.
+- `waiting-for-details` - Issues or PRs that need more details before they can be acted upon.
+- `waiting-to-merge` - PRs that are close to being merged in but are stalled.

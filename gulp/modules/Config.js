@@ -168,7 +168,7 @@ var Config = function() {
           var template = hbs.compile(fileContents);
           var thisProps = {props: props};
           var templateString = new hbs.SafeString(template(thisProps));
-          return '' + templateString;
+          return ' ' + templateString;
         }.bind(this)
       }
   };
