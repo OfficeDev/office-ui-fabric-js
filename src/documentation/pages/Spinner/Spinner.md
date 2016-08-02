@@ -40,7 +40,7 @@ Displays the progress of an operation when the percentage complete can not be de
     </code>
 </pre>
 --->
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Spinners on the page:
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Spinner components on the page:
 <!---
 <pre>
     <code>

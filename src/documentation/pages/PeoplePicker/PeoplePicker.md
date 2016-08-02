@@ -44,7 +44,7 @@ If the network is unavailable, you can present an error message in the search mo
     </code>
 </pre>
 --->
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Dialog components on the page:
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all PeoplePicker components on the page:
 <!---
 <pre>
     <code>

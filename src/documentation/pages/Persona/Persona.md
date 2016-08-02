@@ -61,7 +61,7 @@ A persona can have one of seven presences: available, away, blocked, busy, do no
     </code>
 </pre>
 --->
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ProgressIndicators on the page:
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Persona components on the page:
 <!---
 <pre>
     <code>

@@ -64,7 +64,7 @@ Use `is-unread` to indicate that the item has not been read.
     </code>
 </pre>
 --->
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Dialog components on the page:
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ListItem components on the page:
 <!---
 <pre>
     <code>
