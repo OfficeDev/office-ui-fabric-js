@@ -24,7 +24,7 @@ A layout component that allows a user to switch between different sets of conten
 --->
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
+1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
