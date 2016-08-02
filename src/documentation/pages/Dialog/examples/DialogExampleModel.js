@@ -106,7 +106,7 @@ var DialogExampleModel = {
   },
   "close": {
     "modifier": "close",
-    "closeIcon": "x",
+    "closeIcon": "Cancel",
     "title": "All emails together",
     "subtext": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "components": [
@@ -194,7 +194,7 @@ var DialogExampleModel = {
         "props":  {
           "label": "Create Account",
           "description": "Description of this action this button takes",
-          "icon": "plus",
+          "icon": "Add",
           "modifier": "compound",
           "tag": "button",
           "customClasses": "ms-Dialog-action"
@@ -205,7 +205,7 @@ var DialogExampleModel = {
         "props":  {
           "label": "Sign in",
           "description": "Description of this action this button takes",
-          "icon": "plus",
+          "icon": "Add",
           "modifier": "compound",
           "tag": "button",
           "customClasses": "ms-Dialog-action"
@@ -216,7 +216,7 @@ var DialogExampleModel = {
         "props":  {
           "label": "Settings",
           "description": "Description of this action this button takes",
-          "icon": "plus",
+          "icon": "Add",
           "modifier": "compound",
           "tag": "button",
           "customClasses": "ms-Dialog-action"
