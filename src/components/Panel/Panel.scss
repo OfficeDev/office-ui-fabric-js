@@ -22,12 +22,12 @@ $ms-panel-close-button-height: 40px;
   @include ms-baseFont;
   background-color: $ms-color-white;
   width: 100%;
-  max-width: $ms-panel-width-sm;
+  max-width: $ms-panel-width-md;
   @include drop-shadow(-30px, 0, 30px, -30px, .2);
   position: absolute;
   top: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
   z-index: $ms-zIndex-front;
   display: none;
   height: 100%;
@@ -43,6 +43,11 @@ $ms-panel-close-button-height: 40px;
 
   &.is-open {
     display: block;
+  }
+
+  .ms-CommandBar {
+    padding-right: 0;
+    padding-left: 8px;
   }
 }
 
@@ -90,7 +95,7 @@ $ms-panel-close-button-height: 40px;
 .ms-Panel-closeButton {
   @include button-reset;
   position: absolute;
-  right: 8px;
+  right: 6px;
   top: 0;
   height: $ms-panel-close-button-height;
   width: $ms-panel-close-button-height;
@@ -98,10 +103,21 @@ $ms-panel-close-button-height: 40px;
   outline: 0;
   padding: 0;
   color: $ms-color-neutralSecondary;
-  font-size: $ms-font-size-m;
+  font-size: $ms-icon-size-m;
 
   &:hover {
     color: $ms-color-neutralPrimary;
+  }
+
+  .ms-Icon--Cancel {
+    margin-top: 2px;
+  }
+
+  @media (max-width: $ms-screen-md-max) {
+    font-size: $ms-icon-size-l;
+    line-height: $ms-icon-size-l;
+    height: 44px;
+    right: 4px;
   }
 }
 
