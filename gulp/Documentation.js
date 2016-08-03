@@ -195,6 +195,32 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
    }
 });
 
+gulp.task('Documentation-buildStyles', function () {
+    return gulp.src(Config.paths.srcDocumentationCSS + '/' + 'demo.scss')
+            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+            .pipe(Plugins.debug({
+              title: "Building Documentation SASS " + BuildConfig.fileExtension + " File"
+            }))
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+            .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
+            .pipe(Plugins.rename('demo.css'))
+            .pipe(Plugins.changed(Config.paths.distDocumentationCSS, {extension: '.css'}))
+            .pipe(Plugins.autoprefixer({
+              browsers: ['last 2 versions', 'ie >= 9'],
+              cascade: false
+            }))
+            .pipe(Plugins.cssbeautify())
+            .pipe(Plugins.csscomb())
+            .pipe(gulp.dest(Config.paths.distDocumentationCSS))
+            .pipe(Plugins.rename('demo.min.css'))
+            .pipe(Plugins.cssMinify())
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+            .pipe(gulp.dest(Config.paths.distDocumentationCSS));
+                
+});
+
 //
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
@@ -204,7 +230,8 @@ var DocumentationTasks = [
     'Documentation-copyAssets',
     'ComponentJS',
     'Documentation-copyIgnoredFiles',
-    "Documentation-template"
+    "Documentation-template",
+    "Documentation-buildStyles"
 ];
 
 //Build Fabric Component Samples

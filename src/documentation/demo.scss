@@ -1,16 +1,34 @@
+@import "./../sass/_Fabric.Common";
+
+/*Variables*/
+$header-height: 47px;
+
 /* DOCUMENTATION SPECIFIC STYLING */
 html, 
 body {
     margin: 0;
     padding: 0;
     height: 100%;  
-}    
+}
+
+body {
+    @include ms-font-m;
+}
 
 h1 {
-    margin: 0;
-    padding: 10px;
-    margin-bottom: 20px;
-    padding-left: 25px;
+    @include ms-font-xxl;
+}
+
+h2 {
+    @include ms-font-xl; 
+}
+
+h3 {
+    @include ms-font-l;
+}
+
+.componentDemo {
+  padding-right: 20px;
 }
 
 #componentWrapper {
@@ -21,13 +39,13 @@ h1 {
 
 .sample-wrapper {
   margin: 28px 0;
-}
 
-.sample-wrapper > .ms-Overlay {
-  display: block;
-  position: relative;
-  height: 300px;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+   > .ms-Overlay {
+    display: block;
+    position: relative;
+    height: 300px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+  }
 }
 
 .ms-NavBar-item .ms-ContextualMenu {
@@ -36,4 +54,187 @@ h1 {
 
 .ms-CommandBar .ms-ContextualMenu {
   position: absolute;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+#Header {
+    position: absolute;
+    top: 0;
+    height: $header-height;
+    left: 0;
+    right: 0;
+
+    .HeaderTitle {
+        padding: 5px 0px 5px 20px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &:hover {
+           cursor: default;
+        }
+    }
+}
+
+
+html[dir=ltr] {
+  #ContentContainer {
+    left: 300px;
+    right: 0;
+  }
+
+  .ms-Nav-groupButton {
+    text-align: left;
+  }
+
+  .ms-Nav-groupChevron.ms-Icon {
+    left: 15px;
+  }
+
+
+  #SidebarContainer {
+      border-right: 1px solid #EEE;
+      left: 0;
+  }
+}
+
+html[dir=rtl] {
+  #ContentContainer {
+    left: 0;
+    right: 300px;
+  }
+
+
+  .ms-Nav-groupButton {
+    text-align: right;
+  }
+
+  .LinkContainer {
+    a {
+      &.is-selected {
+        &:after {
+          border-right: 2px solid black;
+          border-left: 0px;
+        }
+      }
+    }
+  }
+}
+
+
+#SidebarContainer {
+    position: absolute;
+    width: 300px;
+    top: $header-height;
+    bottom: 0;
+    background: #fff;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    h1 {
+      padding-left: 25px;
+    }
+}
+
+
+.ms-Nav-groupChevron.ms-Icon {
+    position: absolute;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    -webkit-transition: -webkit-transform .1s linear;
+    transition: -webkit-transform .1s linear;
+    transition: transform .1s linear;
+    transition: transform .1s linear,-webkit-transform .1s linear;
+}
+
+.ms-Nav-group.is-expanded .ms-Nav-groupChevron {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.ms-Nav-groupButton {
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-family: "Segoe UI Regular WestEuropean","Segoe UI",Tahoma,Arial,sans-serif;
+    font-size: 12px;
+    line-height: 40px;
+    margin: 5px 0;
+    padding: 0 40px;
+    background: 0 0;
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #333333;
+    background: #ffffff;
+    outline: transparent;
+}
+
+.ms-Nav-groupContent {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.ms-Nav-group.is-expanded .ms-Nav-groupContent {
+    display: block;
+}
+
+.ms-u-slideDownIn20 {
+    -webkit-animation-name: fade,slideDownIn20;
+    animation-name: fade,slideDownIn20;
+    -webkit-animation-duration: 367ms;
+    -moz-animation-duration: 367ms;
+    -ms-animation-duration: 367ms;
+    -o-animation-duration: 367ms;
+    -webkit-animation-timing-function: cubic-bezier(.1,.9,.2,1);
+    animation-timing-function: cubic-bezier(.1,.9,.2,1);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+#ContentContainer {
+    position: absolute;
+    top: $header-height;
+    bottom: 0;
+    padding: 0 0 0 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-overflow-scrolling: touch;
+}
+
+.LinkContainer {
+  margin-bottom: 20px;
+  
+  a {
+    display: block;
+    padding: 6px 40px;
+
+    &.is-selected {
+      @include ms-bgColor-info;
+      position: relative;
+      color: #333;
+
+      &:after {
+        content: '';
+        position: absolute;
+        border-left: 2px solid black;
+        top: 0; 
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
 }
