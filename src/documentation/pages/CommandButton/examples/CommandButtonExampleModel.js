@@ -1,15 +1,15 @@
 var CommandButtonExampleModel = {
   "props": { 
     "label": "Command",
-    "icon": "circleFill",
+    "icon": "CircleFill",
     "tag": "button",
     "iconColor": "themePrimary"
   },
   "propsDropdown": {
     "label": "New",
-    "icon": "circleFill",
+    "icon": "CircleFill",
     "tag": "button",
-    "dropdownIcon": "chevronDown",
+    "dropdownIcon": "ChevronDown",
     "iconColor": "themePrimary",
     "dropdown": {
       "component": "ContextualMenu",
@@ -20,7 +20,7 @@ var CommandButtonExampleModel = {
           {
             "title": "Folder",
             "state": "",
-            "icon": "folder"
+            "icon": "Folder"
           },
           {
             "modifier": "divider",
@@ -28,20 +28,20 @@ var CommandButtonExampleModel = {
           },
           {
             "title": "Plain Text Document",
-            "icon": "document"
+            "icon": "Document"
           },
           {
-            "title": "A Dog",
-            "icon": "dogAlt"
+            "title": "Smile",
+            "icon": "Emoji2"
           },
           {
-            "title": "The Sun",
+            "title": "Globe",
             "state": "",
-            "icon": "sun"
+            "icon": "Globe"
           },
           {
             "title": "Money",
-            "icon": "money"
+            "icon": "Money"
           }
         ]
       }
@@ -49,8 +49,8 @@ var CommandButtonExampleModel = {
   },
   "propsSplit": {
     "label": "Reply",
-    "icon": "circleFill",
-    "splitIcon": "chevronDown",
+    "icon": "CircleFill",
+    "splitIcon": "ChevronDown",
     "iconColor": "themePrimary",
     "tag": "button",
     "dropdown": {
@@ -83,16 +83,16 @@ var CommandButtonExampleModel = {
     }
   },
   "propsNoLabel": {
-    "icon": "circleFill",
+    "icon": "CircleFill",
     "modifier": "noLabel",
     "tag": "button",
     "iconColor": "themePrimary"
   },
   "propsNoLabelSplit": {
-    "icon": "circleFill",
+    "icon": "CircleFill",
     "modifier": "noLabel",
     "tag": "button",
-    "splitIcon": "chevronDown",
+    "splitIcon": "ChevronDown",
     "iconColor": "themePrimary",
     "dropdown": {
       "component": "ContextualMenu",
@@ -125,20 +125,20 @@ var CommandButtonExampleModel = {
   },
   "propsInline": {
     "label": "Command",
-    "icon": "check",
+    "icon": "CircleFill",
     "tag": "button",
     "modifier": "inline",
     "iconColor": "green"
   },
   "propsDisabled": {
     "label": "Command",
-    "icon": "circleFill",
+    "icon": "CircleFill",
     "tag": "button",
     "iconColor": "themePrimary",
     "disabled": true
   },
   "propsActionButton": {
-    "icon": "circleFill",
+    "icon": "CircleFill",
     "modifier": "actionButton",
     "tag": "button",
     "iconColor": "themePrimary"
@@ -150,9 +150,9 @@ var CommandButtonExampleModel = {
   },
   "propsPivot": {
     "label": "New",
-    "icon": "circleFill",
+    "icon": "CircleFill",
     "tag": "button",
-    "dropdownIcon": "chevronDown",
+    "dropdownIcon": "ChevronDown",
     "iconColor": "themePrimary",
     "state": "is-active",
     "modifier": "pivot"

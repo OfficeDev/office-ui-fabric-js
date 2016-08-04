@@ -1,12 +1,4 @@
-<div class="ms-PanelExtraExtraLargeExample">
+<div class="ms-PanelExtraExtraLargeExample ms-PanelExample">
     {{> Button props=PanelExampleProps.extraExtraLarge.button}}
     {{> Panel props=PanelExampleProps.extraExtraLarge}}
 </div>
-
-<script>
-  var PanelExtraExtraLargeExampleButton = document.querySelector(".ms-PanelExtraExtraLargeExample .ms-Button");
-  var PanelExtraExtraLargeExamplePanel = document.querySelector(".ms-PanelExtraExtraLargeExample .ms-Panel");
-  PanelExtraExtraLargeExampleButton.addEventListener("click", function() {
-    new fabric['Panel'](PanelExtraExtraLargeExamplePanel);
-  });
-</script>

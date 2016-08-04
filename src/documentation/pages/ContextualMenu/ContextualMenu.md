@@ -33,6 +33,7 @@ Dividers can be added to create distinct sections of options or commands.
 {{> ContextualMenuDividersExample props=ContextualMenuExampleModel.dividers }}
 --->
 
+
 ## States
 
 State | Applied to | Result
@@ -41,8 +42,40 @@ State | Applied to | Result
 `.is-selected` | `.ms-ContextualMenu-link` | Marks that item as selected. Only available for the multiselect variant.
 `.is-disabled` | `.ms-ContextualMenu-link` | Disables that item in the menu.
 
+## Using this component
+1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+    ```
+    <head> 
+        <link rel="stylesheet" href="fabric.min.css">
+        <link rel="stylesheet" href="fabric.components.min.css">
+        <script src="fabric.min.js"></script>
+    </head>
+    ```
+2. Copy the HTML from one of the samples above into your page. For example:
+<!---
+<pre>
+    <code>
+{{renderPartialPre "ContextualMenu" "ContextualMenuExample" ContextualMenuExampleModel.basic false}}
+    </code>
+</pre>
+--->
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ContextualMenu components on the page:
+<!---
+<pre>
+    <code>
+{{renderPartialPre "ContextualMenu" "ContextualMenuExampleJS" "" false}}
+    </code>
+</pre>
+--->
+4. Verify that the component is working the same as in the sample above.
+5. Replace the sample HTML content (such as the `.ms-ContextualMenu-link` elements) with your content.
+
 ## Dependencies
-ContextualHost
+This component has no dependencies.
 
 ## Accessibility
 More details will be added here.
+
+<!---
+{{> ContextualMenuExampleJS }}
+--->
