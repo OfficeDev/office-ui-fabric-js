@@ -11,16 +11,29 @@ var BuildConfig = require('./modules/BuildConfig');
 // ----------------------------------------------------------------------------
 
 gulp.task('DocumentationViewer', ['Fabric', 'FabricComponents', 'Documentation', 'Samples'], function() {
+    // List of folders in /dist to display in sidebar in order of presentation
+    var folders = ['Getting Started', 'Components', 'Samples'];
     var sections = [];
-    var getDocsFolders = Utilites.getFolders(Config.paths.distDocumentation);
-    
-    for(var x = 0; x < getDocsFolders.length; x++) {
-        var folderName = getDocsFolders[x];
-        var subSections = Utilites.getFolders(Config.paths.distDocumentation + '/' + folderName);
+
+    for(var x = 0; x < folders.length; x++) {
+        var subSections = Utilites.getFolders(Config.paths.distDocumentation + '/' + folders[x]);
+        var pagesOnly;
+
+        if (subSections.length < 1) {
+            subSections = Plugins.fs.readdirSync(Config.paths.distDocumentation + '/' + folders[x]);
+            subSections = subSections.map(function(fileName) {
+                fileName = fileName.substr(0, fileName.length - 5);
+                return (fileName == fileName.toUpperCase()) ? (fileName.charAt(0).toUpperCase() + fileName.slice(1).toLowerCase()) : fileName;
+            });
+            pagesOnly = true;
+        } else {
+            pagesOnly = false;
+        }
         
         sections.push({
-            "name": folderName,
-            "subSections":  subSections
+            "name": folders[x],
+            subSections,
+            pagesOnly
         });
     }
 

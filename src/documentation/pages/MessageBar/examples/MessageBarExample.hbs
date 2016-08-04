@@ -1,0 +1,1 @@
+{{> MessageBar props=props }}

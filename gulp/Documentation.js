@@ -195,6 +195,51 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
    }
 });
 
+gulp.task('Documentation-buildStyles', function () {
+    return gulp.src(Config.paths.srcDocumentationCSS + '/' + 'demo.scss')
+            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+            .pipe(Plugins.debug({
+              title: "Building Documentation SASS " + BuildConfig.fileExtension + " File"
+            }))
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+            .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
+            .pipe(Plugins.rename('demo.css'))
+            .pipe(Plugins.changed(Config.paths.distDocumentationCSS, {extension: '.css'}))
+            .pipe(Plugins.autoprefixer({
+              browsers: ['last 2 versions', 'ie >= 9'],
+              cascade: false
+            }))
+            .pipe(Plugins.cssbeautify())
+            .pipe(Plugins.csscomb())
+            .pipe(gulp.dest(Config.paths.distDocumentationCSS))
+            .pipe(Plugins.rename('demo.min.css'))
+            .pipe(Plugins.cssMinify())
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+            .pipe(gulp.dest(Config.paths.distDocumentationCSS));
+                
+});
+
+gulp.task('Documentation-convertMarkdown', function() {
+  return gulp.src('./ghdocs/*.md')
+          .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+          .pipe(Plugins.debug({
+            title: "Building Getting Started Documentation"
+          }))
+          .pipe(Plugins.marked())
+          .pipe(Plugins.wrap(
+              {
+                  src:  Config.paths.srcTemplate + '/gettingStartedTemplate.html'  
+              },
+              {
+                  pageName: 'Getting Started Page'
+              }
+         ))
+          .pipe(gulp.dest(Config.paths.distDocsGettingStarted))
+          
+});
+
 //
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
@@ -204,7 +249,9 @@ var DocumentationTasks = [
     'Documentation-copyAssets',
     'ComponentJS',
     'Documentation-copyIgnoredFiles',
-    "Documentation-template"
+    "Documentation-template",
+    "Documentation-buildStyles",
+    "Documentation-convertMarkdown"
 ];
 
 //Build Fabric Component Samples
