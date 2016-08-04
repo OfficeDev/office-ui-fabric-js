@@ -8,16 +8,22 @@
 	<link rel="stylesheet" href="../css/fabric.css">
 	<link rel="stylesheet" href="../css/fabric.components.css">
     <script type="text/javascript">
+
+        // Documentation javascript
         document.addEventListener("DOMContentLoaded", function(){
+            // Add Click handlers on DOM ready
             addClickHandlers();
             var docContent = document.getElementById('ContentContainer');
             var docContentFrame = docContent.getElementsByTagName('iframe')[0];
+            var componentLinks = document.querySelectorAll(".LinkContainer a");
+            componentLinks[0].click();
 
             function addClickHandlers(){
                 componentLinksHandler();
                 sectionCollapseHandler();
             }
 
+            // Add click handlers for sidebar links
             function componentLinksHandler() {
                 var componentLinks = document.querySelectorAll(".LinkContainer a");
                 componentLinks.forEach(function(ele){
@@ -31,6 +37,7 @@
                 });
             }
 
+            // Add click handler for collapsing and expanding sidebar sections
             function sectionCollapseHandler() {
                 var sectionHeaders = document.querySelectorAll(".SidebarSection > button");
                 sectionHeaders.forEach(function(ele) {
@@ -42,6 +49,7 @@
                 });
             }
 
+            // Remove currently selected link
             function removeSelected() {
                 var selectedLinks = document.querySelectorAll(".LinkContainer a.is-selected");
                 selectedLinks.forEach(function(ele) {
@@ -59,7 +67,7 @@
         <div id="SidebarContainer">
         <% sections.forEach(function(section) { %>
             <div class="SidebarSection ms-Nav-group is-expanded">
-                <button class="ms-font-l ms-Nav-groupButton">
+                <button class="ms-Nav-groupButton">
                     <i class="ms-Nav-groupChevron ms-Icon ms-Icon--ChevronDown"></i>
                     <span>
                         <%= section.name %>
@@ -67,7 +75,11 @@
                     </button>
                 <div class="LinkContainer ms-Nav-groupContent ms-u-slideDownIn20">
                     <% section.subSections.forEach(function(subsection) { %>
-                        <a href="<%= section.name %>/<%= subsection %>/index.html" class="ms-Link ms-font-l ms-fontWeight-semilight ms-bgColor-neutralLighterAlt--hover"><%= subsection %></a>
+                        <% if (section.pagesOnly) { %> 
+                            <a href="<%= section.name %>/<%= subsection %>.html" class="ms-Link ms-font-l ms-fontWeight-semilight ms-bgColor-neutralLighterAlt--hover"><%= subsection %></a>
+                        <% } else { %>
+                            <a href="<%= section.name %>/<%= subsection %>/index.html" class="ms-Link ms-font-l ms-fontWeight-semilight ms-bgColor-neutralLighterAlt--hover"><%= subsection %></a>
+                        <% } %>
                     <% }); %>
                 </div>
             </div>

@@ -68,7 +68,6 @@ pre {
     right: 0;
 
     .HeaderTitle {
-        padding: 5px 0px 5px 20px;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -khtml-user-select: none;
@@ -98,6 +97,13 @@ html[dir=ltr] {
   }
 
 
+  #Header {
+    .HeaderTitle {
+        padding: 5px 0px 5px 20px;
+    }
+  }
+
+
   #SidebarContainer {
       border-right: 1px solid #EEE;
       left: 0;
@@ -110,9 +116,23 @@ html[dir=rtl] {
     right: 300px;
   }
 
+  .ms-Nav-groupChevron.ms-Icon {
+    right: 15px;
+  }
 
   .ms-Nav-groupButton {
     text-align: right;
+  }
+
+  #Header {
+    .HeaderTitle {
+        padding: 5px 20px 5px 0px;
+    }
+  }
+
+  #SidebarContainer {
+      border-left: 1px solid #EEE;
+      right: 0;
   }
 
   .LinkContainer {
@@ -149,7 +169,7 @@ html[dir=rtl] {
     position: absolute;
     height: 40px;
     line-height: 40px;
-    font-size: 15px;
+    font-size: 13px;
     -webkit-transition: -webkit-transform .1s linear;
     transition: -webkit-transform .1s linear;
     transition: transform .1s linear;
@@ -178,6 +198,10 @@ html[dir=rtl] {
     color: #333333;
     background: #ffffff;
     outline: transparent;
+
+    &:hover {
+      background: #f8f8f8;
+    }
 }
 
 .ms-Nav-groupContent {
@@ -219,7 +243,7 @@ html[dir=rtl] {
   
   a {
     display: block;
-    padding: 6px 40px;
+    padding: 10px 40px;
 
     &.is-selected {
       @include ms-bgColor-info;

@@ -221,6 +221,25 @@ gulp.task('Documentation-buildStyles', function () {
                 
 });
 
+gulp.task('Documentation-convertMarkdown', function() {
+  return gulp.src('./ghdocs/*.md')
+          .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+          .pipe(Plugins.debug({
+            title: "Building Getting Started Documentation"
+          }))
+          .pipe(Plugins.marked())
+          .pipe(Plugins.wrap(
+              {
+                  src:  Config.paths.srcTemplate + '/gettingStartedTemplate.html'  
+              },
+              {
+                  pageName: 'Getting Started Page'
+              }
+         ))
+          .pipe(gulp.dest(Config.paths.distDocsGettingStarted))
+          
+});
+
 //
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
@@ -231,7 +250,8 @@ var DocumentationTasks = [
     'ComponentJS',
     'Documentation-copyIgnoredFiles',
     "Documentation-template",
-    "Documentation-buildStyles"
+    "Documentation-buildStyles",
+    "Documentation-convertMarkdown"
 ];
 
 //Build Fabric Component Samples

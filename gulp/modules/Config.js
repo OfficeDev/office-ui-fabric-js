@@ -30,6 +30,7 @@ var Config = function() {
   this.paths.distJS = this.paths.dist + '/js';
   this.paths.distPackages = this.paths.dist + '/packages';
   this.paths.distDocsComponents = this.paths.distDocumentation + '/Components';
+  this.paths.distDocsGettingStarted = this.paths.distDocumentation + '/Getting Started';
   this.paths.distDocsSamples = this.paths.distDocumentation + '/Samples';
   this.paths.distDocsStyles = this.paths.distDocumentation + '/Styles';
   this.paths.bundlePath = this.paths.dist + '/bundles';
