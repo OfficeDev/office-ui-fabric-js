@@ -8,7 +8,7 @@
 
 // Import both Fabric and Fabric Components by reference to access variables
 // and mixins from each without compiling their contents.
-@import '../../../../bower_components/office-ui-fabric/src/sass/Fabric.Common.scss';
+@import '../../../../node_modules/office-ui-fabric-core/src/sass/Fabric.Common.scss';
 @import '../../../sass/Fabric.Components.scss';
 
 // Import all LESS

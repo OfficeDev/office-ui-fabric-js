@@ -18,7 +18,7 @@ var Config = function() {
     srcDocsPagesExamples: 'examples',
 		componentsPath : 'src/components',
     srcLibPath: 'lib',
-    uiCorePath: 'bower_components/office-ui-fabric',
+    uiCorePath: 'node_modules/office-ui-fabric-core',
 	};
   
   this.paths.distComponents = this.paths.dist + '/components';
