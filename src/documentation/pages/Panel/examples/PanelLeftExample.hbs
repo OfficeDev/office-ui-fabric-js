@@ -1,12 +1,4 @@
-<div class="ms-PanelLeftExample">
+<div class="ms-PanelLeftExample ms-PanelExample">
     {{> Button props=PanelExampleProps.left.button}}
     {{> Panel props=PanelExampleProps.left}}
 </div>
-
-<script>
-  var PanelLeftExampleButton = document.querySelector(".ms-PanelLeftExample .ms-Button");
-  var PanelLeftExamplePanel = document.querySelector(".ms-PanelLeftExample .ms-Panel");
-  PanelLeftExampleButton.addEventListener("click", function() {
-    new fabric['Panel'](PanelLeftExamplePanel);
-  });
-</script>

@@ -55,6 +55,33 @@ A smaller callout with an action.
 ## States
 This component has only the default state.
 
+## Using this component
+1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+    ```
+    <head>
+        <link rel="stylesheet" href="fabric.min.css">
+        <link rel="stylesheet" href="fabric.components.min.css">
+        <script src="fabric.min.js"></script>
+    </head>
+    ```
+2. Copy the HTML from one of the samples above into your page. For example:
+<!---
+<pre>
+    <code>
+{{renderPartialPre "Callout" "CalloutExample" CalloutExampleModel.props false}}
+    </code>
+</pre>
+--->
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a Callout component on the page:
+<!---
+<pre>
+    <code>
+{{renderPartialPre "Callout" "CalloutExampleJS" "" false}}
+    </code>
+</pre>
+--->
+3. Replace the sample HTML content (such as the content of `.ms-Callout-title`) with your content.
+
 ## Dependencies
 Button, Label, Link, ContextualHost, CommandButton
 

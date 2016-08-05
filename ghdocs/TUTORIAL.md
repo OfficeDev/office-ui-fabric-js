@@ -4,18 +4,18 @@
 
 - [Overview](#overview)
 - [Components overview](#components-overview)
-- [Step 1 – Setting up your project](#step-1--setting-up-your-project)
-- [Step 2 – Adding Fabric to a project](#step-2--adding-fabric-to-a-project)
-- [Step 3 – Prepping your app](#step-3--prepping-your-app)
-- [Step 4 – Using Fabric components](#step-4--using-fabric-components)
-- [Step 5 – Using Fabric typography](#step-5--using-fabric-typography)
-- [Step 6 – Adding more complex components](#step-6--adding-more-complex-components)
+- [Step 1 – Setting up your project](#step-1-setting-up-your-project)
+- [Step 2 – Adding Fabric to a project](#step-2-adding-fabric-to-a-project)
+- [Step 3 – Prepping your app](#step-3-prepping-your-app)
+- [Step 4 – Using Fabric components](#step-4-using-fabric-components)
+- [Step 5 – Using Fabric typography](#step-5-using-fabric-typography)
+- [Step 6 – Adding more complex components](#step-6-adding-more-complex-components)
 
 ## Overview
 
 Fabric is an HTML and CSS toolkit that works like a skin to help your experiences look and feel like Office and Office 365. To demonstrate how to use Fabric, let's build a simple ToDo application. For this tutorial, we will focus mainly on using Fabric components to get our app looking solid as quickly as possible.
 
-###Using Fabric with Office Add-ins
+### Using Fabric with Office Add-ins
 If you're building an Office Add-in, you can find simple instructions for using the compiled version right away in the article [Using Fabric with Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/6f46dd69-2ba3-4b0f-9735-7d7394ca2731.aspx).  
 
 ## Components Overview
@@ -103,7 +103,7 @@ And index.html should look like this:
 
 Let's start adding Fabric components to our app. Below is a preview of what our finished app will look like:
 
-![Third screenshot of ToDo app](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/images/ThirdAppLook.png)
+![Third screenshot of ToDo app](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-core/master/ghdocs/images/ThirdAppLook.png)
 
 At the top we have a TextField and Button component that we will eventually use to add new tasks. Underneath, we have our List component that contains ListItems, which will hold each of the user's pending tasks.
 
@@ -138,7 +138,7 @@ Now let's add styles for these elements. Open up app.css and add two CSS rules: 
 
 Save and then open up index.html in your browser. You should see something like this:
 
-![First screenshot of ToDo app](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/images/FirstAppLook.png)
+![First screenshot of ToDo app](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-core/master/ghdocs/images/FirstAppLook.png)
 
 If you don't see this, double-check your CSS paths and make sure you followed the first part of this tutorial correctly.
 
@@ -471,7 +471,7 @@ body {
 
 Here is a screenshot of what your app should look like at this moment:
 
-![Second screenshot of ToDo app](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/images/SecondAppLook.png)
+![Second screenshot of ToDo app](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-core/master/ghdocs/images/SecondAppLook.png)
 
 It's starting to look pretty good! It still needs something more, so let's add a background color and adjust the padding and margins of our TextField and Button components.
 
@@ -725,6 +725,6 @@ body {
 
 Your app should look exactly like this:
 
-![Third screenshot of ToDo app](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/images/ThirdAppLook.png)
+![Third screenshot of ToDo app](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-core/master/ghdocs/images/ThirdAppLook.png)
 
 Check out the next part in the series, where we will integrate functionality, animations, and more awesomeness.
