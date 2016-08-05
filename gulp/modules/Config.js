@@ -18,6 +18,7 @@ var Config = function() {
     srcDocsPagesExamples: 'examples',
 		componentsPath : 'src/components',
     srcLibPath: 'lib',
+    uiCorePath: 'node_modules/office-ui-fabric-core',
 	};
   
   this.paths.distComponents = this.paths.dist + '/components';
@@ -35,12 +36,14 @@ var Config = function() {
   this.paths.distDocsStyles = this.paths.distDocumentation + '/Styles';
   this.paths.bundlePath = this.paths.dist + '/bundles';
   this.paths.distLibPath = this.paths.dist + '/lib';
+  this.paths.uiCorePathDist = this.paths.uiCorePath + '/dist';
+  this.paths.uiCorePathDistCSS = this.paths.uiCorePathDist + '/css';
   
   this.paths.srcSamples = this.paths.src + '/samples';
   this.paths.srcSass = this.paths.src + '/sass';
   this.paths.srcDocs = this.paths.src + '/documentation';
   this.paths.srcDocsPages = this.paths.srcDocs + '/pages';
-  this.paths.srcDocsComponents = this.paths.srcDocs + '/components';
+  // this.paths.srcDocsComponents = this.paths.srcDocs + '/components';
   this.paths.srcTemplate = this.paths.srcDocs + '/templates';
   this.paths.srcDocumentationCSS = this.paths.srcDocs;
   

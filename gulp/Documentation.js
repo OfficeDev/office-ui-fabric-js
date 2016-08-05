@@ -19,7 +19,7 @@ var BuildConfig = require('./modules/BuildConfig');
 // ----------------------------------------------------------------------------
 
 gulp.task('Documentation-nuke', function () {
-    return Plugins.del.sync([Config.paths.distDocsComponents]);
+    return Plugins.del.sync([Config.paths.distDocumentation]);
 });
 
 //
