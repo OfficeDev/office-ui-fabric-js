@@ -35,10 +35,10 @@ var Config = function() {
   this.paths.distLibPath = this.paths.dist + '/lib';
   
   this.paths.srcSamples = this.paths.src + '/samples';
-  this.paths.srcSass = this.paths.src + '/sass';
+  // this.paths.srcSass = this.paths.src + '/sass';
   this.paths.srcDocs = this.paths.src + '/documentation';
   this.paths.srcDocsPages = this.paths.srcDocs + '/pages';
-  this.paths.srcDocsComponents = this.paths.srcDocs + '/components';
+  // this.paths.srcDocsComponents = this.paths.srcDocs + '/components';
   this.paths.srcTemplate = this.paths.srcDocs + '/templates';
   
 	this.port =  process.env.PORT || 2020;

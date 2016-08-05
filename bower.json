@@ -28,5 +28,8 @@
     ".htmllintrc",
     ".jshintrc",
     ".csscomb.json"
-  ]
+  ],
+  "dependencies": {
+    "office-ui-fabric": "https://github.com/OfficeDev/office-ui-fabric-core.git#master"
+  }
 }
