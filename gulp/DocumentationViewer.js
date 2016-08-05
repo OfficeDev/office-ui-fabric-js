@@ -10,7 +10,7 @@ var BuildConfig = require('./modules/BuildConfig');
 // Sample Index Page Build
 // ----------------------------------------------------------------------------
 
-gulp.task('DocumentationViewer', ['Fabric', 'FabricComponents', 'Documentation', 'Samples'], function() {
+gulp.task('DocumentationViewer', ['FabricComponents', 'Documentation', 'Samples'], function() {
     // List of folders in /dist to display in sidebar in order of presentation
     var folders = ['Getting Started', 'Components', 'Samples'];
     var sections = [];
