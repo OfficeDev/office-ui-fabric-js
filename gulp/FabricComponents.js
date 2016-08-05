@@ -15,7 +15,7 @@ var folderList = Utilities.getFolders(Config.paths.componentsPath);
 // ----------------------------------------------------------------------------
 
 gulp.task('FabricComponents-nuke', function () {
-    return Plugins.del.sync([Config.paths.distComponents, Config.paths.distJS]);
+    return Plugins.del.sync([Config.paths.distComponents, Config.paths.distJS, Config.paths.distCSS]);
 });
 
 
@@ -33,6 +33,17 @@ gulp.task('FabricComponents-copyAssets', function () {
         })))
         .pipe(gulp.dest(Config.paths.distComponents));
 });
+
+gulp.task('FabricCoreStyles-copyAssets', function() {
+    return gulp.src([Config.paths.uiCorePathDistCSS + '/*.min.css'])
+            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+            .pipe(Plugins.changed(Config.paths.distComponents))
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                    title: "Moving Fabric Core Style CSS to Dist"
+            })))
+            .pipe(gulp.dest(Config.paths.distCSS));
+});
+
 
 //
 // Sass tasks
@@ -90,6 +101,7 @@ gulp.task('FabricComponents-buildAndCombineStyles', function () {
 gulp.task('FabricComponents', [
         'FabricComponents-buildAndCombineStyles',
         'FabricComponents-copyAssets', 
+        'FabricCoreStyles-copyAssets',
         'ComponentJS'
     ]
 );

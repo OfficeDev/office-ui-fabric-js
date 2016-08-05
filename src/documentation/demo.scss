@@ -67,18 +67,48 @@ pre {
     left: 0;
     right: 0;
 
-    .HeaderTitle {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+    line-height: $header-height;
+    padding: 0 20px;
+    overflow: hidden;
+    white-space: no-wrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .Header-Title {
+        display: inline-block;
 
         &:hover {
            cursor: default;
         }
     }
+
+    .Header-buttons {
+      -webkit-font-smoothing: auto;
+    }
+
+    .Header-button {
+      position: relative;
+      text-decoration: none;
+      background: 0 0;
+      color: #fff;
+      border: none;
+      padding: 0;
+      padding: 0 10px;
+      min-width: 50px;
+      height: 50px;
+      line-height: 50px;
+      margin: 0 5px;
+      text-transform: uppercase;
+      display: inline-block;
+      vertical-align: top;
+      box-sizing: border-box;
+
+      &:hover {
+        @include ms-bgColor-themePrimary;
+      }
+  }
 }
 
 
@@ -100,6 +130,10 @@ html[dir=ltr] {
   #Header {
     .HeaderTitle {
         padding: 5px 0px 5px 20px;
+    }
+
+    .Header-buttons {
+     float: right; 
     }
   }
 
@@ -127,6 +161,10 @@ html[dir=rtl] {
   #Header {
     .HeaderTitle {
         padding: 5px 20px 5px 0px;
+    }
+
+    .Header-buttons {
+     float: left; 
     }
   }
 
