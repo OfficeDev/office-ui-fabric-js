@@ -10,12 +10,13 @@ Office UI Fabric uses [gulp](http://gulpjs.com/) to compile its styling, build a
 
 ## Building Fabric
 
-Before you get started, make sure you have [node.js](https://nodejs.org/), [gulp](http://gulpjs.com/), and [git](https://git-scm.com/) installed. To build Fabric:
+Before you get started, make sure you have [node.js](https://nodejs.org/), [gulp](http://gulpjs.com/), [bower](https://bower.io/), and [git](https://git-scm.com/) installed. To build Fabric:
 
 1. Clone the repo.
 2. Navigate to the folder that contains the gulpfile.js file (Fabric's root).
 3. `npm install`
-4. `gulp`
+4. `bower install`
+5. `gulp`
 
 The built files will be in the `/dist/` folder.
 
