@@ -63,6 +63,7 @@
   width: 100%;
   min-width: 180px;
   outline: 0;
+  text-overflow: ellipsis;
 
   &:hover {
     border-color: $ms-color-neutralSecondaryAlt;
