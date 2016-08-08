@@ -51,7 +51,7 @@ namespace fabric {
     private _addListeners(): void {
       /** Placeholder - hide/unhide the placeholder  */
       if (this._type.indexOf(TextFieldConsts.Type.Placeholder) >= 0) {
-        this._textField.addEventListener("click", (event: MouseEvent) => {
+        this._textField.addEventListener("focus", (event: MouseEvent) => {
           this._textFieldLabel.style.display = "none";
         });
         this._textField.addEventListener("blur", (event: MouseEvent) => {
