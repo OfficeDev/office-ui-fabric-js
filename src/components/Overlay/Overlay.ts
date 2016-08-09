@@ -23,10 +23,12 @@ namespace fabric {
 
     public show(): void {
       this.overlayElement.classList.add("is-visible");
+      document.body.classList.add("ms-noScroll");
     }
 
     public hide(): void {
       this.overlayElement.classList.remove("is-visible");
+      document.body.classList.remove("ms-noScroll");
     }
   }
 }
