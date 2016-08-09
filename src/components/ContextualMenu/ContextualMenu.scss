@@ -13,6 +13,7 @@
   font-weight: $ms-font-weight-regular;
   display: block;
   min-width: 180px;
+  max-width: 220px;
   list-style-type: none;
   position: relative;
   background-color: $ms-color-white;
@@ -34,9 +35,12 @@
   cursor: pointer;
   display: block;
   height: 36px;
+  overflow: hidden;
   line-height: 34px;
   padding: 0 16px 0 25px;
   position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   &:hover,
   &:active,
