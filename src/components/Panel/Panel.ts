@@ -9,22 +9,26 @@ namespace fabric {
    * A host for the panel control
    *
    */
-  const ANIMATE_IN_STATE = "ms-u-slideLeftIn400";
-  const ANIMATE_OUT_STATE = "ms-u-slideRightOut400";
+  const ANIMATE_IN_STATE = "animate-in";
+  const ANIMATE_OUT_STATE = "animate-out";
   const ANIMATION_END = 400;
 
   export class Panel {
 
     private _panel: Element;
     private _panelHost: PanelHost;
+    private _direction: string;
+    private _animateOverlay: boolean;
 
     /**
      *
      * @param {HTMLElement} container - the target container for an instance of Panel
      * @constructor
      */
-    constructor(panel: Element) {
+    constructor(panel: Element,  direction?: string, animateOverlay?: boolean) {
       this._panel = panel;
+      this._direction = direction || "right";
+      this._animateOverlay = animateOverlay || true;
       this._panelHost = new fabric.PanelHost(this._panel, this._animateInPanel);
       this._setEvents();
 
