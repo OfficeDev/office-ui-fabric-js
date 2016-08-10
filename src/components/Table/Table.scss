@@ -40,7 +40,7 @@
 
       // But show the mark.
       &::after {
-        content: '\e73A';
+        @include ms-Icon--CheckboxComposite;
         color: $ms-color-white;
       }
     }
@@ -84,7 +84,7 @@
   // Empty checkbox.
   &::after {
     @include ms-Icon;
-    content: '\e739';
+    @include ms-Icon--Checkbox;
     color: $ms-color-neutralTertiary;
     font-size: 12px;
     position: absolute;

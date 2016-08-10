@@ -27,7 +27,7 @@ namespace fabric {
     public close(): void {
       this._overlay.remove();
       this._dialog.classList.remove("is-open");
-      document.body.classList.remove("ms-noScroll");
+      document.body.classList.remove("ms-u-overflowHidden");
       this._overlay.overlayElement.removeEventListener("click", this.close.bind(this));
     }
 
@@ -37,7 +37,7 @@ namespace fabric {
       if (!this._dialog.classList.contains("ms-Dialog--blocking")) {
         this._overlay.overlayElement.addEventListener("click", this.close.bind(this), false);
         this._overlay.show();
-        document.body.classList.add("ms-noScroll");
+        document.body.classList.add("ms-u-overflowHidden");
       }
       this._dialog.parentElement.appendChild(this._overlay.overlayElement);
     }
