@@ -12,7 +12,7 @@ var MessageBarExampleProps = {
   },
   "blocked": {
     "modifier": "ms-MessageBar--blocked",
-    "iconModifiers": "ms-Icon--Blocked2"
+    "iconModifiers": "ms-Icon--Blocked"
   },
   "warning": {
     "modifier": "ms-MessageBar--warning",
