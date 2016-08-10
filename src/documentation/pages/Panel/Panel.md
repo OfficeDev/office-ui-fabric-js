@@ -61,8 +61,16 @@ State | Applied to | Result
     </code>
 </pre>
 --->
-3. Verify that the component is working the same as in the sample above.
-4. Replace the sample HTML content (such as the content of `.ms-Panel-content`) with your content.
+3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Panel components on the page:
+<!---
+<pre>
+    <code>
+{{renderPartialPre "Panel" "PanelDocExampleJS" "" false}}
+    </code>
+</pre>
+--->
+4. Verify that the component is working the same as in the sample above.
+5. Replace the sample HTML content (such as the content of `.ms-Panel-content`) with your content.
 
 <!---
 {{> PanelDocExampleJS}}

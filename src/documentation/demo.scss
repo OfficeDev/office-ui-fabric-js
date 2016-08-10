@@ -28,7 +28,7 @@ h3 {
 }
 
 .componentDemo {
-  padding-right: 20px;
+  padding: 0 20px;
 }
 
 #componentWrapper {
@@ -268,7 +268,6 @@ html[dir=rtl] {
     position: absolute;
     top: $header-height;
     bottom: 0;
-    padding: 0 0 0 20px;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-transform: translateZ(0);

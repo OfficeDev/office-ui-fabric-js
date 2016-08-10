@@ -98,7 +98,6 @@ $SearchBox-command-color: #F4F4F4;
   display: inline-block;
   font-size: 16px;
   width: 16px;
-  height: 16px;
   margin-left: 12px;
   margin-right: 6px;
   color: $ms-color-themePrimary;
@@ -161,20 +160,6 @@ $SearchBox-command-color: #F4F4F4;
       background-color: transparent;
       padding: 6px 3px 7px $SearchBox-field-padding-left;
     }
-  }
-
-  .ms-SearchBox-icon {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    display: inline-block;
-    font-size: 16px;
-    width: 16px;
-    height: 16px;
-    margin-left: 16px;
-    margin-right: 8px;
-    color: $ms-color-themePrimary;
-    vertical-align: top;
   }
 
   .ms-SearchBox-clear,

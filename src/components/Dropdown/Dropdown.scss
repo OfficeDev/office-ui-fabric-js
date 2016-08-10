@@ -220,7 +220,6 @@
     background: $ms-color-white;
     color: $ms-color-neutralTertiary;
     cursor: default;
-    line-height: 40px;
   }
 }
 
@@ -231,7 +230,6 @@
 .ms-Dropdown-item.ms-Dropdown-item--selected {
   background-color: $ms-color-themeLight;
   color: $ms-color-black;
-  line-height: 40px;
 
   &:hover {
     background-color: $ms-color-themeLight;

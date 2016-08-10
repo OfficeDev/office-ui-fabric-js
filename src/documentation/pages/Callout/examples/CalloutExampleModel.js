@@ -30,7 +30,7 @@ var CalloutExampleModel = {
         "component": "CommandButton",
         "props": {
           "label": "Command",
-          "icon": "check",
+          "icon": "CheckMark",
           "tag": "button",
           "modifier": "inline",
           "iconColor": "green"
@@ -40,7 +40,7 @@ var CalloutExampleModel = {
         "component": "CommandButton",
         "props": {
           "label": "Command",
-          "icon": "x",
+          "icon": "Clear",
           "tag": "button",
           "modifier": "inline",
           "iconColor": "red"
@@ -61,7 +61,7 @@ var CalloutExampleModel = {
     "title": "All of your favorite people",
     "subText": "Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.",
     "modifier": "close",
-    "closeIcon": "x",
+    "closeIcon": "Clear",
     "arrowPosition": "arrowLeft",
     "actions": [
       {

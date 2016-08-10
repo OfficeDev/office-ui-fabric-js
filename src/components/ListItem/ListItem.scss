@@ -158,8 +158,8 @@
     &::before {
       @include ms-Icon;
       position: absolute;
-      top: 12px;
-      left: 6px;
+      top: 14px;
+      left: 7px;
       height: 15px;
       width: 15px;
       border: 1px solid $ms-color-neutralSecondaryAlt;
@@ -179,12 +179,13 @@
   &::before,
   &:hover::before {
     @include ms-Icon;
-    content: '\e041';
-    font-size: $ms-font-size-m-plus;
+    content: '\e73A';
+    font-size: $ms-font-size-l;
     color: $ms-color-neutralSecondaryAlt;
     position: absolute;
-    top: 12px;
-    left: 6px;
+    top: 23px;
+    left: 7px;
+    border: 0;
   }
 
   &:hover {

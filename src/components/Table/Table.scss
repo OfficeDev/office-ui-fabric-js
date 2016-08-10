@@ -40,13 +40,8 @@
 
       // But show the mark.
       &::after {
-        @include ms-Icon;
-        content: '\e041';
+        @include ms-Icon--CheckboxComposite;
         color: $ms-color-white;
-        font-size: 12px;
-        position: absolute;
-        left: 4px;
-        top: 9px;
       }
     }
   }
@@ -77,18 +72,6 @@
     text-align: left;
     border-bottom: 1px solid $ms-color-neutralLight;
   }
-
-  .ms-Table-rowCheck {
-    &::after {
-      @include ms-Icon;
-      content: '\e041';
-      color: $ms-color-neutralTertiary;
-      font-size: 12px;
-      position: absolute;
-      left: 4px;
-      top: 9px;
-    }
-  }
 }
 
 // On selectable tables, each row has a checkbox.
@@ -99,15 +82,14 @@
   padding: 0;
 
   // Empty checkbox.
-  &::before {
-    border: 1px solid $ms-color-neutralTertiary;
-    content: '';
-    display: block;
-    height: 14px;
-    left: 2px;
+  &::after {
+    @include ms-Icon;
+    @include ms-Icon--Checkbox;
+    color: $ms-color-neutralTertiary;
+    font-size: 12px;
     position: absolute;
-    top: 6px;
-    width: 14px;
+    left: 4px;
+    top: 1px;
   }
 }
 
