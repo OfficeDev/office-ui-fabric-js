@@ -1,5 +1,5 @@
 # Command Bar
-Commanding surface for panels, pages, and applications. Unlike the NavBar, this component should not navigate to other pages.
+Commanding surface for panels, pages, and applications. When planning to use the surface for navigation only, consider the NavBar variant.
 
 ## Variants
 

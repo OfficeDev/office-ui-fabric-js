@@ -20,4 +20,18 @@
 <body class="componentDemo">
 <%= contents %>
 </body>
+<script>
+  function stripComments() {
+      var codeBlocks = document.getElementsByTagName("code");
+      var commentRegex = /(<!--.+-->)+/g;
+      var matches = [];
+
+      for (var i = 0; i < codeBlocks.length; i++) {
+        var code = codeBlocks[i].innerText;
+        codeBlocks[i].innerText = code.replace(commentRegex, '');
+      }
+    }
+
+    stripComments();
+</script>
 </html>
