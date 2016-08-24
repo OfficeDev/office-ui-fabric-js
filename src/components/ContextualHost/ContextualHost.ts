@@ -29,7 +29,6 @@ namespace fabric {
   const ARROW_BOTTOM_CLASS = "ms-ContextualHost--arrowBottom";
   const ARROW_RIGHT_CLASS = "ms-ContextualHost--arrowRight";
   const MODIFIER_BASE = "ms-ContextualHost--";
-  const HAS_SUBMENU = "ms-ContextualMenu-item--hasMenu";
   const ARROW_SIZE = 28;
   const ARROW_OFFSET = 8;
 
@@ -53,7 +52,6 @@ namespace fabric {
     private _children: Array<ContextualHost>;
     private _hasArrow: boolean;
     private _arrow: Element;
-    private _hasSubMenu: boolean;
 
     constructor(
         content: HTMLElement,
@@ -62,8 +60,7 @@ namespace fabric {
         hasArrow: boolean = true,
         modifiers?: Array<string>,
         matchTargetWidth?: boolean,
-        disposalCallback?: Function,
-        hasSubMenu: boolean = false
+        disposalCallback?: Function
       ) {
       this._resizeAction = this._resizeAction.bind(this);
       this._dismissAction = this._dismissAction.bind(this);
@@ -75,7 +72,6 @@ namespace fabric {
       this._contextualHostMain.appendChild(content);
       this._hasArrow = hasArrow;
       this._arrow = this._container.querySelector(CONTEXT_HOST_BEAK_CLASS);
-      this._hasSubMenu = hasSubMenu;
 
       this._targetElement = targetElement;
       this._openModal();
@@ -381,10 +377,6 @@ namespace fabric {
             this.disposeModal();
           }
         } else {
-          this.disposeModal();
-        }
-      } else {
-        if (!e.target.parentElement.classList.contains(HAS_SUBMENU) && this._hasSubMenu) {
           this.disposeModal();
         }
       }

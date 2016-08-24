@@ -52,8 +52,7 @@ namespace fabric {
         false,
         [""],
         true,
-        this._contextHostCallBack.bind(this),
-        false
+        this._contextHostCallBack.bind(this)
       );
       this._peoplePickerSearchBox.classList.add("is-active");
       this._isContextualMenuOpen = true;
