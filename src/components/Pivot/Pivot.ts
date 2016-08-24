@@ -33,7 +33,7 @@ namespace fabric {
     }
 
     private _addListeners(): void {
-      this._container.addEventListener("click", this._selectTabMouse.bind(this), false);
+      this._container.querySelector(".ms-Pivot-links").addEventListener("click", this._selectTabMouse.bind(this), false);
       this._container.addEventListener("keyup", (event: KeyboardEvent) => {
         if (event.keyCode === 13) {
           this._selectTabKeyboard(event);
