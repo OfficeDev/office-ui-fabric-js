@@ -52,7 +52,8 @@ namespace fabric {
         false,
         [""],
         true,
-        this._contextHostCallBack.bind(this)
+        this._contextHostCallBack.bind(this),
+        false
       );
       this._peoplePickerSearchBox.classList.add("is-active");
       this._isContextualMenuOpen = true;
@@ -117,7 +118,7 @@ namespace fabric {
         actionBtn.addEventListener("click", this._removeResult.bind(this), true);
       }
 
-      actionIcon.classList.add("ms-Icon", "ms-Icon--x");
+      actionIcon.classList.add("ms-Icon", "ms-Icon--Cancel");
 
       actionBtn.appendChild(actionIcon);
 
