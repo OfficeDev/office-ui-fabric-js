@@ -52,6 +52,8 @@ New to Fabric? Although [the project's site](http://dev.office.com/fabric) conta
 
 To see a full component list, you can check out the [component list]() here or [build the project locally to use the fully interactive docs site]().
 
+When you're ready to create an Office Add-in with Fabric, take a look at the [Use Office UI Fabric with Office Add-ins on MSDN article](https://msdn.microsoft.com/EN-US/library/office/mt450443.aspx).
+
 ## Contribute to Fabric JS
 
 Bug reports, feature requests, and questions are posted on the [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric-js/issues). For details on our contribution process and how we label issues, see our [Contributing](https://github.com/OfficeDev/Office-UI-Fabric-js/blob/master/ghdocs/CONTRIBUTING.md) page.
