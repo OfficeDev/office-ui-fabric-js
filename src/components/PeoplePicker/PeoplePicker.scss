@@ -21,6 +21,9 @@ $ms-Persona-leftPadding: 16px;
 .ms-PeoplePicker-searchBox {
   border-bottom: 1px solid $ms-color-neutralTertiaryAlt;
   cursor: text;
+  flex-flow: row wrap;
+  display: flex;
+  align-items: stretch;
 
   &:hover {
     border-color: $ms-color-neutralSecondaryAlt;
@@ -51,6 +54,7 @@ $ms-Persona-leftPadding: 16px;
     margin-bottom: 0;
     display: inline-block;
     width: 100%;
+    flex: 1;
 
     .ms-TextField-field {
       min-height: 40px;

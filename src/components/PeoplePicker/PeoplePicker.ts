@@ -81,7 +81,6 @@ namespace fabric {
 
       let currentResult = this._findElement(e.target, "ms-Persona");
       let clonedResult: Element = <Element>currentResult.cloneNode(true);
-      let openHost = document.querySelector(".ms-ContextualHost.is-open");
 
       // if facePile - add to members list / else tokenize
       if (this._container.classList.contains("ms-PeoplePicker--facePile")) {
@@ -91,7 +90,7 @@ namespace fabric {
       }
 
       // Close the open contextual host
-      openHost.classList.remove("is-open");
+      this._contextualHostView.disposeModal();
     }
 
     private _findElement(childObj: Element, className: string ) {
