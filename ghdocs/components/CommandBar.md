@@ -6,6 +6,19 @@ Commanding surface for panels, pages, and applications. Unlike the NavBar, this 
 ### Default
 
 
+![CommandBar example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandBar-default.png)
+
+
+### Dropdowns
+
+
+![CommandBar example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandBar-dropdowns.png)
+
+
+### NavBar
+Provides a means of navigating to different areas within an application. On small screens, the navigation items are placed inside a hamburger menu.
+
+
 ![CommandBar example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandBar-navbar.png)
 
 

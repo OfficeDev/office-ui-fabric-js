@@ -6,46 +6,16 @@ Allows for turning on or off a setting. This is best suited for simple, singular
 ### Label above (default)
 
 
-<div class="ms-Toggle  ">
-  <span class="ms-Toggle-description">Let apps use my location</span>
-  <input type="checkbox" id="demo-toggle-3" class="ms-Toggle-input" />
-  <label for="demo-toggle-3" class="ms-Toggle-field"  tabindex="0" >
-    <span class="ms-Label ms-Label--off">Off</span>
-    <span class="ms-Label ms-Label--on">On</span>
-  </label>
-</div>
-
-
 ![Toggle example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Toggle-default.png)
 
 
 ### Label on left
 
 
-<div class="ms-Toggle  ms-Toggle--textLeft ">
-  <span class="ms-Toggle-description">Let apps use my location</span>
-  <input type="checkbox" id="demo-toggle-1" class="ms-Toggle-input" />
-  <label for="demo-toggle-1" class="ms-Toggle-field"  tabindex="0" >
-    <span class="ms-Label ms-Label--off">Off</span>
-    <span class="ms-Label ms-Label--on">On</span>
-  </label>
-</div>
-
-
 ![Toggle example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Toggle-left.png)
 
 
 ### Disabled
-
-
-<div class="ms-Toggle   is-disabled ">
-  <span class="ms-Toggle-description">Let apps use my location</span>
-  <input type="checkbox" id="demo-toggle-2" class="ms-Toggle-input" />
-  <label for="demo-toggle-2" class="ms-Toggle-field" >
-    <span class="ms-Label ms-Label--off">Off</span>
-    <span class="ms-Label ms-Label--on">On</span>
-  </label>
-</div>
 
 
 ![Toggle example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Toggle-disabled.png)

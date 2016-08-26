@@ -6,6 +6,18 @@ Used to label form elements such as TextField and Dropdown.
 ### Default
 
 
+![Label example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Label-default.png)
+
+
+### Required
+
+
+![Label example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Label-required.png)
+
+
+### Disabled
+
+
 ![Label example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Label-disabled.png)
 
 

@@ -6,6 +6,12 @@ Partially obscures the page to create a modal experience and focus the user's at
 ### Default
 
 
+![Overlay example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Overlay-default.png)
+
+
+### Dark
+
+
 ![Overlay example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Overlay-dark.png)
 
 

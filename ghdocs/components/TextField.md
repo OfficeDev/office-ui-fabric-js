@@ -6,6 +6,32 @@ Allows for the input of text. Can be a single line or multiple lines. Typically 
 ### Default
 
 
+![TextField example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/TextField-default.png)
+
+
+### Multiline
+
+
+![TextField example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/TextField-multiline.png)
+
+
+### Placeholder text
+
+
+![TextField example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/TextField-placeholdertext.png)
+
+
+### Underlined
+
+
+![TextField example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/TextField-underlined.png)
+
+
+## States
+
+### Disabled
+
+
 ![TextField example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/TextField-disabled.png)
 
 

@@ -6,31 +6,36 @@ Suitable for presenting a summary of an item with associated actions. Most often
 ### Default
 
 
-<li class="ms-ListItem  " tabindex="0">
-  
-  <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-  <span class="ms-ListItem-secondaryText">Meeting notes</span>
-  <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
-  <span class="ms-ListItem-metaText">2:42p</span>
-  
-  <div class="ms-ListItem-selectionTarget"></div>
-  <div class="ms-ListItem-actions">
-    
-    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Mail"></i></div>
-    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Delete"></i></div>
-    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Flag"></i></div>
-    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Pinned"></i></div>
-  </div>
-</li>
-
-
-
 ![ListItem example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ListItem-default.png)
 
 
 ### Image
 The same as the default variant, with a thumbnail image added.
 
+
+
+![ListItem example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ListItem-image.png)
+
+
+### Document
+Showcases a document by providing a thumbnail, title, and some metadata.
+
+
+![ListItem example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ListItem-document.png)
+
+
+## States
+
+### Selectable
+Apply the `is-selectable` class to make it possible to select the item.
+
+
+### Selected
+When applied alongside the `is-selectable` class, `is-selected` will mark it as selected.
+
+
+### Unread
+Use `is-unread` to indicate that the item has not been read.
 
 
 ## Using this component

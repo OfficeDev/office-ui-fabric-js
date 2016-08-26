@@ -4,9 +4,9 @@ Presents content by sliding over the rest of the application, which is covered b
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> PanelDefaultExample}}
---->
+---->
 <!---i
 ![Panel example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Panel.png)
 i--->

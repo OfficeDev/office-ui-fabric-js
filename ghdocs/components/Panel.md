@@ -5,27 +5,32 @@ Presents content by sliding over the rest of the application, which is covered b
 
 ### Default
 
-<div class="ms-PanelDefaultExample ms-PanelExample">
-        <button class="ms-Button 
-      
-      ">
-      <span class="ms-Button-label">Open Panel</span>
-    </button>        <div class="ms-Panel ">
-        <button class="ms-Panel-closeButton ms-PanelAction-close">
-            <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
-        </button>
-        <div class="ms-Panel-contentInner">
-            <p class="ms-Panel-headerText">Panel</p>
-            <div class="ms-Panel-content">
-                <span class="ms-font-m">Content goes here</span>
-            </div>
-        </div>
-    </div></div>
 
 ![Panel example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Panel.png)
 
 
 ### Medium
+
+
+
+### Large
+
+
+
+### Large, fixed
+
+
+
+### Extra Large
+
+
+
+### Extra extra large
+
+
+
+### Left aligned
+You can add the `ms-Panel--left` modifier to any panel to attach it to the left side of the screen.
 
 
 

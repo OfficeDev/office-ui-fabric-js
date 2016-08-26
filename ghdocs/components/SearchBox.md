@@ -5,6 +5,14 @@ A special form field that allows for the input of search text.
 
 ### Default
 
+-
+
+![SearchBox example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/SearchBox-default.png)
+
+
+### Collapsed
+
+-
 
 ![SearchBox example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/SearchBox-collapsed.png)
 

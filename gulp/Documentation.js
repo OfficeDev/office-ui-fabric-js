@@ -163,8 +163,7 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
                 console.log(err);  
             })
             .pipe(Plugins.fileinclude())
-            // .pipe(Plugins.replace(/<!-----.*----->/, ""))
-            .pipe(Plugins.replace(/<!----i[\s\S]+i---->/im, ""))
+            .pipe(Plugins.replace(/<!----i(.|\s)*?i---->/img, ""))
             .pipe(Plugins.replace("<!----", ""))
             .pipe(Plugins.replace("---->", ""))
             .pipe(Plugins.replace("<!---", ""))
@@ -194,7 +193,7 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
                 console.log(err);  
                 })
             .pipe(Plugins.fileinclude())
-            .pipe(Plugins.replace(/<!----[\s\S]+---->/im, ""))
+            .pipe(Plugins.replace(/<!----(.|\s)*?---->/img, ""))
             .pipe(Plugins.replace("<!---i", ""))
             .pipe(Plugins.replace("i--->", ""))
             .pipe(Plugins.replace("<!---", ""))

@@ -6,6 +6,60 @@ Allows users to take action, such as submitting a form or dismissing a message. 
 ### Default
 
 
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-default.png)
+
+
+### Action Button
+
+
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-action.png)
+
+
+### Disabled
+
+
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-disabled.png)
+
+
+### Dropdown
+
+
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-dropdown.png)
+
+
+### Inline
+
+
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-inline.png)
+
+
+### No Label
+
+
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-nolabel.png)
+
+
+### No Label Split
+
+
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-nolabelsplit.png)
+
+
+### Pivot
+
+
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-pivot.png)
+
+
+### Split
+
+
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-split.png)
+
+
+### Text Only
+
+
 ![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-textonly.png)
 
 

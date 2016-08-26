@@ -7,6 +7,20 @@ A form input that allows for the choice of one or more people.
 Uses the standard sized Persona component.
 
 
+![PeoplePicker example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/PeoplePicker-default.png)
+
+
+### Compact
+Use the extra small Persona component to fit more results.
+
+
+![PeoplePicker example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/PeoplePicker-compact.png)
+
+
+### Face pile
+Presents the selected people in a list below the search field, rather than inline.
+
+
 ![PeoplePicker example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/PeoplePicker-facepile.png)
 
 

@@ -7,6 +7,26 @@ Represents a person, complete with a profile image and additional details. Where
 Six sizes are available: tiny, extraSmall, small, default, large, and extraLarge
 
 
+![Persona example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Persona-circle.png)
+
+
+### Initials
+Don't have a profile image for the user? Provide the person's initials as an alternative.
+
+
+![Persona example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Persona-initials.png)
+
+
+### Presence indicators
+A persona can have one of seven presences: available, away, blocked, busy, do not disturb, and offline.
+
+
+![Persona example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Persona-presence.png)
+
+
+### Token
+
+
 ![Persona example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Persona-facepile.png)
 
 

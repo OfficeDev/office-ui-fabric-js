@@ -4,9 +4,9 @@ Suitable for presenting a summary of an item with associated actions. Most often
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> ListItemElem props=ListItemModels.basic }}
---->
+---->
 <!---i
 ![ListItem example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ListItem-default.png)
 i--->

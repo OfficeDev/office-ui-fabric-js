@@ -22,6 +22,39 @@ When additional context - or more advanced description - is necessary, consider 
 ### Default
 
 
+![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-default.png)
+
+
+
+### Close
+Includes an icon to dismiss the callout.
+
+
+
+![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-close.png)
+
+
+### Action text
+Includes buttons to take action.
+
+
+
+![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-action.png)
+
+
+### OOBE (Out Of the Box Experience)
+Draws attention to one aspect of the application during a product tour.
+
+
+
+![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-oobe.png)
+
+
+### Peek
+A smaller callout with an action.
+
+
+
 ![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-peek.png)
 
 

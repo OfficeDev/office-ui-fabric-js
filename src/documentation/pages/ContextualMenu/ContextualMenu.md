@@ -6,9 +6,9 @@ Presents options associated with an object. Often opened via a right-click or ov
 ### Default
 A standard menu of commands. Should close when a command is invoked.
 
-<!---
+<!----
 {{> ContextualMenuExample props=ContextualMenuExampleModel.basic }}
---->
+---->
 <!---i
 ![ContextualMenu example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ContextualMenu-default.png)
 i--->

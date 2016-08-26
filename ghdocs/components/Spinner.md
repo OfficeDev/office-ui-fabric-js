@@ -6,6 +6,24 @@ Displays the progress of an operation when the percentage complete can not be de
 ### Default
 
 
+![Spinner example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Spinner-default.png)
+
+
+### Large
+
+
+![Spinner example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Spinner-large.png)
+
+
+### Default with label
+
+
+![Spinner example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Spinner-defaultwithlabel.png)
+
+
+### Large with label
+
+
 ![Spinner example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Spinner-largewithlabel.png)
 
 

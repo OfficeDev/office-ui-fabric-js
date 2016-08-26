@@ -6,6 +6,24 @@ A layout component that allows a user to switch between different sets of conten
 ### Default
 
 
+![Pivot example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Pivot-default.png)
+
+
+### Large
+
+
+![Pivot example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Pivot-large.png)
+
+
+### Tabs
+
+
+![Pivot example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Pivot-tabs.png)
+
+
+### Large tabs
+
+
 ![Pivot example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Pivot-largetabs.png)
 
 

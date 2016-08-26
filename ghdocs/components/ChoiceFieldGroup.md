@@ -8,6 +8,9 @@ Used to indicate a single choice from multiple options.
 
 
 
+![ChoiceFieldGroup example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ChoiceFieldGroup-default.png)
+
+
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:

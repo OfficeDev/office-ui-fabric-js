@@ -6,9 +6,9 @@ Presents a number of related items, either as a vertical list or in a grid.
 ### Default
 A standard vertical list of items.
 
-<!---
+<!----
 {{> ListElem props=ListModels.basic }}
---->
+---->
 <!---i
 ![List example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/List-default.png)
 i--->

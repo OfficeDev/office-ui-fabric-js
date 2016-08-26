@@ -7,39 +7,30 @@ Presents options associated with an object. Often opened via a right-click or ov
 A standard menu of commands. Should close when a command is invoked.
 
 
-<div class="ms-ContextualMenu-basic">
-        <button class="ms-Button 
-      ms-Button--primary
-      ">
-      <span class="ms-Button-label">Open Example</span>
-    </button>        <ul class="ms-ContextualMenu  is-hidden ">
-          <li class="ms-ContextualMenu-item ">
-            <a class="ms-ContextualMenu-link " tabindex="1" >Animals</a>
-            
-          </li>
-          <li class="ms-ContextualMenu-item ">
-            <a class="ms-ContextualMenu-link " tabindex="1" >Books</a>
-            
-          </li>
-          <li class="ms-ContextualMenu-item ">
-            <a class="ms-ContextualMenu-link  is-selected " tabindex="1" >Education</a>
-            
-          </li>
-          <li class="ms-ContextualMenu-item ">
-            <a class="ms-ContextualMenu-link " tabindex="1" >Music</a>
-            
-          </li>
-          <li class="ms-ContextualMenu-item ">
-            <a class="ms-ContextualMenu-link  is-disabled " tabindex="1" >Sports</a>
-            
-          </li>
-    </ul></div>
 
 ![ContextualMenu example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ContextualMenu-default.png)
 
 
 ### Multiselect
 Allows for multiple options to be set. Remains opened until the user clicks or taps outside of the menu.
+
+
+
+![ContextualMenu example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ContextualMenu-multiselect.png)
+
+
+## Optional functionality
+
+### SubMenu
+You can nest a ContextualMenu inside another ContextualMenu, resulting in a submenu.
+
+
+
+![ContextualMenu example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ContextualMenu-submenu.png)
+
+
+### Dividers
+Dividers can be added to create distinct sections of options or commands.
 
 
 
