@@ -1,8 +1,8 @@
 # Custom Bundling
 ## What are bundles and why are they useful?
-"Bundles" are simply preconfigured CSS files that are made up of only the pieces of Fabric you specify. This allows you to tailor Fabric to the needs of your app and reduce the impact of including all of Fabric or Fabric's components. The end result is similar to the output of something like `src/sass/Fabric.scss`
+"Bundles" are simply preconfigured CSS files that are made up of only the pieces of Fabric you specify. This allows you to tailor Fabric to the needs of your app and reduce the impact of including all of Fabric or Fabric's components. The end result is similar to the output of something like `src/sass/Fabric.Components.scss`
 
-For example, if your web app or add-in uses only Fabric's Typography styles and Button component, you can configure a bundle that includes only the styles for those elements, and nothing more. However, if a component depends on other components to render properly, those would also be included in the bundle. For example, the HTML for PersonaCard depends on the Persona, OrgChart, and Link components, so a bundle including the PersonaCard would also include the styles for those components.
+For example, if your web app or add-in uses only the Button and Dropdown components, you can configure a bundle that includes only the styles for those elements, and nothing more. However, if a component depends on other components to render properly, those would also be included in the bundle. For example, the HTML for PersonaCard depends on the Persona, OrgChart, and Link components, so a bundle including the PersonaCard would also include the styles for those components.
 
 ## Usage
 Bundling is a build process that depends on Fabric's gulp build tools to work, so first, make sure you've followed the [instructions for Building Fabric](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md#building-fabric) to set up a local clone of Fabric that is ready for compiling.
@@ -20,7 +20,7 @@ Here's an example "excludes" bundle that excludes the Language Overrides styles:
     "name": "excludes-bundle", // Becomes excludes-bundle.css/.min.css
     "description": "A custom bundle including a handful of modules.",
     "excludes": [
-      "_Fabric.Typography.Languageoverrides"
+      "Button"
     ]
   } 
 ]
@@ -34,10 +34,9 @@ This will produce the following:
 // --------------------------------------------------
 // SCSS template for building a bundle of Fabric and Fabric Components CSS.
 
-@import '../../../src/sass/_Fabric.Common.scss';
+@import '../../../node_modules/dist/sass/_Fabric.Common.scss';
 
 @import '../../../src/components/Breadcrumb/Breadcrumb.scss';
-@import '../../../src/components/Button/Button.scss';
 @import '../../../src/components/Callout/Callout.scss';
 @import '../../../src/components/CheckBox/CheckBox.scss';
 @import '../../../src/components/CommandBar/CommandBar.scss';
@@ -65,16 +64,6 @@ This will produce the following:
 @import '../../../src/components/Table/Table.scss';
 @import '../../../src/components/TextField/TextField.scss';
 @import '../../../src/components/Toggle/Toggle.scss';
-@import '../../../src/sass/Fabric.Animations.Output.scss';
-@import '../../../src/sass/Fabric.Color.Mixins.Output.scss';
-@import '../../../src/sass/Fabric.Grid.Output.scss';
-@import '../../../src/sass/Fabric.Icons.Font.Output.scss';
-@import '../../../src/sass/Fabric.Icons.Output.scss';
-@import '../../../src/sass/Fabric.Responsive.Utilities.Output.scss';
-@import '../../../src/sass/Fabric.Typography.Fonts.Output.scss';
-@import '../../../src/sass/Fabric.Typography.Language.Overrides.Output.scss';
-@import '../../../src/sass/Fabric.Typography.Output.scss';
-@import '../../../src/sass/Fabric.Utilities.Output.scss';
 ```
 
 #### `includes`
@@ -102,7 +91,7 @@ This will produce the following:
 // --------------------------------------------------
 // SCSS template for building a bundle of Fabric and Fabric Components CSS.
 
-@import '../../../src/sass/_Fabric.Common.scss';
+@import '../../../node_modules/dist/sass/_Fabric.Common.scss';
 
 @import '../../../src/components/Button/Button.scss';
 @import '../../../src/components/Link/Link.scss';
@@ -112,7 +101,7 @@ This will produce the following:
 ```
 
 #### Neither excludes nor includes
-If neither "excludes" nor "includes" are specified, the bundle will include all of Fabric's CSS.
+If neither "excludes" nor "includes" are specified, the bundle will include all of Fabric's Components CSS.
 
 
 ### `gulp Bundles`
