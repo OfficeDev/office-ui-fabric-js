@@ -158,12 +158,12 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Building documentation page " + pageName
             })))
+            .pipe(Plugins.replace(/<!---i(.|\s)*?i--->/img, ""))
             .pipe(Plugins.marked())
             .on('error', function(err) {
                 console.log(err);  
             })
             .pipe(Plugins.fileinclude())
-            .pipe(Plugins.replace(/<!----i(.|\s)*?i---->/img, ""))
             .pipe(Plugins.replace("<!----", ""))
             .pipe(Plugins.replace("---->", ""))
             .pipe(Plugins.replace("<!---", ""))
