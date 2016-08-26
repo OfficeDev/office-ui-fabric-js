@@ -7,45 +7,54 @@ Suitable for presenting a summary of an item with associated actions. Most often
 <!---
 {{> ListItemElem props=ListItemModels.basic }}
 --->
+<!---i
+![ListItem example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ListItem-default.png)
+i--->
 
 ### Image
 The same as the default variant, with a thumbnail image added.
 
-<!---
+<!----
 {{> ListItemElem props=ListItemModels.image }}
---->
+---->
+<!---i
+![ListItem example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ListItem-image.png)
+i--->
 
 ### Document
 Showcases a document by providing a thumbnail, title, and some metadata.
-<!---
+<!----
 {{> ListItemElem props=ListItemModels.document }}
---->
+---->
+<!---i
+![ListItem example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ListItem-document.png)
+i--->
 
 ## States
 
 ### Selectable
 Apply the `is-selectable` class to make it possible to select the item.
-<!---
+<!----
 {{> ListItemElem props=ListItemModels.selectable }}
---->
+---->
 
 ### Selected
 When applied alongside the `is-selectable` class, `is-selected` will mark it as selected.
-<!---
+<!----
 {{> ListItemElem props=ListItemModels.selected }}
 --->
 
 ### Unseen
 Use `is-unseen` to indicate that the item has not been seen.
-<!---
+<!----
 {{> ListItemElem props=ListItemModels.unseen }}
---->
+---->
 
 ### Unread
 Use `is-unread` to indicate that the item has not been read.
-<!---
+<!----
 {{> ListItemElem props=ListItemModels.unread }}
---->
+---->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:

@@ -7,37 +7,46 @@ Presents content by sliding over the rest of the application, which is covered b
 <!---
 {{> PanelDefaultExample}}
 --->
+<!---i
+![Panel example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Panel.png)
+i--->
 
 ### Medium
-<!---
+<!----
 {{> PanelMediumExample}}
---->
+---->
+
 
 ### Large
-<!---
+<!----
 {{> PanelLargeExample}}
---->
+---->
+
 
 ### Large, fixed
-<!---
+<!----
 {{> PanelLargeFixedExample}}
---->
+---->
+
 
 ### Extra Large
-<!---
+<!----
 {{> PanelExtraLargeExample}}
---->
+---->
+
 
 ### Extra extra large
-<!---
+<!----
 {{> PanelExtraExtraLargeExample}}
---->
+---->
+
 
 ### Left aligned
 You can add the `ms-Panel--left` modifier to any panel to attach it to the left side of the screen.
-<!---
+<!----
 {{> PanelLeftExample}}
---->
+---->
+
 
 ## States
 State | Applied to | Result

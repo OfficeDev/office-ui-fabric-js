@@ -9,6 +9,9 @@ A standard vertical list of items.
 <!---
 {{> ListElem props=ListModels.basic }}
 --->
+<!---i
+![List example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/List-default.png)
+i--->
 
 ## States
 This component has only the default state.

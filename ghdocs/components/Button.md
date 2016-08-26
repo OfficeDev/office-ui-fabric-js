@@ -19,43 +19,10 @@ Use task buttons to cause actions that complete a task or cause a transitional t
 ## Variants
 
 ### Default
-<!----
-{{> Button props=ButtonExampleModel}}
----->
 
-<!---i
-![Button example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Button-default.png)
-i--->
 
-### Primary
-Where multiple buttons are presented together, this is the default action when submitting the form.
-
-<!----
-{{> Button props=ButtonExamplePrimaryModel}}
----->
-<!---i
-![Button example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Button-primary.png)
-i--->
- 
-### Compound
-Provides a second line of text to explain the action the button takes.
-
-<!---i
-![Button example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Button-compound.png)
-i--->
-<!----
-{{> Button props=ButtonExampleCompoundModel}}
----->
-
-### Hero
-Similar to the Command variant, but with a larger size to draw attention to important actions.
-
-<!----
-{{> Button props=ButtonExampleHeroModel}}
----->
-<!---i
 ![Button example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Button-hero.png)
-i--->
+
 
 ## States
 
@@ -73,21 +40,34 @@ State | Applied to | Result
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
-<!---
+
 <pre>
     <code>
-{{renderPartialPre "Button" "ButtonExample" ButtonExampleModel false}}
+ &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+&lt;button class&#x3D;&quot;ms-Button 
+  
+  &quot;&gt;
+  &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Create Account&lt;/span&gt;
+&lt;/button&gt;
     </code>
 </pre>
---->
+
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Button components on the page:
-<!---
+
 <pre>
     <code>
-{{renderPartialPre "Button" "ButtonExampleJS" "" false}}
+ &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+    var ButtonElements &#x3D; document.querySelectorAll(&quot;.ms-Button&quot;);
+    for(var i &#x3D; 0; i &lt; ButtonElements.length; i++) {
+        new fabric[&#x27;Button&#x27;](ButtonElements[i], function() {
+        	// Insert Event Here
+        });
+    }
+&lt;/script&gt;
+
     </code>
 </pre>
---->
+
 4. Replace the sample HTML content (such as the content of `.ms-Button-label`) with your content.
 
 ## Dependencies
@@ -96,6 +76,13 @@ This component has no dependencies.
 ## Accessibility
 Focus styles are included for keyboard navigation.
 
-<!---
-{{> ButtonExampleJS }}
---->
+
+<script type="text/javascript">
+    var ButtonElements = document.querySelectorAll(".ms-Button");
+    for(var i = 0; i < ButtonElements.length; i++) {
+        new fabric['Button'](ButtonElements[i], function() {
+        	// Insert Event Here
+        });
+    }
+</script>
+

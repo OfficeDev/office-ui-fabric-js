@@ -4,20 +4,10 @@ Partially obscures the page to create a modal experience and focus the user's at
 ## Variants
 
 ### Default
-<!----
-{{> OverlayExample }}
----->
-<!---i
-![Overlay example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Overlay-default.png)
-i--->
 
-### Dark
-<!----
-{{> OverlayDarkExample }}
----->
-<!---i
+
 ![Overlay example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Overlay-dark.png)
-i--->
+
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
@@ -33,13 +23,16 @@ i--->
     <div class="ms-Overlay"></div>
     ```
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate an Overlay component on the page:
-<!---
+
 <pre>
     <code>
-{{renderPartialPre "Overlay" "OverlayExampleJS" "" false}}
+ &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+    var OverlayElement &#x3D; document.querySelector(&#x27;.ms-Overlay&#x27;);
+    var Overlay &#x3D; new fabric[&#x27;Overlay&#x27;](OverlayElement);
+&lt;/script&gt;
     </code>
 </pre>
---->
+
 3. Replace the sample HTML content (such as the content of `.ms-Button-label`) with your content.
 
 ## Dependencies

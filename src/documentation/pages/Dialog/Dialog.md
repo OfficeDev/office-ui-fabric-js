@@ -15,6 +15,10 @@ Includes a content area and two buttons.
 {{> DialogExampleDefaultJS }}
 --->
 
+<!---i
+![Dialog example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Dialog-default.png)
+i--->
+
 ### Multiline
 Includes multiple large buttons, each with a title and description.
 
@@ -26,6 +30,9 @@ Includes multiple large buttons, each with a title and description.
 </div>
 {{> DialogExampleMultilineJS }}
 --->
+<!---i
+![Dialog example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Dialog-multiline.png)
+i--->
 
 ### Large Header
 Provides a large, styled header followed by a content area and two buttons.
@@ -38,6 +45,9 @@ Provides a large, styled header followed by a content area and two buttons.
 </div>
 {{> DialogExampleLgHeaderJS }}
 --->
+<!---i
+![Dialog example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Dialog-largeheader.png)
+i--->
 
 ### Blocking
 The overlay for this variant does not dismiss the Dialog.
@@ -50,6 +60,9 @@ The overlay for this variant does not dismiss the Dialog.
 </div>
 {{> DialogExampleBlockingJS }}
 --->
+<!---i
+![Dialog example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Dialog-blocking.png)
+i--->
 
 ### Close
 Includes a close button at the top right, as an additional way to dismiss the dialog.
@@ -62,6 +75,9 @@ Includes a close button at the top right, as an additional way to dismiss the di
 </div>
 {{> DialogExampleCloseJS }}
 --->
+<!---i
+![Dialog example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Dialog-close.png)
+i--->
 
 ## States
 This component has only the default state.

@@ -4,28 +4,10 @@ Used to label form elements such as TextField and Dropdown.
 ## Variants
 
 ### Default
-<!----
-{{> LabelExample props=LabelExampleModel.props }}
----->
-<!---i
-![Label example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Label-default.png)
-i--->
 
-### Required
-<!----
-{{> LabelExampleRequired props=LabelExampleModel.propsRequired }}
----->
-<!---i
-![Label example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Label-required.png)
-i--->
 
-### Disabled
-<!----
-{{> LabelExampleDisabled props=LabelExampleModel.propsDisabled }}
----->
-<!---i
 ![Label example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Label-disabled.png)
-i--->
+
 
 ## States
 State | Applied to | Result
@@ -42,13 +24,15 @@ State | Applied to | Result
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
-<!---
+
 <pre>
     <code>
-{{renderPartialPre "Label" "LabelExample" LabelExampleModel.props false}}
+ &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+&lt;label class&#x3D;&quot;ms-Label  &quot;&gt;Name&lt;/label&gt;
+
     </code>
 </pre>
---->
+
 3. Replace the sample HTML content (such as the content of `.ms-Label`) with your content.
 
 ## Dependencies

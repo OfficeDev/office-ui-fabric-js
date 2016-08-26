@@ -5,9 +5,12 @@ Displays multiple Persona components in groups with headers in order to show the
 
 ### Default
 
-<!---
+<!----
 {{> OrgChart props=OrgChartModels.basic}}
---->
+---->
+<!---i
+![OrgChart example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/OrgChart-default.png)
+i--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS on your page:

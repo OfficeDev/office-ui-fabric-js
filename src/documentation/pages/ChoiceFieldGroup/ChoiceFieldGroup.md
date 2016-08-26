@@ -6,13 +6,16 @@ Allows selection from one or more options.
 ### Default
 Used to indicate a single choice from multiple options.
 
-<!---
+<!----
 {{> ChoiceFieldGroupElem props=ChoiceFieldGroupModels.props }}
---->
+---->
+<!---i
+![ChoiceField example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ChoiceFieldGroup-default.png)
+i--->
 
-<!---
+<!----
 {{> ChoiceFieldGroupJS }}
---->
+---->
 
 
 ## Using this component

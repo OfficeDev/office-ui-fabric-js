@@ -9,30 +9,41 @@ A standard menu of commands. Should close when a command is invoked.
 <!---
 {{> ContextualMenuExample props=ContextualMenuExampleModel.basic }}
 --->
+<!---i
+![ContextualMenu example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ContextualMenu-default.png)
+i--->
 
 ### Multiselect
 Allows for multiple options to be set. Remains opened until the user clicks or taps outside of the menu.
 
-<!---
+<!----
 {{> ContextualMenuMultiselectExample props=ContextualMenuExampleModel.multiselect }}
---->
+---->
+<!---i
+![ContextualMenu example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ContextualMenu-multiselect.png)
+i--->
 
 ## Optional functionality
 
 ### SubMenu
 You can nest a ContextualMenu inside another ContextualMenu, resulting in a submenu.
 
-<!---
+<!----
 {{> ContextualMenuSubmenuExample props=ContextualMenuExampleModel.submenu }}
---->
+---->
+<!---i
+![ContextualMenu example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ContextualMenu-submenu.png)
+i--->
 
 ### Dividers
 Dividers can be added to create distinct sections of options or commands.
 
-<!---
+<!----
 {{> ContextualMenuDividersExample props=ContextualMenuExampleModel.dividers }}
---->
-
+---->
+<!---i
+![ContextualMenu example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ContextualMenu-dividers.png)
+i--->
 
 ## States
 

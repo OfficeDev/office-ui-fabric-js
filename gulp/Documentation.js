@@ -163,6 +163,10 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
                 console.log(err);  
             })
             .pipe(Plugins.fileinclude())
+            // .pipe(Plugins.replace(/<!-----.*----->/, ""))
+            .pipe(Plugins.replace(/<!----i[\s\S]+i---->/im, ""))
+            .pipe(Plugins.replace("<!----", ""))
+            .pipe(Plugins.replace("---->", ""))
             .pipe(Plugins.replace("<!---", ""))
             .pipe(Plugins.replace("--->", ""))
             .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
@@ -190,18 +194,13 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
                 console.log(err);  
                 })
             .pipe(Plugins.fileinclude())
+            .pipe(Plugins.replace(/<!----[\s\S]+---->/im, ""))
+            .pipe(Plugins.replace("<!---i", ""))
+            .pipe(Plugins.replace("i--->", ""))
             .pipe(Plugins.replace("<!---", ""))
             .pipe(Plugins.replace("--->", ""))
             .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
             .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
-            .pipe(Plugins.wrap(
-                    {
-                        src:  Config.paths.srcTemplate + '/componentDemo.html'  
-                    },
-                    {
-                        pageName: pageName
-                    }
-            ))
             // Replace Comments to hide code
             .pipe(gulp.dest('./ghdocs/components/'));
 

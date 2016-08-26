@@ -20,53 +20,10 @@ When additional context - or more advanced description - is necessary, consider 
 ## Variants
 
 ### Default
-<!----
-{{> CalloutExample props=CalloutExampleModel.props }}
----->
-<!---i
-![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-default.png)
-i--->
 
 
-### Close
-Includes an icon to dismiss the callout.
-
-<!----
-{{> CalloutExample props=CalloutExampleModel.propsClose }}
----->
-<!---i
-![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-close.png)
-i--->
-
-### Action text
-Includes buttons to take action.
-
-<!----
-{{> CalloutExample props=CalloutExampleModel.propsActionText }}
----->
-<!---i
-![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-action.png)
-i--->
-
-### OOBE (Out Of the Box Experience)
-Draws attention to one aspect of the application during a product tour.
-
-<!----
-{{> CalloutExample props=CalloutExampleModel.propsOobe }}
----->
-<!---i
-![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-oobe.png)
-i--->
-
-### Peek
-A smaller callout with an action.
-
-<!----
-{{> CalloutExample props=CalloutExampleModel.propsPeek }}
----->
-<!---i
 ![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-peek.png)
-i--->
+
 
 ## States
 This component has only the default state.
@@ -81,21 +38,67 @@ This component has only the default state.
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
-<!---
+
 <pre>
     <code>
-{{renderPartialPre "Callout" "CalloutExample" CalloutExampleModel.props false}}
+ &lt;div class&#x3D;&quot;ms-CalloutExample&quot;&gt;  
+  &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+  
+  &lt;div class&#x3D;&quot;ms-Callout 
+       
+       is-hidden&quot;&gt;
+    &lt;div class&#x3D;&quot;ms-Callout-main&quot;&gt;
+      &lt;div class&#x3D;&quot;ms-Callout-header&quot;&gt;
+        &lt;p class&#x3D;&quot;ms-Callout-title&quot;&gt;All of your favorite people&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;ms-Callout-inner&quot;&gt;
+        &lt;div class&#x3D;&quot;ms-Callout-content&quot;&gt;
+          &lt;p class&#x3D;&quot;ms-Callout-subText  ms-Callout-subText-- &quot;&gt;Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;ms-Callout-actions&quot;&gt;
+              &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+  
+  &lt;a class&#x3D;&quot;ms-Link  &quot; 
+     
+     
+    &gt;Learn more&lt;/a&gt;
+  
+  
+        &lt;/div&gt;
+      &lt;/div&gt;     
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;ms-CalloutExample-button&quot;&gt;
+    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    &lt;button class&#x3D;&quot;ms-Button 
+      
+      &quot;&gt;
+      &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Open Callout&lt;/span&gt;
+    &lt;/button&gt;  &lt;/div&gt;
+&lt;/div&gt;
     </code>
 </pre>
---->
+
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a Callout component on the page:
-<!---
+
 <pre>
     <code>
-{{renderPartialPre "Callout" "CalloutExampleJS" "" false}}
+ &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+  var CalloutExamples &#x3D; document.querySelectorAll(&quot;.ms-CalloutExample&quot;);
+  for(var i &#x3D; 0; i &lt; CalloutExamples.length; i++) {
+    var Example &#x3D; CalloutExamples[i];
+    var ExampleButtonElement &#x3D; Example.querySelector(&quot;.ms-CalloutExample-button .ms-Button&quot;);
+    var CalloutElement &#x3D; Example.querySelector(&quot;.ms-Callout&quot;);
+    new fabric[&#x27;Callout&#x27;](
+          CalloutElement, 
+          ExampleButtonElement,
+          &quot;right&quot;
+    );
+  }
+&lt;/script&gt;
     </code>
 </pre>
---->
+
 3. Replace the sample HTML content (such as the content of `.ms-Callout-title`) with your content.
 
 ## Dependencies
@@ -104,6 +107,17 @@ Button, Label, Link, ContextualHost, CommandButton
 ## Accessibility
 Focus styles are included for all of the actions (links and buttons) included within a Callout.
 
-<!---
-{{> CalloutExampleJS }}
---->
+
+<script type="text/javascript">
+  var CalloutExamples = document.querySelectorAll(".ms-CalloutExample");
+  for(var i = 0; i < CalloutExamples.length; i++) {
+    var Example = CalloutExamples[i];
+    var ExampleButtonElement = Example.querySelector(".ms-CalloutExample-button .ms-Button");
+    var CalloutElement = Example.querySelector(".ms-Callout");
+    new fabric['Callout'](
+          CalloutElement, 
+          ExampleButtonElement,
+          "right"
+    );
+  }
+</script>

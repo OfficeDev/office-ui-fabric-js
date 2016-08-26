@@ -9,9 +9,12 @@ Place Breadcrumbs at the top of a page, above a list of items, or above the main
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> BreadcrumbExample props=BreadcrumbExampleModel }}
---->
+---->
+<!---i
+![Breadcrumb example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Breadcrumb-default.png)
+i--->
 
 ## States
 
