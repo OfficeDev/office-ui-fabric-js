@@ -6,11 +6,14 @@ Allows selection from one or more options.
 ### Checkbox
 Used to indicate a simple yes or no choice, typically as part of a form.
 
-<!---
+<!----
 {{> CheckBoxElem props=CheckBoxModels.basic }}
 {{> CheckBoxElem props=CheckBoxModels.checkboxDisabled }}
 {{> CheckBoxElem props=CheckBoxModels.checkboxSelected }}
---->
+---->
+<!---i
+![CheckBox example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CheckBox-default.png)
+i--->
 
 
 ## States

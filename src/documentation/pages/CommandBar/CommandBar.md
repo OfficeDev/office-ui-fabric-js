@@ -6,7 +6,7 @@ Commanding surface for panels, pages, and applications. Unlike the NavBar, this 
 ### Default
 <!----
 {{> CommandBar props=CommandBarExampleModel.props}}
---->
+---->
 <!---i
 ![CommandBar example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandBar-default.png)
 i--->

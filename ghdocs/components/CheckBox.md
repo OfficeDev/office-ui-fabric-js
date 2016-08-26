@@ -8,42 +8,7 @@ Used to indicate a simple yes or no choice, typically as part of a form.
 
 
 
-<div class="ms-CheckBox"> 
-    <input tabindex="-1" type="checkbox" class="ms-CheckBox-input">
-    <label role="checkbox"
-        class="ms-CheckBox-field "
-        tabindex="0"
-        aria-checked="false"
-        name="checkboxa"
->
-        <span class="ms-Label">Checkbox</span>
-    </label>
-</div>
-
-<div class="ms-CheckBox"> 
-    <input tabindex="-1" type="checkbox" class="ms-CheckBox-input">
-    <label role="checkbox"
-        class="ms-CheckBox-field  is-disabled "
-        tabindex="0"
-        aria-checked="false"
-        name="checkboxb"
-        aria-disabled="true"
-        >
-        <span class="ms-Label">Checkbox Disabled</span>
-    </label>
-</div>
-
-<div class="ms-CheckBox"> 
-    <input tabindex="-1" type="checkbox" class="ms-CheckBox-input">
-    <label role="checkbox"
-        class="ms-CheckBox-field "
-        tabindex="0"
-        aria-checked="true"
-        name="checkboxc"
->
-        <span class="ms-Label">Checkbox selected</span>
-    </label>
-</div>
+![CheckBox example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CheckBox-default.png)
 
 
 
