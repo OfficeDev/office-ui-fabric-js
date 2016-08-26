@@ -7,15 +7,13 @@
   // When clicking the button, open the MessageBanner
   MessageBannerButton.onclick = function() {
     MessageBanner.showBanner();
-    this.style.display = 'none';
+    this.classList.add("is-hidden");
   };
-
-  MessageBannerButton.style.display = 'none';
 
   // Hide "Show the Banner Button" when banner is active
   MessageBannerCloseButton.addEventListener("click", function(){
   	setTimeout(function() {
-  		MessageBannerButton.style.display = '';
+  		MessageBannerButton.classList.remove("is-hidden");
   	}, 500);
   });
 </script>
