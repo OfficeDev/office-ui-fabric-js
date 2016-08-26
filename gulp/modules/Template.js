@@ -9,7 +9,6 @@ var Config = require('./Config');
 var Plugins = require('./Plugins');
 var Utilities = require('./Utilities');
 var mkdirp = require('mkdirp');
-var gutil = require('gulp-util');
 var ErrorHandling = require('./ErrorHandling');
 var sys = require('sys')
 var exec = require('child_process').exec;
