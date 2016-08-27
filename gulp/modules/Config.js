@@ -174,7 +174,10 @@ var Config = function() {
           var template = hbs.compile(fileContents);
           var thisProps = {props: props};
           var templateString = new hbs.SafeString(template(thisProps));
-          return ' ' + templateString;
+          var commentRegex = /(<!--.+-->)+/g;
+          templateString = ' ' + templateString;
+          templateString = templateString.replace(commentRegex, '');
+          return templateString;
         }.bind(this)
       }
   };
