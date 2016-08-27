@@ -17,7 +17,11 @@ namespace fabric {
     private _position: string;
     private _host: ContextualHost;
 
-    constructor(container: Element, hostTarget: Element, position?: string) {
+    constructor(
+        container: Element,
+        hostTarget: Element,
+        position?: string
+      ) {
       this._container = container;
       this._hostTarget = hostTarget;
       this._position = position ? position : MODAL_POSITION;
@@ -41,6 +45,9 @@ namespace fabric {
           this._multiSelect(target);
         } else {
           this._singleSelect(target);
+          if (!target.parentElement.classList.contains("ms-ContextualMenu-item--hasMenu")) {
+            this._host.disposeModal();
+          }
         }
       }
     }
@@ -94,7 +101,10 @@ namespace fabric {
 
     private _createModalHostView(container: Element, position: string, hostTarget: Element) {
       container.classList.remove("is-hidden");
-      this._host = new fabric.ContextualHost(<HTMLElement>container, position, hostTarget, false);
+      this._host = new fabric.ContextualHost(<HTMLElement>container,
+                                          position,
+                                          hostTarget,
+                                          false);
       let event: Event = document.createEvent("Event");
       event.initEvent("hostAdded", true, true);
       container.dispatchEvent(event);
