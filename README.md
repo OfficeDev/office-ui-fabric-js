@@ -20,6 +20,8 @@ For documentation on Fabric's last stable version that included both the compone
 ## Get started
 For a quick start, you can reference the latest release of Fabric from a CDN or clone and build locally. Once you've got Fabric JS added to your project, look at the [component list](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/COMPONENTSLIST.md) for documentation pertaining to each available component.
 
+If you'd like to get Fabric through a package manager such as Bower, npm, or NuGet, check out the [package manager docs](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/PACKAGES.md).
+
 ### Referencing the CDN
 Include the following references in the `<head>` of your page:
 
