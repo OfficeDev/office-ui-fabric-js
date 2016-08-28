@@ -1,5 +1,5 @@
 # FacePile
-Displays several people with the option to add additional people or view the details of a person.
+Displays several people with the option to add additional people or view the details of a person. Although not baked into the component, adding new people to a FacePile (the listing of faces horizontally) should occur through a panel using the FacePile PeoplePicker variant.
 
 ## Variants
 
