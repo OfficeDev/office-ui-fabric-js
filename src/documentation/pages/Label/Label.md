@@ -4,19 +4,28 @@ Used to label form elements such as TextField and Dropdown.
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> LabelExample props=LabelExampleModel.props }}
---->
+---->
+<!---i
+![Label example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Label-default.png)
+i--->
 
 ### Required
-<!---
+<!----
 {{> LabelExampleRequired props=LabelExampleModel.propsRequired }}
---->
+---->
+<!---i
+![Label example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Label-required.png)
+i--->
 
 ### Disabled
-<!---
+<!----
 {{> LabelExampleDisabled props=LabelExampleModel.propsDisabled }}
---->
+---->
+<!---i
+![Label example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Label-disabled.png)
+i--->
 
 ## States
 State | Applied to | Result

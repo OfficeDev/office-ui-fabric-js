@@ -4,9 +4,12 @@ Displays the progress of an operation when the percentage complete can be determ
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> ProgressIndicator props=ProgressIndicatorExampleProps.default }}
---->
+---->
+<!---i
+![ProgressIndicator example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/ProgressIndicator-default.png)
+i--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
