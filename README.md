@@ -4,8 +4,6 @@
 
 This framework uses styles from the [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core/) project. Fabric is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for you to create web experiences using the Office Design Language.
 
-**Please note**: We are currently removing the core styles (colors, fonts, icons, etc.) from this project as they are part of the core [Office UI Fabric](https://github.com/OfficeDev/office-ui-fabric/) project. If you have any issues related to these core styles, please open them in that project.
-
 ## Contents
 - [What's included](#whats-included)
 - [Get started](#get-started)
@@ -20,43 +18,50 @@ This repository contains simple, visuals-focused components that don't require a
 For documentation on Fabric's last stable version that included both the components *and* the core, check out the [Fabric 2.6.1 get started guide (located in the Core repo)](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md).
 
 ## Get started
-For a quick start, you can reference the latest release of Fabric from a CDN or download and add a copy to your project. Once you've got Fabric JS added to your project, look at the [component list]() for documentation pertaining to each available component.
+For a quick start, you can reference the latest release of Fabric from a CDN or clone and build locally. Once you've got Fabric JS added to your project, look at the [component list](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/COMPONENTSLIST.md) for documentation pertaining to each available component.
 
 ### Referencing the CDN
-Include the following reference in the `<head>` of your page:
+Include the following references in the `<head>` of your page:
 
 ```html
-<link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.2.0/fabric.components.min.css">
+<link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/3.0.0/fabric.min.css">
+<link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0.0/fabric.components.min.css">
 ```
+
+**Note:** You may notice an additional reference to the Fabric Core - this is intentional as these styles are almost always needed for experiences where you'd like to use the components, so we recommend including it by default.
 
 New versions of Fabric might not be available on the CDN right away. The following table lists the releases that are available now. To reference a specific version, update the version number in the URL to match the one you want.
 
 | Fabric JS Release | Available on CDN |
 |:-----------------:|:----------------:|
-|       3.0.0       |        Yes       |
+|       1.0.0       |        Yes       |
 
 If you want to reference previous versions, please see [this get started guide (located in the Core repo)](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md).
 
-### Download and add to your project
+### Clone and build locally
 
-THe simplest way to get started is to add a copy of Fabric to your project.
+Before you get started, make sure you have [node.js](https://nodejs.org/), [gulp](http://gulpjs.com/), and [git](https://git-scm.com/) installed. To build Fabric:
 
-1. Download the source code zip file from the [latest release on GitHub](https://github.com/OfficeDev/Office-UI-Fabric-js/releases/latest).
-2. Unzip the file and copy the Fabric folder into your project.
-3. Add a reference to `fabric.components.css` in the `<head>` of your page. Make sure the path is correct.
-4. If you'd also like to use the core, add a reference to `fabric.css` after the `fabric.components.css` reference.
+1. Clone the repo.
+2. Navigate to the folder that contains the gulpfile.js file (Fabric JS's root).
+3. `npm install`
+4. `gulp`
+
+The built files will be in the `/dist/` folder. You can then add these built files directly to your project.
+
+For more information, check out the [documentaiton on building Fabric JS locally](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/BUILDING.md).
 
 ## Learn more
 
 New to Fabric? Although [the project's site](http://dev.office.com/fabric) contains lots of great info about its purpose and what's included, most of Fabric JS's documentation is contained in this repository.
 
-To see a full component list, you can check out the [component list]() here or [build the project locally to use the fully interactive docs site]().
+To see a full component list, you can check out the [component list](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/COMPONENTSLIST.md) here or [build the project locally to use the fully interactive docs site](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/BUILDING.md#gulp-watch-and-the-local-docs-site).
 
 When you're ready to create an Office Add-in with Fabric, take a look at the [Use Office UI Fabric with Office Add-ins on MSDN article](https://msdn.microsoft.com/EN-US/library/office/mt450443.aspx).
 
 ## Contribute to Fabric JS
 
-Bug reports, feature requests, and questions are posted on the [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric-js/issues). For details on our contribution process and how we label issues, see our [Contributing](https://github.com/OfficeDev/Office-UI-Fabric-js/blob/master/ghdocs/CONTRIBUTING.md) page.
+Bug reports, feature requests, and questions are posted on the [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric-js/issues). For details on our contribution process and how we label issues, see our [contributing](https://github.com/OfficeDev/Office-UI-Fabric-js/blob/master/ghdocs/CONTRIBUTING.md) page.
 
 
 ## Licenses
