@@ -4,9 +4,12 @@ Displays several people with the option to add additional people or view the det
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> FacePileElem props=FacePileModels.basic }}
---->
+---->
+<!---i
+![FacePile example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/FacePile-default.png)
+i--->
 
 ## States
 State | Applied to | Result

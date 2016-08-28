@@ -1,13 +1,13 @@
 var CommandButtonExampleModel = {
   "props": { 
     "label": "Command",
-    "icon": "CircleFill",
+    "icon": "CircleRing",
     "tag": "button",
     "iconColor": "themePrimary"
   },
   "propsDropdown": {
     "label": "New",
-    "icon": "CircleFill",
+    "icon": "CircleRing",
     "tag": "button",
     "dropdownIcon": "ChevronDown",
     "iconColor": "themePrimary",
@@ -49,7 +49,7 @@ var CommandButtonExampleModel = {
   },
   "propsSplit": {
     "label": "Reply",
-    "icon": "CircleFill",
+    "icon": "CircleRing",
     "splitIcon": "ChevronDown",
     "iconColor": "themePrimary",
     "tag": "button",
@@ -83,13 +83,13 @@ var CommandButtonExampleModel = {
     }
   },
   "propsNoLabel": {
-    "icon": "CircleFill",
+    "icon": "CircleRing",
     "modifier": "noLabel",
     "tag": "button",
     "iconColor": "themePrimary"
   },
   "propsNoLabelSplit": {
-    "icon": "CircleFill",
+    "icon": "CircleRing",
     "modifier": "noLabel",
     "tag": "button",
     "splitIcon": "ChevronDown",
@@ -125,20 +125,20 @@ var CommandButtonExampleModel = {
   },
   "propsInline": {
     "label": "Command",
-    "icon": "CircleFill",
+    "icon": "CircleRing",
     "tag": "button",
     "modifier": "inline",
     "iconColor": "green"
   },
   "propsDisabled": {
     "label": "Command",
-    "icon": "CircleFill",
+    "icon": "CircleRing",
     "tag": "button",
     "iconColor": "themePrimary",
     "disabled": true
   },
   "propsActionButton": {
-    "icon": "CircleFill",
+    "icon": "CircleRing",
     "modifier": "actionButton",
     "tag": "button",
     "iconColor": "themePrimary"
@@ -150,7 +150,7 @@ var CommandButtonExampleModel = {
   },
   "propsPivot": {
     "label": "New",
-    "icon": "CircleFill",
+    "icon": "CircleRing",
     "tag": "button",
     "dropdownIcon": "ChevronDown",
     "iconColor": "themePrimary",

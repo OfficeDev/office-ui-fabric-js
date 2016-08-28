@@ -29,7 +29,6 @@ namespace fabric {
   const ARROW_BOTTOM_CLASS = "ms-ContextualHost--arrowBottom";
   const ARROW_RIGHT_CLASS = "ms-ContextualHost--arrowRight";
   const MODIFIER_BASE = "ms-ContextualHost--";
-  const HAS_SUBMENU = "ms-ContextualMenu-item--hasMenu";
   const ARROW_SIZE = 28;
   const ARROW_OFFSET = 8;
 
@@ -378,10 +377,6 @@ namespace fabric {
             this.disposeModal();
           }
         } else {
-          this.disposeModal();
-        }
-      } else {
-        if (!e.target.parentElement.classList.contains(HAS_SUBMENU)) {
           this.disposeModal();
         }
       }
