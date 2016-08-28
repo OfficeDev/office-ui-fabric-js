@@ -4,24 +4,36 @@ Displays the progress of an operation when the percentage complete can not be de
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> SpinnerExample props=SpinnerExampleModel}}
---->
+---->
+<!---i
+![Spinner example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Spinner-default.png)
+i--->
 
 ### Large
-<!---
+<!----
 {{> SpinnerLargeExample props=SpinnerLargeExampleModel}}
---->
+---->
+<!---i
+![Spinner example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Spinner-large.png)
+i--->
 
 ### Default with label
-<!---
+<!----
 {{> SpinnerWithLabelExample props=SpinnerWithLabelExampleModel}}
---->
+---->
+<!---i
+![Spinner example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Spinner-defaultwithlabel.png)
+i--->
 
 ### Large with label
-<!---
+<!----
 {{> SpinnerLargeWithLabelExample props=SpinnerLargeWithLabelExampleModel}}
---->
+---->
+<!---i
+![Spinner example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Spinner-largewithlabel.png)
+i--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:

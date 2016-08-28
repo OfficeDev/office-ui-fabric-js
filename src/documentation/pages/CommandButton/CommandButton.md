@@ -4,54 +4,84 @@ Allows users to take action, such as submitting a form or dismissing a message. 
 ## Variants
 
 ### Default
-<!--- 
+<!---- 
 {{> CommandButton props=CommandButtonExampleModel.props}} 
---->
+---->
+<!---i
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-default.png)
+i--->
 
 ### Action Button
-<!--- 
+<!---- 
 {{> CommandButton props=CommandButtonExampleModel.propsActionButton}} 
---->
+---->
+<!---i
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-action.png)
+i--->
 
 ### Disabled
-<!--- 
+<!---- 
 {{> CommandButton props=CommandButtonExampleModel.propsDisabled}} 
---->
+---->
+<!---i
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-disabled.png)
+i--->
 
 ### Dropdown
-<!--- 
+<!---- 
 {{> CommandButton props=CommandButtonExampleModel.propsDropdown}} 
---->
+---->
+<!---i
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-dropdown.png)
+i--->
 
 ### Inline
-<!--- 
+<!---- 
 {{> CommandButton props=CommandButtonExampleModel.propsInline}} 
---->
+---->
+<!---i
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-inline.png)
+i--->
 
 ### No Label
-<!--- 
+<!---- 
 {{> CommandButton props=CommandButtonExampleModel.propsNoLabel}} 
---->
+---->
+<!---i
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-nolabel.png)
+i--->
 
 ### No Label Split
-<!--- 
+<!---- 
 {{> CommandButton props=CommandButtonExampleModel.propsNoLabelSplit}} 
---->
+---->
+<!---i
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-nolabelsplit.png)
+i--->
 
 ### Pivot
-<!--- 
+<!---- 
 {{> CommandButton props=CommandButtonExampleModel.propsPivot}} 
---->
+---->
+<!---i
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-pivot.png)
+i--->
 
 ### Split
-<!--- 
+<!---- 
 {{> CommandButton props=CommandButtonExampleModel.propsSplit}} 
---->
+---->
+<!---i
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-split.png)
+i--->
 
 ### Text Only
-<!--- 
+<!---- 
 {{> CommandButton props=CommandButtonExampleModel.propsTextOnly}} 
---->
+---->
+<!---i
+![CommandButton example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandButton-textonly.png)
+i--->
 
 ## States
 State | Applied to | Result

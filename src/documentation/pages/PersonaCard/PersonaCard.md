@@ -4,9 +4,12 @@ The visualization of details of an individual including Skype contact details, e
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> PersonaCardExample props=PersonaCardExampleModel.default}}
---->
+---->
+<!---i
+![PersonaCard example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/PersonaCard-default.png)
+i--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
