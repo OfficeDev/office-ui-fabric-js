@@ -20,6 +20,10 @@
   min-width: 80px;
   padding: 4px 20px 6px;
 
+  &.is-hidden {
+    display: none;
+  }
+
   &:hover {
     background-color: $ms-color-neutralLight;
     border-color: $ms-color-neutralLight;

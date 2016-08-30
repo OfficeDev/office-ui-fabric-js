@@ -19,30 +19,43 @@ Use task buttons to cause actions that complete a task or cause a transitional t
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> Button props=ButtonExampleModel}}
---->
+---->
+
+<!---i
+![Button example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Button-default.png)
+i--->
 
 ### Primary
 Where multiple buttons are presented together, this is the default action when submitting the form.
 
-<!---
+<!----
 {{> Button props=ButtonExamplePrimaryModel}}
---->
+---->
+<!---i
+![Button example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Button-primary.png)
+i--->
  
 ### Compound
 Provides a second line of text to explain the action the button takes.
 
-<!---
+<!---i
+![Button example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Button-compound.png)
+i--->
+<!----
 {{> Button props=ButtonExampleCompoundModel}}
---->
+---->
 
 ### Hero
 Similar to the Command variant, but with a larger size to draw attention to important actions.
 
-<!---
+<!----
 {{> Button props=ButtonExampleHeroModel}}
---->
+---->
+<!---i
+![Button example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Button-hero.png)
+i--->
 
 ## States
 

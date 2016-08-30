@@ -4,19 +4,28 @@ Allows for turning on or off a setting. This is best suited for simple, singular
 ## Variants
 
 ### Label above (default)
-<!---
+<!----
 {{> ToggleElem props=ToggleModels.basic }}
---->
+---->
+<!---i
+![Toggle example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Toggle-default.png)
+i--->
 
 ### Label on left
-<!---
+<!----
 {{> ToggleElem props=ToggleModels.textLeft }}
---->
+---->
+<!---i
+![Toggle example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Toggle-left.png)
+i--->
 
 ### Disabled
-<!---
+<!----
 {{> ToggleElem props=ToggleModels.disabled }}
---->
+---->
+<!---i
+![Toggle example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Toggle-disabled.png)
+i--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:

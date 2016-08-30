@@ -5,27 +5,31 @@ A form input that allows for the choice of one or more people.
 
 ### Default
 Uses the standard sized Persona component.
-<!---
+<!----
 {{> PeoplePicker props=PeoplePickerExampleProps.default}}
---->
+---->
+<!---i
+![PeoplePicker example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/PeoplePicker-default.png)
+i--->
 
 ### Compact
 Use the extra small Persona component to fit more results.
-<!---
+<!----
 {{> PeoplePicker props=PeoplePickerExampleProps.compact}}
---->
+---->
+<!---i
+![PeoplePicker example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/PeoplePicker-compact.png)
+i--->
 
 ### Face pile
 Presents the selected people in a list below the search field, rather than inline.
-<!---
+<!----
 {{> PeoplePicker props=PeoplePickerExampleProps.facePile}}
---->
+---->
+<!---i
+![PeoplePicker example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/PeoplePicker-facepile.png)
+i--->
 
-## More options
-
-### Disconnected
-If the network is unavailable, you can present an error message in the search more area.
-@@include('PeoplePicker.Disconnected.html')
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
