@@ -20,37 +20,53 @@ When additional context - or more advanced description - is necessary, consider 
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> CalloutExample props=CalloutExampleModel.props }}
---->
+---->
+<!---i
+![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-default.png)
+i--->
+
 
 ### Close
 Includes an icon to dismiss the callout.
 
-<!---
+<!----
 {{> CalloutExample props=CalloutExampleModel.propsClose }}
---->
+---->
+<!---i
+![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-close.png)
+i--->
 
 ### Action text
 Includes buttons to take action.
 
-<!---
+<!----
 {{> CalloutExample props=CalloutExampleModel.propsActionText }}
---->
+---->
+<!---i
+![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-action.png)
+i--->
 
 ### OOBE (Out Of the Box Experience)
 Draws attention to one aspect of the application during a product tour.
 
-<!---
+<!----
 {{> CalloutExample props=CalloutExampleModel.propsOobe }}
---->
+---->
+<!---i
+![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-oobe.png)
+i--->
 
 ### Peek
 A smaller callout with an action.
 
-<!---
+<!----
 {{> CalloutExample props=CalloutExampleModel.propsPeek }}
---->
+---->
+<!---i
+![Callout example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Callout-peek.png)
+i--->
 
 ## States
 This component has only the default state.

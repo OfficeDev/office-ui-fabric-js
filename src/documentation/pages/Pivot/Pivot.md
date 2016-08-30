@@ -4,24 +4,36 @@ A layout component that allows a user to switch between different sets of conten
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> Pivot props=PivotExampleProps.default}}
---->
+---->
+<!---i
+![Pivot example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Pivot-default.png)
+i--->
 
 ### Large
-<!---
+<!----
 {{> Pivot props=PivotExampleProps.large}}
---->
+---->
+<!---i
+![Pivot example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Pivot-large.png)
+i--->
 
 ### Tabs
-<!---
+<!----
 {{> Pivot props=PivotExampleProps.tabs}}
---->
+---->
+<!---i
+![Pivot example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Pivot-tabs.png)
+i--->
 
 ### Large tabs
-<!---
+<!----
 {{> Pivot props=PivotExampleProps.largeTabs}}
---->
+---->
+<!---i
+![Pivot example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Pivot-largetabs.png)
+i--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:

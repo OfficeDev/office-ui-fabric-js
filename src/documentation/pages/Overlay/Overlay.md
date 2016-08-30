@@ -4,14 +4,20 @@ Partially obscures the page to create a modal experience and focus the user's at
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> OverlayExample }}
---->
+---->
+<!---i
+![Overlay example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Overlay-default.png)
+i--->
 
 ### Dark
-<!---
+<!----
 {{> OverlayDarkExample }}
---->
+---->
+<!---i
+![Overlay example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Overlay-dark.png)
+i--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:

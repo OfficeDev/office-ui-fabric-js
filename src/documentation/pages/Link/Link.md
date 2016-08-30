@@ -4,9 +4,12 @@ Used to create a hyperlink to another location.
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> Link props=LinkModels.basic }}
---->
+---->
+<!---i
+![Link example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Link-default.png)
+i--->
 
 ## States
 This component has only the default state.

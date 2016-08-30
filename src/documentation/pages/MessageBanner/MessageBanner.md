@@ -4,9 +4,12 @@ Presents a message to the user, with an optional call to action. The message is 
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> MessageBannerExample props=MessageBannerExampleModel.props }}
---->
+---->
+<!---i
+![MessageBanner example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/MessageBanner-default.png)
+i--->
 
 ## States
 This component has only the default state.

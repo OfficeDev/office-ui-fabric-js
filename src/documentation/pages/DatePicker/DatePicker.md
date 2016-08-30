@@ -4,9 +4,12 @@ Allows for the selection of a date into a text field.
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> DatePicker}}
---->
+---->
+<!---i
+![DatePicker example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/DatePicker-default.png)
+i--->
 
 ## States
 State | Applied to | Result
