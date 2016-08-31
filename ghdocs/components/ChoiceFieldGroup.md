@@ -25,13 +25,13 @@ Used to indicate a single choice from multiple options.
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 &lt;div class&#x3D;&quot;ms-ChoiceFieldGroup&quot; id&#x3D;&quot;choicefieldgroup&quot; role&#x3D;&quot;radiogroup&quot;&gt;
   &lt;div class&#x3D;&quot;ms-ChoiceFieldGroup-title&quot;&gt;
     &lt;label class&#x3D;&quot;ms-Label  is-required &quot;&gt;Unselected&lt;/label&gt;
   &lt;/div&gt;
   &lt;ul class&#x3D;&quot;ms-ChoiceFieldGroup-list&quot;&gt;
-    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    
 
 &lt;div class&#x3D;&quot;ms-RadioButton&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;ms-RadioButton-input&quot;&gt;
@@ -44,7 +44,7 @@ Used to indicate a single choice from multiple options.
         &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option 1&lt;/span&gt;
     &lt;/label&gt;
 &lt;/div&gt; 
-    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    
 
 &lt;div class&#x3D;&quot;ms-RadioButton&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;ms-RadioButton-input&quot;&gt;
@@ -57,7 +57,7 @@ Used to indicate a single choice from multiple options.
         &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option 2&lt;/span&gt;
     &lt;/label&gt;
 &lt;/div&gt; 
-    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    
 
 &lt;div class&#x3D;&quot;ms-RadioButton&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;ms-RadioButton-input&quot;&gt;
@@ -71,7 +71,7 @@ Used to indicate a single choice from multiple options.
         &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option 3&lt;/span&gt;
     &lt;/label&gt;
 &lt;/div&gt; 
-    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    
 
 &lt;div class&#x3D;&quot;ms-RadioButton&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;ms-RadioButton-input&quot;&gt;

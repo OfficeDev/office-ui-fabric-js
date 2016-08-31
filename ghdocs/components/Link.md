@@ -25,7 +25,7 @@ This component has only the default state.
 <pre>
     <code>
  &lt;div class&#x3D;&quot;ms-font-m&quot;&gt;
-    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    
     
     &lt;a class&#x3D;&quot;ms-Link  &quot; 
        href&#x3D;&quot;#&quot;  

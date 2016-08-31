@@ -51,7 +51,7 @@ Use `is-unread` to indicate that the item has not been read.
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;li class&#x3D;&quot;ms-ListItem  &quot; tabindex&#x3D;&quot;0&quot;&gt;
   

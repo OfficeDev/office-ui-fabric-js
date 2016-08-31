@@ -59,12 +59,12 @@ State | Applied to | Result
 <pre>
     <code>
  &lt;div class&#x3D;&quot;ms-ContextualMenu-basic&quot;&gt;
-    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    
     &lt;button class&#x3D;&quot;ms-Button 
       ms-Button--primary
       &quot;&gt;
       &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Open Example&lt;/span&gt;
-    &lt;/button&gt;    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    &lt;/button&gt;    
     &lt;ul class&#x3D;&quot;ms-ContextualMenu  is-hidden &quot;&gt;
           &lt;li class&#x3D;&quot;ms-ContextualMenu-item &quot;&gt;
             &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot; tabindex&#x3D;&quot;1&quot; &gt;Animals&lt;/a&gt;

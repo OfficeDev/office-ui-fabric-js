@@ -31,7 +31,7 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;div class&#x3D;&quot;ms-CheckBox&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;ms-CheckBox-input&quot;&gt;

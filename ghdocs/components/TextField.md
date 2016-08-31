@@ -48,7 +48,7 @@ Allows for the input of text. Can be a single line or multiple lines. Typically 
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;div class&#x3D;&quot;ms-TextField  &quot;&gt;
   &lt;label class&#x3D;&quot;ms-Label&quot;&gt;Name&lt;/label&gt;

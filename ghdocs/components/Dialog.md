@@ -60,12 +60,12 @@ This component has only the default state.
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 &lt;div class&#x3D;&quot;ms-Dialog &quot;&gt;
     &lt;div class&#x3D;&quot;ms-Dialog-title&quot;&gt;All emails together&lt;/div&gt;
     &lt;div class&#x3D;&quot;ms-Dialog-content&quot;&gt;
         &lt;p class&#x3D;&quot;ms-Dialog-subText&quot;&gt;Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.&lt;/p&gt;
-          &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+          
 
 &lt;div class&#x3D;&quot;ms-CheckBox&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;ms-CheckBox-input&quot;&gt;
@@ -79,7 +79,7 @@ This component has only the default state.
     &lt;/label&gt;
 &lt;/div&gt;
 
-          &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+          
 
 &lt;div class&#x3D;&quot;ms-CheckBox&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;ms-CheckBox-input&quot;&gt;
@@ -95,13 +95,13 @@ This component has only the default state.
 
     &lt;/div&gt;
       &lt;div class&#x3D;&quot;ms-Dialog-actions&quot;&gt;
-          &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+          
 &lt;button class&#x3D;&quot;ms-Button ms-Dialog-action
   ms-Button--primary
   &quot;&gt;
   &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Save&lt;/span&gt;
 &lt;/button&gt;
-          &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+          
 &lt;button class&#x3D;&quot;ms-Button ms-Dialog-action
   
   &quot;&gt;

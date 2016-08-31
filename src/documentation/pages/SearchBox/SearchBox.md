@@ -23,9 +23,9 @@ i--->
 
 
 ### Command bar
-<!---
+<!----
 {{> SearchBox props=SearchBoxExampleProps.commandBar}}
---->
+---->
 <!---i
 ![SearchBox example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/SearchBox-collapsed.png)
 i--->

@@ -81,10 +81,10 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 &lt;div class&#x3D;&quot;ms-CommandButton    &quot;&gt;
   &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
-      &lt;span class&#x3D;&quot;ms-CommandButton-icon ms-fontColor-themePrimary&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--CircleFill&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;Command&lt;/span&gt;  &lt;/button&gt;
+      &lt;span class&#x3D;&quot;ms-CommandButton-icon ms-fontColor-themePrimary&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--CircleRing&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;Command&lt;/span&gt;  &lt;/button&gt;
 &lt;/div&gt;
     </code>
 </pre>

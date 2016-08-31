@@ -75,7 +75,7 @@ This component has only the default state.
 <pre>
     <code>
  &lt;div class&#x3D;&quot;ms-CalloutExample&quot;&gt;  
-  &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+  
   
   &lt;div class&#x3D;&quot;ms-Callout 
        
@@ -89,7 +89,7 @@ This component has only the default state.
           &lt;p class&#x3D;&quot;ms-Callout-subText  ms-Callout-subText-- &quot;&gt;Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.&lt;/p&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;ms-Callout-actions&quot;&gt;
-              &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+              
   
   &lt;a class&#x3D;&quot;ms-Link  &quot; 
      
@@ -102,7 +102,7 @@ This component has only the default state.
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;ms-CalloutExample-button&quot;&gt;
-    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    
     &lt;button class&#x3D;&quot;ms-Button 
       
       &quot;&gt;

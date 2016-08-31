@@ -26,7 +26,7 @@ This component has only the default state.
 <pre>
     <code>
  &lt;div class&#x3D;&quot;docs-MessageBannerExample&quot;&gt;
-  &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+  
   
   &lt;div class&#x3D;&quot;ms-MessageBanner&quot;&gt;
     &lt;div class&#x3D;&quot;ms-MessageBanner-content&quot;&gt;
@@ -39,7 +39,7 @@ This component has only the default state.
         &lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronDown&quot;&gt;&lt;/i&gt;
       &lt;/button&gt;
       &lt;div class&#x3D;&quot;ms-MessageBanner-action&quot;&gt;
-        &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+        
   &lt;button class&#x3D;&quot;ms-Button 
     ms-Button--primary
     &quot;&gt;
@@ -51,7 +51,7 @@ This component has only the default state.
       &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Clear&quot;&gt;&lt;/i&gt;
     &lt;/button&gt;
   &lt;/div&gt;
-  &lt;button class&#x3D;&quot;ms-Button docs-MessageBannerExample-button&quot;&gt;Show the banner&lt;/button&gt;
+  &lt;button class&#x3D;&quot;ms-Button docs-MessageBannerExample-button is-hidden&quot;&gt;Show the banner&lt;/button&gt;
 &lt;/div&gt;
     </code>
 </pre>
@@ -64,11 +64,20 @@ This component has only the default state.
   var MessageBannerExample &#x3D; document.querySelector(&#x27;.docs-MessageBannerExample&#x27;);
   var MessageBanner &#x3D; new fabric[&#x27;MessageBanner&#x27;](MessageBannerExample.querySelector(&#x27;.ms-MessageBanner&#x27;));
   var MessageBannerButton &#x3D; MessageBannerExample.querySelector(&#x27;.docs-MessageBannerExample-button&#x27;);
-  
+  var MessageBannerCloseButton &#x3D; MessageBannerExample.querySelector(&#x27;.ms-MessageBanner-close&#x27;);
+
   // When clicking the button, open the MessageBanner
   MessageBannerButton.onclick &#x3D; function() {
     MessageBanner.showBanner();
+    this.classList.add(&quot;is-hidden&quot;);
   };
+
+  // Hide &quot;Show the Banner Button&quot; when banner is active
+  MessageBannerCloseButton.addEventListener(&quot;click&quot;, function(){
+  	setTimeout(function() {
+  		MessageBannerButton.classList.remove(&quot;is-hidden&quot;);
+  	}, 500);
+  });
 &lt;/script&gt;
     </code>
 </pre>
@@ -84,9 +93,18 @@ This component has a dependency on Button.
   var MessageBannerExample = document.querySelector('.docs-MessageBannerExample');
   var MessageBanner = new fabric['MessageBanner'](MessageBannerExample.querySelector('.ms-MessageBanner'));
   var MessageBannerButton = MessageBannerExample.querySelector('.docs-MessageBannerExample-button');
-  
+  var MessageBannerCloseButton = MessageBannerExample.querySelector('.ms-MessageBanner-close');
+
   // When clicking the button, open the MessageBanner
   MessageBannerButton.onclick = function() {
     MessageBanner.showBanner();
+    this.classList.add("is-hidden");
   };
+
+  // Hide "Show the Banner Button" when banner is active
+  MessageBannerCloseButton.addEventListener("click", function(){
+  	setTimeout(function() {
+  		MessageBannerButton.classList.remove("is-hidden");
+  	}, 500);
+  });
 </script>
