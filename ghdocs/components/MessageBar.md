@@ -46,20 +46,6 @@ Use when the user is explicitly forbidden from a particular action not because o
 Use sparingly when there's an exceptional need to tell the use that something went right. The preferred way to show success is to show, not tell (e.g. by navigating to show the result of the user action and letting users continue working on it or elsewhere).
 
 
-<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
-
-<div class="ms-MessageBar ms-MessageBar--success">
-  <div class="ms-MessageBar-content">
-    <div class="ms-MessageBar-icon">
-      <i class="ms-Icon ms-Icon--Completed"></i>
-    </div>
-    <div class="ms-MessageBar-text">
-      Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
-      <a href="" class="ms-Link">Hyperlink string</a>
-    </div>
-  </div>
-</div>
-
 
 ![MessageBar example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/MessageBar-success.png)
 

@@ -55,9 +55,9 @@ i--->
 ### Success
 Use sparingly when there's an exceptional need to tell the use that something went right. The preferred way to show success is to show, not tell (e.g. by navigating to show the result of the user action and letting users continue working on it or elsewhere).
 
-<!---
+<!----
 {{> MessageBar props=MessageBarExampleProps.success }}
---->
+---->
 <!---i
 ![MessageBar example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/MessageBar-success.png)
 i--->

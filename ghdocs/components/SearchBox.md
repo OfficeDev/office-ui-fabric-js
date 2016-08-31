@@ -20,30 +20,6 @@ A special form field that allows for the input of search text.
 
 ### Command bar
 
-<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
-
-<div class="ms-SearchBox  ms-SearchBox--commandBar  ">
-  <input class="ms-SearchBox-field" type="text" value="">
-  <label class="ms-SearchBox-label">
-    <i class="ms-SearchBox-icon ms-Icon ms-Icon--Search"></i>
-    <span class="ms-SearchBox-text">Search</span>
-  </label>
-  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
-<div class="ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel  ">
-  <button class="ms-CommandButton-button"  >
-      <span class="ms-CommandButton-icon "><i class="ms-Icon ms-Icon--Clear"></i></span><span class="ms-CommandButton-label"></span>  </button>
-</div>
-  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
-<div class="ms-CommandButton ms-SearchBox-exit ms-CommandButton--noLabel  ">
-  <button class="ms-CommandButton-button"  >
-      <span class="ms-CommandButton-icon "><i class="ms-Icon ms-Icon--ChromeBack"></i></span><span class="ms-CommandButton-label"></span>  </button>
-</div>
-  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
-<div class="ms-CommandButton ms-SearchBox-filter ms-CommandButton--noLabel  ">
-  <button class="ms-CommandButton-button"  >
-      <span class="ms-CommandButton-icon "><i class="ms-Icon ms-Icon--Filter"></i></span><span class="ms-CommandButton-label"></span>  </button>
-</div>
-</div>
 
 ![SearchBox example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/SearchBox-collapsed.png)
 
