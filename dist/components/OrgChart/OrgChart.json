@@ -1,0 +1,6 @@
+{
+  "name": "OrgChart",
+  "dependencies": [
+    "Persona"
+  ]
+}

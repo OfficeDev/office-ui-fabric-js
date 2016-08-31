@@ -1,0 +1,70 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started Page</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../../css/fabric.min.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.min.css">
+  <link rel="stylesheet" href="../../demo.css">
+  
+</head>
+
+<body class="componentDemo">
+<h1 id="fabric-roadmap">Fabric Roadmap</h1>
+<h2 id="planned-work">Planned Work</h2>
+<ul>
+<li><strong>Create TypeScript implementations of each component.</strong> This will remove our dependency on jQuery, which most teams are not in favor of, and standardize our code samples. Of course you are always free to write your own JavaScript or use whatever framework you prefer to interact with Fabric styles and components.</li>
+<li><strong>Card component.</strong> We&#39;re identifying the most common scenarios and getting design support to have this added. See the <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/152">original request</a>.</li>
+<li><strong>Searchable dropdown component.</strong> See <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/130">this issue</a> for the original request.</li>
+<li><strong>Improved component documentation.</strong> Our website will be updated with more details on what each component should be used for, and how to make it work in your project.</li>
+<li><strong>Simple pagination component.</strong> As requested in <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/131">this issue</a>.</li>
+<li><strong>Details list.</strong> This component is similar to the table and will be based on the file list in OneDrive. It will include functionality such as multi-select, filtering, sorting of columns, and may also have resizable columns.</li>
+</ul>
+<h2 id="possible-future-improvements">Possible Future Improvements</h2>
+<ul>
+<li><strong>Provide standard layouts for building full-page apps.</strong> We&#39;ve received a <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/284">request for this feature</a> and it&#39;s something we&#39;d like to add once we have a more clearly-defined set of UI patterns. For now, please send us screenshots of your full-page apps so that we can understand what common layouts we could provide.</li>
+<li><strong>Additional samples of Fabric classes and components in use.</strong> We currently provide a basic form example and the video portal example. These are a start, but we&#39;ve <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/301#issuecomment-184346264">received requests</a> for additional samples that show Fabric being used to build simple apps.</li>
+<li><strong>TreeView/Accordion component.</strong> See the <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/238">original request</a> for details.</li>
+<li><strong>Code snippets for Visual Studio.</strong> This would be nice to have but is not a priority for us at this time. See the <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/233">original request</a> for details.</li>
+<li><strong>Custom HTML elements for components,</strong> using something like <a href="https://www.polymer-project.org/">Polymer</a>. See the <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/223">original request</a>.</li>
+<li><strong>Single components file with both left-to-right and right-to-left.</strong> We&#39;ve had <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/210">one request</a> for this so far and it&#39;s something we could consider adding if more people show interest. Right now it seems that most teams are okay with swapping out the CSS file depending on whether the page is being displayed as LTR or RTL.</li>
+<li><strong>Typeahead/Autocomplete component.</strong> We&#39;ve had a <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/504">request for this component</a> and are currently investigating the styling for it. No timeframe at the moment, though.</li>
+<li><strong>Increment/decrement component.</strong> We&#39;ve had a <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/196">request for this component</a> but have no need for it in product at this time. If anyone wants to build it and submit a pull request we can review the design and implementation and consider adding it.</li>
+<li><strong>File upload component.</strong> This was <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/134">requested</a> and is something we can see the value in, but do not have designs for at this time.</li>
+<li><strong>Input masks</strong>. We&#39;ve had a <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/133">request for this feature</a> but do not have any plans to build it at this time.</li>
+<li><strong>Timer component.</strong> This was <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/132">requested</a> but is not something we plan to work on at this time.</li>
+<li><strong>Vertical navbar component.</strong> See <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/122">the request</a>.</li>
+<li><strong>App launcher/chrome component.</strong> This was <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/81">requested</a> <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/407">twice</a> and may be included in a future release of Fabric.</li>
+<li><strong>Slider component.</strong> See <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/360">the request</a>.</li>
+<li><strong>Generic ListItem styles.</strong> Our current ListItem component is for an email item, and contains many icons and pieces of text that developers are unlikely to need. We want to replace this with a small set of generic list items that can be used for most scenarios. We might also add list items specific to content, such as for showing a file.</li>
+<li><strong>Hosting JavaScript on CDN</strong> See <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/496">the request</a>.</li>
+<li><strong>Split view (vertical menu)</strong> See <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/405">the request</a>.</li>
+<li><strong>Make the components AMD compliant</strong> for compatibility with <a href="http://www.requirejs.org/">RequireJS</a>. See <a href="https://github.com/OfficeDev/Office-UI-Fabric/issues/120">the request</a>.</li>
+<li><strong>Generate d.ts files for TypeScript components</strong> See <a href="https://github.com/OfficeDev/office-ui-fabric/issues/699">the request</a>.</li>
+<li><strong>Support for RTL layouts for components</strong> See <a href="https://github.com/OfficeDev/office-ui-fabric/issues/733">the request</a>.</li>
+<li><strong>Timepicker component</strong> See <a href="https://github.com/OfficeDev/office-ui-fabric-js/issues/79">the request</a>.</li>
+</ul>
+
+</body>
+<script>
+  // Get external links and add target _blank to them
+  function fixExternalLinks() {
+    var links = document.getElementsByTagName('a');
+    var len = links.length;
+
+    for(var i=0; i<len; i++) {
+      var pattern = new RegExp("^https?:\/\/", "i");
+      var url = links[i].getAttribute('href');
+      if (pattern.test(url)) {
+        links[i].target = "_blank";
+      }
+    }
+  }
+
+  fixExternalLinks();
+</script>
+</html>

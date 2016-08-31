@@ -1,0 +1,656 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started Page</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../../css/fabric.min.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.min.css">
+  <link rel="stylesheet" href="../../demo.css">
+  
+</head>
+
+<body class="componentDemo">
+<h1 id="fabric-tutorial-part-1">Fabric Tutorial Part 1</h1>
+<h3 id="contents">Contents</h3>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#components-overview">Components overview</a></li>
+<li><a href="#step-1-setting-up-your-project">Step 1 – Setting up your project</a></li>
+<li><a href="#step-2-adding-fabric-to-a-project">Step 2 – Adding Fabric to a project</a></li>
+<li><a href="#step-3-prepping-your-app">Step 3 – Prepping your app</a></li>
+<li><a href="#step-4-using-fabric-components">Step 4 – Using Fabric components</a></li>
+<li><a href="#step-5-using-fabric-typography">Step 5 – Using Fabric typography</a></li>
+<li><a href="#step-6-adding-more-complex-components">Step 6 – Adding more complex components</a></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>Fabric is an HTML and CSS toolkit that works like a skin to help your experiences look and feel like Office and Office 365. To demonstrate how to use Fabric, let&#39;s build a simple ToDo application. For this tutorial, we will focus mainly on using Fabric components to get our app looking solid as quickly as possible.</p>
+<h3 id="using-fabric-with-office-add-ins">Using Fabric with Office Add-ins</h3>
+<p>If you&#39;re building an Office Add-in, you can find simple instructions for using the compiled version right away in the article <a href="https://msdn.microsoft.com/EN-US/library/office/6f46dd69-2ba3-4b0f-9735-7d7394ca2731.aspx">Using Fabric with Office Add-ins</a>.  </p>
+<h2 id="components-overview">Components Overview</h2>
+<p>Components are snippets of HTML and CSS that can be used in any application as a skin for common UI elements like Textfields, Toggle Switches, Lists, and People Pickers. Fabric&#39;s components exist in Microsoft products today and are used by millions of customers. Components can be manipulated fairly easily, and, in this tutorial, we will be tweaking a few of them.</p>
+<p>Now, let&#39;s start building our application.</p>
+<h2 id="step-1-setting-up-your-project">Step 1 – Setting up your project</h2>
+<p>Let&#39;s set up our project folder to look like the following:</p>
+<pre><code>todo/
+|-- css/
+</code></pre><p>Now open up your favorite text editor or IDE and create a new file called index.html in the root <code>todo/</code> directory, containing a simple HTML document:</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="step-2-adding-fabric-to-a-project">Step 2 – Adding Fabric to a project</h2>
+<p>Go to the <a href="https://github.com/OfficeDev/Office-UI-Fabric/releases/latest">latest release of Fabric</a> and scroll down to the downloads section. Download the first ZIP file (e.g. office-ui-fabric-[version].zip) and extract its contents. Then go into <code>/dist/css</code> and copy <strong>fabric.css</strong> and <strong>fabric.components.css</strong> into your <code>todo/css/</code> project folder. Then add the following lines to the <code>&lt;head&gt;</code> section of your <code>index.html</code> document:</p>
+<pre><code class="lang-html">&lt;link href=&quot;css/fabric.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+&lt;link href=&quot;css/fabric.components.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+</code></pre>
+<p>The first file includes the core Fabric styles (typography, colors, animations, etc.) and the second includes styles for all of the components. Note that Fabric comes with several other CSS files that can be used to improve or optimize your application. These include .rtl.css versions for right-to-left languages, as well as individual CSS files for each component, allowing you to include styles for only the components your application uses. There are also .min.css versions of each of these, which should be used in production to save bandwidth. For now, we will use the full versions of the core Fabric styles and components for simple debugging and quick development.</p>
+<p>After linking to the Fabric CSS files, your page will now have access to all of the colors, fonts, animations, and component styles that Fabric offers.</p>
+<h3 id="create-a-new-style-sheet-for-our-application">Create a new style sheet for our application</h3>
+<p>We will now create a CSS file for your application, which we&#39;ll use to add custom styles and to override Fabric component styles where necessary. Create a new file titled <strong>app.css</strong> in your <code>todo/css/</code> directory and add a link to it <em>after</em> fabric.components.css in index.html:</p>
+<pre><code class="lang-html">&lt;link href=&quot;css/fabric.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+&lt;link href=&quot;css/fabric.components.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+&lt;link href=&quot;css/app.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+</code></pre>
+<p><strong><em>NOTE</em></strong>: It&#39;s important that app.css goes <em>after</em> Fabric&#39;s CSS files to ensure that any application-specific styles will have enough specificity to override Fabric styles if necessary. While Fabric does have a lot great pre-existing styles, you may need tweak them to fit your application&#39;s specific requirements. </p>
+<p>At this point, your directory should look like this:</p>
+<pre><code>todo/
+|-- css/
+  |--fabric.css
+  |--fabric.components.css
+  |--app.css
+|--index.html
+</code></pre><p>And index.html should look like this:</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link href=&quot;css/fabric.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+    &lt;link href=&quot;css/fabric.components.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+    &lt;link href=&quot;css/app.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="step-3-prepping-your-app">Step 3 – Prepping your app</h2>
+<p>Let&#39;s start adding Fabric components to our app. Below is a preview of what our finished app will look like:</p>
+<p><img src="https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-core/master/ghdocs/images/ThirdAppLook.png" alt="Third screenshot of ToDo app"></p>
+<p>At the top we have a TextField and Button component that we will eventually use to add new tasks. Underneath, we have our List component that contains ListItems, which will hold each of the user&#39;s pending tasks.</p>
+<p>Let&#39;s start by creating containers that will hold the Fabric components for our two main sections. Add the following elements to <code>&lt;body&gt;</code>:</p>
+<pre><code class="lang-html">&lt;div class=&quot;TodoBar&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;TodoList&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>Now let&#39;s add styles for these elements. Open up app.css and add two CSS rules: one for our TodoBar container and one for our TodoList container.</p>
+<pre><code class="lang-css">.TodoBar {
+  position: fixed; /* This bar should always be fixed to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #000000;
+  z-index: 2;
+}
+
+.TodoList {
+  width: 100%;
+  height: auto;
+  background-color: #cdcdcd;
+  z-index: 1;
+  min-height: 200px;
+}
+</code></pre>
+<p>Save and then open up index.html in your browser. You should see something like this:</p>
+<p><img src="https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-core/master/ghdocs/images/FirstAppLook.png" alt="First screenshot of ToDo app"></p>
+<p>If you don&#39;t see this, double-check your CSS paths and make sure you followed the first part of this tutorial correctly.</p>
+<p>Next, you&#39;ll notice extra spacing around <code>&lt;div class=&quot;TodoList&quot;&gt;&lt;/div&gt;</code>. This is because of margins that browsers add to <code>&lt;body&gt;</code> and <code>&lt;html&gt;</code> elements by default. Let&#39;s remove the margin on these elements by adding the following to the top of app.css:</p>
+<pre><code class="lang-css">html, 
+body {
+  margin: 0;
+}
+</code></pre>
+<p>Go ahead and refresh—the extra white space along the top and sides should go away, and <code>.TodoList</code> should now expand 100% across the screen.</p>
+<h2 id="step-4-using-fabric-components">Step 4 – Using Fabric components</h2>
+<p>Fabric includes a responsive grid system, similar to those seen in other UI toolkits, that we will be using for our TodoBar section. Let&#39;s add the following HTML inside  <code>&lt;div class=&quot;TodoBar&quot;&gt;&lt;/div&gt;</code>:</p>
+<pre><code class="lang-html">&lt;div class=&quot;ms-Grid&quot;&gt;
+  &lt;div class=&quot;ms-Grid-row&quot;&gt;
+    &lt;div class=&quot;ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10&quot;&gt;&lt;/div&gt; &lt;!-- First Column --&gt;
+    &lt;div class=&quot;ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2&quot;&gt;&lt;/div&gt; &lt;!-- Second Column --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Now for the fun part: let&#39;s add some components to our app! Navigate to where you extracted Fabric, then open the following component files in your code editor:</p>
+<pre><code>dist/components/Button/Button.html
+dist/components/TextField/TextField.html
+</code></pre><p>First, copy all the contents from TextField.html and paste it inside of the first column <code>&lt;div class=&quot;ms-Grid-col&quot;&gt;&lt;/div&gt; &lt;!-- First Column --&gt;</code>, then remove the <code>&lt;label class=&quot;ms-Label&quot;&gt;Name&lt;/label&gt;</code> element and <code>&lt;span class=&quot;ms-TextField-description&quot;&gt;This should be your first and last name.&lt;/span&gt;</code>.  At this point your second column HTML should look like this:</p>
+<pre><code class="lang-html">&lt;div class=&quot;ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10&quot;&gt;
+    &lt;div class=&quot;ms-TextField&quot;&gt;
+        &lt;input class=&quot;ms-TextField-field&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt; &lt;!-- First Column --&gt;
+</code></pre>
+<p><strong><em>NOTE</em></strong>: We are removing the <code>&lt;label&gt;</code> and <code>&lt;span&gt;</code> elements because we don&#39;t need them in this example.</p>
+<p>Copy all the contents from Button.html and paste it into our second column <code>&lt;div class=&quot;ms-Grid-col&quot;&gt;&lt;/div&gt; &lt;!-- Second Column --&gt;</code>. Now change the text inside of the button <code>&lt;span class=&quot;ms-Button-label&quot;&gt;</code> from <strong>Create account</strong> to <strong>Add Todo</strong>. We should also remove <code>&lt;span class=&quot;ms-Button-description&quot;&gt;&lt;/span&gt;</code> After the past few edits, your <strong>index.html</strong> should look like the following:</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+      &lt;link href=&quot;css/fabric.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+      &lt;link href=&quot;css/fabric.components.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+      &lt;link href=&quot;css/app.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+      &lt;div class=&quot;TodoBar&quot;&gt;
+        &lt;div class=&quot;ms-Grid&quot;&gt;
+            &lt;div class=&quot;ms-Grid-row&quot;&gt;
+                &lt;div class=&quot;ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10&quot;&gt;
+                    &lt;div class=&quot;ms-TextField&quot;&gt;
+                        &lt;input class=&quot;ms-TextField-field&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt; &lt;!-- First Column --&gt;
+                &lt;div class=&quot;ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2&quot;&gt;
+                    &lt;button class=&quot;ms-Button&quot;&gt;
+                        &lt;span class=&quot;ms-Button-icon&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--plus&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                        &lt;span class=&quot;ms-Button-label&quot;&gt;Add Todo&lt;/span&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt; &lt;!-- Second Column --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;TodoList&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="step-5-using-fabric-typography">Step 5 – Using Fabric typography</h2>
+<p>Let&#39;s create a title for our application using Fabric font classes. First, add the following HTML right after <code>&lt;div class=&quot;TodoBar&quot;&gt;&lt;/div&gt;</code>:</p>
+<pre><code class="lang-html">&lt;div class=&quot;ListHeader&quot;&gt;Todo List&lt;/div&gt;
+</code></pre>
+<p>Now, let&#39;s add some styles to app.css to position the ListHeader:</p>
+<pre><code class="lang-css">.ListHeader {
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+</code></pre>
+<p>Now we should have a simple title inside a white strip. Let&#39;s change that with a few Fabric typography classes: add <code>ms-font-xxl</code> and <code>ms-fontWeight-light</code> after the ListHeader class on   our  <code>&lt;div class=&quot;ListHeader&quot;&gt;Todo List&lt;/div&gt;</code> element. This element should now look like the following:</p>
+<pre><code class="lang-html">&lt;div class=&quot;ListHeader ms-font-xxl ms-fontWeight-light&quot;&gt;Todo List&lt;/div&gt;
+</code></pre>
+<p><strong><em>NOTE</em></strong>: <code>.ms-font-xxl</code> is a &quot;base&quot; typography class, each of which sets a size, color, font-family, and weight. <code>.ms-fontWeight-light</code> is one of several helper classes that override a single property and should usually be combined with a base typography class.</p>
+<h2 id="step-6-adding-more-complex-components">Step 6 – Adding more complex components</h2>
+<p>Now, let&#39;s get our list up and running using some hard-coded content. In Part 2, we will use JavaScript to add real data and interactions.</p>
+<p>Go ahead and open up <code>dist/components/List/List.html</code> from your extracted Fabric .zip into your text editor, then copy all of the contents and paste it inside of <code>&lt;div class=&quot;TodoList&quot;&gt;&lt;/div&gt;</code>. This div should now look like the following:</p>
+<pre><code class="lang-html">&lt;div class=&quot;TodoList&quot;&gt;
+  &lt;ul class=&quot;ms-List&quot;&gt;
+   &lt;li class=&quot;ms-List-item&quot;&gt;
+     &lt;div class=&quot;ms-ListItem is-unread&quot;&gt;
+       &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+       &lt;span class=&quot;ms-ListItem-secondaryText&quot;&gt;Meeting notes&lt;/span&gt;
+       &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+       &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+       &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+       &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+         &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--attachment&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+         &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+         &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--flag&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+   &lt;/li&gt;
+   &lt;li class=&quot;ms-List-item&quot;&gt;
+     &lt;div class=&quot;ms-ListItem is-unread&quot;&gt;
+       &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+       &lt;span class=&quot;ms-ListItem-secondaryText&quot;&gt;Meeting notes&lt;/span&gt;
+       &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+       &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+       &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+       &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+         &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--attachment&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+         &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+         &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--flag&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+  …
+&lt;/div&gt;
+</code></pre>
+<p>Now, let&#39;s remove the background colors ( <code>background-color: #000000;</code>, <code>background-color: #cdcdcd;</code>) we used to test <code>&lt;div class=&quot;TodoBar&quot;&gt;&lt;/div&gt;</code> and <code>&lt;div class=&quot;TodoList&gt;&lt;/div&gt;</code>. Your <strong>app.css</strong> file should look like the following:</p>
+<pre><code class="lang-css">html, 
+body {
+  margin: 0;
+}
+
+.TodoBar {
+  position: fixed; /* This bar should always be fixed to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 2;
+}
+
+.TodoList {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  min-height: 200px;
+}
+
+.ListHeader {
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+</code></pre>
+<p> And here is what your HTML should look like:</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+      &lt;link href=&quot;css/fabric.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+      &lt;link href=&quot;css/fabric.components.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+      &lt;link href=&quot;css/app.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+      &lt;div class=&quot;TodoBar&quot;&gt;
+        &lt;div class=&quot;ms-Grid&quot;&gt;
+            &lt;div class=&quot;ms-Grid-row&quot;&gt;
+                &lt;div class=&quot;ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10&quot;&gt;
+                    &lt;div class=&quot;ms-TextField&quot;&gt;
+                        &lt;input class=&quot;ms-TextField-field&quot;&gt;
+                        &lt;span class=&quot;ms-TextField-description&quot;&gt;This should be your first and last name.&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt; &lt;!-- First Column --&gt;
+                &lt;div class=&quot;ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2&quot;&gt;
+                    &lt;button class=&quot;ms-Button&quot;&gt;
+                        &lt;span class=&quot;ms-Button-icon&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--plus&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                        &lt;span class=&quot;ms-Button-label&quot;&gt;Add ToDo&lt;/span&gt;
+                        &lt;span class=&quot;ms-Button-description&quot;&gt;Description of the action this button takes&lt;/span&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt; &lt;!-- Second Column --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;ListHeader ms-font-xxl ms-fontWeight-light&quot;&gt;Todo List&lt;/div&gt;
+      &lt;div class=&quot;TodoList&quot;&gt;
+          &lt;ul class=&quot;ms-List&quot;&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-secondaryText&quot;&gt;Meeting notes&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--mail&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--trash&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--flag&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--pinLeft&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-secondaryText&quot;&gt;Meeting notes&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--mail&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--trash&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--flag&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--pinLeft&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-secondaryText&quot;&gt;Meeting notes&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--mail&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--trash&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--flag&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--pinLeft&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-secondaryText&quot;&gt;Meeting notes&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--mail&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--trash&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--flag&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--pinLeft&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-selected is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-secondaryText&quot;&gt;Meeting notes&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--mail&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--trash&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--flag&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--pinLeft&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-secondaryText&quot;&gt;Meeting notes&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--mail&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--trash&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--flag&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--pinLeft&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-secondaryText&quot;&gt;Meeting notes&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--mail&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--trash&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--flag&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--pinLeft&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-secondaryText&quot;&gt;Meeting notes&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--mail&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--trash&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--flag&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--pinLeft&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Here is a screenshot of what your app should look like at this moment:</p>
+<p><img src="https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-core/master/ghdocs/images/SecondAppLook.png" alt="Second screenshot of ToDo app"></p>
+<p>It&#39;s starting to look pretty good! It still needs something more, so let&#39;s add a background color and adjust the padding and margins of our TextField and Button components.</p>
+<p><strong><em>NOTE</em></strong>: Fabric comes with a large assortment of colors that can be referenced on our <a href="http://dev.office.com/fabric/styles#color">Styles Section</a>.</p>
+<p>To accomplish this, let&#39;s add the following new styles to app.css below our <code>.TodoBar</code> block of styles:</p>
+<pre><code class="lang-css">
+.TodoBar {
+  position: fixed; /* This bar should always be fixed to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 2;
+  background-color: #0078D7; /* New Background Color */
+}
+
+... styles hidden
+
+.ms-TextField .ms-TextField-field {
+  margin-top: 14px;
+}
+
+.ms-Button {
+  margin-top: 14px;
+  width: 100%;
+}
+</code></pre>
+<p>These styles are going to override the default component styling and will help our TextField and Button stand out with some minor positioning adjustments.</p>
+<p><strong>Hang on, this part gets a bit tricky!</strong></p>
+<p>But now we&#39;d really like to tweak our component by adding a title and a description along with icons for an x and a checkmark. Since we don&#39;t need the paper clip and flag, go ahead and remove all <code>&lt;div class=&quot;ms-ListItem is-selectable&quot;&gt;&lt;/div&gt;</code> elements <strong>except the first one</strong> so we have one element to work with.</p>
+<p>Inside of the first <code>.ms-ListItem</code> remove the elements<code>&lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--mail&quot;&gt;&lt;/i&gt;&lt;/div&gt;</code>,  <code>&lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--trash&quot;&gt;&lt;/i&gt;&lt;/div&gt;</code>, and <code>&lt;span class=&quot;ms-ListItem-secondaryText&quot;&gt;Meeting notes&lt;/span&gt;</code>. Then change the icons to the x and the check: replace <code>ms-Icon ms-Icon--flag</code> with <code>ms-Icon ms-Icon--x</code> and <code>ms-Icon ms-Icon--pinLeft</code> with <code>ms-Icon ms-Icon--check</code>. Our new list HTML should look like the following:</p>
+<pre><code class="lang-html">   &lt;div class=&quot;TodoList&quot;&gt;
+        &lt;ul class=&quot;ms-List&quot;&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                    &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                    &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--check&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</code></pre>
+<p>Now let&#39;s copy this new list item code and paste it at least 10 times inside of <code>&lt;ul class=&quot;ms-List&quot;&gt;&lt;/ul&gt;</code> to fill out the UI of the app. With this final step, you just completed the tutorial! Below is the complete HTML and CSS:</p>
+<h3 id="final-html">Final HTML</h3>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+      &lt;link href=&quot;css/fabric.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+      &lt;link href=&quot;css/fabric.components.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+      &lt;link href=&quot;css/app.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+      &lt;div class=&quot;TodoBar&quot;&gt;
+        &lt;div class=&quot;ms-Grid&quot;&gt;
+            &lt;div class=&quot;ms-Grid-row&quot;&gt;
+                &lt;div class=&quot;ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10&quot;&gt;
+                    &lt;div class=&quot;ms-TextField&quot;&gt;
+                        &lt;input class=&quot;ms-TextField-field&quot;&gt;
+                        &lt;span class=&quot;ms-TextField-description&quot;&gt;This should be your first and last name.&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt; &lt;!-- First Column --&gt;
+                &lt;div class=&quot;ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2&quot;&gt;
+                    &lt;button class=&quot;ms-Button&quot;&gt;
+                        &lt;span class=&quot;ms-Button-icon&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--plus&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                        &lt;span class=&quot;ms-Button-label&quot;&gt;Add ToDo&lt;/span&gt;
+                        &lt;span class=&quot;ms-Button-description&quot;&gt;Description of the action this button takes&lt;/span&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt; &lt;!-- Second Column --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;ListHeader ms-font-xxl ms-fontWeight-light&quot;&gt;Todo List&lt;/div&gt;
+      &lt;div class=&quot;TodoList&quot;&gt;
+        &lt;ul class=&quot;ms-List&quot;&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--check&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--check&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--check&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--check&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--check&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--check&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--check&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--check&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--check&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--check&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ms-ListItem is-unread is-selectable&quot;&gt;
+                &lt;span class=&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
+                &lt;span class=&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
+                &lt;div class=&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;ms-ListItem-actions&quot;&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                   &lt;div class=&quot;ms-ListItem-action&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--check&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+         &lt;/ul&gt;
+      &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="lang-css">html, 
+body {
+  margin: 0;
+}
+
+.TodoBar {
+  position: fixed; /* This bar should always be fixed to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 2;
+  background-color: #0078D7;
+}
+
+.TodoList {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  min-height: 200px;
+}
+
+.ListHeader {
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.ms-TextField .ms-TextField-field {
+  margin-top: 14px;
+}
+
+.ms-Button {
+  margin-top: 14px;
+  width: 100%;
+}
+</code></pre>
+<p>Your app should look exactly like this:</p>
+<p><img src="https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-core/master/ghdocs/images/ThirdAppLook.png" alt="Third screenshot of ToDo app"></p>
+<p>Check out the next part in the series, where we will integrate functionality, animations, and more awesomeness.</p>
+
+</body>
+<script>
+  // Get external links and add target _blank to them
+  function fixExternalLinks() {
+    var links = document.getElementsByTagName('a');
+    var len = links.length;
+
+    for(var i=0; i<len; i++) {
+      var pattern = new RegExp("^https?:\/\/", "i");
+      var url = links[i].getAttribute('href');
+      if (pattern.test(url)) {
+        links[i].target = "_blank";
+      }
+    }
+  }
+
+  fixExternalLinks();
+</script>
+</html>
