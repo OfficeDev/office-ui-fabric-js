@@ -22,7 +22,7 @@ Displays multiple Persona components in groups with headers in order to show the
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;div class&#x3D;&quot;ms-OrgChart &quot;&gt;
     &lt;div class&#x3D;&quot;ms-OrgChart-group&quot;&gt;
@@ -30,7 +30,7 @@ Displays multiple Persona components in groups with headers in order to show the
       &lt;ul class&#x3D;&quot;ms-OrgChart-list&quot;&gt;
           &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
             &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-              &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+              
 
 &lt;div class&#x3D;&quot;ms-Persona
 &quot;&gt;
@@ -50,7 +50,7 @@ Displays multiple Persona components in groups with headers in order to show the
           &lt;/li&gt;
           &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
             &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-              &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+              
 
 &lt;div class&#x3D;&quot;ms-Persona
 &quot;&gt;
@@ -75,7 +75,7 @@ Displays multiple Persona components in groups with headers in order to show the
       &lt;ul class&#x3D;&quot;ms-OrgChart-list&quot;&gt;
           &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
             &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-              &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+              
 
 &lt;div class&#x3D;&quot;ms-Persona
 &quot;&gt;
@@ -100,7 +100,7 @@ Displays multiple Persona components in groups with headers in order to show the
       &lt;ul class&#x3D;&quot;ms-OrgChart-list&quot;&gt;
           &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
             &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-              &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+              
 
 &lt;div class&#x3D;&quot;ms-Persona
 &quot;&gt;
@@ -120,7 +120,7 @@ Displays multiple Persona components in groups with headers in order to show the
           &lt;/li&gt;
           &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
             &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-              &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+              
 
 &lt;div class&#x3D;&quot;ms-Persona
 &quot;&gt;
@@ -140,7 +140,7 @@ Displays multiple Persona components in groups with headers in order to show the
           &lt;/li&gt;
           &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
             &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-              &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+              
 
 &lt;div class&#x3D;&quot;ms-Persona
 &quot;&gt;
@@ -160,7 +160,7 @@ Displays multiple Persona components in groups with headers in order to show the
           &lt;/li&gt;
           &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
             &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-              &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+              
 
 &lt;div class&#x3D;&quot;ms-Persona
 &quot;&gt;

@@ -34,7 +34,7 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 &lt;div class&#x3D;&quot;ms-Breadcrumb &quot;&gt;
   &lt;div class&#x3D;&quot;ms-Breadcrumb-overflow&quot;&gt;
     &lt;div class&#x3D;&quot;ms-Breadcrumb-overflowButton ms-Icon ms-Icon--More&quot; tabindex&#x3D;&quot;1&quot;&gt;&lt;/div&gt;

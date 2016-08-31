@@ -38,12 +38,12 @@ Presents the selected people in a list below the search field, rather than inlin
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;div class&#x3D;&quot;ms-PeoplePicker
 &quot;&gt;
   &lt;div class&#x3D;&quot;ms-PeoplePicker-searchBox&quot;&gt;
-    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    
     
     &lt;div class&#x3D;&quot;ms-TextField  ms-TextField--textFieldUnderlined &quot;&gt;
       
@@ -59,7 +59,7 @@ Presents the selected people in a list below the search field, rather than inlin
           Contacts
         &lt;/div&gt;
           &lt;div class&#x3D;&quot;ms-PeoplePicker-result &quot; tabindex&#x3D;&quot;1&quot;&gt;
-            &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+            
             
             &lt;div class&#x3D;&quot;ms-Persona
                   ms-Persona--sm
@@ -77,7 +77,7 @@ Presents the selected people in a list below the search field, rather than inlin
               &lt;button class&#x3D;&quot;ms-PeoplePicker-resultAction&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--Clear&quot;&gt;&lt;/i&gt;&lt;/button&gt;
           &lt;/div&gt;
           &lt;div class&#x3D;&quot;ms-PeoplePicker-result &quot; tabindex&#x3D;&quot;1&quot;&gt;
-            &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+            
             
             &lt;div class&#x3D;&quot;ms-Persona
                   ms-Persona--sm
@@ -95,7 +95,7 @@ Presents the selected people in a list below the search field, rather than inlin
               &lt;button class&#x3D;&quot;ms-PeoplePicker-resultAction&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--Clear&quot;&gt;&lt;/i&gt;&lt;/button&gt;
           &lt;/div&gt;
           &lt;div class&#x3D;&quot;ms-PeoplePicker-result &quot; tabindex&#x3D;&quot;1&quot;&gt;
-            &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+            
             
             &lt;div class&#x3D;&quot;ms-Persona
                   ms-Persona--sm
@@ -113,7 +113,7 @@ Presents the selected people in a list below the search field, rather than inlin
               &lt;button class&#x3D;&quot;ms-PeoplePicker-resultAction&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--Clear&quot;&gt;&lt;/i&gt;&lt;/button&gt;
           &lt;/div&gt;
           &lt;div class&#x3D;&quot;ms-PeoplePicker-result &quot; tabindex&#x3D;&quot;1&quot;&gt;
-            &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+            
             
             &lt;div class&#x3D;&quot;ms-Persona
                   ms-Persona--sm

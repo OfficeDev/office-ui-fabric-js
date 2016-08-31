@@ -31,8 +31,8 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;!-- This is a sample Date Picker that works for Gregorian calendars. It uses jQuery and pickadate.js for demonstration. --&gt;
-&lt;!-- For more information on this version of pickadate.js (3.5.3), go here: https://github.com/amsul/pickadate.js/tree/505e00b9208a81ffb169338042c0b9c781e76fb7 --&gt;
+ 
+
 
 &lt;div class&#x3D;&quot;ms-DatePicker&quot;&gt;
   &lt;div class&#x3D;&quot;ms-TextField&quot;&gt;

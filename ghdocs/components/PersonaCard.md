@@ -22,10 +22,10 @@ The visualization of details of an individual including Skype contact details, e
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 &lt;div class&#x3D;&quot;ms-PersonaCard &quot;&gt;
   &lt;div class&#x3D;&quot;ms-PersonaCard-persona&quot;&gt;
-    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    
     
     &lt;div class&#x3D;&quot;ms-Persona
           ms-Persona--lg
@@ -70,9 +70,9 @@ The visualization of details of an individual including Skype contact details, e
     &lt;div data-detail-id&#x3D;&quot;video&quot; class&#x3D;&quot;ms-PersonaCard-details&quot;&gt;
       &lt;div class&#x3D;&quot;ms-PersonaCard-detailLine&quot;&gt;&lt;span class&#x3D;&quot;ms-PersonaCard-detailLabel&quot;&gt;Skype:&lt;/span&gt; &lt;a class&#x3D;&quot;ms-Link&quot; href&#x3D;&quot;#&quot;&gt;Start Skype call&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
-      &lt;!-- org chart --&gt;
+      
     &lt;div data-detail-id&#x3D;&quot;org&quot; class&#x3D;&quot;ms-PersonaCard-details&quot;&gt;
-      &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+      
       
       &lt;div class&#x3D;&quot;ms-OrgChart &quot;&gt;
           &lt;div class&#x3D;&quot;ms-OrgChart-group&quot;&gt;
@@ -80,7 +80,7 @@ The visualization of details of an individual including Skype contact details, e
             &lt;ul class&#x3D;&quot;ms-OrgChart-list&quot;&gt;
                 &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
                   &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-                    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+                    
       
       &lt;div class&#x3D;&quot;ms-Persona
       &quot;&gt;
@@ -101,7 +101,7 @@ The visualization of details of an individual including Skype contact details, e
                 &lt;/li&gt;
                 &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
                   &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-                    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+                    
       
       &lt;div class&#x3D;&quot;ms-Persona
       &quot;&gt;
@@ -127,7 +127,7 @@ The visualization of details of an individual including Skype contact details, e
             &lt;ul class&#x3D;&quot;ms-OrgChart-list&quot;&gt;
                 &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
                   &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-                    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+                    
       
       &lt;div class&#x3D;&quot;ms-Persona
       &quot;&gt;
@@ -153,7 +153,7 @@ The visualization of details of an individual including Skype contact details, e
             &lt;ul class&#x3D;&quot;ms-OrgChart-list&quot;&gt;
                 &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
                   &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-                    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+                    
       
       &lt;div class&#x3D;&quot;ms-Persona
       &quot;&gt;
@@ -174,7 +174,7 @@ The visualization of details of an individual including Skype contact details, e
                 &lt;/li&gt;
                 &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
                   &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-                    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+                    
       
       &lt;div class&#x3D;&quot;ms-Persona
       &quot;&gt;
@@ -195,7 +195,7 @@ The visualization of details of an individual including Skype contact details, e
                 &lt;/li&gt;
                 &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
                   &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-                    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+                    
       
       &lt;div class&#x3D;&quot;ms-Persona
       &quot;&gt;
@@ -216,7 +216,7 @@ The visualization of details of an individual including Skype contact details, e
                 &lt;/li&gt;
                 &lt;li class&#x3D;&quot;ms-OrgChart-listItem&quot;&gt;
                   &lt;button class&#x3D;&quot;ms-OrgChart-listItemBtn&quot; tabindex&#x3D;&quot;1&quot;&gt;
-                    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+                    
       
       &lt;div class&#x3D;&quot;ms-Persona
       &quot;&gt;

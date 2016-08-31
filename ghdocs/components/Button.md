@@ -68,7 +68,7 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 &lt;button class&#x3D;&quot;ms-Button 
   
   &quot;&gt;

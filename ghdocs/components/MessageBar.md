@@ -46,6 +46,7 @@ Use when the user is explicitly forbidden from a particular action not because o
 Use sparingly when there's an exceptional need to tell the use that something went right. The preferred way to show success is to show, not tell (e.g. by navigating to show the result of the user action and letting users continue working on it or elsewhere).
 
 
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
 <div class="ms-MessageBar ms-MessageBar--success">
   <div class="ms-MessageBar-content">
@@ -75,7 +76,7 @@ Use sparingly when there's an exceptional need to tell the use that something we
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;div class&#x3D;&quot;ms-MessageBar &quot;&gt;
   &lt;div class&#x3D;&quot;ms-MessageBar-content&quot;&gt;

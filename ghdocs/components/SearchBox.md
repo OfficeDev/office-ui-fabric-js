@@ -20,6 +20,7 @@ A special form field that allows for the input of search text.
 
 ### Command bar
 
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
 <div class="ms-SearchBox  ms-SearchBox--commandBar  ">
   <input class="ms-SearchBox-field" type="text" value="">
@@ -27,15 +28,18 @@ A special form field that allows for the input of search text.
     <i class="ms-SearchBox-icon ms-Icon ms-Icon--Search"></i>
     <span class="ms-SearchBox-text">Search</span>
   </label>
-  <div class="ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel  ">
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel  ">
   <button class="ms-CommandButton-button"  >
       <span class="ms-CommandButton-icon "><i class="ms-Icon ms-Icon--Clear"></i></span><span class="ms-CommandButton-label"></span>  </button>
 </div>
-  <div class="ms-CommandButton ms-SearchBox-exit ms-CommandButton--noLabel  ">
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-CommandButton ms-SearchBox-exit ms-CommandButton--noLabel  ">
   <button class="ms-CommandButton-button"  >
       <span class="ms-CommandButton-icon "><i class="ms-Icon ms-Icon--ChromeBack"></i></span><span class="ms-CommandButton-label"></span>  </button>
 </div>
-  <div class="ms-CommandButton ms-SearchBox-filter ms-CommandButton--noLabel  ">
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-CommandButton ms-SearchBox-filter ms-CommandButton--noLabel  ">
   <button class="ms-CommandButton-button"  >
       <span class="ms-CommandButton-icon "><i class="ms-Icon ms-Icon--Filter"></i></span><span class="ms-CommandButton-label"></span>  </button>
 </div>
@@ -57,7 +61,7 @@ A special form field that allows for the input of search text.
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;div class&#x3D;&quot;ms-SearchBox  &quot;&gt;
   &lt;input class&#x3D;&quot;ms-SearchBox-field&quot; type&#x3D;&quot;text&quot; value&#x3D;&quot;&quot;&gt;
@@ -65,7 +69,7 @@ A special form field that allows for the input of search text.
     &lt;i class&#x3D;&quot;ms-SearchBox-icon ms-Icon ms-Icon--Search&quot;&gt;&lt;/i&gt;
     &lt;span class&#x3D;&quot;ms-SearchBox-text&quot;&gt;Search&lt;/span&gt;
   &lt;/label&gt;
-  &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+  
 &lt;div class&#x3D;&quot;ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel  &quot;&gt;
   &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
       &lt;span class&#x3D;&quot;ms-CommandButton-icon &quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--Clear&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;&lt;/span&gt;  &lt;/button&gt;

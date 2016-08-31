@@ -42,7 +42,7 @@ A persona can have one of seven presences: available, away, blocked, busy, do no
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;div class&#x3D;&quot;ms-Persona
 &quot;&gt;
