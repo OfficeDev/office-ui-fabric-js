@@ -4,19 +4,31 @@ A special form field that allows for the input of search text.
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> SearchBox props=SearchBoxExampleProps.default}}
---->
+---->
+---->
+<!---i
+![SearchBox example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/SearchBox-default.png)
+i--->
 
 ### Collapsed
-<!---
+<!----
 {{> SearchBox props=SearchBoxExampleProps.collapsed}}
---->
+---->
+---->
+<!---i
+![SearchBox example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/SearchBox-collapsed.png)
+i--->
+
 
 ### Command bar
-<!---
+<!----
 {{> SearchBox props=SearchBoxExampleProps.commandBar}}
---->
+---->
+<!---i
+![SearchBox example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/SearchBox-collapsed.png)
+i--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:

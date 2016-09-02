@@ -1,23 +1,32 @@
 # Command Bar
-Commanding surface for panels, pages, and applications. Unlike the NavBar, this component should not navigate to other pages.
+Commanding surface for panels, pages, and applications. When planning to use the surface for navigation only, consider the NavBar variant.
 
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> CommandBar props=CommandBarExampleModel.props}}
---->
+---->
+<!---i
+![CommandBar example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandBar-default.png)
+i--->
 
 ### Dropdowns
-<!---
+<!----
 {{> CommandBar props=CommandBarExampleModel.propsDropdown}}
---->
+---->
+<!---i
+![CommandBar example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandBar-dropdowns.png)
+i--->
 
 ### NavBar
 Provides a means of navigating to different areas within an application. On small screens, the navigation items are placed inside a hamburger menu.
-<!---
+<!----
 {{> CommandBar props=CommandBarExampleModel.propsNavBar}}
---->
+---->
+<!---i
+![CommandBar example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/CommandBar-navbar.png)
+i--->
 
 ## States
 State | Applied to | Result

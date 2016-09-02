@@ -1,8 +1,6 @@
 var express = require('express');
 var path = require('path');
 var expressServer = express();
-var gutil = require('gulp-util');
-var connect = require('gulp-connect');
 /**
  * Class for managing the Expres server
  * @property {number} portNum The port number to use for serving up the local project usually 2020

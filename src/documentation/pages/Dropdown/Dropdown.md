@@ -4,14 +4,20 @@ Allows for the selection of one option from a list.
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> Dropdown props=DropdownExampleModel.props}}
---->
+---->
+<!---i
+![Dropdown example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Dropdown-default.png)
+i--->
 
 ### Disabled
-<!---
+<!----
 {{> Dropdown props=DropdownExampleModel.propsDisabled}}
---->
+---->
+<!---i
+![Dropdown example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Dropdown-disabled.png)
+i--->
 
 ## States
 State | Applied to | Result

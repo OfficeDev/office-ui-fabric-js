@@ -4,31 +4,46 @@ Allows for the input of text. Can be a single line or multiple lines. Typically 
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> TextField props=TextFieldExampleModel}}
---->
+---->
+<!---i
+![TextField example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/TextField-default.png)
+i--->
 
 ### Multiline
-<!---
+<!----
 {{> TextField props=TextFieldMultilineExampleModel}}
---->
+---->
+<!---i
+![TextField example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/TextField-multiline.png)
+i--->
 
 ### Placeholder text
-<!---
+<!----
 {{> TextFieldPlaceholderExample props=TextFieldPlaceholderExampleModel}}
---->
+---->
+<!---i
+![TextField example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/TextField-placeholdertext.png)
+i--->
 
 ### Underlined
-<!---
+<!----
 {{> TextField props=TextFieldUnderlinedExampleModel}}
---->
+---->
+<!---i
+![TextField example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/TextField-underlined.png)
+i--->
 
 ## States
 
 ### Disabled
-<!---
+<!----
 {{> TextField props=TextFieldDisabledExampleModel}}
---->
+---->
+<!---i
+![TextField example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/TextField-disabled.png)
+i--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:

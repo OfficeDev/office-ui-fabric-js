@@ -151,41 +151,61 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
         }
 
        hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.md', '.html');
-       
-        // if (hasFileChanged) {
-           
-           // Get markdown File
-           markdown = srcFolderName + '/' + pageName + '.md';
-           componentPipe = gulp.src(markdown)
-           .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-           .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+        markdown = srcFolderName + '/' + pageName + '.md';
+
+        componentPipe = gulp.src(markdown)
+            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Building documentation page " + pageName
             })))
-           .pipe(Plugins.marked())
-           .on('error', function(err) {
-              console.log(err);  
+            .pipe(Plugins.replace(/<!---i(.|\s)*?i--->/img, ""))
+            .pipe(Plugins.marked())
+            .on('error', function(err) {
+                console.log(err);  
             })
-           .pipe(Plugins.fileinclude())
-           .pipe(Plugins.replace("<!---", ""))
-           .pipe(Plugins.replace("--->", ""))
-           .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
-           .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
-           .pipe(Plugins.prettify({indent_char: ' ', indent_size: 2}))
-           .pipe(Plugins.rename("index.html"))
-           .pipe(Plugins.wrap(
+            .pipe(Plugins.fileinclude())
+            .pipe(Plugins.replace("<!----", ""))
+            .pipe(Plugins.replace("---->", ""))
+            .pipe(Plugins.replace("<!---", ""))
+            .pipe(Plugins.replace("--->", ""))
+            .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+            .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
+            .pipe(Plugins.prettify({indent_char: ' ', indent_size: 2}))
+            .pipe(Plugins.rename("index.html"))
+            .pipe(Plugins.wrap(
                 {
                     src:  Config.paths.srcTemplate + '/componentDemo.html'  
                 },
                 {
                     pageName: pageName
                 }
-           ))
-           // Replace Comments to hide code
-           .pipe(gulp.dest(Config.paths.distDocsComponents + '/' + pageName));
-           
-           // Add stream
-           streams.push(componentPipe);
-      // }
+            ))
+            // Replace Comments to hide code
+            .pipe(gulp.dest(Config.paths.distDocsComponents + '/' + pageName));
+
+
+        markdownPipe = gulp.src(markdown)
+            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                    title: "Building documentation page " + pageName
+                })))
+            .on('error', function(err) {
+                console.log(err);  
+                })
+            .pipe(Plugins.fileinclude())
+            .pipe(Plugins.replace(/<!----(.|\s)*?---->/img, ""))
+            .pipe(Plugins.replace("<!---i", ""))
+            .pipe(Plugins.replace("i--->", ""))
+            .pipe(Plugins.replace("<!---", ""))
+            .pipe(Plugins.replace("--->", ""))
+            .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+            .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
+            // Replace Comments to hide code
+            .pipe(gulp.dest('./ghdocs/components/'));
+
+        // Add stream
+        streams.push(markdownPipe);
+        streams.push(componentPipe);
    }
    
    if (streams.length > 0) {

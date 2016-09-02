@@ -1,12 +1,15 @@
 # FacePile
-Displays several people with the option to add additional people or view the details of a person.
+Displays several people with the option to add additional people or view the details of a person. Although not baked into the component, adding new people to a FacePile (the listing of faces horizontally) should occur through a panel using the FacePile PeoplePicker variant.
 
 ## Variants
 
 ### Default
-<!---
+<!----
 {{> FacePileElem props=FacePileModels.basic }}
---->
+---->
+<!---i
+![FacePile example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/FacePile-default.png)
+i--->
 
 ## States
 State | Applied to | Result
