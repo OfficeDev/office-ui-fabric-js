@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 
+var fs = require('fs');
 var Utilites = require('./modules/Utilities');
 var Config = require('./modules/Config');
 var BuildConfig = require('./modules/BuildConfig');
@@ -7,6 +8,9 @@ var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var folderList = Utilites.getFolders(Config.paths.srcSamples);
+
+
+var MDL2IconData = require('office-ui-fabric-core/src/data/icons.json');
 
 
 //
@@ -62,8 +66,27 @@ gulp.task('Samples-buildStyles',  function () {
     });
 });
 
+//
+// Build MDL2Samples Page from icon.json data
+// ----------------------------------------------------------------------------
+
+gulp.task('Samples-buildHandlebars', ['Samples-copyAssets'], function() {
+    var templateData = [],
+    options = {
+        ignorePartials: true,
+        partials : {},
+        batch : [Config.paths.srcPartials],
+        helpers : {}
+    };
+    templateData['icons'] = MDL2IconData;
+
+    return gulp.src(Config.paths.srcSamples + '/MDL2Icons/index.html')
+                .pipe(Plugins.handlebars(templateData, options))
+                .pipe(Plugins.rename('index.html'))
+                .pipe(gulp.dest(Config.paths.distDocsSamples + '/MDL2Icons'));
+});
 
 // Roll up for samples
-gulp.task('Samples', ['Samples-copyAssets', 'Samples-buildStyles']);
+gulp.task('Samples', ['Samples-copyAssets', 'Samples-buildStyles', 'Samples-buildHandlebars']);
 BuildConfig.buildTasks.push('Samples');
 BuildConfig.nukeTasks.push('Samples-nuke');

@@ -45,6 +45,7 @@ var Config = function() {
   this.paths.srcDocsPages = this.paths.srcDocs + '/pages';
   // this.paths.srcDocsComponents = this.paths.srcDocs + '/components';
   this.paths.srcTemplate = this.paths.srcDocs + '/templates';
+  this.paths.srcPartials = this.paths.srcTemplate + '/partials';
   this.paths.srcDocumentationCSS = this.paths.srcDocs;
   
 	this.port =  process.env.PORT || 2020;
