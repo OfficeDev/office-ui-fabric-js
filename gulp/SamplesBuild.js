@@ -66,6 +66,9 @@ gulp.task('Samples-buildStyles',  function () {
     });
 });
 
+//
+// Build MDL2Samples Page from icon.json data
+// ----------------------------------------------------------------------------
 
 gulp.task('Samples-buildHandlebars', ['Samples-copyAssets'], function() {
     var templateData = [],
