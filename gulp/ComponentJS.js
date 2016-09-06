@@ -45,7 +45,8 @@ gulp.task('ComponentJS-typescript', ['Documentation-template'], function() {
 
       // place .d.ts outqput in both the Samples folder and the Components folder
       tscResult.dts.pipe(Plugins.concat("fabric.d.ts"))
-                   .pipe(Plugins.header(Banners.getJSCopyRight()))
+                   .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+                   .pipe(Plugins.header(Banners.getJSCopyRight(), Banners.getBannerData()))
                    .pipe(gulp.dest(Config.paths.distJS))
                    .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                      title: "Output Fabric Component .d.ts built from TypeScript"
@@ -53,7 +54,8 @@ gulp.task('ComponentJS-typescript', ['Documentation-template'], function() {
 
       // place .js output in both the Samples folder and the Components folder
       tscResult.js.pipe(Plugins.concat("fabric.js"))
-                    .pipe(Plugins.header(Banners.getJSCopyRight()))
+                    .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+                    .pipe(Plugins.header(Banners.getJSCopyRight(), Banners.getBannerData()))
                     .pipe(gulp.dest(Config.paths.distJS))
                     .pipe(Plugins.uglify())
                     .pipe(Plugins.rename('fabric.min.js'))
