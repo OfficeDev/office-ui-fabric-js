@@ -97,7 +97,7 @@ State | Applied to | Result
 4. Verify that the component is working the same as in the sample above.
 
 ## Dependencies
-This component has no dependencies on other components. It does, however, require [pickadate.js](http://amsul.ca/pickadate.js/). 
+This component has no dependencies on other components. It does, however, require [pickadate.js](http://amsul.ca/pickadate.js/). You can find a copy of this within the `lib` folder once you have downloaded Fabric.
 
 ## Accessibility
 More details will be added here.
