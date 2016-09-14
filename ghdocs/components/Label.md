@@ -39,7 +39,7 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 &lt;label class&#x3D;&quot;ms-Label  &quot;&gt;Name&lt;/label&gt;
 
     </code>

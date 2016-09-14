@@ -40,7 +40,7 @@ Displays the progress of an operation when the percentage complete can not be de
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;div class&#x3D;&quot;ms-Spinner &quot;&gt;
 &lt;/div&gt;

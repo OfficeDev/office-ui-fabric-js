@@ -37,7 +37,7 @@ Rows can be selected.
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;table class&#x3D;&quot;ms-Table &quot;&gt;
   &lt;thead&gt;

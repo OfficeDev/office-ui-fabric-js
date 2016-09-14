@@ -34,7 +34,7 @@ Allows for turning on or off a setting. This is best suited for simple, singular
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;div class&#x3D;&quot;ms-Toggle  &quot;&gt;
   &lt;span class&#x3D;&quot;ms-Toggle-description&quot;&gt;Let apps use my location&lt;/span&gt;

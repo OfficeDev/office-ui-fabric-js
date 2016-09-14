@@ -47,19 +47,6 @@ Use sparingly when there's an exceptional need to tell the use that something we
 
 
 
-<div class="ms-MessageBar ms-MessageBar--success">
-  <div class="ms-MessageBar-content">
-    <div class="ms-MessageBar-icon">
-      <i class="ms-Icon ms-Icon--Completed"></i>
-    </div>
-    <div class="ms-MessageBar-text">
-      Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
-      <a href="" class="ms-Link">Hyperlink string</a>
-    </div>
-  </div>
-</div>
-
-
 ![MessageBar example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/MessageBar-success.png)
 
 
@@ -75,7 +62,7 @@ Use sparingly when there's an exceptional need to tell the use that something we
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;div class&#x3D;&quot;ms-MessageBar &quot;&gt;
   &lt;div class&#x3D;&quot;ms-MessageBar-content&quot;&gt;

@@ -33,9 +33,9 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
-&lt;!-- Future implementation to be discussed --&gt;
+
 &lt;div class&#x3D;&quot;ms-Dropdown  &quot; tabindex&#x3D;&quot;0&quot;&gt;
   &lt;label class&#x3D;&quot;ms-Label&quot;&gt;Dropdown label&lt;/label&gt;
   &lt;i class&#x3D;&quot;ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown&quot;&gt;&lt;/i&gt;

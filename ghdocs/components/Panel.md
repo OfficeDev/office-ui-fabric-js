@@ -53,12 +53,12 @@ State | Applied to | Result
 <pre>
     <code>
  &lt;div class&#x3D;&quot;ms-PanelDefaultExample ms-PanelExample&quot;&gt;
-    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    
     &lt;button class&#x3D;&quot;ms-Button 
       
       &quot;&gt;
       &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Open Panel&lt;/span&gt;
-    &lt;/button&gt;    &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+    &lt;/button&gt;    
     &lt;div class&#x3D;&quot;ms-Panel &quot;&gt;
         &lt;button class&#x3D;&quot;ms-Panel-closeButton ms-PanelAction-close&quot;&gt;
             &lt;i class&#x3D;&quot;ms-Panel-closeIcon ms-Icon ms-Icon--Cancel&quot;&gt;&lt;/i&gt;

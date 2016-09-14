@@ -40,7 +40,7 @@ A layout component that allows a user to switch between different sets of conten
 
 <pre>
     <code>
- &lt;!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --&gt;
+ 
 
 &lt;div class&#x3D;&quot;ms-Pivot &quot;&gt;
   &lt;ul class&#x3D;&quot;ms-Pivot-links&quot;&gt;
