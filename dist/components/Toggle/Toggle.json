@@ -1,0 +1,6 @@
+{
+  "name": "Toggle",
+  "dependencies": [
+    "Label"
+  ]
+}

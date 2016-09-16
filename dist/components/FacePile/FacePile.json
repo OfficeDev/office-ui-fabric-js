@@ -1,0 +1,13 @@
+{
+  "name": "FacePile",
+  "dependencies": [
+    "Overlay",
+    "Link",
+    "Panel",
+    "PeoplePicker",
+    "Persona",
+    "PersonaCard",
+    "Spinner",
+    "ContextualHost"
+  ]
+}

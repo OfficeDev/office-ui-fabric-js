@@ -1,0 +1,6 @@
+{
+  "name": "MessageBar",
+  "dependencies": [
+    "Link"
+  ]
+}
