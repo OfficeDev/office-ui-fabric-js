@@ -9,7 +9,7 @@ This framework uses styles from the [Office UI Fabric Core](https://github.com/O
 - [Get started](#get-started)
 - [Learn more](#learn-more)
 - [Trello board](#trello-board)
-- [Contribute to Fabric](#contribute-to-fabric)
+- [Contribute to Fabric](#contribute-to-fabric-js)
 - [Licenses](#licenses)
 - [Changelog](#changelog)
 
