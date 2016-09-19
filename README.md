@@ -8,6 +8,7 @@ This framework uses styles from the [Office UI Fabric Core](https://github.com/O
 - [What's included](#whats-included)
 - [Get started](#get-started)
 - [Learn more](#learn-more)
+- [Trello board](#trello-board)
 - [Contribute to Fabric](#contribute-to-fabric)
 - [Licenses](#licenses)
 - [Changelog](#changelog)
@@ -60,6 +61,10 @@ New to Fabric? Although [the project's site](http://dev.office.com/fabric) conta
 To see a full component list, you can check out the [component list](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/COMPONENTSLIST.md) here or [build the project locally to use the fully interactive docs site](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/BUILDING.md#gulp-watch-and-the-local-docs-site).
 
 When you're ready to create an Office Add-in with Fabric, take a look at the [Use Office UI Fabric with Office Add-ins on MSDN article](https://msdn.microsoft.com/EN-US/library/office/mt450443.aspx).
+
+## Trello board
+
+Fabric JS contains a variety of components that are a part of the Office / Office 365 design language. If you're not seeing a component here that you'd like, first check out the [Office UI Fabric JS Requests board](https://trello.com/b/wq7oIK87/office-ui-fabric-js-requests) and upvote it there (if it exists), or file an [issue on Fabric JS's issue tracker](https://github.com/OfficeDev/office-ui-fabric-js/issues) to kick off a new request.
 
 ## Contribute to Fabric JS
 
