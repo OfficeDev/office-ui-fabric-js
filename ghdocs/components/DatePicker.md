@@ -24,8 +24,7 @@ State | Applied to | Result
         <link rel="stylesheet" href="fabric.components.min.css">
         <script src="jquery-2.2.1.min.js"></script>
         <script src="fabric.min.js"></script>
-        <script src="picker.js"></script>
-        <script src="picker.date.js"></script>
+        <script src="PickaDate.js"></script>
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:

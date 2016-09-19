@@ -30,7 +30,7 @@ Real-world examples include copying files to a storage location, saving edits to
 i--->
 
 ## States
-Active<br/>
+Active
 Error
 
 ## Using this component
