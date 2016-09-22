@@ -1,6 +1,8 @@
 # Building Fabric, gulp tasks, bundling, and the starter template
 
-Office UI Fabric uses [gulp](http://gulpjs.com/) to compile its styling, build and serve demos, and generate or watch other parts of the framework for changes. Use it to customize Fabric for your project, or to test changes you make to specific aspects of the toolkit.
+Office UI Fabric JS uses [gulp](http://gulpjs.com/) to compile its styling, build and serve demos, and generate or watch other parts of the framework for changes. Use it to customize Fabric JS for your project, or to test changes you make to specific aspects of the components.
+
+It's also valuable for seeing the [locally hosted docs site](#gulp-watch-and-the-local-docs-site).
 
 ## Contents
 
@@ -13,7 +15,7 @@ Office UI Fabric uses [gulp](http://gulpjs.com/) to compile its styling, build a
 Before you get started, make sure you have [node.js](https://nodejs.org/), [gulp](http://gulpjs.com/), and [git](https://git-scm.com/) installed. To build Fabric:
 
 1. Clone the repo.
-2. Navigate to the folder that contains the gulpfile.js file (Fabric's root).
+2. Navigate to the folder that contains the gulpfile.js file (Fabric JS's root).
 3. `npm install`
 4. `gulp`
 
@@ -21,15 +23,17 @@ The built files will be in the `/dist/` folder.
 
 ## Gulp tasks
 
-You can test and work with Fabric locally using the tasks below.
+You can test and work with Fabric JS locally using the tasks below.
 
 ### gulp
 
-Builds everything incrementally. This will run slowly the first time and very quickly on subsequent runs. This task will build all parts of Fabric and move all changed files into `/dist/`. Every time you make changes, re-run this task.
+Builds everything incrementally. This will run slowly the first time and very quickly on subsequent runs. This task will build all parts of Fabric JS and move all changed files into `/dist/`. Every time you make changes, re-run this task.
 
-### gulp watch
+### gulp watch and the local docs site
 
-Builds and watches everything. After running this once, your builds will be a lot faster. Now if you make a change anything anywhere in Fabric, only that area/section/file will get built/changed/moved.
+Builds and watches everything. After running this once, your builds will be a lot faster. Now if you make a change anything anywhere in Fabric JS, only that area/section/file will get built/changed/moved.
+
+Once Fabric JS is built, you can view the localhost docs site by pointing your favorite browser at http://localhost:2020. This docs site allows you to view a list of the components, customize them (while `watch` runs), and see their responsive behavior.
 
 ### gulp watch-debug
 
@@ -37,7 +41,7 @@ This task is similar to `gulp watch` except you can now get a readout of what fi
 
 ### gulp watch-sass
 
-Builds and watches everything but builds only Sass versions of our core library files.
+Builds and watches everything but builds only Sass versions of our library files.
 
 ### gulp watch-sass-debug
 
@@ -45,7 +49,7 @@ Builds and watches everything but uses the Sass versions of the files and gives 
 
 ### gulp Bundles
 
-Builds all bundles specified in `gulp/modules/Config.js`. View more details in the [Bundling](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUNDLING.md)
+Builds all bundles specified in `gulp/modules/Config.js`. View more details in the [Bundling](https://github.com/OfficeDev/Office-UI-Fabric-js/blob/master/ghdocs/BUNDLING.md)
 
 
 ## Starter template

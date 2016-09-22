@@ -2,10 +2,10 @@
 
 Office UI Fabric JS is an evolving snapshot of the Office 365 Design Language's components, provided by the OneDrive and SharePoint Design Studio.
 
-Currently, this set of components is in a **paused** state by the Fabric team while we work on the other control sets, but is still open to contributions that help improve the stability or usability of the components.
+Currently, the Fabric team is focusing on other control sets, but we are still open to contributions that help improve the stability or usability of the components.
 
 This project has a few key tenets that are worth noting:
- - No use of jQuery, please!
+ - No use of jQuery, please! (only the DatePicker uses jQuery)
  - TypeScript is used for the components' included functionality
 
 ### Pull requests
