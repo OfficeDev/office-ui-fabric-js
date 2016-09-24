@@ -3,6 +3,8 @@ Displays the progress of an operation when the percentage complete can not be de
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 
 
@@ -28,7 +30,7 @@ Displays the progress of an operation when the percentage complete can not be de
 
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+1.) Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -36,7 +38,7 @@ Displays the progress of an operation when the percentage complete can not be de
         <script src="fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from the sample above into your page. For example:
+2.) Copy the HTML from the sample above into your page. For example:
 
 <pre>
     <code>
@@ -48,7 +50,7 @@ Displays the progress of an operation when the percentage complete can not be de
     </code>
 </pre>
 
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Spinner components on the page:
+3.) Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Spinner components on the page:
 
 <pre>
     <code>
@@ -67,7 +69,7 @@ Displays the progress of an operation when the percentage complete can not be de
     </code>
 </pre>
 
-4. Verify that the component is working the same as in the sample above.
+4.) Verify that the component is working the same as in the sample above.
 
 ## Dependencies
 This component has no dependency on other components.

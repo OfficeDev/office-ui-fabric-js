@@ -3,6 +3,8 @@ Suitable for presenting a summary of an item with associated actions. Most often
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 
 
@@ -39,7 +41,7 @@ Use `is-unread` to indicate that the item has not been read.
 
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+1.) Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -47,7 +49,7 @@ Use `is-unread` to indicate that the item has not been read.
         <script src="fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page. For example:
+2.) Copy the HTML from one of the samples above into your page. For example:
 
 <pre>
     <code>
@@ -74,7 +76,7 @@ Use `is-unread` to indicate that the item has not been read.
     </code>
 </pre>
 
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ListItem components on the page:
+3.) Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ListItem components on the page:
 
 <pre>
     <code>
@@ -87,8 +89,8 @@ Use `is-unread` to indicate that the item has not been read.
     </code>
 </pre>
 
-4. Verify that the component is working the same as in the sample above.
-5. Replace the sample HTML content (such as the content of `.ms-ListItem-primaryText`) with your content.
+4.) Verify that the component is working the same as in the sample above.
+5.) Replace the sample HTML content (such as the content of `.ms-ListItem-primaryText`) with your content.
 
 ## Dependencies
 This component has no dependencies on other components, although it is most often used within a List component.

@@ -3,6 +3,8 @@ Allows selection from one or more options.
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 Used to indicate a single choice from multiple options.
 
@@ -13,7 +15,7 @@ Used to indicate a single choice from multiple options.
 
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+1.) Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head> 
         <link rel="stylesheet" href="fabric.min.css">
@@ -21,7 +23,7 @@ Used to indicate a single choice from multiple options.
         <script src="fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from the sample above into your page. For example:
+2.) Copy the HTML from the sample above into your page. For example:
 
 <pre>
     <code>
@@ -89,7 +91,7 @@ Used to indicate a single choice from multiple options.
     </code>
 </pre>
 
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ChoiceFieldGroup components on the page:
+3.) Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ChoiceFieldGroup components on the page:
 
 <pre>
     <code>
@@ -102,7 +104,7 @@ Used to indicate a single choice from multiple options.
     </code>
 </pre>
 
-4. Replace the sample HTML content (such as the `.ms-Label` elements) with your content.
+4.) Replace the sample HTML content (such as the `.ms-Label` elements) with your content.
 
 
 ## Dependencies

@@ -3,6 +3,8 @@ Represents a person, complete with a profile image and additional details. Where
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Circle (default)
 Six sizes are available: tiny, extraSmall, small, default, large, and extraLarge
 
@@ -31,14 +33,14 @@ A persona can have one of seven presences: available, away, blocked, busy, do no
 
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS on your page:
+1.) Confirm that you have references to Fabric's CSS on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page. For example:
+2.) Copy the HTML from one of the samples above into your page. For example:
 
 <pre>
     <code>
@@ -61,7 +63,7 @@ A persona can have one of seven presences: available, away, blocked, busy, do no
     </code>
 </pre>
 
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Persona components on the page:
+3.) Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Persona components on the page:
 
 <pre>
     <code>
@@ -75,7 +77,7 @@ A persona can have one of seven presences: available, away, blocked, busy, do no
     </code>
 </pre>
 
-4. Replace the sample HTML content (such as the name within `.ms-Persona-primaryText`) with your content.
+4.) Replace the sample HTML content (such as the name within `.ms-Persona-primaryText`) with your content.
 
 ## Dependencies
 This component has no dependencies.

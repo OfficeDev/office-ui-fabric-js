@@ -3,6 +3,8 @@ Allows for the selection of a date into a text field.
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 
 
@@ -17,7 +19,7 @@ State | Applied to | Result
 `.is-pickingMonths` | `.ms-DatePicker` | Displays a set of months to choose from.
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery and PickaDate.js library:
+1.) Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery and PickaDate.js library:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -27,7 +29,7 @@ State | Applied to | Result
         <script src="PickaDate.js"></script>
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page. For example:
+2.) Copy the HTML from one of the samples above into your page. For example:
 
 <pre>
     <code>
@@ -80,7 +82,7 @@ State | Applied to | Result
     </code>
 </pre>
 
-3. Add the following `<script>` tag to your page, below the references to PickaDate and Fabric's JS, to instantiate all DatePicker components on the page:
+3.) Add the following `<script>` tag to your page, below the references to PickaDate and Fabric's JS, to instantiate all DatePicker components on the page:
 
 <pre>
     <code>
@@ -94,7 +96,7 @@ State | Applied to | Result
     </code>
 </pre>
 
-4. Verify that the component is working the same as in the sample above.
+4.) Verify that the component is working the same as in the sample above.
 
 ## Dependencies
 This component has no dependencies on other components. It does, however, require [pickadate.js 3.5.3](https://github.com/amsul/pickadate.js/releases/tag/3.5.3). Once you have downloaded the ZIP, you'll find `picker.js` and `picker.date.js` in the `lib` folder.

@@ -3,6 +3,8 @@ Displays multiple Persona components in groups with headers in order to show the
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 
 
@@ -11,14 +13,14 @@ Displays multiple Persona components in groups with headers in order to show the
 
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS on your page:
+1.) Confirm that you have references to Fabric's CSS on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
     </head>
     ```
-2. Copy the HTML from the samples above into your page. For example:
+2.) Copy the HTML from the samples above into your page. For example:
 
 <pre>
     <code>
@@ -184,7 +186,7 @@ Displays multiple Persona components in groups with headers in order to show the
     </code>
 </pre>
 
-3. Replace the Persona components with your own.
+3.) Replace the Persona components with your own.
 
 ## Dependencies
 This component has a dependency on the Persona component.

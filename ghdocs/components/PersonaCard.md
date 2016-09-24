@@ -3,6 +3,8 @@ The visualization of details of an individual including Skype contact details, e
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 
 
@@ -10,7 +12,7 @@ The visualization of details of an individual including Skype contact details, e
 
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+1.) Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -18,7 +20,7 @@ The visualization of details of an individual including Skype contact details, e
         <script src="fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page. For example:
+2.) Copy the HTML from one of the samples above into your page. For example:
 
 <pre>
     <code>
@@ -244,7 +246,7 @@ The visualization of details of an individual including Skype contact details, e
     </code>
 </pre>
 
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all PersonaCard components on the page:
+3.) Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all PersonaCard components on the page:
 
 <pre>
     <code>
@@ -257,8 +259,8 @@ The visualization of details of an individual including Skype contact details, e
     </code>
 </pre>
 
-4. Verify that the component is working the same as in the sample above.
-5. Replace the sample HTML content with your content.
+4.) Verify that the component is working the same as in the sample above.
+5.) Replace the sample HTML content with your content.
 
 ## Dependencies
 This component uses a Persona component to present the person, an OrgChart to present the persona's position within the organization, and a Link for navigation.

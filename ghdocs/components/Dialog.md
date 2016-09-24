@@ -3,6 +3,8 @@ Displays content that temporarily blocks interactions with the application. It i
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 Includes a content area and two buttons.
 
@@ -48,7 +50,7 @@ Includes a close button at the top right, as an additional way to dismiss the di
 This component has only the default state.
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+1.) Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -56,7 +58,7 @@ This component has only the default state.
         <script src="fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page. For example:
+2.) Copy the HTML from one of the samples above into your page. For example:
 
 <pre>
     <code>
@@ -113,7 +115,7 @@ This component has only the default state.
     </code>
 </pre>
 
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Dialog components on the page:
+3.) Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Dialog components on the page:
 
 <pre>
     <code>
@@ -142,8 +144,8 @@ This component has only the default state.
         </code>
     </pre>
     
-4. Verify that the component is working the same as in the sample above.
-5. Replace the sample HTML content (such as the content of `.ms-Dialog-content`) with your content.
+4.) Verify that the component is working the same as in the sample above.
+5.) Replace the sample HTML content (such as the content of `.ms-Dialog-content`) with your content.
 
 ## Dependencies
 This component has no dependencies on other components.

@@ -3,6 +3,8 @@ Presents tabular data with multiple rows and columns. The table's width is flexi
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 The column widths are determined by the content.
 
@@ -25,7 +27,7 @@ Rows can be selected.
 
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+1.) Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -33,7 +35,7 @@ Rows can be selected.
         <script src="fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from the sample above into your page. For example:
+2.) Copy the HTML from the sample above into your page. For example:
 
 <pre>
     <code>
@@ -97,7 +99,7 @@ Rows can be selected.
     </code>
 </pre>
 
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Table components on the page:
+3.) Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Table components on the page:
 
 <pre>
     <code>
@@ -111,7 +113,7 @@ Rows can be selected.
     </code>
 </pre>
 
-4. Replace the content with your own data. You can add more rows or columns.
+4.) Replace the content with your own data. You can add more rows or columns.
 
 ## Dependencies
 This component has no dependency on other components.

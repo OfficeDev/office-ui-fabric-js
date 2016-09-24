@@ -3,6 +3,8 @@ Presents a number of related items, either as a vertical list or in a grid.
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 A standard vertical list of items.
 
@@ -15,7 +17,7 @@ A standard vertical list of items.
 This component has only the default state.
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+1.) Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -23,7 +25,7 @@ This component has only the default state.
         <script src="fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from the sample above into your page. For example: 
+2.) Copy the HTML from the sample above into your page. For example: 
 
 <pre>
     <code>
@@ -187,7 +189,7 @@ This component has only the default state.
     </code>
 </pre>
 
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ListItem components on the page:
+3.) Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ListItem components on the page:
 
 <pre>
     <code>
@@ -200,7 +202,7 @@ This component has only the default state.
     </code>
 </pre>
 
-4. Replace the content with whatever you'd like to display as a list. The samples use `.ms-ListItem` components, but you can place any content within `.ms-List`.
+4.) Replace the content with whatever you'd like to display as a list. The samples use `.ms-ListItem` components, but you can place any content within `.ms-List`.
 
 ## Dependencies
 This component has no dependencies on other components, although it does often contain ListItem components.

@@ -3,36 +3,15 @@ Presents content by sliding over the rest of the application, which is covered b
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 
 
 ![Panel example](https://raw.githubusercontent.com/OfficeDev/office-ui-fabric-js/master/ghdocs/component_images/Panel.png)
 
-
-### Medium
-
-
-
-### Large
-
-
-
-### Large, fixed
-
-
-
-### Extra Large
-
-
-
-### Extra extra large
-
-
-
 ### Left aligned
 You can add the `ms-Panel--left` modifier to any panel to attach it to the left side of the screen.
-
-
 
 ## States
 State | Applied to | Result
@@ -40,7 +19,7 @@ State | Applied to | Result
 `.is-open` | `.ms-Panel` | The panel is closed by default. Apply this class to open it.
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+1.) Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -48,7 +27,7 @@ State | Applied to | Result
         <script src="fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from the sample above into your page. For example:
+2.) Copy the HTML from the sample above into your page. For example:
 
 <pre>
     <code>
@@ -73,7 +52,7 @@ State | Applied to | Result
     </code>
 </pre>
 
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Panel components on the page:
+3.) Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Panel components on the page:
 
 <pre>
     <code>
@@ -92,8 +71,8 @@ for (var i &#x3D; 0; i &lt; PanelExamples.length; i++) {
     </code>
 </pre>
 
-4. Verify that the component is working the same as in the sample above.
-5. Replace the sample HTML content (such as the content of `.ms-Panel-content`) with your content.
+4.) Verify that the component is working the same as in the sample above.
+5.) Replace the sample HTML content (such as the content of `.ms-Panel-content`) with your content.
 
 
 <script type="text/javascript">

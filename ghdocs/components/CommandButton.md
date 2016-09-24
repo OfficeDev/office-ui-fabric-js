@@ -3,6 +3,8 @@ Allows users to take action, such as submitting a form or dismissing a message. 
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 
 
@@ -69,7 +71,7 @@ State | Applied to | Result
 `.is-disabled` | `.ms-Button` | When using an `<a>` element, apply this class to disable the button. When using a `<button>`, the `disabled` attribute can be used instead.
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+1.) Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -77,7 +79,7 @@ State | Applied to | Result
         <script src="fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page. For example:
+2.) Copy the HTML from one of the samples above into your page. For example:
 
 <pre>
     <code>
@@ -89,8 +91,8 @@ State | Applied to | Result
     </code>
 </pre>
 
-3. Replace the sample HTML content (such as the content of `.ms-CommandButton-label`) with your content.
-4. If you are using any of CommandButton's variants that use a dropdown, the below JavaScript is required.
+3.) Replace the sample HTML content (such as the content of `.ms-CommandButton-label`) with your content.
+4.) If you are using any of CommandButton's variants that use a dropdown, the below JavaScript is required.
 
 <pre>
     <code>

@@ -3,6 +3,8 @@ Allows for turning on or off a setting. This is best suited for simple, singular
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Label above (default)
 
 
@@ -22,7 +24,7 @@ Allows for turning on or off a setting. This is best suited for simple, singular
 
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+1.) Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -30,7 +32,7 @@ Allows for turning on or off a setting. This is best suited for simple, singular
         <script src="fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page. For example:
+2.) Copy the HTML from one of the samples above into your page. For example:
 
 <pre>
     <code>
@@ -48,7 +50,7 @@ Allows for turning on or off a setting. This is best suited for simple, singular
     </code>
 </pre>
 
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Toggle components on the page:
+3.) Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Toggle components on the page:
 
 <pre>
     <code>
@@ -61,7 +63,7 @@ Allows for turning on or off a setting. This is best suited for simple, singular
     </code>
 </pre>
 
-4. Update the `.ms-Label` to contain your label text.
+4.) Update the `.ms-Label` to contain your label text.
 
 ## Dependencies
 This component has a dependency on the Label component.

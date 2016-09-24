@@ -3,6 +3,8 @@ Presents a message to the user, with an optional call to action. The message is 
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 
 
@@ -13,7 +15,7 @@ Presents a message to the user, with an optional call to action. The message is 
 This component has only the default state.
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+1.) Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -21,7 +23,7 @@ This component has only the default state.
         <script src="fabric.min.js"></script>
     </head>
     ```
-2. Copy the HTML from the sample above into your page. For example:
+2.) Copy the HTML from the sample above into your page. For example:
 
 <pre>
     <code>
@@ -56,7 +58,7 @@ This component has only the default state.
     </code>
 </pre>
 
-3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a MessageBanner component on the page:
+3.) Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a MessageBanner component on the page:
 
 <pre>
     <code>
@@ -82,8 +84,8 @@ This component has only the default state.
     </code>
 </pre>
 
-4. Verify that the component is working the same as in the sample above.
-5. Replace the sample HTML content (such as the text in `.ms-MessageBanner-action`) with your content.
+4.) Verify that the component is working the same as in the sample above.
+5.) Replace the sample HTML content (such as the text in `.ms-MessageBanner-action`) with your content.
 
 ## Dependencies
 This component has a dependency on Button.

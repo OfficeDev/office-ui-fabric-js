@@ -2,6 +2,8 @@
 
 ## Variants
 
+Want to see working versions of the samples? [Check out these instructions to get the docs site running locally](https://github.com/OfficeDev/office-ui-fabric-js#clone-build-and-view-the-docs).
+
 ### Default
 Lowest level of caution. Use when you want to present timely, concise information that accelerates a workflow, or to provide key information or actions that avoid a dead end in the experience.
 
@@ -51,14 +53,14 @@ Use sparingly when there's an exceptional need to tell the use that something we
 
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS on your page:
+1.) Confirm that you have references to Fabric's CSS on your page:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
     </head>
     ```
-2. Copy the HTML from one of the samples above into your page. For example:
+2.) Copy the HTML from one of the samples above into your page. For example:
 
 <pre>
     <code>
@@ -79,8 +81,8 @@ Use sparingly when there's an exceptional need to tell the use that something we
     </code>
 </pre>
 
-3. Verify that the component is working the same as in the sample above.
-4. Replace the sample HTML content (such as the content of `.ms-MessageBar-text`) with your content.
+3.) Verify that the component is working the same as in the sample above.
+4.) Replace the sample HTML content (such as the content of `.ms-MessageBar-text`) with your content.
 
 ## Dependencies
 Link
