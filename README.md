@@ -4,9 +4,12 @@
 
 This framework uses styles from the [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core/) project. Fabric is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for you to create web experiences using the Office Design Language.
 
+**Latest version:** 1.1.0, using [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
+
 ## Contents
 - [What's included](#whats-included)
 - [Get started](#get-started)
+- [View the interactive docs](#clone-build-and-view-the-docs)
 - [Learn more](#learn-more)
 - [Trello board](#trello-board)
 - [Contribute to Fabric](#contribute-to-fabric-js)
@@ -37,20 +40,23 @@ New versions of Fabric might not be available on the CDN right away. The followi
 
 | Fabric JS Release | Available on CDN |
 |:-----------------:|:----------------:|
+|       1.1.0       |        No        |
 |       1.0.0       |        Yes       |
 
 If you want to reference previous versions, please see [this get started guide (located in the Core repo)](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md).
 
-### Clone and build locally
+### Clone, build, and view the docs
 
 Before you get started, make sure you have [node.js](https://nodejs.org/), [gulp](http://gulpjs.com/), and [git](https://git-scm.com/) installed. To build Fabric:
 
-1. Clone the repo.
+1. Clone the repo
 2. Navigate to the folder that contains the gulpfile.js file (Fabric JS's root).
 3. `npm install`
-4. `gulp`
+4. `gulp watch`
 
 The built files will be in the `/dist/` folder. You can then add these built files directly to your project.
+
+You can also navigate to http://localhost:2020 to see the local docs site where you can test out the components' responsive behavior and see the samples.
 
 For more information, check out the [documentaiton on building Fabric JS locally](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/BUILDING.md).
 
