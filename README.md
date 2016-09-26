@@ -30,7 +30,7 @@ If you'd like to get Fabric through a package manager such as Bower, npm, or NuG
 Include the following references in the `<head>` of your page:
 
 ```html
-<link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/fabric-core/3.0.0/fabric.min.css">
+<link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/fabric-core/4.0.0/fabric.min.css">
 <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
 ```
 
