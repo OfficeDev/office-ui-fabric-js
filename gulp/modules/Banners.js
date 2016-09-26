@@ -26,6 +26,17 @@ var Banners = function() {
 					' **/',
       			''].join('\n');
 	};
+	/**
+     * Retrieve Banner Template with Template Variables
+     * @returns {String} with template variables for pkg version and pkg description
+     */
+	this.getBannerTemplateHTML = function() {
+		return ['<!--',
+					'Office UI Fabric JS <%= pkg.version %>',
+					'<%= pkg.description %>',
+					'-->',
+      			''].join('\n');
+	};
     /**
      * Retrieve Copyright Comment for Javascript
      * @returns {String} containing Javascript Comment Speicific Copyright Message
