@@ -6,6 +6,8 @@ This framework uses styles from the [Office UI Fabric Core](https://github.com/O
 
 **Latest version:** 1.1.0, using [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
 
+**Latest version available on CDN:** 1.0.0, using [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
+
 ## Contents
 - [What's included](#whats-included)
 - [Get started](#get-started)
