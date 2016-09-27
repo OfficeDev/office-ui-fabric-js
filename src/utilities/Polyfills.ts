@@ -2,17 +2,17 @@
 // "use strict";
 
 interface Window {
-    CustomEvent: CustomEvent;
+    CustomEvent: Object;
 }
 
 // CustomEvent Polyfill to support IE
 (function () {
     function CustomEvent ( event, params ) {
         params = params || { bubbles: false, cancelable: false, detail: undefined };
-        let evt: CustomEvent = <any>document.createEvent("CustomEvent");
+        let evt: CustomEvent = document.createEvent("CustomEvent");
         evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
         return evt;
     };
     CustomEvent.prototype = Event.prototype;
-    window.CustomEvent = <any>CustomEvent;
+    window.CustomEvent = <Object>CustomEvent;
 })();
