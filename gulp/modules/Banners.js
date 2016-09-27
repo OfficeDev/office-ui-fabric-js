@@ -21,9 +21,20 @@ var Banners = function() {
      */
 	this.getBannerTemplate = function() {
 		return ['/**',
-					' * Office UI Fabric <%= pkg.version %>',
+					' * Office UI Fabric JS <%= pkg.version %>',
 					' * <%= pkg.description %>',
 					' **/',
+      			''].join('\n');
+	};
+	/**
+     * Retrieve Banner Template with Template Variables
+     * @returns {String} with template variables for pkg version and pkg description
+     */
+	this.getBannerTemplateHTML = function() {
+		return ['<!--',
+					'Office UI Fabric JS <%= pkg.version %>',
+					'<%= pkg.description %>',
+					'-->',
       			''].join('\n');
 	};
     /**

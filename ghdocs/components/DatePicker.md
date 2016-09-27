@@ -97,7 +97,7 @@ State | Applied to | Result
 4. Verify that the component is working the same as in the sample above.
 
 ## Dependencies
-This component has no dependencies on other components. It does, however, require [pickadate.js](http://amsul.ca/pickadate.js/). 
+This component has no dependencies on other components. It does, however, require [pickadate.js 3.5.3](https://github.com/amsul/pickadate.js/releases/tag/3.5.3). Once you have downloaded the ZIP, you'll find `picker.js` and `picker.date.js` in the `lib` folder.
 
 ## Accessibility
 More details will be added here.
