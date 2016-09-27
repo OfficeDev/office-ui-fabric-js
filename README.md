@@ -33,7 +33,7 @@ Include the following references in the `<head>` of your page:
 
 ```html
 <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/fabric-core/3.0.0/fabric.min.css">
-<link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
+<link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/fabric-js/1.0.0/fabric.components.min.css">
 ```
 
 **Note:** You may notice an additional reference to the Fabric Core - this is intentional as these styles are almost always needed for experiences where you'd like to use the components, so we recommend including it by default.
