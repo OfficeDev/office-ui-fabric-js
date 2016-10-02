@@ -89,6 +89,7 @@ gulp.task('Documentation-handlebars', function(cb) {
 gulp.task('Documentation-template', ["Documentation-handlebars"], function(cb) {
   var _template = new Template(folderList, Config.paths.distJS, Config.paths.componentsPath, function() {
     gulp.src(Config.paths.distJS + "/fabric.templates.ts")
+    .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
     .pipe(Plugins.header(Banners.getJSCopyRight()))
     .pipe(Plugins.tsc(Config.typescriptProject))
     .js.pipe(gulp.dest(Config.paths.distJS))
@@ -97,6 +98,13 @@ gulp.task('Documentation-template', ["Documentation-handlebars"], function(cb) {
     });
   }.bind(this));
   _template.init();
+});
+
+gulp.task('Documentation-templateAddHeader', ['Documentation-template'], function(){
+  gulp.src(Config.paths.distJS + "/fabric.templates.ts")
+    .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+    .pipe(Plugins.header(Banners.getJSCopyRight()))
+    .pipe(gulp.dest(Config.paths.distJS));
 });
 
 //
@@ -270,6 +278,7 @@ var DocumentationTasks = [
     'ComponentJS',
     'Documentation-copyIgnoredFiles',
     "Documentation-template",
+    "Documentation-templateAddHeader",
     "Documentation-buildStyles",
     "Documentation-convertMarkdown"
 ];

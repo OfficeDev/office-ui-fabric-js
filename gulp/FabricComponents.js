@@ -25,7 +25,11 @@ gulp.task('FabricComponents-nuke', function () {
 
 gulp.task('FabricComponents-copyAssets', function () {
     // Copy all Components files.
-    return gulp.src([Config.paths.componentsPath + '/**', '!' + Config.paths.componentsPath + '/**/*.js', '!' + Config.paths.componentsPath + '/**/*.ts'])
+    return gulp.src([Config.paths.componentsPath + '/**/*.json',
+        '!' + Config.paths.componentsPath + '/**/*.js',
+        '!' + Config.paths.componentsPath + '/**/*.ts',
+        '!' + Config.paths.componentsPath + '/**/*.hbs',
+        '!' + Config.paths.componentsPath + '/**/*.scss'])
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
         .pipe(Plugins.changed(Config.paths.distComponents))
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -42,6 +46,28 @@ gulp.task('FabricCoreStyles-copyAssets', function() {
                     title: "Moving Fabric Core Style CSS to Dist"
             })))
             .pipe(gulp.dest(Config.paths.distCSS));
+});
+
+//
+// Add Comments to Component Files (HBS and SCSS) and copy to Dist/Components
+// ----------------------------------------------------------------------------
+
+gulp.task('FabricComponents-addCommentsToComponentsHBS', ['FabricComponents-copyAssets'], function(){
+    return gulp.src(Config.paths.componentsPath + '/**/' + '*.hbs')
+            .pipe(Plugins.debug({
+                title: "Adding Comments to Component HBS"
+            }))
+            .pipe(Plugins.header(Banners.getBannerTemplateHTML(), Banners.getBannerData()))
+            .pipe(gulp.dest(Config.paths.distComponents));
+});
+
+gulp.task('FabricComponents-addCommentsToComponentsSCSS', ['FabricComponents-copyAssets'], function(){
+    return gulp.src(Config.paths.componentsPath + '/**/' + '*.scss')
+            .pipe(Plugins.debug({
+                title: "Adding Comments to Component SASS"
+            }))
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(gulp.dest(Config.paths.distComponents));
 });
 
 
@@ -102,6 +128,8 @@ gulp.task('FabricComponents', [
         'FabricComponents-buildAndCombineStyles',
         'FabricComponents-copyAssets', 
         'FabricCoreStyles-copyAssets',
+        'FabricComponents-addCommentsToComponentsHBS',
+        'FabricComponents-addCommentsToComponentsSCSS',
         'ComponentJS'
     ]
 );
