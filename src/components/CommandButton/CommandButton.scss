@@ -94,11 +94,7 @@ $CommandButtonIcon-md-size: 20px;
   &:active {
     background-color: $ms-color-neutralLight;
   }
-
-  &:focus::before {
-    @include ms-CommandBar-focusRectangle;
-  }
-
+  
   &:focus {
     outline: 0;
   }
