@@ -55,10 +55,13 @@ namespace fabric {
       this._panelHost._overlay.overlayElement.addEventListener("click", () => {
         this.dismiss();
       });
-
       let closeButton = this._panel.querySelector(".ms-PanelAction-close");
+
       if (closeButton !== null) {
-        closeButton.addEventListener("click", () => {
+        let closeButtonClone = closeButton.cloneNode(true);
+        closeButton.parentNode.replaceChild(closeButtonClone, closeButton);
+
+        closeButtonClone.addEventListener("click", () => {
           this.dismiss();
         });
       }
