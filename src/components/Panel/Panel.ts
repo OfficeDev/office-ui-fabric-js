@@ -52,7 +52,9 @@ namespace fabric {
         // Remove temporary body styles
         document.body.setAttribute("style", "");
       }, ANIMATION_END);
-      this._closeButton.removeEventListener("click", this._clickHandler);
+      if (this._closeButton !== null) {
+        this._closeButton.removeEventListener("click", this._clickHandler);
+      }
     }
 
     private _setEvents() {
