@@ -19,6 +19,8 @@ namespace fabric {
     private _panelHost: PanelHost;
     private _direction: string;
     private _animateOverlay: boolean;
+    private _closeButton: Element;
+    private _clickHandler: EventListener;
 
     /**
      *
@@ -30,6 +32,8 @@ namespace fabric {
       this._direction = direction || "right";
       this._animateOverlay = animateOverlay || true;
       this._panelHost = new fabric.PanelHost(this._panel, this._animateInPanel);
+      this._closeButton = this._panel.querySelector(".ms-PanelAction-close");
+      this._clickHandler = this.dismiss.bind(this, null);
       this._setEvents();
 
       // Set body height to 100% and overflow hidden while panel is open
@@ -45,25 +49,16 @@ namespace fabric {
         if (callBack) {
           callBack();
         }
-
         // Remove temporary body styles
         document.body.setAttribute("style", "");
       }, ANIMATION_END);
+      this._closeButton.removeEventListener("click", this._clickHandler);
     }
 
     private _setEvents() {
-      this._panelHost._overlay.overlayElement.addEventListener("click", () => {
-        this.dismiss();
-      });
-      let closeButton = this._panel.querySelector(".ms-PanelAction-close");
-
-      if (closeButton !== null) {
-        let closeButtonClone = closeButton.cloneNode(true);
-        closeButton.parentNode.replaceChild(closeButtonClone, closeButton);
-
-        closeButtonClone.addEventListener("click", () => {
-          this.dismiss();
-        });
+      this._panelHost._overlay.overlayElement.addEventListener("click", this._clickHandler);
+      if (this._closeButton !== null) {
+        this._closeButton.addEventListener("click", this._clickHandler);
       }
     }
 
