@@ -384,7 +384,6 @@ namespace fabric {
 
     private _setDismissClick() {
       document.addEventListener("click", this._dismissAction, true);
-      // document.addEventListener("focus", this._dismissAction, true);
       document.addEventListener("keyup", (e: KeyboardEvent) => {
         if (e.keyCode === 32 || e.keyCode === 27) {
           this._dismissAction(e);
