@@ -40,7 +40,6 @@ namespace fabric {
     }
 
     private _openContextMenu() {
-
       let modifiers = [];
       if (this._hasModifier(MODIFIER_OOBE_CLASS)) {
         modifiers.push("primaryArrow");
@@ -66,6 +65,8 @@ namespace fabric {
 
     private _closeHandler(e) {
       this._contextualHost.disposeModal();
+      this._closeButton.removeEventListener("click", this._closeHandler.bind(this), false);
+      this._addTarget.removeEventListener("click", this._clickHandler.bind(this), true);
     }
 
     private _clickHandler(e) {
