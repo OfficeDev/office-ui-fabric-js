@@ -185,7 +185,7 @@ namespace fabric {
     }
 
     private _onItemSelection(evt: any) {
-      let item = <HTMLLIElement>evt.srcElement;
+      let item = <HTMLLIElement>evt.target;
       let isDropdownDisabled = this._container.classList.contains(IS_DISABLED_CLASS);
       let isOptionDisabled = item.classList.contains(IS_DISABLED_CLASS);
       if (!isDropdownDisabled && !isOptionDisabled) {
