@@ -60,7 +60,7 @@ The built files will be in the `/dist/` folder. You can then add these built fil
 
 You can also navigate to http://localhost:2020 to see the local docs site where you can test out the components' responsive behavior and see the samples.
 
-For more information, check out the [documentaiton on building Fabric JS locally](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/BUILDING.md).
+For more information, check out the [documentation on building Fabric JS locally](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/BUILDING.md).
 
 ## Learn more
 
