@@ -173,7 +173,7 @@ namespace fabric {
       $monthPicker.on("click", ".js-changeDate", (event) => {
         event.preventDefault();
 
-        let $changeDate = $(event.toElement);
+        let $changeDate = $(event.target);
 
         /** Get the requested date from the data attributes. */
         let newYear = $changeDate.attr("data-year");
@@ -192,7 +192,7 @@ namespace fabric {
       /** Change the highlighted year. */
       $yearPicker.on("click", ".js-changeDate", (event) => {
         event.preventDefault();
-        let $changeDate = $(event.toElement);
+        let $changeDate = $(event.target);
 
         /** Get the requested date from the data attributes. */
         let newYear = $changeDate.attr("data-year");
