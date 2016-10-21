@@ -49,14 +49,14 @@ namespace fabric {
 
     /** Add event listeners according to the type(s) of text field */
     private _addListeners(): void {
+      // Ensure that the text box gets focus when the label is clicked.
+      this._textFieldLabel.addEventListener("click", (event: MouseEvent) => {
+        this._textField.focus();
+      });
       /** Placeholder - hide/unhide the placeholder  */
       if (this._type.indexOf(TextFieldConsts.Type.Placeholder) >= 0) {
         this._textField.addEventListener("focus", (event: MouseEvent) => {
           this._textFieldLabel.style.display = "none";
-        });
-		// Ensure that the text box gets focus when the placeholder text itself is clicked.
-        this._textFieldLabel.addEventListener("click", (event: MouseEvent) => {
-          this._textField.focus();
         });
         this._textField.addEventListener("blur", (event: MouseEvent) => {
           // Show only if no value in the text field
