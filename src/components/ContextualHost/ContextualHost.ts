@@ -64,6 +64,7 @@ namespace fabric {
       ) {
       this._resizeAction = this._resizeAction.bind(this);
       this._dismissAction = this._dismissAction.bind(this);
+      this._handleKeyUpDismiss = this._handleKeyUpDismiss.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
       this._container = this._ftl.ContextualHost();
@@ -98,6 +99,7 @@ namespace fabric {
       if (ContextualHost.hosts.length > 0) {
         window.removeEventListener("resize", this._resizeAction, false);
         document.removeEventListener("click", this._dismissAction, true);
+        document.removeEventListener("keyup", this._handleKeyUpDismiss, true);
         this._container.parentNode.removeChild(this._container);
         if (this._disposalCallback) {
           this._disposalCallback();
@@ -384,11 +386,13 @@ namespace fabric {
 
     private _setDismissClick() {
       document.addEventListener("click", this._dismissAction, true);
-      document.addEventListener("keyup", (e: KeyboardEvent) => {
-        if (e.keyCode === 32 || e.keyCode === 27) {
-          this._dismissAction(e);
-        }
-      }, true);
+      document.addEventListener("keyup", this._handleKeyUpDismiss, true);
+    }
+
+    private _handleKeyUpDismiss(e: KeyboardEvent) {
+      if (e.keyCode === 32 || e.keyCode === 27) {
+        this._dismissAction(e);
+      }
     }
 
     private _resizeAction() {
