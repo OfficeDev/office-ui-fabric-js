@@ -24,6 +24,9 @@ namespace fabric {
       this._container = container;
       this._choiceField = <HTMLElement>this._container.querySelector(".ms-CheckBox-field");
       this._choiceInput = <HTMLInputElement>this._container.querySelector(".ms-CheckBox-input");
+      if (this._choiceInput.checked) {
+          this._choiceField.setAttribute("aria-checked", "true");
+      }
       if (this._choiceField.getAttribute("aria-checked") === "true") {
           this._choiceField.classList.add("is-checked");
       }
@@ -40,18 +43,17 @@ namespace fabric {
         } else {
           this.check();
         }
+        this._choiceInput.click();
     }
 
     public check(): void {
       this._choiceField.setAttribute("aria-checked", "true");
       this._choiceField.classList.add("is-checked");
-      this._choiceInput.checked = true;
     }
 
     public unCheck(): void {
       this._choiceField.setAttribute("aria-checked", "false");
       this._choiceField.classList.remove("is-checked");
-      this._choiceInput.checked = false;
     }
 
     public removeListeners(): void {
