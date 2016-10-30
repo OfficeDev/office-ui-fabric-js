@@ -20,6 +20,7 @@ Before you get started, make sure you have [node.js](https://nodejs.org/), [gulp
 4. `gulp`
 
 The built files will be in the `/dist/` folder.
+You can browse the list of locally built components from the documentation page `/dist/documentation/index.html`.
 
 ## Gulp tasks
 
