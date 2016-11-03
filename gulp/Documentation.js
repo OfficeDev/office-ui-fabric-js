@@ -10,7 +10,6 @@ var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
 var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
-var Template = require('./modules/Template');
 var reload = require('require-reload')(require);
 var BuildConfig = require('./modules/BuildConfig');
 
