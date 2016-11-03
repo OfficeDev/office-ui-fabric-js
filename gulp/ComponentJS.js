@@ -27,10 +27,8 @@ gulp.task('ComponentJS-copyLib', function() {
         .pipe(gulp.dest(Config.paths.distLibPath));
 });
 
-
-
-gulp.task('ComponentJS-typescript', ['Documentation-template'], function() {
-    var tscResult = gulp.src([Config.paths.src + '/**/*.ts', Config.paths.distJS + "/fabric.templates.ts"])
+gulp.task('ComponentJS-typescript', function() {
+    var tscResult = gulp.src([Config.paths.src + '/**/*.ts'])
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
             title: "Typescriptingz the file"
         })))
