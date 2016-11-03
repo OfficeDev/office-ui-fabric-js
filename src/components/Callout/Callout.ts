@@ -2,7 +2,6 @@
 
 /// <reference path="../Button/Button.ts"/>
 /// <reference path="../Button/IButton.ts"/>
-/// <reference path="../../../dist/js/fabric.templates.ts"/>
 
 /**
  * Callout

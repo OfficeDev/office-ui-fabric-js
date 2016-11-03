@@ -1,7 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-/// <reference path="../../../dist/js/fabric.templates.ts"/>
-
 /**
  * ContextualHost
  *
@@ -47,7 +45,6 @@ namespace fabric {
     private _disposalCallback: Function;
     private _targetElement;
     private _matchTargetWidth;
-    private _ftl = new FabricTemplateLibrary();
     private _contextualHostMain: Element;
     private _children: Array<ContextualHost>;
     private _hasArrow: boolean;
@@ -66,7 +63,7 @@ namespace fabric {
       this._dismissAction = this._dismissAction.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
-      this._container = this._ftl.ContextualHost();
+      this._container = this.createContainer();
       this._contextualHost = this._container;
       this._contextualHostMain = this._contextualHost.querySelector(CONTEXT_HOST_MAIN_CLASS);
       this._contextualHostMain.appendChild(content);
@@ -124,6 +121,22 @@ namespace fabric {
 
     public contains(value: HTMLElement): boolean {
       return this._container.contains(value);
+    }
+
+    private createContainer() {
+      let ContextualHost0 = document.createElement("div");
+      ContextualHost0.setAttribute("class", "ms-ContextualHost");
+      ContextualHost0.innerHTML += " ";
+      let ContextualHost0c1 = document.createElement("div");
+      ContextualHost0c1.setAttribute("class", "ms-ContextualHost-main");
+      ContextualHost0c1.innerHTML += " ";
+      ContextualHost0.appendChild(ContextualHost0c1);
+      ContextualHost0.innerHTML += " ";
+      let ContextualHost0c3 = document.createElement("div");
+      ContextualHost0c3.setAttribute("class", "ms-ContextualHost-beak");
+      ContextualHost0.appendChild(ContextualHost0c3);
+      ContextualHost0.innerHTML += "";
+      return ContextualHost0;
     }
 
     private _openModal(): void {
