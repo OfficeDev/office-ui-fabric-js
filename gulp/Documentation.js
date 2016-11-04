@@ -10,7 +10,6 @@ var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
 var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
-var Template = require('./modules/Template');
 var reload = require('require-reload')(require);
 var BuildConfig = require('./modules/BuildConfig');
 
@@ -84,27 +83,6 @@ gulp.task('Documentation-handlebars', function(cb) {
    }
    
    cb();
-});
-
-gulp.task('Documentation-template', ["Documentation-handlebars"], function(cb) {
-  var _template = new Template(folderList, Config.paths.distJS, Config.paths.componentsPath, function() {
-    gulp.src(Config.paths.distJS + "/fabric.templates.ts")
-    .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
-    .pipe(Plugins.header(Banners.getJSCopyRight()))
-    .pipe(Plugins.tsc(Config.typescriptProject))
-    .js.pipe(gulp.dest(Config.paths.distJS))
-    .on('end', function() {
-      cb();
-    });
-  }.bind(this));
-  _template.init();
-});
-
-gulp.task('Documentation-templateAddHeader', ['Documentation-template'], function(){
-  gulp.src(Config.paths.distJS + "/fabric.templates.ts")
-    .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
-    .pipe(Plugins.header(Banners.getJSCopyRight()))
-    .pipe(gulp.dest(Config.paths.distJS));
 });
 
 //
@@ -277,8 +255,6 @@ var DocumentationTasks = [
     'Documentation-copyAssets',
     'ComponentJS',
     'Documentation-copyIgnoredFiles',
-    "Documentation-template",
-    "Documentation-templateAddHeader",
     "Documentation-buildStyles",
     "Documentation-convertMarkdown"
 ];

@@ -1,6 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-/// <reference path="../../../dist/js/fabric.templates.ts"/>
 /// <reference path="../ContextualHost/ContextualHost.ts"/>
 /// <reference path="../Button/Button.ts"/>
 
