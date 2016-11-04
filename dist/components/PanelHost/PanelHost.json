@@ -1,0 +1,6 @@
+{
+  "name": "PanelHost",
+  "dependencies": [
+    "Overlay"
+  ]
+}
