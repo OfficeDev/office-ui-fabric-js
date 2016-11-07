@@ -1,18 +1,17 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-/// <reference path="../../../dist/js/fabric.templates.ts"/>
-
 namespace fabric {
 
   export class Overlay {
     public overlayElement: HTMLElement;
-    private _ftl = new FabricTemplateLibrary();
 
     constructor(overlayElement?: HTMLElement) {
       if (overlayElement) {
         this.overlayElement = overlayElement;
       } else {
-        this.overlayElement = this._ftl.Overlay();
+        let overlayContainer = document.createElement("div");
+        overlayContainer.setAttribute("class", "ms-Overlay");
+        this.overlayElement = overlayContainer;
       }
       this.overlayElement.addEventListener("click", this.hide.bind(this), false);
     }

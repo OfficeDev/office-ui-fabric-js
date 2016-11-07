@@ -32,6 +32,7 @@ namespace fabric {
     }
 
     public dismiss() {
+      this._overlay.hide();
       document.body.removeChild(this.panelHost);
     }
 
