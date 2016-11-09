@@ -21,7 +21,7 @@ This framework uses styles from the [Office UI Fabric Core](https://github.com/O
 ## What's included
 This repository contains simple, visuals-focused components that don't require a framework. If you have any issues with core styling - icons, typography, fonts, colors, the grid, etc. - please file them in the [Office UI Fabric Core repository](https://github.com/OfficeDev/office-ui-fabric-core). For more information about the React components, check out the [Office UI Fabric React repository](https://github.com/OfficeDev/office-ui-fabric-react).
 
-For documentation on Fabric's last stable version that included both the components *and* the core, check out the [Fabric 2.6.1 get started guide (located in the Core repo)](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md).
+For documentation on Office UI Fabric version 2.6.1, which combined Fabric core and Fabric’s components together, check out the [Fabric 2.6.1 get started guide (located in the Core repo)](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md).
 
 ## Get started
 For a quick start, you can reference the latest release of Fabric from a CDN or clone and build locally. Once you've got Fabric JS added to your project, look at the [component list](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/COMPONENTSLIST.md) for documentation pertaining to each available component.
