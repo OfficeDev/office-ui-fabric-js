@@ -75,9 +75,9 @@ namespace fabric {
     };
 
     /**
-     * removes a breadcrumb item by position in the breadcrumbs list
+     * removes a breadcrumb item by position in the breadcrumb's list
      * index starts at 0
-     * @param value {String} the item's index
+     * @param value {number} the item's index
     */
     public removeItemByPosition(value: number): void {
       this._itemCollection.splice(value, 1);
@@ -167,7 +167,7 @@ namespace fabric {
         }
         const a: HTMLAnchorElement = document.createElement("a");
         a.className = "ms-ContextualMenu-link";
-        if (item.link !== null) {
+        if (item.link !== undefined) {
           a.setAttribute("href", item.link);
         }
         a.textContent = item.text;
@@ -192,7 +192,7 @@ namespace fabric {
           const chevron: HTMLPhraseElement = document.createElement("i");
           listItem.className = "ms-Breadcrumb-listItem";
           a.className = "ms-Breadcrumb-itemLink";
-          if (item.link !== null) {
+          if (item.link !== undefined) {
               a.setAttribute("href", item.link);
           }
           if (!isNaN(item.tabIndex)) {
