@@ -28,7 +28,7 @@ namespace fabric {
 
     private _currentMaxItems: number = 0;
     private _itemCollection: Array<any> = [];
-
+    private _tabIndex: number;
     /**
      *
      * @param {HTMLElement} container - the target container for an instance of Breadcrumb
@@ -38,7 +38,13 @@ namespace fabric {
      * in the DOM.
     */
     constructor(container: HTMLElement) {
+      this._tabIndex = 2;
       this.container = container;
+      this._onResize = this._onResize.bind(this);
+      this._openOverflow = this._openOverflow.bind(this);
+      this._overflowKeyPress = this._overflowKeyPress.bind(this);
+      this._closeOverflow = this._closeOverflow.bind(this);
+      this.removeOutlinesOnClick = this.removeOutlinesOnClick.bind(this);
       this.init();
     }
 
@@ -53,10 +59,9 @@ namespace fabric {
      * Adds a breadcrumb item to a breadcrumb
      * @param itemLabel {String} the item's text label
      * @param itemLink {String} the item's href link
-     * @param tabIndex {number} the item's tabIndex
     */
-    public addItem(itemLabel: string, itemLink: string, tabIndex: number): void {
-      this._itemCollection.push({text: itemLabel, link: itemLink, tabIndex: tabIndex});
+    public addItem(itemLabel: string, itemLink: string): void {
+      this._itemCollection.push({ text: itemLabel, link: itemLink });
       this._updateBreadcrumbs();
     }
 
@@ -75,9 +80,9 @@ namespace fabric {
     };
 
     /**
-     * removes a breadcrumb item by position in the breadcrumbs list
+     * removes a breadcrumb item by position in the breadcrumb's list
      * index starts at 0
-     * @param value {String} the item's index
+     * @param value {number} the item's index
     */
     public removeItemByPosition(value: number): void {
       this._itemCollection.splice(value, 1);
@@ -140,6 +145,7 @@ namespace fabric {
      * updates the breadcrumbs and overflow menu
     */
     private _updateBreadcrumbs() {
+      this._tabIndex = 2;
       const maxItems: number = window.innerWidth > Breadcrumb.MEDIUM ? 4 : 2;
       if (this._itemCollection.length > maxItems) {
         this._breadcrumb.classList.add("is-overflow");
@@ -147,8 +153,8 @@ namespace fabric {
         this._breadcrumb.classList.remove("is-overflow");
       }
 
-      this._addBreadcrumbItems(maxItems);
       this._addItemsToOverflow(maxItems);
+      this._addBreadcrumbItems(maxItems);
     };
 
     /**
@@ -162,14 +168,12 @@ namespace fabric {
       overflowItems.forEach( (item) => {
         const li: HTMLLIElement = document.createElement("li");
         li.className = "ms-ContextualMenu-item";
-        if (!isNaN(item.tabIndex)) {
-          li.setAttribute("tabindex", item.tabIndex);
-        }
         const a: HTMLAnchorElement = document.createElement("a");
         a.className = "ms-ContextualMenu-link";
         if (item.link !== null) {
           a.setAttribute("href", item.link);
         }
+        a.setAttribute("tabindex", (this._tabIndex++).toString());
         a.textContent = item.text;
         li.appendChild(a);
         this._contextMenu.appendChild(li);
@@ -195,9 +199,7 @@ namespace fabric {
           if (item.link !== null) {
               a.setAttribute("href", item.link);
           }
-          if (!isNaN(item.tabIndex)) {
-            a.setAttribute("tabindex", item.tabIndex);
-          }
+          a.setAttribute("tabindex", (this._tabIndex++).toString());
           a.textContent = item.text;
           chevron.className = "ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight";
           listItem.appendChild(a);
@@ -259,10 +261,10 @@ namespace fabric {
     * sets handlers for resize and button click events
     */
     private _setListeners(): void {
-      window.addEventListener("resize", this._onResize.bind(this));
-      this._overflowButton.addEventListener("click", this._openOverflow.bind(this), false);
-      this._overflowButton.addEventListener("keypress", this._overflowKeyPress.bind(this), false);
-      document.addEventListener("click", this._closeOverflow.bind(this), false);
+      window.addEventListener("resize", this._onResize, false);
+      this._overflowButton.addEventListener("click", this._openOverflow, false);
+      this._overflowButton.addEventListener("keypress", this._overflowKeyPress, false);
+      document.addEventListener("click", this._closeOverflow, false);
       this._breadcrumbList.addEventListener("click", this.removeOutlinesOnClick, false);
     }
   }
