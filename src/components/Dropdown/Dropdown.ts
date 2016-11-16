@@ -170,7 +170,7 @@ namespace fabric {
       if (!isDisabled && !isOpen) {
         /** Stop the click event from propagating, which would just close the dropdown immediately. */
         evt.stopPropagation();
-        this.closeOtherDropdowns();
+        this._closeOtherDropdowns();
 
         /** Go ahead and open that dropdown. */
         this._container.classList.add(IS_OPEN_CLASS);
@@ -185,7 +185,7 @@ namespace fabric {
       }
     }
 
-    private closeOtherDropdowns() {
+    private _closeOtherDropdowns() {
       let dropdowns = document.querySelectorAll(`.${DROPDOWN_CLASS}.${IS_OPEN_CLASS}`);
       for (let i = 0; i < dropdowns.length; i++) {
         dropdowns[i].classList.remove(IS_OPEN_CLASS);
