@@ -153,7 +153,7 @@ namespace fabric {
           /** destroy panel and move dropdown back to outside the panel */
           /* if event target is overlay element, only append dropdown to prevent */
           /* double dismiss bug, otherwise, dismiss and append */
-          if (evt && evt.target === this._panel._panelHost._overlay.overlayElement) {
+          if (evt && evt.target === this._panel.panelHost.overlay.overlayElement) {
             this._container.appendChild(this._newDropdown);
           } else {
             this._panel.dismiss(() => {

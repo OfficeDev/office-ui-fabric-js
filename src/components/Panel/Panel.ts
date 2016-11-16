@@ -15,7 +15,7 @@ namespace fabric {
 
   export class Panel {
 
-    public _panelHost: PanelHost;
+    public panelHost: PanelHost;
     private _panel: Element;
     private _direction: string;
     private _animateOverlay: boolean;
@@ -31,7 +31,7 @@ namespace fabric {
       this._panel = panel;
       this._direction = direction || "right";
       this._animateOverlay = animateOverlay || true;
-      this._panelHost = new fabric.PanelHost(this._panel, this._animateInPanel);
+      this.panelHost = new fabric.PanelHost(this._panel, this._animateInPanel);
       this._closeButton = this._panel.querySelector(".ms-PanelAction-close");
       this._clickHandler = this.dismiss.bind(this, null);
       this._setEvents();
@@ -45,7 +45,7 @@ namespace fabric {
       setTimeout(() => {
         this._panel.classList.remove(ANIMATE_OUT_STATE);
         this._panel.classList.remove("is-open");
-        this._panelHost.dismiss();
+        this.panelHost.dismiss();
         if (callBack) {
           callBack();
         }
@@ -58,7 +58,7 @@ namespace fabric {
     }
 
     private _setEvents() {
-      this._panelHost._overlay.overlayElement.addEventListener("click", this._clickHandler);
+      this.panelHost.overlay.overlayElement.addEventListener("click", this._clickHandler);
       if (this._closeButton !== null) {
         this._closeButton.addEventListener("click", this._clickHandler);
       }
