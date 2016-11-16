@@ -233,7 +233,7 @@ namespace fabric {
       /** Update it. */
       this.picker.set("highlight", newDateArr);
     }
-    
+
     /** Whenever the picker renders, do our own rendering on the custom controls. */
     public updateCustomView($datePicker) {
 
