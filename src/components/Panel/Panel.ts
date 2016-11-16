@@ -15,8 +15,8 @@ namespace fabric {
 
   export class Panel {
 
+    public _panelHost: PanelHost;
     private _panel: Element;
-    private _panelHost: PanelHost;
     private _direction: string;
     private _animateOverlay: boolean;
     private _closeButton: Element;
