@@ -10,6 +10,7 @@ namespace fabric {
    * DatePicker Plugin
    */
   export class DatePicker {
+    private picker: any;
 
     constructor(container, options) {
       /** Set up letiables and run the Pickadate plugin. */
@@ -72,7 +73,7 @@ namespace fabric {
         }
       }, options || {}));
       let $picker = $dateField.pickadate("picker");
-
+      this.picker = $picker;
       /** Respond to built-in picker events. */
       $picker.on({
         render: () => {
@@ -118,42 +119,42 @@ namespace fabric {
       $monthControls.on("click", ".js-prevMonth", (event) => {
         event.preventDefault();
         let newMonth = $picker.get("highlight").month - 1;
-        this.changeHighlightedDate($picker, null, newMonth, null);
+        this.changeHighlightedDate(null, newMonth, null);
       });
 
       /** Move ahead one month. */
       $monthControls.on("click", ".js-nextMonth", (event) => {
         event.preventDefault();
         let newMonth = $picker.get("highlight").month + 1;
-        this.changeHighlightedDate($picker, null, newMonth, null);
+        this.changeHighlightedDate(null, newMonth, null);
       });
 
       /** Move back one year. */
       $monthPicker.on("click", ".js-prevYear", (event) => {
         event.preventDefault();
         let newYear = $picker.get("highlight").year - 1;
-        this.changeHighlightedDate($picker, newYear, null, null);
+        this.changeHighlightedDate(newYear, null, null);
       });
 
       /** Move ahead one year. */
       $monthPicker.on("click", ".js-nextYear", (event) => {
         event.preventDefault();
         let newYear = $picker.get("highlight").year + 1;
-        this.changeHighlightedDate($picker, newYear, null, null);
+        this.changeHighlightedDate(newYear, null, null);
       });
 
       /** Move back one decade. */
       $yearPicker.on("click", ".js-prevDecade", (event) => {
         event.preventDefault();
         let newYear = $picker.get("highlight").year - 10;
-        this.changeHighlightedDate($picker, newYear, null, null);
+        this.changeHighlightedDate(newYear, null, null);
       });
 
       /** Move ahead one decade. */
       $yearPicker.on("click", ".js-nextDecade", (event) => {
         event.preventDefault();
         let newYear = $picker.get("highlight").year + 10;
-        this.changeHighlightedDate($picker, newYear, null, null);
+        this.changeHighlightedDate(newYear, null, null);
       });
 
       /** Go to the current date, shown in the day picking view. */
@@ -181,7 +182,7 @@ namespace fabric {
         let newDay = $changeDate.attr("data-day");
 
         /** Update the date. */
-        this.changeHighlightedDate($picker, newYear, newMonth, newDay);
+        this.changeHighlightedDate(newYear, newMonth, newDay);
 
         /** If we"ve been in the "picking months" state on mobile, remove that state so we show the calendar again. */
         if ($datePicker.hasClass("is-pickingMonths")) {
@@ -200,7 +201,7 @@ namespace fabric {
         let newDay = $changeDate.attr("data-day");
 
         /** Update the date. */
-        this.changeHighlightedDate($picker, newYear, newMonth, newDay);
+        this.changeHighlightedDate(newYear, newMonth, newDay);
 
         /** If we"ve been in the "picking years" state on mobile, remove that state so we show the calendar again. */
         if ($datePicker.hasClass("is-pickingYears")) {
@@ -226,21 +227,19 @@ namespace fabric {
     }
 
     /** Change the highlighted date. */
-    public changeHighlightedDate($picker, newYear, newMonth, newDay) {
-
-      /** All letiables are optional. If not provided, default to the current value. */
-      if (typeof newYear === "undefined" || newYear === null) {
-        newYear = $picker.get("highlight").year;
-      }
-      if (typeof newMonth === "undefined" || newMonth === null) {
-        newMonth = $picker.get("highlight").month;
-      }
-      if (typeof newDay === "undefined" || newDay === null) {
-        newDay = $picker.get("highlight").date;
-      }
+    public changeHighlightedDate(newYear, newMonth, newDay) {
+      let dateArr = this.setDateAttributes(newYear, newMonth, newDay);
 
       /** Update it. */
-      $picker.set("highlight", [newYear, newMonth, newDay]);
+      this.picker.set("highlight", dateArr);
+    }
+
+        /** Change the highlighted date. */
+    public changeSelectedDate(newYear, newMonth, newDay) {
+      let dateArr = this.setDateAttributes(newYear, newMonth, newDay);
+      
+      /** Update it. */
+      this.picker.set("select", dateArr);
     }
 
 
@@ -288,6 +287,20 @@ namespace fabric {
       $("html, body").animate({
         scrollTop: $datePicker.offset().top
       }, 367);
+    }
+
+    private setDateAttributes(newYear: any, newMonth: any, newDay: any): any[] {
+      /** All letiables are optional. If not provided, default to the current value. */
+      if (typeof newYear === "undefined" || newYear === null) {
+        newYear = this.picker.get("highlight").year;
+      }
+      if (typeof newMonth === "undefined" || newMonth === null) {
+        newMonth = this.picker.get("highlight").month;
+      }
+      if (typeof newDay === "undefined" || newDay === null) {
+        newDay = this.picker.get("highlight").date;
+      }
+      return [newYear, newMonth, newDay];
     }
   }
 }
