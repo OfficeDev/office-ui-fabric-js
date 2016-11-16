@@ -148,22 +148,29 @@ namespace fabric {
         this._panel = new fabric.Panel(this._panelContainer);
       }
     }
-    private _removeDropdownAsPanel() {
+    private _removeDropdownAsPanel(evt?: Event) {
       if (this._panel !== undefined) {
           /** destroy panel and move dropdown back to outside the panel */
-          this._panel.dismiss(() => {
+          /* if event target is overlay element, only append dropdown to prevent */
+          /* double dismiss bug, otherwise, dismiss and append */
+          if (evt && evt.target === this._panel.panelHost.overlay.overlayElement) {
             this._container.appendChild(this._newDropdown);
-          });
+          } else {
+            this._panel.dismiss(() => {
+              this._container.appendChild(this._newDropdown);
+            });
+          }
           this._panel = undefined;
         }
     }
 
-    private _onOpenDropdown(evt: any) {
+    private _onOpenDropdown(evt: Event) {
       let isDisabled = this._container.classList.contains(IS_DISABLED_CLASS);
       let isOpen = this._container.classList.contains(IS_OPEN_CLASS);
       if (!isDisabled && !isOpen) {
         /** Stop the click event from propagating, which would just close the dropdown immediately. */
         evt.stopPropagation();
+        this._closeOtherDropdowns();
 
         /** Go ahead and open that dropdown. */
         this._container.classList.add(IS_OPEN_CLASS);
@@ -178,8 +185,15 @@ namespace fabric {
       }
     }
 
-    private _onCloseDropdown() {
-      this._removeDropdownAsPanel();
+    private _closeOtherDropdowns() {
+      let dropdowns = document.querySelectorAll(`.${DROPDOWN_CLASS}.${IS_OPEN_CLASS}`);
+      for (let i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].classList.remove(IS_OPEN_CLASS);
+      }
+    }
+
+    private _onCloseDropdown(evt: Event) {
+      this._removeDropdownAsPanel(evt);
       this._container.classList.remove(IS_OPEN_CLASS);
       document.removeEventListener("click", this._onCloseDropdown);
     }
