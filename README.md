@@ -4,9 +4,9 @@
 
 This framework uses styles from the [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core/) project. Fabric is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for you to create web experiences using the Office Design Language.
 
-**Latest version:** 1.2.0, using [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
+**Latest version:** Fabric JS 1.2.0, using [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
 
-**Latest version on CDN:** 1.0.0, using [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
+**Latest version on CDN:** Fabric JS 1.0.0, using [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
 
 ## Contents
 - [What's included](#whats-included)
@@ -42,6 +42,7 @@ New versions of Fabric might not be available on the CDN right away. The followi
 
 | Fabric JS Release | Available on CDN |
 |:-----------------:|:----------------:|
+|       1.2.0       |        No        |
 |       1.1.0       |        No        |
 |       1.0.0       |        Yes       |
 
