@@ -234,11 +234,14 @@ namespace fabric {
       let teLeft = teBR.left;
       let teRight = teBR.right;
       let teTop = teBR.top;
+      let teWidth = teBR.width;
       let teHeight = teBR.height;
       let mHLeft;
       let mHTop;
       let mWidth = "";
       let arrowTop;
+      let arrowLeft;
+      let windowX = window.scrollX ? window.scrollX : 0;
       let windowY = window.scrollY ? window.scrollY : 0;
       let arrowSpace = (this._hasArrow) ? ARROW_SIZE : 0;
 
@@ -281,6 +284,9 @@ namespace fabric {
           this._container.classList.add(MODAL_STATE_POSITIONED);
 
           if (this._hasArrow) {
+            arrowTop = this._modalHeight - (arrowSpace / 2);
+            arrowLeft = Math.max(windowX + teLeft - mHLeft + ((teWidth - arrowSpace) / 2), ARROW_OFFSET);
+            this._arrow.setAttribute("style", "top: " + arrowTop + "px; left: " + arrowLeft + "px;");
             this._container.classList.add(ARROW_BOTTOM_CLASS);
           }
         break;
@@ -292,6 +298,8 @@ namespace fabric {
           this._container.classList.add(MODAL_STATE_POSITIONED);
 
           if (this._hasArrow) {
+            arrowLeft = Math.max(windowX + teLeft - mHLeft + ((teWidth - arrowSpace) / 2), ARROW_OFFSET);
+            this._arrow.setAttribute("style", "left: " + arrowLeft + "px;");
             this._container.classList.add(ARROW_TOP_CLASS);
           }
         break;
