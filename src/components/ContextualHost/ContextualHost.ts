@@ -248,7 +248,7 @@ namespace fabric {
 
       switch (curDirection) {
         case "left":
-          mHLeft = (teLeft - this._modalWidth) + arrowSpace;
+          mHLeft = teLeft - this._modalWidth - arrowSpace;
           mHTop = this._calcTop(this._modalHeight, teHeight, teTop);
           mHTop += window.scrollY ? window.scrollY : 0;
           this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
@@ -275,7 +275,7 @@ namespace fabric {
         break;
         case "top":
           mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
-          mHTop = (teTop - this._modalHeight) + arrowSpace;
+          mHTop = teTop - this._modalHeight - arrowSpace;
           mHTop += windowY;
           this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._container.classList.add(MODAL_STATE_POSITIONED);
