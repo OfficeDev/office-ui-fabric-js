@@ -144,6 +144,13 @@
   padding: 5px 32px 0 10px;
   position: relative;
   overflow: hidden;
+
+  &.ms-Dropdown-truncator {
+    height: auto;
+    display: block;
+    position: absolute;
+    visibility: hidden;
+  }
 }
 
 // Container for the dropdown items, displayed as a panel on small screens.

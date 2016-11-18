@@ -17,6 +17,7 @@ namespace fabric {
 
   const DROPDOWN_CLASS = "ms-Dropdown";
   const DROPDOWN_TITLE_CLASS = "ms-Dropdown-title";
+  const DROPDOWN_LABEL_HELPER = "ms-Dropdown-truncator";
   const DROPDOWN_ITEMS_CLASS = "ms-Dropdown-items";
   const DROPDOWN_ITEM_CLASS = "ms-Dropdown-item";
   const DROPDOWN_SELECT_CLASS_SELECTOR = ".ms-Dropdown-select";
@@ -39,6 +40,7 @@ namespace fabric {
     private _container: HTMLElement;
     private _originalDropdown: HTMLSelectElement;
     private _newDropdownLabel: HTMLSpanElement;
+    private _dropdownLabelHelper: HTMLSpanElement;
     private _newDropdown: HTMLUListElement;
     private _dropdownItems: Array<DropdownItems>;
     private _panelContainer: HTMLElement;
@@ -51,6 +53,9 @@ namespace fabric {
      */
     constructor(container: HTMLElement) {
       this._container = container;
+      this._dropdownLabelHelper = document.createElement("span");
+      this._dropdownLabelHelper.classList.add(DROPDOWN_LABEL_HELPER)
+      this._dropdownLabelHelper.classList.add(DROPDOWN_TITLE_CLASS);
       this._newDropdownLabel = document.createElement("span");
       this._newDropdownLabel.classList.add(DROPDOWN_TITLE_CLASS);
 
@@ -92,16 +97,38 @@ namespace fabric {
       container.appendChild(this._newDropdownLabel);
       container.appendChild(this._newDropdown);
 
+      /** Add dropdown label helper for truncation */
+      container.appendChild(this._dropdownLabelHelper);
+
       /** Toggle open/closed state of the dropdown when clicking its title. */
       this._newDropdownLabel.addEventListener("click", this._onOpenDropdown );
-
+      this._checkTruncation();
       this._setWindowEvent();
     }
 
     private _setWindowEvent() {
       window.addEventListener("resize", () => {
         this._doResize();
+        this._checkTruncation();
       }, false);
+    }
+
+    private _checkTruncation(): void {
+      let selected = this._newDropdown.querySelector(`.${IS_SELECTED_CLASS}`);
+      let origText = (selected ?
+                    selected.textContent :
+                    this._newDropdown.querySelectorAll(`.${DROPDOWN_ITEM_CLASS}`)[0].textContent);
+      this._dropdownLabelHelper.textContent = origText;
+      if (this._dropdownLabelHelper.offsetHeight > this._newDropdownLabel.offsetHeight) {
+        let i = 0;
+        do {
+          i--
+          let newText = origText.slice(0, i);
+          let ellipsis = "...";
+          this._dropdownLabelHelper.textContent = newText + ellipsis;
+        } while (this._dropdownLabelHelper.offsetHeight > this._newDropdownLabel.offsetHeight);
+      }
+      this._newDropdownLabel.textContent = this._dropdownLabelHelper.textContent;
     }
 
     private _getScreenSize(): WindowSize {
