@@ -244,6 +244,7 @@ namespace fabric {
 
           /** Update the replacement dropdown's title. */
           this._newDropdownLabel.innerHTML = item.textContent;
+          this._checkTruncation();
 
           /** Trigger any change event tied to the original dropdown. */
           let changeEvent = document.createEvent("HTMLEvents");

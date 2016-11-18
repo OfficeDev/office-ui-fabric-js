@@ -110,6 +110,8 @@
 
   .ms-Dropdown-item {
     padding: 7px 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &::before {
