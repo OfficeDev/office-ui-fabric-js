@@ -54,7 +54,7 @@ namespace fabric {
     constructor(container: HTMLElement) {
       this._container = container;
       this._dropdownLabelHelper = document.createElement("span");
-      this._dropdownLabelHelper.classList.add(DROPDOWN_LABEL_HELPER)
+      this._dropdownLabelHelper.classList.add(DROPDOWN_LABEL_HELPER);
       this._dropdownLabelHelper.classList.add(DROPDOWN_TITLE_CLASS);
       this._newDropdownLabel = document.createElement("span");
       this._newDropdownLabel.classList.add(DROPDOWN_TITLE_CLASS);
@@ -122,7 +122,7 @@ namespace fabric {
       if (this._dropdownLabelHelper.offsetHeight > this._newDropdownLabel.offsetHeight) {
         let i = 0;
         do {
-          i--
+          i--;
           let newText = origText.slice(0, i);
           let ellipsis = "...";
           this._dropdownLabelHelper.textContent = newText + ellipsis;
