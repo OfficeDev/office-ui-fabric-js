@@ -81,12 +81,7 @@ namespace fabric {
     }
 
     private _toggleMenu(event): void {
-      // !this._isOpen ? this._openContextMenu(event) : this._host.disposeModal();
-      if (!this._isOpen) {
-        this._openContextMenu(event);
-      } else {
-        this._host.disposeModal();
-      }
+      (!this._isOpen) ? this._openContextMenu(event) : this._host.disposeModal();
       this._isOpen = !this._isOpen;
     }
 
