@@ -117,7 +117,7 @@ namespace fabric {
     private _expand(): void {
       let icon = this._chevronButton.querySelector(".ms-Icon");
       this._errorBanner.className += " is-expanded";
-      icon.className = "ms-Icon ms-Icon--ChevronUp";
+      icon.className = "ms-Icon ms-Icon--DoubleChevronUp";
     }
 
     /**
@@ -126,7 +126,7 @@ namespace fabric {
     private _collapse(): void {
       let icon = this._chevronButton.querySelector(".ms-Icon");
       this._errorBanner.className = "ms-MessageBanner";
-      icon.className = "ms-Icon ms-Icon--ChevronDown";
+      icon.className = "ms-Icon ms-Icon--DoubleChevronDown";
     }
 
     private _toggleExpansion(): void {
