@@ -2,11 +2,11 @@
 
 ##### The JavaScript front-end framework for building experiences for Office and Office 365.
 
-This framework uses styles from the [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core/) project. Fabric is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for you to create web experiences using the Office Design Language.
+Fabric JS is a JavaScript front-end framework which provides visuals-focused [components](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/COMPONENTSLIST.md) to extend, re-work and use in your Office and Office 365 experiences. Fabric JS uses styles from the [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core/) project. Fabric JS is a collection of responsive, mobile-first styles and tools designed to make it quick and simple for you to create web experiences using the Office Design Language. 
 
-**Latest version:** 1.2.0, using [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
+**Latest version:** Fabric JS 1.2.0, which uses [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
 
-**Latest version on CDN:** 1.0.0, using [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
+**Latest version on CDN:** Fabric JS 1.0.0, which uses [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
 
 ## Contents
 - [What's included](#whats-included)
@@ -19,9 +19,9 @@ This framework uses styles from the [Office UI Fabric Core](https://github.com/O
 - [Changelog](#changelog)
 
 ## What's included
-This repository contains simple, visuals-focused components that don't require a framework. If you have any issues with core styling - icons, typography, fonts, colors, the grid, etc. - please file them in the [Office UI Fabric Core repository](https://github.com/OfficeDev/office-ui-fabric-core). For more information about the React components, check out the [Office UI Fabric React repository](https://github.com/OfficeDev/office-ui-fabric-react).
+This repository contains simple, visuals-focused components that don't require a framework. For the entire list of components available in Fabric JS, see the [component list](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/COMPONENTSLIST.md).
 
-For documentation on Office UI Fabric version 2.6.1, which combined Fabric core and Fabric’s components together, check out the [Fabric 2.6.1 get started guide (located in the Core repo)](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md).
+> **Note:** For more information on Office UI Fabric version 2.6.1, which combined Fabric core and Fabric’s components together, see [Get started with Fabric 2.6.1](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md).
 
 ## Get started
 For a quick start, you can reference the latest release of Fabric from a CDN or clone and build locally. Once you've got Fabric JS added to your project, look at the [component list](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/COMPONENTSLIST.md) for documentation pertaining to each available component.
@@ -36,14 +36,14 @@ Include the following references in the `<head>` of your page:
 <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/fabric-js/1.0.0/fabric.components.min.css">
 ```
 
-**Note:** You may notice an additional reference to the Fabric Core - this is intentional as these styles are almost always needed for experiences where you'd like to use the components, so we recommend including it by default.
+**Note:** You may notice an additional reference to the Fabric Core. The components of Fabric JS use styles from Fabric Core.
 
 New versions of Fabric might not be available on the CDN right away. The following table lists the releases that are available now. To reference a specific version, update the version number in the URL to match the one you want.
 
-| Fabric JS Release | Available on CDN |
-|:-----------------:|:----------------:|
-|       1.1.0       |        No        |
-|       1.0.0       |        Yes       |
+| Fabric JS Release | Fabric Core      | Available on CDN |
+|:-----------------:|:----------------:|:----------------:|
+|       1.1.0       |        4.0.0     |      No          |
+|       1.0.0       |        4.0.0     |      Yes         |
 
 If you want to reference previous versions, please see [this get started guide (located in the Core repo)](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md).
 
@@ -70,6 +70,8 @@ To see a full component list, you can check out the [component list](https://git
 
 When you're ready to create an Office Add-in with Fabric, take a look at the [Use Office UI Fabric with Office Add-ins on MSDN article](https://msdn.microsoft.com/EN-US/library/office/mt450443.aspx).
 
+For more information about the React components, check out the [Office UI Fabric React repository](https://github.com/OfficeDev/office-ui-fabric-react).
+
 ## Trello board
 
 Fabric JS contains a variety of components that are a part of the Office / Office 365 design language. If you're not seeing a component here that you'd like, first check out the [Office UI Fabric JS Requests board](https://trello.com/b/wq7oIK87/office-ui-fabric-js-requests) and upvote it there (if it exists), or file an [issue on Fabric JS's issue tracker](https://github.com/OfficeDev/office-ui-fabric-js/issues) to kick off a new request.
@@ -78,6 +80,7 @@ Fabric JS contains a variety of components that are a part of the Office / Offic
 
 Bug reports, feature requests, and questions are posted on the [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric-js/issues). For details on our contribution process and how we label issues, see our [contributing](https://github.com/OfficeDev/Office-UI-Fabric-js/blob/master/ghdocs/CONTRIBUTING.md) page.
 
+If you have any style issues - icons, typography, fonts, colors, the grid, etc. - please file them in the [Office UI Fabric Core repository](https://github.com/OfficeDev/office-ui-fabric-core). 
 
 ## Licenses
 
