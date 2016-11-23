@@ -84,8 +84,7 @@ If you have any style issues - icons, typography, fonts, colors, the grid, etc. 
 
 ## Licenses
 
-All files on the Office UI Fabric GitHub repository are subject to the MIT license. Please read the License file at the root of the project. Usage of the fonts referenced on Office UI Fabric files is subject to the [license](http://aka.ms/fabric-font-license).
-
+All files in this GitHub repository are subject to the [MIT license](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/LICENSE). This project also references fonts and icons from a CDN, which are subject to a separate [asset license](https://static2.sharepointonline.com/files/fabric/assets/license.txt).
 
 ## Changelog
 We use [GitHub Releases](https://github.com/blog/1547-release-your-software) to manage our releases, including the changelog between every release. View a complete list of additions, fixes, and changes since 1.0 on the [releases](https://github.com/OfficeDev/office-ui-fabric-js/releases) page.
