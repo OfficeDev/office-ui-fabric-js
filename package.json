@@ -62,6 +62,6 @@
     "walk-sync": "^0.2.6"
   },
   "dependencies": {
-    "office-ui-fabric-core": "4.0.0"
+    "office-ui-fabric-core": "5.0.1"
   }
 }
