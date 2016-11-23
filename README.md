@@ -34,6 +34,7 @@ Include the following references in the `<head>` of your page:
 ```html
 <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/5.0.1/css/fabric.min.css">
 <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css">
+<script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
 ```
 
 **Note:** You may notice an additional reference to the Fabric Core. The components of Fabric JS use styles from Fabric Core.
