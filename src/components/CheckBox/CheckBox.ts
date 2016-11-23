@@ -60,7 +60,7 @@ namespace fabric {
       this._choiceField.removeEventListener("focus", this._FocusHandler.bind(this));
       this._choiceField.removeEventListener("blur", this._BlurHandler.bind(this));
       this._choiceField.removeEventListener("click", this._ClickHandler.bind(this));
-      this._choiceField.addEventListener("keydown", this._KeydownHandler.bind(this));
+      this._choiceField.removeEventListener("keydown", this._KeydownHandler.bind(this));
     }
 
     protected _addListeners(events?): void {
