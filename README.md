@@ -39,13 +39,7 @@ Include the following references in the `<head>` of your page:
 
 **Note:** You may notice an additional reference to the Fabric Core. The components of Fabric JS use styles from Fabric Core.
 
-New versions of Fabric might not be available on the CDN right away. The following table lists the releases that are available now. To reference a specific version, update the version number in the URL to match the one you want.
-
-| Fabric JS Release | Fabric Core      | Available on CDN |
-|:-----------------:|:----------------:|:----------------:|
-|       1.2.0       |        5.0.1     |      Yes         |
-|       1.1.0       |        4.0.0     |      Yes         |
-|       1.0.0       |        4.0.0     |      Yes         |
+All [releases of Fabric JS](https://github.com/OfficeDev/office-ui-fabric-js/releases) are available on the CDN, with new versions typically added within a week of the release. To reference a specific version, update the version number in the URL to match the one you want.
 
 If you want to reference previous versions, please see [this get started guide (located in the Core repo)](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md).
 
