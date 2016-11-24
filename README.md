@@ -43,7 +43,8 @@ New versions of Fabric might not be available on the CDN right away. The followi
 
 | Fabric JS Release | Fabric Core      | Available on CDN |
 |:-----------------:|:----------------:|:----------------:|
-|       1.1.0       |        4.0.0     |      No          |
+|       1.2.0       |        5.0.1     |      Yes         |
+|       1.1.0       |        4.0.0     |      Yes         |
 |       1.0.0       |        4.0.0     |      Yes         |
 
 If you want to reference previous versions, please see [this get started guide (located in the Core repo)](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md).
