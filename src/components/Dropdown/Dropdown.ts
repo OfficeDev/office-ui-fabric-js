@@ -121,10 +121,11 @@ namespace fabric {
       this._dropdownLabelHelper.textContent = origText;
       if (this._dropdownLabelHelper.offsetHeight > this._newDropdownLabel.offsetHeight) {
         let i = 0;
+        let ellipsis = "...";
+        let newText;
         do {
           i--;
-          let newText = origText.slice(0, i);
-          let ellipsis = "...";
+          newText = origText.slice(0, i);
           this._dropdownLabelHelper.textContent = newText + ellipsis;
         } while (this._dropdownLabelHelper.offsetHeight > this._newDropdownLabel.offsetHeight);
       }
