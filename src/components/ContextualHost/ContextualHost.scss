@@ -66,12 +66,14 @@
 
 .ms-ContextualHost.ms-ContextualHost--arrowTop {
   .ms-ContextualHost-beak {
+    display: block;
     top: -10px;
   }
 }
 
 .ms-ContextualHost.ms-ContextualHost--arrowBottom {
   .ms-ContextualHost-beak {
+    display: block;
     bottom: -10px;
   }
 }

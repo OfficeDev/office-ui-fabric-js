@@ -110,6 +110,8 @@
 
   .ms-Dropdown-item {
     padding: 7px 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &::before {
@@ -144,6 +146,13 @@
   padding: 5px 32px 0 10px;
   position: relative;
   overflow: hidden;
+
+  &.ms-Dropdown-truncator {
+    height: auto;
+    display: block;
+    position: absolute;
+    visibility: hidden;
+  }
 }
 
 // Container for the dropdown items, displayed as a panel on small screens.
@@ -194,6 +203,8 @@
   position: relative;
   border: 1px solid transparent;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   @media screen and (-ms-high-contrast: active) {
     border-color: $ms-color-black;

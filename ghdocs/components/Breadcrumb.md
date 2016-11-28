@@ -99,3 +99,9 @@ ContextualMenu
 
 ## Accessibility
 The component's JavaScript will apply the correct `tabindex` values to ensure keyboard accessibility.
+
+
+<script type="text/javascript">
+    var BreadcrumbHTML = document.querySelector('.ms-Breadcrumb');
+    var Breadcrumb = new fabric['Breadcrumb'](BreadcrumbHTML);
+</script>

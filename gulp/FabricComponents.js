@@ -88,7 +88,7 @@ gulp.task('FabricComponents-buildAndCombineStyles', function () {
         })))
         .pipe(Plugins.autoprefixer(
             {
-                browsers: ['last 2 versions', 'ie >= 9'],
+                browsers: ['last 3 versions', 'ie >= 9'],
                 cascade: false
             }
         ))
