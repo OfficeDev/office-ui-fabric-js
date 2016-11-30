@@ -6,8 +6,6 @@ Fabric JS is a JavaScript front-end framework which provides visuals-focused [co
 
 **Latest version:** Fabric JS 1.2.0, which uses [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
 
-**Latest version on CDN:** Fabric JS 1.0.0, which uses [Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core) 4.0.0.
-
 ## Contents
 - [What's included](#whats-included)
 - [Get started](#get-started)
@@ -32,7 +30,7 @@ If you'd like to get Fabric through a package manager such as Bower, npm, or NuG
 Include the following references in the `<head>` of your page:
 
 ```html
-<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/5.0.1/css/fabric.min.css">
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css">
 <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css">
 <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
 ```
