@@ -1,0 +1,32 @@
+$od-Header-height: 50px;
+$od-Header-searchHeight: 33px;
+$od-Header-bannerWidth: 1300px;
+
+.od-Header {
+  background-color: $ms-color-black;
+  height: $od-Header-height;
+  left: 0;
+  padding: 0 8px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 600;
+}
+
+.od-Header-banner {
+  height: $od-Header-height;
+  position: relative;
+  width: 100%;
+
+  @media (min-width: $od-Header-bannerWidth) {
+     width: $od-Header-bannerWidth;
+     margin: auto;
+  }
+}
+
+@media (min-width: $od-Header-bannerWidth) {
+  .od-Header-logo {
+    @include padding-left(8px);
+  }
+}

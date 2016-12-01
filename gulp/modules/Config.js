@@ -7,7 +7,7 @@ var Utilities = require('./Utilities');
  * Configuration class containing all properties to be used throughout the build
  */
 var Config = function() {
-  this.debugMode = false;
+  this.debugMode = true;
   this.sassExtension = "scss";
   this.buildSass = false;
   this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
@@ -28,6 +28,7 @@ var Config = function() {
   this.paths.distDocumentationCSS = this.paths.distDocumentation;
   this.paths.distSamples = this.paths.dist + '/samples';
   this.paths.distSampleComponents = this.paths.dist + '/samples/' + '/Components';
+  this.paths.distImages = this.paths.distDocumentation + '/images';
   this.paths.distJS = this.paths.dist + '/js';
   this.paths.distPackages = this.paths.dist + '/packages';
   this.paths.distDocsComponents = this.paths.distDocumentation + '/Components';
@@ -42,10 +43,11 @@ var Config = function() {
   this.paths.srcSamples = this.paths.src + '/samples';
   this.paths.srcSass = this.paths.src + '/sass';
   this.paths.srcDocs = this.paths.src + '/documentation';
+  this.paths.srcDocImages = this.paths.srcDocs + '/images';
   this.paths.srcDocsPages = this.paths.srcDocs + '/pages';
   // this.paths.srcDocsComponents = this.paths.srcDocs + '/components';
   this.paths.srcTemplate = this.paths.srcDocs + '/templates';
-  this.paths.srcDocumentationCSS = this.paths.srcDocs;
+  this.paths.srcDocumentationSCSS = this.paths.srcDocs + '/sass';
   
 	this.port =  process.env.PORT || 2020;
 	this.projectURL =  "http://localhost";

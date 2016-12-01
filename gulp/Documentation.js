@@ -39,6 +39,15 @@ gulp.task('Documentation-copyIgnoredFiles', function() {
     });
 });
 
+gulp.task('Documentation-copyDocImages', function() {
+  return gulp.src(Config.paths.srcDocImages + '/*')
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Copying Documentation Images"
+            })))
+            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+            .pipe(gulp.dest(Config.paths.distImages));
+});
+
 gulp.task('Documentation-copyAssets', function() {
     var paths = [
         Config.paths.srcDocsPages + '/**/*.jpg', 
@@ -137,60 +146,60 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
         }
 
        hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.md', '.html');
-        markdown = srcFolderName + '/' + pageName + '.md';
+        // markdown = srcFolderName + '/' + pageName + '.md';
 
-        componentPipe = gulp.src(markdown)
-            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                title: "Building documentation page " + pageName
-            })))
-            .pipe(Plugins.replace(/<!---i(.|\s)*?i--->/img, ""))
-            .pipe(Plugins.marked())
-            .on('error', function(err) {
-                console.log(err);  
-            })
-            .pipe(Plugins.fileinclude())
-            .pipe(Plugins.replace("<!----", ""))
-            .pipe(Plugins.replace("---->", ""))
-            .pipe(Plugins.replace("<!---", ""))
-            .pipe(Plugins.replace("--->", ""))
-            //.pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
-            // .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
-            .pipe(Plugins.htmlbeautify())
-            .pipe(Plugins.rename(pageName + ".hbs"))
-            // .pipe(Plugins.wrap(
-            //     {
-            //         src:  Config.paths.srcTemplate + '/componentDemo.html' 
-            //     },
-            //     {
-            //         pageName: pageName
-            //     }
-            // ));
-            // Replace Comments to hide code
-            .pipe(gulp.dest(Config.paths.srcDocsPages + '/' + pageName));
+        // componentPipe = gulp.src(markdown)
+        //     .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
+        //     .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+        //         title: "Building documentation page " + pageName
+        //     })))
+        //     .pipe(Plugins.replace(/<!---i(.|\s)*?i--->/img, ""))
+        //     .pipe(Plugins.marked())
+        //     .on('error', function(err) {
+        //         console.log(err);  
+        //     })
+        //     .pipe(Plugins.fileinclude())
+        //     .pipe(Plugins.replace("<!----", ""))
+        //     .pipe(Plugins.replace("---->", ""))
+        //     .pipe(Plugins.replace("<!---", ""))
+        //     .pipe(Plugins.replace("--->", ""))
+        //     //.pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+        //     // .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
+        //     .pipe(Plugins.htmlbeautify())
+        //     .pipe(Plugins.rename(pageName + ".hbs"))
+        //     // .pipe(Plugins.wrap(
+        //     //     {
+        //     //         src:  Config.paths.srcTemplate + '/componentDemo.html' 
+        //     //     },
+        //     //     {
+        //     //         pageName: pageName
+        //     //     }
+        //     // ));
+        //     // Replace Comments to hide code
+        //     .pipe(gulp.dest(Config.paths.srcDocsPages + '/' + pageName));
 
 
-        markdownPipe = gulp.src(markdown)
-            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building documentation page " + pageName
-                })))
-            .on('error', function(err) {
-                console.log(err);  
-                })
-            .pipe(Plugins.fileinclude())
-            .pipe(Plugins.replace(/<!----(.|\s)*?---->/img, ""))
-            .pipe(Plugins.replace("<!---i", ""))
-            .pipe(Plugins.replace("i--->", ""))
-            .pipe(Plugins.replace("<!---", ""))
-            .pipe(Plugins.replace("--->", ""))
-            .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
-            .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
-            // Replace Comments to hide code
-            .pipe(gulp.dest('./ghdocs/components/'));
+        // markdownPipe = gulp.src(markdown)
+        //     .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
+        //     .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+        //             title: "Building documentation page " + pageName
+        //         })))
+        //     .on('error', function(err) {
+        //         console.log(err);  
+        //         })
+        //     .pipe(Plugins.fileinclude())
+        //     .pipe(Plugins.replace(/<!----(.|\s)*?---->/img, ""))
+        //     .pipe(Plugins.replace("<!---i", ""))
+        //     .pipe(Plugins.replace("i--->", ""))
+        //     .pipe(Plugins.replace("<!---", ""))
+        //     .pipe(Plugins.replace("--->", ""))
+        //     .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+        //     .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
+        //     // Replace Comments to hide code
+        //     .pipe(gulp.dest('./ghdocs/components/'));
 
-        // Add stream
-        streams.push(markdownPipe);
+        // // Add stream
+        // streams.push(markdownPipe);
         streams.push(componentPipe);
    }
    
@@ -202,29 +211,28 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
 });
 
 gulp.task('Documentation-buildStyles', function () {
-    return gulp.src(Config.paths.srcDocumentationCSS + '/' + 'demo.scss')
-            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-            .pipe(Plugins.debug({
-              title: "Building Documentation SASS " + BuildConfig.fileExtension + " File"
-            }))
-            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
-            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
-            .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
-            .pipe(Plugins.rename('demo.css'))
-            .pipe(Plugins.changed(Config.paths.distDocumentationCSS, {extension: '.css'}))
-            .pipe(Plugins.autoprefixer({
-              browsers: ['last 3 versions', 'ie >= 9'],
-              cascade: false
-            }))
-            .pipe(Plugins.cssbeautify())
-            .pipe(Plugins.csscomb())
-            .pipe(gulp.dest(Config.paths.distDocumentationCSS))
-            .pipe(Plugins.rename('demo.min.css'))
-            .pipe(Plugins.cssMinify())
-            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
-            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
-            .pipe(gulp.dest(Config.paths.distDocumentationCSS));
-                
+  return gulp.src(Config.paths.srcDocumentationSCSS + '/' + 'style.scss')
+                      .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+                      .pipe(Plugins.debug({
+                        title: "Building Documentation SASS " + BuildConfig.fileExtension + " File"
+                      }))
+                      .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+                      .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+                      .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
+                      .pipe(Plugins.rename('styles.css'))
+                      // .pipe(Plugins.changed(Config.paths.distDocumentationCSS, {extension: '.css'}))
+                      .pipe(Plugins.autoprefixer({
+                        browsers: ['last 3 versions', 'ie >= 9'],
+                        cascade: false
+                      }))
+                      .pipe(Plugins.cssbeautify())
+                      .pipe(Plugins.csscomb())
+                      .pipe(gulp.dest(Config.paths.distDocumentationCSS))
+                      .pipe(Plugins.rename('styles.min.css'))
+                      .pipe(Plugins.cssMinify())
+                      .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+                      .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+                      .pipe(gulp.dest(Config.paths.distDocumentationCSS));
 });
 
 gulp.task('Documentation-convertMarkdown', function() {
@@ -251,7 +259,7 @@ gulp.task('Documentation-convertMarkdown', function() {
 // ----------------------------------------------------------------------------
 
 var DocumentationTasks = [
-    'Documentation-build', 
+    'Documentation-copyDocImages',
     'Documentation-copyAssets',
     'ComponentJS',
     'Documentation-copyIgnoredFiles',
