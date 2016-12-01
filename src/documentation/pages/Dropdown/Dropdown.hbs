@@ -1,0 +1,59 @@
+<h1 id="dropdown">Dropdown</h1>
+<p>Allows for the selection of one option from a list.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+{{> Dropdown props=DropdownExampleModel.props}}
+
+<h3 id="disabled">Disabled</h3>
+
+{{> Dropdown props=DropdownExampleModel.propsDisabled}}
+
+<h2 id="states">States</h2>
+<table>
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Applied to</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>.is-disabled</code></td>
+            <td><code>.ms-Dropdown</code></td>
+            <td>Disables the dropdown.</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+    <li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+    <li>Copy the HTML from the sample above into your page. For example:
+        <pre>
+ <code>
+{{renderPartialPre "Dropdown" "DropdownExample" DropdownExampleModel.props false}}
+ </code>
+</pre>
+    </li>
+    <li>Add the following <code>&lt;script&gt;</code> tag to your page to instantiate all Dropdown components on the page:
+        <pre>
+ <code>
+{{renderPartialPre "Dropdown" "DropdownExampleJS" "" false}}
+ </code>
+</pre>
+    </li>
+    <li>Verify that the component is working the same as in the sample above.</li>
+    <li>Replace the sample HTML content (such as the options within <code>.ms-Dropdown-select</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component depends on Panel for when it is rendered on mobile.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>More details will be added here.</p>
+
+{{> DropdownExampleJS }}

@@ -154,20 +154,20 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
             .pipe(Plugins.replace("---->", ""))
             .pipe(Plugins.replace("<!---", ""))
             .pipe(Plugins.replace("--->", ""))
-            .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
-            .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
-            .pipe(Plugins.htmlbeautify({indent_char: ' ', indentSize: 2}))
-            .pipe(Plugins.rename("index.html"))
-            .pipe(Plugins.wrap(
-                {
-                    src:  Config.paths.srcTemplate + '/componentDemo.html'  
-                },
-                {
-                    pageName: pageName
-                }
-            ))
+            //.pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+            // .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
+            .pipe(Plugins.htmlbeautify())
+            .pipe(Plugins.rename(pageName + ".hbs"))
+            // .pipe(Plugins.wrap(
+            //     {
+            //         src:  Config.paths.srcTemplate + '/componentDemo.html' 
+            //     },
+            //     {
+            //         pageName: pageName
+            //     }
+            // ));
             // Replace Comments to hide code
-            .pipe(gulp.dest(Config.paths.distDocsComponents + '/' + pageName));
+            .pipe(gulp.dest(Config.paths.srcDocsPages + '/' + pageName));
 
 
         markdownPipe = gulp.src(markdown)

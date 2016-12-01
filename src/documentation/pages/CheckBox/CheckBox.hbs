@@ -1,0 +1,60 @@
+<h1 id="check-box">Check Box</h1>
+<p>Allows selection from one or more options.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="checkbox">Checkbox</h3>
+<p>Used to indicate a simple yes or no choice, typically as part of a form.</p>
+
+{{> CheckBoxElem props=CheckBoxModels.basic }} {{> CheckBoxElem props=CheckBoxModels.checkboxDisabled }} {{> CheckBoxElem props=CheckBoxModels.checkboxSelected }}
+
+<h2 id="states">States</h2>
+<table>
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Applied to</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>disabled</code> attribute</td>
+            <td><code>.ms-CheckBox-input</code></td>
+            <td>Disables the input.</td>
+        </tr>
+        <tr>
+            <td><code>checked</code> attribute</td>
+            <td><code>.ms-CheckBox-input</code></td>
+            <td>Fills in the checkbox or radio button.</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+    <li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+    <li>Copy the HTML from one of the samples above into your page. For example:
+        <pre>
+ <code>
+{{renderPartialPre "Checkbox" "CheckBoxElem" CheckBoxModels.basic false}}
+ </code>
+</pre>
+    </li>
+    <li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to Fabric&#39;s JS, to instantiate all CheckBox components on the page:
+        <pre>
+ <code>
+{{renderPartialPre "Checkbox" "CheckBoxJS" "" false}}
+ </code>
+</pre>
+    </li>
+    <li>Replace the sample HTML content (such as the content of <code>.ms-Label</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>Label</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>Focus styles are included for these fields. Ensure that you use descriptive labels.</p>
+
+{{> CheckBoxJS }}
