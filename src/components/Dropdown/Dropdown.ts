@@ -17,6 +17,7 @@ namespace fabric {
 
   const DROPDOWN_CLASS = "ms-Dropdown";
   const DROPDOWN_TITLE_CLASS = "ms-Dropdown-title";
+  const DROPDOWN_LABEL_HELPER = "ms-Dropdown-truncator";
   const DROPDOWN_ITEMS_CLASS = "ms-Dropdown-items";
   const DROPDOWN_ITEM_CLASS = "ms-Dropdown-item";
   const DROPDOWN_SELECT_CLASS_SELECTOR = ".ms-Dropdown-select";
@@ -39,6 +40,7 @@ namespace fabric {
     private _container: HTMLElement;
     private _originalDropdown: HTMLSelectElement;
     private _newDropdownLabel: HTMLSpanElement;
+    private _dropdownLabelHelper: HTMLSpanElement;
     private _newDropdown: HTMLUListElement;
     private _dropdownItems: Array<DropdownItems>;
     private _panelContainer: HTMLElement;
@@ -51,6 +53,9 @@ namespace fabric {
      */
     constructor(container: HTMLElement) {
       this._container = container;
+      this._dropdownLabelHelper = document.createElement("span");
+      this._dropdownLabelHelper.classList.add(DROPDOWN_LABEL_HELPER);
+      this._dropdownLabelHelper.classList.add(DROPDOWN_TITLE_CLASS);
       this._newDropdownLabel = document.createElement("span");
       this._newDropdownLabel.classList.add(DROPDOWN_TITLE_CLASS);
 
@@ -92,16 +97,39 @@ namespace fabric {
       container.appendChild(this._newDropdownLabel);
       container.appendChild(this._newDropdown);
 
+      /** Add dropdown label helper for truncation */
+      container.appendChild(this._dropdownLabelHelper);
+
       /** Toggle open/closed state of the dropdown when clicking its title. */
       this._newDropdownLabel.addEventListener("click", this._onOpenDropdown );
-
+      this._checkTruncation();
       this._setWindowEvent();
     }
 
     private _setWindowEvent() {
       window.addEventListener("resize", () => {
         this._doResize();
+        this._checkTruncation();
       }, false);
+    }
+
+    private _checkTruncation(): void {
+      let selected = this._newDropdown.querySelector(`.${IS_SELECTED_CLASS}`);
+      let origText = (selected ?
+                    selected.textContent :
+                    this._newDropdown.querySelectorAll(`.${DROPDOWN_ITEM_CLASS}`)[0].textContent);
+      this._dropdownLabelHelper.textContent = origText;
+      if (this._dropdownLabelHelper.offsetHeight > this._newDropdownLabel.offsetHeight) {
+        let i = 0;
+        let ellipsis = "...";
+        let newText;
+        do {
+          i--;
+          newText = origText.slice(0, i);
+          this._dropdownLabelHelper.textContent = newText + ellipsis;
+        } while (this._dropdownLabelHelper.offsetHeight > this._newDropdownLabel.offsetHeight);
+      }
+      this._newDropdownLabel.textContent = this._dropdownLabelHelper.textContent;
     }
 
     private _getScreenSize(): WindowSize {
@@ -148,22 +176,29 @@ namespace fabric {
         this._panel = new fabric.Panel(this._panelContainer);
       }
     }
-    private _removeDropdownAsPanel() {
+    private _removeDropdownAsPanel(evt?: Event) {
       if (this._panel !== undefined) {
           /** destroy panel and move dropdown back to outside the panel */
-          this._panel.dismiss(() => {
+          /* if event target is overlay element, only append dropdown to prevent */
+          /* double dismiss bug, otherwise, dismiss and append */
+          if (evt && evt.target === this._panel.panelHost.overlay.overlayElement) {
             this._container.appendChild(this._newDropdown);
-          });
+          } else {
+            this._panel.dismiss(() => {
+              this._container.appendChild(this._newDropdown);
+            });
+          }
           this._panel = undefined;
         }
     }
 
-    private _onOpenDropdown(evt: any) {
+    private _onOpenDropdown(evt: Event) {
       let isDisabled = this._container.classList.contains(IS_DISABLED_CLASS);
       let isOpen = this._container.classList.contains(IS_OPEN_CLASS);
       if (!isDisabled && !isOpen) {
         /** Stop the click event from propagating, which would just close the dropdown immediately. */
         evt.stopPropagation();
+        this._closeOtherDropdowns();
 
         /** Go ahead and open that dropdown. */
         this._container.classList.add(IS_OPEN_CLASS);
@@ -178,8 +213,15 @@ namespace fabric {
       }
     }
 
-    private _onCloseDropdown() {
-      this._removeDropdownAsPanel();
+    private _closeOtherDropdowns() {
+      let dropdowns = document.querySelectorAll(`.${DROPDOWN_CLASS}.${IS_OPEN_CLASS}`);
+      for (let i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].classList.remove(IS_OPEN_CLASS);
+      }
+    }
+
+    private _onCloseDropdown(evt: Event) {
+      this._removeDropdownAsPanel(evt);
       this._container.classList.remove(IS_OPEN_CLASS);
       document.removeEventListener("click", this._onCloseDropdown);
     }
@@ -203,6 +245,7 @@ namespace fabric {
 
           /** Update the replacement dropdown's title. */
           this._newDropdownLabel.innerHTML = item.textContent;
+          this._checkTruncation();
 
           /** Trigger any change event tied to the original dropdown. */
           let changeEvent = document.createEvent("HTMLEvents");

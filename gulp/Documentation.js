@@ -213,7 +213,7 @@ gulp.task('Documentation-buildStyles', function () {
             .pipe(Plugins.rename('demo.css'))
             .pipe(Plugins.changed(Config.paths.distDocumentationCSS, {extension: '.css'}))
             .pipe(Plugins.autoprefixer({
-              browsers: ['last 2 versions', 'ie >= 9'],
+              browsers: ['last 3 versions', 'ie >= 9'],
               cascade: false
             }))
             .pipe(Plugins.cssbeautify())

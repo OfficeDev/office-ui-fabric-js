@@ -49,7 +49,7 @@ gulp.task('Samples-buildStyles',  function () {
                 .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
                     .on('error', ErrorHandling.onErrorInPipe)
                 .pipe(Plugins.autoprefixer({
-                    browsers: ['last 2 versions', 'ie >= 9'],
+                    browsers: ['last 3 versions', 'ie >= 9'],
                     cascade: false
                 }))
                 .pipe(Plugins.rename(folder + '.css'))
