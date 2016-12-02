@@ -30,8 +30,19 @@
                             <li class="link getStartedPage">
                                 <a href="#">Get Started</a>
                             </li>
-                            <li class="link jsComponents">
+                            <li class="link linkToggle jsComponents">
                                 <a href="#">JS Components</a>
+                                <ul class="links isSubMenu">
+                                    <li class="link">
+                                        <a href="#!/Components/Breadcrumb/Breadcrumb">Breadcrumb</a>
+                                    </li>
+                                    <li class="link">
+                                        <a href="#">Cats</a>
+                                    </li>
+                                    <li class="link">
+                                        <a href="#">Dogs</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="link backToFabricSite">
                                 <a href="#">Back to Fabric Site</a>
@@ -39,11 +50,66 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="App-content">
+                <div id="mainContent" class="App-content">
                     {{ renderDocPage "HomePage" }}
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+(function(){
+    var mainContainer = document.getElementById('mainContent');
+    var toggleLinks = document.getElementsByClassName('linkToggle');
+    var navLinks = document.getElementsByTagName('a');
+    function linkToggle() {
+        (this.classList.contains('isActive')) ? this.classList.remove('isActive') : this.classList.add('isActive');
+    }
+
+    function navLinkAction(e) {
+        e.preventDefault();
+        var url = this.getAttribute('href');
+        var pattern = new RegExp(/\w+/, 'g');
+        var urlSections = [];
+        console.log(url);
+        var match = null;
+        while (match = pattern.exec(url)) {
+            console.log(match);
+            urlSections.push(match[0]);
+        }
+
+        if (urlSections.length) {
+            var path = "./";
+            urlSections.forEach(function(section, idx) {
+                var end = (idx === urlSections.length - 1) ? ".html" : "/";
+                path += section + end;
+            });
+            console.log(path);
+
+            var xhr= new XMLHttpRequest();
+            xhr.open('GET', path, true);
+            xhr.onreadystatechange= function() {
+                if (this.readyState!==4) return;
+                if (this.status!==200) return; // or whatever error handling you want
+                mainContainer.innerHTML= this.responseText;
+            };
+            xhr.send();
+        }
+
+
+    }
+
+    for (var i = 0; i < toggleLinks.length; i++) {
+        toggleLinks[i].addEventListener('click', linkToggle);
+    }
+
+    for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener('click', navLinkAction);
+    }
+
+
+})();
+
+    
+</script>
 </html>
