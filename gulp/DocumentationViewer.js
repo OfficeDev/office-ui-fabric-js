@@ -37,11 +37,13 @@ gulp.task('DocumentationViewer', ['FabricComponents', 'Documentation', 'Samples'
         });
     }
 
-    return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.html')
+
+    return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.hbs')
         .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
         .pipe(Plugins.data(function () {
             return { "sections" : sections };
         }))
+        .pipe(Plugins.handlebars({}, Config.handleBarsConfig))
         .pipe(Plugins.template())
         .pipe(Plugins.rename('index.html'))
         .pipe(gulp.dest(Config.paths.distDocumentation));

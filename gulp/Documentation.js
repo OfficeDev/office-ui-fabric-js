@@ -9,7 +9,7 @@ var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
-var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
+var demoPagesList = Utilities.getFolders(Config.paths.srcDocsJSCompPages);
 var reload = require('require-reload')(require);
 var BuildConfig = require('./modules/BuildConfig');
 
@@ -84,8 +84,9 @@ gulp.task('Documentation-handlebars', function(cb) {
    // Next get all example partials inside of the pages folders
    for (var i = 0; i < demoPagesList.length; i++) {
     _folderName = demoPagesList[i];
-    _srcFolderName = Config.paths.srcDocsPages + '/' + _folderName + '/' + Config.paths.srcDocsPagesExamples;
-    
+    _srcFolderName = Config.paths.srcDocsJSCompPages + '/' + _folderName + '/' + Config.paths.srcDocsPagesExamples;
+    console.log('FOLDER NAME', _srcFolderName);
+
     if (fs.existsSync(_srcFolderName)) {
         Config.handleBarsConfig.batch.push('./' + _srcFolderName);
     }
@@ -98,42 +99,41 @@ gulp.task('Documentation-handlebars', function(cb) {
 // Sample Component Building
 // ----------------------------------------------------------------------------
 gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
-   var streams = [],
-       pageName,
-       srcFolderName,
-       distFolderName,
-       hasFileChanged,
-       manifest,
-       filesArray,
-       componentPipe,
-       markdown,
-       templateData,
-       exampleModels;
+    var streams = [],
+        pageName,
+        srcFolderName,
+        distFolderName,
+        hasFileChanged,
+        manifest,
+        filesArray,
+        componentPipe,
+        hbs,
+        templateData,
+        exampleModels;
        
-   var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
-  
-   for (var i=0; i < demoPagesList.length; i++) {
+    var demoPagesList = Utilities.getFolders(Config.paths.srcDocsJSCompPages);
+    for (var i=0; i < demoPagesList.length; i++) {
        
-       templateData = {};
-       pageName = demoPagesList[i];
-       var exampleModels = [];
+        templateData = {};
+        pageName = demoPagesList[i];
+        var exampleModels = [];
        
-       // Current Page Folder path
-       srcFolderName = Config.paths.srcDocsPages + '/' + pageName;
-       
-       // Current Page example folder path
-       exampleFolderName = srcFolderName + '/' + Config.paths.srcDocsPagesExamples;
-       
-       // Dist folder name for page
-       distFolderName = Config.paths.distDocumentation + '/' + pageName;
-     
-       try {
-        fs.statSync(exampleFolderName);
-        exampleModels = Utilities.getFilesByExtension(exampleFolderName, '.js');
-       } catch (err) {}
-       
-       
-       // Go through and find the view model for each example handlebars file and store in context
+        // Current Page Folder path
+        srcFolderName = Config.paths.srcDocsJSCompPages + '/' + pageName;
+
+        // Current Page example folder path
+        exampleFolderName = srcFolderName + '/' + Config.paths.srcDocsPagesExamples;
+
+        // Dist folder name for page
+        distFolderName = Config.paths.distDocumentation + '/' + pageName;
+
+        try {
+          fs.statSync(exampleFolderName);
+          exampleModels = Utilities.getFilesByExtension(exampleFolderName, '.js');
+        } catch (err) {}
+
+
+        // Go through and find the view model for each example handlebars file and store in context
         if(exampleModels.length > 0) {
             for(var x = 0; x < exampleModels.length; x++) {
                 var file = exampleModels[x];
@@ -141,42 +141,43 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
                 modelName = modelName.replace(" ", '');
                 var modelFile = reload('../' + exampleFolderName + '/' + file);
                 templateData[modelName] = modelFile;
-               
             }
         }
 
-       hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.md', '.html');
-        // markdown = srcFolderName + '/' + pageName + '.md';
+        console.log('template data', templateData);
 
-        // componentPipe = gulp.src(markdown)
-        //     .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-        //     .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-        //         title: "Building documentation page " + pageName
-        //     })))
-        //     .pipe(Plugins.replace(/<!---i(.|\s)*?i--->/img, ""))
-        //     .pipe(Plugins.marked())
-        //     .on('error', function(err) {
-        //         console.log(err);  
-        //     })
-        //     .pipe(Plugins.fileinclude())
-        //     .pipe(Plugins.replace("<!----", ""))
-        //     .pipe(Plugins.replace("---->", ""))
-        //     .pipe(Plugins.replace("<!---", ""))
-        //     .pipe(Plugins.replace("--->", ""))
-        //     //.pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
-        //     // .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
-        //     .pipe(Plugins.htmlbeautify())
-        //     .pipe(Plugins.rename(pageName + ".hbs"))
-        //     // .pipe(Plugins.wrap(
-        //     //     {
-        //     //         src:  Config.paths.srcTemplate + '/componentDemo.html' 
-        //     //     },
-        //     //     {
-        //     //         pageName: pageName
-        //     //     }
-        //     // ));
-        //     // Replace Comments to hide code
-        //     .pipe(gulp.dest(Config.paths.srcDocsPages + '/' + pageName));
+       // hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.hbs', '.html');
+        hbs = srcFolderName + '/' + pageName + '.hbs';
+
+        componentPipe = gulp.src(hbs)
+            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Building documentation page " + pageName
+            })))
+            // .pipe(Plugins.replace(/<!---i(.|\s)*?i--->/img, ""))
+            // .pipe(Plugins.marked())
+            // .on('error', function(err) {
+            //     console.log(err);  
+            // })
+            // .pipe(Plugins.fileinclude())
+            // .pipe(Plugins.replace("<!----", ""))
+            // .pipe(Plugins.replace("---->", ""))
+            // .pipe(Plugins.replace("<!---", ""))
+            // .pipe(Plugins.replace("--->", ""))
+            .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+            // .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
+            // .pipe(Plugins.htmlbeautify())
+            .pipe(Plugins.rename(pageName + ".html"))
+            // .pipe(Plugins.wrap(
+            //     {
+            //         src:  Config.paths.srcTemplate + '/componentDemo.html' 
+            //     },
+            //     {
+            //         pageName: pageName
+            //     }
+            // ));
+            // Replace Comments to hide code
+            .pipe(gulp.dest(Config.paths.distDocsComponents + '/' + pageName));
 
 
         // markdownPipe = gulp.src(markdown)
@@ -251,7 +252,6 @@ gulp.task('Documentation-convertMarkdown', function() {
               }
          ))
           .pipe(gulp.dest(Config.paths.distDocsGettingStarted))
-          
 });
 
 //
@@ -259,12 +259,13 @@ gulp.task('Documentation-convertMarkdown', function() {
 // ----------------------------------------------------------------------------
 
 var DocumentationTasks = [
-    'Documentation-copyDocImages',
-    'Documentation-copyAssets',
-    'ComponentJS',
-    'Documentation-copyIgnoredFiles',
-    "Documentation-buildStyles",
-    "Documentation-convertMarkdown"
+  'Documentation-build',
+  'Documentation-copyDocImages',
+  'Documentation-copyAssets',
+  'ComponentJS',
+  'Documentation-copyIgnoredFiles',
+  'Documentation-buildStyles',
+  'Documentation-convertMarkdown'
 ];
 
 //Build Fabric Component Samples

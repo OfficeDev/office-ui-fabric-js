@@ -7,7 +7,7 @@ var Utilities = require('./Utilities');
  * Configuration class containing all properties to be used throughout the build
  */
 var Config = function() {
-  this.debugMode = true;
+  this.debugMode = false;
   this.sassExtension = "scss";
   this.buildSass = false;
   this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
@@ -17,6 +17,7 @@ var Config = function() {
     src: 'src',
     srcDocsPagesExamples: 'examples',
 		componentsPath : 'src/components',
+    docPages : 'src/documentation/pages',
     srcLibPath: 'lib',
     uiCorePath: 'node_modules/office-ui-fabric-core',
 	};
@@ -45,6 +46,7 @@ var Config = function() {
   this.paths.srcDocs = this.paths.src + '/documentation';
   this.paths.srcDocImages = this.paths.srcDocs + '/images';
   this.paths.srcDocsPages = this.paths.srcDocs + '/pages';
+  this.paths.srcDocsJSCompPages = this.paths.srcDocsPages + '/JS_Components';
   // this.paths.srcDocsComponents = this.paths.srcDocs + '/components';
   this.paths.srcTemplate = this.paths.srcDocs + '/templates';
   this.paths.srcDocumentationSCSS = this.paths.srcDocs + '/sass';
@@ -156,6 +158,14 @@ var Config = function() {
       },
       batch: [],
       helpers:  {
+        renderDocPage: function(page) {
+          var hbs = Plugins.handlebars.Handlebars;
+          var fileContents = Plugins.fs.readFileSync(this.paths.docPages + '/' + page + '/' + page +'.hbs',  "utf8");
+          var template = hbs.compile(fileContents);
+          // var thisProps = {props: props};
+          return new hbs.SafeString(template());
+        }.bind(this),
+
         renderPartial: function(partial, props) {
           var hbs = Plugins.handlebars.Handlebars;
           var fileContents = Plugins.fs.readFileSync(this.paths.componentsPath + '/' + partial + '/' + partial +'.hbs',  "utf8");
@@ -170,9 +180,9 @@ var Config = function() {
           if (isComponent) {
             var fileContents = Plugins.fs.readFileSync(this.paths.componentsPath + '/' + partial + '/' + partial +'.hbs',  "utf8");
           } else {
-            var fileContents = Plugins.fs.readFileSync(this.paths.srcDocsPages + '/' + partial + '/examples/' + examplePartial +'.hbs',  "utf8");
+            var fileContents = Plugins.fs.readFileSync(this.paths.srcDocsJSCompPages + '/' + partial + '/examples/' + examplePartial +'.hbs',  "utf8");
           }
-          
+
           var template = hbs.compile(fileContents);
           var thisProps = {props: props};
           var templateString = new hbs.SafeString(template(thisProps));
