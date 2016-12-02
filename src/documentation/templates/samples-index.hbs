@@ -28,20 +28,16 @@
                                 <a href="#/" title="Home page" aria-label="Home Page">Fabric JS</a>
                             </li>
                             <li class="link getStartedPage">
-                                <a href="#">Get Started</a>
+                                <a href="#!/GetStarted">Get Started</a>
                             </li>
                             <li class="link linkToggle jsComponents">
                                 <a href="#">JS Components</a>
                                 <ul class="links isSubMenu">
-                                    <li class="link">
-                                        <a href="#!/Components/Breadcrumb/Breadcrumb">Breadcrumb</a>
-                                    </li>
-                                    <li class="link">
-                                        <a href="#">Cats</a>
-                                    </li>
-                                    <li class="link">
-                                        <a href="#">Dogs</a>
-                                    </li>
+                                    <% components.forEach(function(component) { %>
+                                        <li class="link">
+                                            <a href="#!/Components/<%= component.name %>/<%= component.name %>"><%= component.name %></a>
+                                        </li>
+                                    <% }); %>
                                 </ul>
                             </li>
                             <li class="link backToFabricSite">
@@ -60,10 +56,17 @@
 <script>
 (function(){
     var mainContainer = document.getElementById('mainContent');
-    var toggleLinks = document.getElementsByClassName('linkToggle');
+    var toggleLinks = document.querySelectorAll('.linkToggle > a');
     var navLinks = document.getElementsByTagName('a');
     function linkToggle() {
-        (this.classList.contains('isActive')) ? this.classList.remove('isActive') : this.classList.add('isActive');
+        (this.parentNode.classList.contains('isActive')) ?
+        this.parentNode.classList.remove('isActive') :
+        this.parentNode.classList.add('isActive');
+    }
+
+
+    for (var i = 0; i < toggleLinks.length; i++) {
+        toggleLinks[i].addEventListener('click', linkToggle);
     }
 
     function navLinkAction(e) {
@@ -95,13 +98,8 @@
             };
             xhr.send();
         }
-
-
     }
 
-    for (var i = 0; i < toggleLinks.length; i++) {
-        toggleLinks[i].addEventListener('click', linkToggle);
-    }
 
     for (var i = 0; i < navLinks.length; i++) {
         navLinks[i].addEventListener('click', navLinkAction);
