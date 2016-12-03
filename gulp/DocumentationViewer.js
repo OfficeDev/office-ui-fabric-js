@@ -13,7 +13,7 @@ var BuildConfig = require('./modules/BuildConfig');
 gulp.task('DocumentationViewer', ['FabricComponents', 'Documentation', 'Samples'], function() {
     // Get components and save to template navigation
     var components = [];
-    var componentsList = Utilites.getFolders(Config.paths.componentsPath);
+    var componentsList = Utilites.getFolders(Config.paths.srcDocsJSCompPages);
     for (var i = 0; i < componentsList.length; i++) {
         components.push({
             "name": componentsList[i]

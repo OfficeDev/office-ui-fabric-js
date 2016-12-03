@@ -85,7 +85,6 @@ gulp.task('Documentation-handlebars', function(cb) {
    for (var i = 0; i < demoPagesList.length; i++) {
     _folderName = demoPagesList[i];
     _srcFolderName = Config.paths.srcDocsJSCompPages + '/' + _folderName + '/' + Config.paths.srcDocsPagesExamples;
-    console.log('FOLDER NAME', _srcFolderName);
 
     if (fs.existsSync(_srcFolderName)) {
         Config.handleBarsConfig.batch.push('./' + _srcFolderName);
@@ -102,27 +101,33 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
     var streams = [],
         pageName,
         srcFolderName,
+        jsonFolderName,
         distFolderName,
+        exampleFolderName,
         hasFileChanged,
         manifest,
         filesArray,
         componentPipe,
         hbs,
         templateData,
+        jsonFile
         exampleModels;
        
     var demoPagesList = Utilities.getFolders(Config.paths.srcDocsJSCompPages);
+
+    // Current Page Folder path
+    srcFolderName = Config.paths.srcDocsJSCompPages + '/';
     for (var i=0; i < demoPagesList.length; i++) {
        
         templateData = {};
         pageName = demoPagesList[i];
         var exampleModels = [];
-       
-        // Current Page Folder path
-        srcFolderName = Config.paths.srcDocsJSCompPages + '/' + pageName;
+
+        // Component Page folder path
+        compFolderPath = srcFolderName + '/'  + pageName;
 
         // Current Page example folder path
-        exampleFolderName = srcFolderName + '/' + Config.paths.srcDocsPagesExamples;
+        exampleFolderName = compFolderPath + '/' + Config.paths.srcDocsPagesExamples;
 
         // Dist folder name for page
         distFolderName = Config.paths.distDocumentation + '/' + pageName;
@@ -135,20 +140,29 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
 
         // Go through and find the view model for each example handlebars file and store in context
         if(exampleModels.length > 0) {
-            for(var x = 0; x < exampleModels.length; x++) {
-                var file = exampleModels[x];
-                var modelName = file.replace('.js', '');
-                modelName = modelName.replace(" ", '');
-                var modelFile = reload('../' + exampleFolderName + '/' + file);
-                templateData[modelName] = modelFile;
-            }
+          for(var x = 0; x < exampleModels.length; x++) {
+              var file = exampleModels[x];
+              var modelName = file.replace('.js', '');
+              modelName = modelName.replace(" ", '');
+              var modelFile = reload('../' + exampleFolderName + '/' + file);
+              templateData[modelName] = modelFile;
+          }
         }
 
-        console.log('template data', templateData);
+        jsonFile = Utilities.getFilesByExtension(compFolderPath, '.js');
+        if (jsonFile.length > 0) {
+          for (var i = 0; i < jsonFile.length; i++) {
+            var file = jsonFile[i];
+            var pageInfo = reload('../' + compFolderPath + '/' + file);
+            console.log(pageInfo);
+            templateData['pageInfo'] = pageInfo;
+          }
+        }
+
+        console.log('TEMPLATE DATA', templateData);
 
        // hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.hbs', '.html');
-        hbs = srcFolderName + '/' + pageName + '.hbs';
-
+        hbs = srcFolderName + 'ComponentPageTmpl.hbs';
         componentPipe = gulp.src(hbs)
             .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({

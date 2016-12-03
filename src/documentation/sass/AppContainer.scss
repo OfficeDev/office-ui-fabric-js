@@ -55,6 +55,7 @@
   transition: $ms-duration2 $ms-ease1;
   @include transition-property(left);
   width: $Nav-width;
+  min-width: $Nav-width; // @TODO: Figure out why width by itself isn't working
 }
 
 .App-content {
