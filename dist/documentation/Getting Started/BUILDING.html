@@ -1,0 +1,98 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started Page</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../../css/fabric.min.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.min.css">
+  <link rel="stylesheet" href="../../demo.css">
+  
+</head>
+
+<body class="componentDemo">
+<h1 id="building-fabric-gulp-tasks-bundling-and-the-starter-template">Building Fabric, gulp tasks, bundling, and the starter template</h1>
+<p>Office UI Fabric JS uses <a href="http://gulpjs.com/">gulp</a> to compile its styling, build and serve demos, and generate or watch other parts of the framework for changes. Use it to customize Fabric JS for your project, or to test changes you make to specific aspects of the components.</p>
+<p>It&#39;s also valuable for seeing the <a href="#gulp-watch-and-the-local-docs-site">locally hosted docs site</a>.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#building-fabric">Building Fabric</a></li>
+<li><a href="#gulp-tasks">Gulp tasks</a></li>
+<li><a href="#starter-template">Starter template</a></li>
+</ul>
+<h2 id="building-fabric">Building Fabric</h2>
+<p>Before you get started, make sure you have <a href="https://nodejs.org/">node.js</a>, <a href="http://gulpjs.com/">gulp</a>, and <a href="https://git-scm.com/">git</a> installed. To build Fabric:</p>
+<ol>
+<li>Clone the repo.</li>
+<li>Navigate to the folder that contains the gulpfile.js file (Fabric JS&#39;s root).</li>
+<li><code>npm install</code></li>
+<li><code>gulp</code></li>
+</ol>
+<p>The built files will be in the <code>/dist/</code> folder.</p>
+<h2 id="gulp-tasks">Gulp tasks</h2>
+<p>You can test and work with Fabric JS locally using the tasks below.</p>
+<h3 id="gulp">gulp</h3>
+<p>Builds everything incrementally. This will run slowly the first time and very quickly on subsequent runs. This task will build all parts of Fabric JS and move all changed files into <code>/dist/</code>. Every time you make changes, re-run this task.</p>
+<h3 id="gulp-watch-and-the-local-docs-site">gulp watch and the local docs site</h3>
+<p>Builds and watches everything. After running this once, your builds will be a lot faster. Now if you make a change anything anywhere in Fabric JS, only that area/section/file will get built/changed/moved.</p>
+<p>Once Fabric JS is built, you can view the localhost docs site by pointing your favorite browser at <a href="http://localhost:2020">http://localhost:2020</a>. This docs site allows you to view a list of the components, customize them (while <code>watch</code> runs), and see their responsive behavior.</p>
+<h3 id="gulp-watch-debug">gulp watch-debug</h3>
+<p>This task is similar to <code>gulp watch</code> except you can now get a readout of what files are in the pipe. This will be helpful to make sure that the build is working properly. </p>
+<h3 id="gulp-watch-sass">gulp watch-sass</h3>
+<p>Builds and watches everything but builds only Sass versions of our library files.</p>
+<h3 id="gulp-watch-sass-debug">gulp watch-sass-debug</h3>
+<p>Builds and watches everything but uses the Sass versions of the files and gives a readout of files in the pipe.</p>
+<h3 id="gulp-bundles">gulp Bundles</h3>
+<p>Builds all bundles specified in <code>gulp/modules/Config.js</code>. View more details in the <a href="https://github.com/OfficeDev/Office-UI-Fabric-js/blob/master/ghdocs/BUNDLING.md">Bundling</a></p>
+<h2 id="starter-template">Starter template</h2>
+<p>The following starter template represents the minimum recommended HTML structure for an app or add-in that uses Fabric. Copy the code into your project to start working with a basic Fabric document.</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;title&gt;Application Name&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+
+    &lt;!-- Optionally include jQuery to use Fabric&#39;s Component jQuery plugins --&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.js&quot;&gt;&lt;/script&gt;
+
+    &lt;!-- Fabric core --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/fabric.min.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/fabric.components.min.css&quot;&gt;
+
+    &lt;!-- Application-specific CSS --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/app.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Application content goes here --&gt;
+    &lt;h1 class=&quot;ms-font-su&quot;&gt;Why, hello, world.&lt;/h1&gt;
+
+    &lt;!-- Optionally include Fabric&#39;s Component jQuery plugins --&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</body>
+<script>
+  // Get external links and add target _blank to them
+  function fixExternalLinks() {
+    var links = document.getElementsByTagName('a');
+    var len = links.length;
+
+    for(var i=0; i<len; i++) {
+      var pattern = new RegExp("^https?:\/\/", "i");
+      var url = links[i].getAttribute('href');
+      if (pattern.test(url)) {
+        links[i].target = "_blank";
+      }
+    }
+  }
+
+  fixExternalLinks();
+</script>
+</html>

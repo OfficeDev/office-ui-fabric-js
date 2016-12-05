@@ -1,0 +1,39 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started Page</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../../css/fabric.min.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.min.css">
+  <link rel="stylesheet" href="../../demo.css">
+  
+</head>
+
+<body class="componentDemo">
+<h1 id="fabric-roadmap">Fabric Roadmap</h1>
+<p>Our roadmap used to be contained in a single markdown file, but has since been transferred to a nifty Trello board where you can view requests, add comments, or even vote so we know what folks need.</p>
+<p>To view the Trello board (that includes old requests that used to be in this file) please see the <a href="https://trello.com/b/wq7oIK87/office-ui-fabric-js-requests">Office UI Fabric JS Requests board</a>. If you&#39;d like to make a new request, please file an issue in <a href="https://github.com/OfficeDev/office-ui-fabric-js/issues">the Fabric JS&#39;s issue tracker</a> so we can add it to the Trello board.</p>
+
+</body>
+<script>
+  // Get external links and add target _blank to them
+  function fixExternalLinks() {
+    var links = document.getElementsByTagName('a');
+    var len = links.length;
+
+    for(var i=0; i<len; i++) {
+      var pattern = new RegExp("^https?:\/\/", "i");
+      var url = links[i].getAttribute('href');
+      if (pattern.test(url)) {
+        links[i].target = "_blank";
+      }
+    }
+  }
+
+  fixExternalLinks();
+</script>
+</html>

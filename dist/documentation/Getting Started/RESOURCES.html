@@ -1,0 +1,39 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started Page</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../../css/fabric.min.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.min.css">
+  <link rel="stylesheet" href="../../demo.css">
+  
+</head>
+
+<body class="componentDemo">
+<h1 id="resources">Resources</h1>
+<h2 id="samples-using-fabric">Samples using Fabric</h2>
+<p><a href="https://github.com/OfficeDev/PnP/tree/master/Samples/MicrosoftGraph.Office365.GroupsExplorer">Office 365 API - Groups Explorer</a></p>
+
+</body>
+<script>
+  // Get external links and add target _blank to them
+  function fixExternalLinks() {
+    var links = document.getElementsByTagName('a');
+    var len = links.length;
+
+    for(var i=0; i<len; i++) {
+      var pattern = new RegExp("^https?:\/\/", "i");
+      var url = links[i].getAttribute('href');
+      if (pattern.test(url)) {
+        links[i].target = "_blank";
+      }
+    }
+  }
+
+  fixExternalLinks();
+</script>
+</html>

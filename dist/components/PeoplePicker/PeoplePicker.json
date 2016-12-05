@@ -1,0 +1,12 @@
+{
+  "name": "PeoplePicker",
+  "dependencies": [
+    "Label",
+    "Persona",
+    "PersonaCard",
+    "Spinner",
+    "TextField",
+    "ContextualHost",
+    "OrgChart"
+  ]
+}

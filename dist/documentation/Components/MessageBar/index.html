@@ -1,0 +1,151 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MessageBar</title>
+  <link rel="stylesheet" href="../../../css/fabric.min.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.min.css">
+  <link rel="stylesheet" href="../../demo.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../../lib/pickadate.js"></script>
+</head>
+
+<body class="componentDemo">
+<h1 id="message-bar">Message Bar</h1>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<p>Lowest level of caution. Use when you want to present timely, concise information that accelerates a workflow, or to provide key information or actions that avoid a dead end in the experience.</p>
+
+
+<div class="ms-MessageBar ">
+    <div class="ms-MessageBar-content">
+        <div class="ms-MessageBar-icon">
+            <i class="ms-Icon ms-Icon--Info"></i>
+        </div>
+        <div class="ms-MessageBar-text">
+            Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+            <a href="" class="ms-Link">Hyperlink string</a>
+        </div>
+    </div>
+</div>
+
+<h3 id="warning">Warning</h3>
+<p>Use in exceptional situations where the use should be mindful of some sort of temporary condition. Notably, yellow is the most visible color to the human eye.</p>
+
+
+<div class="ms-MessageBar ms-MessageBar--warning">
+    <div class="ms-MessageBar-content">
+        <div class="ms-MessageBar-icon">
+            <i class="ms-Icon ms-Icon--Info"></i>
+        </div>
+        <div class="ms-MessageBar-text">
+            Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+            <a href="" class="ms-Link">Hyperlink string</a>
+        </div>
+    </div>
+</div>
+
+<h3 id="severe-warning">Severe Warning</h3>
+<p>Use for a situation that is not harmful or destructive yet but could easily turn into one. (e.g. You&#39;re about to run out of storage space).</p>
+
+
+<div class="ms-MessageBar ms-MessageBar--severeWarning">
+    <div class="ms-MessageBar-content">
+        <div class="ms-MessageBar-icon">
+            <i class="ms-Icon ms-Icon--Warning"></i>
+        </div>
+        <div class="ms-MessageBar-text">
+            Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+            <a href="" class="ms-Link">Hyperlink string</a>
+        </div>
+    </div>
+</div>
+
+<h3 id="error">Error</h3>
+<p>Use when a serious failure or error has occured and information may have been lost or some actions are impossible.</p>
+
+
+<div class="ms-MessageBar ms-MessageBar--error">
+    <div class="ms-MessageBar-content">
+        <div class="ms-MessageBar-icon">
+            <i class="ms-Icon ms-Icon--ErrorBadge"></i>
+        </div>
+        <div class="ms-MessageBar-text">
+            Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+            <a href="" class="ms-Link">Hyperlink string</a>
+        </div>
+    </div>
+</div>
+
+<h3 id="blocked">Blocked</h3>
+<p>Use when the user is explicitly forbidden from a particular action not because of an error, but because of security restrictions or policy enforcements.</p>
+
+
+<div class="ms-MessageBar ms-MessageBar--blocked">
+    <div class="ms-MessageBar-content">
+        <div class="ms-MessageBar-icon">
+            <i class="ms-Icon ms-Icon--Blocked"></i>
+        </div>
+        <div class="ms-MessageBar-text">
+            Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+            <a href="" class="ms-Link">Hyperlink string</a>
+        </div>
+    </div>
+</div>
+
+<h3 id="success">Success</h3>
+<p>Use sparingly when there&#39;s an exceptional need to tell the use that something went right. The preferred way to show success is to show, not tell (e.g. by navigating to show the result of the user action and letting users continue working on it or
+    elsewhere).</p>
+
+
+<div class="ms-MessageBar ms-MessageBar--success">
+    <div class="ms-MessageBar-content">
+        <div class="ms-MessageBar-icon">
+            <i class="ms-Icon ms-Icon--Completed"></i>
+        </div>
+        <div class="ms-MessageBar-text">
+            Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+            <a href="" class="ms-Link">Hyperlink string</a>
+        </div>
+    </div>
+</div>
+
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+    <li>Confirm that you have references to Fabric&#39;s CSS on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+ &lt;/head&gt;
+</code></pre></li>
+    <li>Copy the HTML from one of the samples above into your page. For example:
+        <pre>
+ <code>
+ 
+
+&lt;div class&#x3D;&quot;ms-MessageBar &quot;&gt;
+  &lt;div class&#x3D;&quot;ms-MessageBar-content&quot;&gt;
+    &lt;div class&#x3D;&quot;ms-MessageBar-icon&quot;&gt;
+      &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Info&quot;&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;ms-MessageBar-text&quot;&gt;
+      Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.&lt;br&gt;
+      &lt;a href&#x3D;&quot;&quot; class&#x3D;&quot;ms-Link&quot;&gt;Hyperlink string&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+ </code>
+</pre>
+    </li>
+    <li>Verify that the component is working the same as in the sample above.</li>
+    <li>Replace the sample HTML content (such as the content of <code>.ms-MessageBar-text</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>Link</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started Page</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../../css/fabric.min.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.min.css">
+  <link rel="stylesheet" href="../../demo.css">
+  
+</head>
+
+<body class="componentDemo">
+<h1 id="package-managers">Package managers</h1>
+<p>Fabric JS is also available from a variety of package managers, including <a href="https://bower.io/">Bower</a>, <a href="https://www.npmjs.com/">npm</a>, and the <a href="https://www.nuget.org/">NuGet Package Manager</a>. You can quickly add Fabric JS as a package and stay up to date with the latest version.</p>
+<p>For information on accessing the previous versions of Fabric that included the components via package managers, check out the <a href="https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/261GETSTARTED.md">2.6.1 get started docs</a>.</p>
+<h3 id="install-with-bower">Install with Bower</h3>
+<p>To install Fabric using Bower, run the following command:</p>
+<pre><code>$ bower install office-ui-fabric-js
+</code></pre><h3 id="install-with-npm">Install with NPM</h3>
+<p>To install <a href="https://www.npmjs.com/package/office-ui-fabric-js">Fabric Core&#39;s NPM package</a>, run the following command:</p>
+<pre><code>$ npm install office-ui-fabric-js
+</code></pre><h3 id="install-with-nuget-package-manager">Install with NuGet Package Manager</h3>
+<p>To install <a href="https://www.nuget.org/packages/OfficeUIFabricJS/">Fabric Core&#39;s NuGet package</a>, run the following command in the <a href="http://docs.nuget.org/consume/package-manager-console">package manager console</a>:</p>
+<pre><code>PM&gt; Install-Package OfficeUIFabricJS
+</code></pre>
+</body>
+<script>
+  // Get external links and add target _blank to them
+  function fixExternalLinks() {
+    var links = document.getElementsByTagName('a');
+    var len = links.length;
+
+    for(var i=0; i<len; i++) {
+      var pattern = new RegExp("^https?:\/\/", "i");
+      var url = links[i].getAttribute('href');
+      if (pattern.test(url)) {
+        links[i].target = "_blank";
+      }
+    }
+  }
+
+  fixExternalLinks();
+</script>
+</html>

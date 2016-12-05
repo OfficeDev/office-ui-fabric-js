@@ -1,0 +1,126 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started Page</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../../css/fabric.min.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.min.css">
+  <link rel="stylesheet" href="../../demo.css">
+  
+</head>
+
+<body class="componentDemo">
+<h1 id="custom-bundling">Custom Bundling</h1>
+<h2 id="what-are-bundles-and-why-are-they-useful-">What are bundles and why are they useful?</h2>
+<p>&quot;Bundles&quot; are simply preconfigured CSS files that are made up of only the pieces of Fabric you specify. This allows you to tailor Fabric to the needs of your app and reduce the impact of including all of Fabric or Fabric&#39;s components. The end result is similar to the output of something like <code>src/sass/Fabric.Components.scss</code></p>
+<p>For example, if your web app or add-in uses only the Button and Dropdown components, you can configure a bundle that includes only the styles for those elements, and nothing more. However, if a component depends on other components to render properly, those would also be included in the bundle. For example, the HTML for PersonaCard depends on the Persona, OrgChart, and Link components, so a bundle including the PersonaCard would also include the styles for those components.</p>
+<h2 id="usage">Usage</h2>
+<p>Bundling is a build process that depends on Fabric&#39;s gulp build tools to work, so first, make sure you&#39;ve followed the <a href="https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md#building-fabric">instructions for Building Fabric</a> to set up a local clone of Fabric that is ready for compiling.</p>
+<p>Then, configure your bundle in <code>gulp/modules/Config.js</code> in the <code>bundlesConfig</code> property. A bundle is simply a JavaScript object with a name, description, and list of file names to include or exclude from the final output. </p>
+<h3 id="exclude-vs-include">Exclude vs include</h3>
+<h4 id="-excludes-"><code>excludes</code></h4>
+<p>If you list your files in &quot;excludes&quot;, the bundle will be comprised of each .scss file in <code>src/sass</code> and <code>src/components</code> <strong>except</strong> for the files specified. For now, component dependencies are not included when in &quot;exclude&quot; mode. Partial .scss files, whose filenames begin with &#39;_&#39; (minus the quotes), are always excluded from bundles, since they produce no output.</p>
+<p>Here&#39;s an example &quot;excludes&quot; bundle that excludes the Language Overrides styles:</p>
+<pre><code class="lang-javascript">&quot;bundles&quot;: [
+  {
+    &quot;name&quot;: &quot;excludes-bundle&quot;, // Becomes excludes-bundle.css/.min.css
+    &quot;description&quot;: &quot;A custom bundle including a handful of modules.&quot;,
+    &quot;excludes&quot;: [
+      &quot;Button&quot;
+    ]
+  } 
+]
+</code></pre>
+<p>This will produce the following:</p>
+<pre><code class="lang-scss">//
+// Office UI Fabric
+// --------------------------------------------------
+// SCSS template for building a bundle of Fabric and Fabric Components CSS.
+
+@import &#39;../../../node_modules/dist/sass/_Fabric.Common.scss&#39;;
+
+@import &#39;../../../src/components/Breadcrumb/Breadcrumb.scss&#39;;
+@import &#39;../../../src/components/Callout/Callout.scss&#39;;
+@import &#39;../../../src/components/CheckBox/CheckBox.scss&#39;;
+@import &#39;../../../src/components/CommandBar/CommandBar.scss&#39;;
+@import &#39;../../../src/components/ContextualMenu/ContextualMenu.scss&#39;;
+@import &#39;../../../src/components/DatePicker/DatePicker.scss&#39;;
+@import &#39;../../../src/components/Dialog/Dialog.scss&#39;;
+@import &#39;../../../src/components/Dropdown/Dropdown.scss&#39;;
+@import &#39;../../../src/components/Facepile/Facepile.scss&#39;;
+@import &#39;../../../src/components/Label/Label.scss&#39;;
+@import &#39;../../../src/components/Link/Link.scss&#39;;
+@import &#39;../../../src/components/List/List.scss&#39;;
+@import &#39;../../../src/components/ListItem/ListItem.scss&#39;;
+@import &#39;../../../src/components/MessageBanner/MessageBanner.scss&#39;;
+@import &#39;../../../src/components/NavBar/NavBar.scss&#39;;
+@import &#39;../../../src/components/OrgChart/OrgChart.scss&#39;;
+@import &#39;../../../src/components/Overlay/Overlay.scss&#39;;
+@import &#39;../../../src/components/Panel/Panel.scss&#39;;
+@import &#39;../../../src/components/PeoplePicker/PeoplePicker.scss&#39;;
+@import &#39;../../../src/components/Persona/Persona.scss&#39;;
+@import &#39;../../../src/components/PersonaCard/PersonaCard.scss&#39;;
+@import &#39;../../../src/components/Pivot/Pivot.scss&#39;;
+@import &#39;../../../src/components/ProgressIndicator/ProgressIndicator.scss&#39;;
+@import &#39;../../../src/components/SearchBox/SearchBox.scss&#39;;
+@import &#39;../../../src/components/Spinner/Spinner.scss&#39;;
+@import &#39;../../../src/components/Table/Table.scss&#39;;
+@import &#39;../../../src/components/TextField/TextField.scss&#39;;
+@import &#39;../../../src/components/Toggle/Toggle.scss&#39;;
+</code></pre>
+<h4 id="-includes-"><code>includes</code></h4>
+<p>If instead you use &quot;includes&quot;, the bundle will include only the files specified. If the file is a component that has dependencies, like mentioned above, those will also be included. If you aren&#39;t sure what a component&#39;s dependencies are, look for the &quot;dependencies&quot; property in that component&#39;s JSON file in <code>src/{ComponentName}/{ComponentName}.json</code>. Note that the build looks for dependencies two children deep, or in other words, dependencies of dependencies. Also, as noted in <code>exludes</code> above, partial .scss files beginning with &#39;_&#39; will not be included in bundles, even if they are explicitly listed.</p>
+<p>Here&#39;s an example &quot;include&quot; bundle that includes only the Button and PersonaCard components:</p>
+<pre><code class="lang-javascript">&quot;bundles&quot;: [
+  {
+    &quot;name&quot;: &quot;includes-bundle&quot;, // Becomes includes-bundle.css/.min.css
+    &quot;description&quot;: &quot;A custom bundle including a handful of modules.&quot;,
+    &quot;includes&quot;: [
+      &quot;Button&quot;,
+      &quot;PersonaCard&quot; // Will also include Link, OrgChart, and Persona components as dependencies
+    ]
+  } 
+]
+</code></pre>
+<p>This will produce the following:</p>
+<pre><code class="lang-scss">//
+// Office UI Fabric
+// --------------------------------------------------
+// SCSS template for building a bundle of Fabric and Fabric Components CSS.
+
+@import &#39;../../../node_modules/dist/sass/_Fabric.Common.scss&#39;;
+
+@import &#39;../../../src/components/Button/Button.scss&#39;;
+@import &#39;../../../src/components/Link/Link.scss&#39;;
+@import &#39;../../../src/components/OrgChart/OrgChart.scss&#39;;
+@import &#39;../../../src/components/Persona/Persona.scss&#39;;
+@import &#39;../../../src/components/PersonaCard/PersonaCard.scss&#39;;
+</code></pre>
+<h4 id="neither-excludes-nor-includes">Neither excludes nor includes</h4>
+<p>If neither &quot;excludes&quot; nor &quot;includes&quot; are specified, the bundle will include all of Fabric&#39;s Components CSS.</p>
+<h3 id="-gulp-bundles-"><code>gulp Bundles</code></h3>
+<p>Then, open a Command Prompt or Terminal window and navigate to the root of your cloned Fabric folder, then run <code>gulp Bundles</code>. Each bundle object will build into a full and minified CSS file in <code>dist/bundles/{name}</code>. To see the .scss file that makes up the bundle, check <code>dist/bundles/{name}.scss</code>.</p>
+
+</body>
+<script>
+  // Get external links and add target _blank to them
+  function fixExternalLinks() {
+    var links = document.getElementsByTagName('a');
+    var len = links.length;
+
+    for(var i=0; i<len; i++) {
+      var pattern = new RegExp("^https?:\/\/", "i");
+      var url = links[i].getAttribute('href');
+      if (pattern.test(url)) {
+        links[i].target = "_blank";
+      }
+    }
+  }
+
+  fixExternalLinks();
+</script>
+</html>

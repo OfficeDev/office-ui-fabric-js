@@ -1,0 +1,291 @@
+/* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. */
+/**
+ * Office UI Fabric JS 1.3.0
+ * The JavaScript front-end framework for building experiences for Office 365.
+ **/
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/*Variables*/
+/* DOCUMENTATION SPECIFIC STYLING */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+h1 {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 28px;
+  font-weight: 100;
+}
+
+h2 {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 21px;
+  font-weight: 100;
+}
+
+h3 {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.componentDemo {
+  padding: 0 20px;
+}
+
+#componentWrapper {
+  width: calc(100% - 56px);
+  height: 100%;
+  padding: 0 28px;
+}
+
+.sample-wrapper {
+  margin: 28px 0;
+}
+
+.sample-wrapper > .ms-Overlay {
+  display: block;
+  position: relative;
+  height: 300px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.ms-NavBar-item .ms-ContextualMenu {
+  position: absolute;
+}
+
+.ms-CommandBar .ms-ContextualMenu {
+  position: absolute;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+#Header {
+  position: absolute;
+  top: 0;
+  height: 47px;
+  left: 0;
+  right: 0;
+  line-height: 47px;
+  padding: 0 20px;
+  overflow: hidden;
+  white-space: no-wrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#Header .Header-Title {
+  display: inline-block;
+}
+
+#Header .Header-Title:hover {
+  cursor: default;
+}
+
+#Header .Header-buttons {
+  -webkit-font-smoothing: auto;
+}
+
+#Header .Header-button {
+  position: relative;
+  text-decoration: none;
+  background: 0 0;
+  color: #ffffff;
+  border: none;
+  padding: 0;
+  padding: 0 10px;
+  min-width: 50px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 5px;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+#Header .Header-button:hover {
+  background-color: #0078d7;
+}
+
+html[dir=ltr] #ContentContainer {
+  left: 300px;
+  right: 0;
+}
+
+html[dir=ltr] .ms-Nav-groupButton {
+  text-align: left;
+}
+
+html[dir=ltr] .ms-Nav-groupChevron.ms-Icon {
+  left: 15px;
+}
+
+html[dir=ltr] #Header .HeaderTitle {
+  padding: 5px 0px 5px 20px;
+}
+
+html[dir=ltr] #Header .Header-buttons {
+  float: right;
+}
+
+html[dir=ltr] #SidebarContainer {
+  border-right: 1px solid #eeeeee;
+  left: 0;
+}
+
+html[dir=rtl] #ContentContainer {
+  left: 0;
+  right: 300px;
+}
+
+html[dir=rtl] .ms-Nav-groupChevron.ms-Icon {
+  right: 15px;
+}
+
+html[dir=rtl] .ms-Nav-groupButton {
+  text-align: right;
+}
+
+html[dir=rtl] #Header .HeaderTitle {
+  padding: 5px 20px 5px 0px;
+}
+
+html[dir=rtl] #Header .Header-buttons {
+  float: left;
+}
+
+html[dir=rtl] #SidebarContainer {
+  border-left: 1px solid #eeeeee;
+  right: 0;
+}
+
+html[dir=rtl] .LinkContainer a.is-selected:after {
+  border-right: 2px solid black;
+  border-left: 0px;
+}
+
+#SidebarContainer {
+  position: absolute;
+  width: 300px;
+  top: 47px;
+  bottom: 0;
+  background: #ffffff;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#SidebarContainer h1 {
+  padding-left: 25px;
+}
+
+.ms-Nav-groupChevron.ms-Icon {
+  position: absolute;
+  height: 40px;
+  line-height: 40px;
+  font-size: 13px;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear,-webkit-transform 0.1s linear;
+}
+
+.ms-Nav-group.is-expanded .ms-Nav-groupChevron {
+  -ms-transform: rotate(-180deg);
+      transform: rotate(-180deg);
+}
+
+.ms-Nav-groupButton {
+  display: block;
+  width: 100%;
+  height: 40px;
+  font-family: 'Segoe UI Regular WestEuropean','Segoe UI',Tahoma,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 40px;
+  margin: 5px 0;
+  padding: 0 40px;
+  background: 0 0;
+  border: none;
+  border-bottom: 1px solid #eaeaea;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #333333;
+  background: #ffffff;
+  outline: transparent;
+}
+
+.ms-Nav-groupButton:hover {
+  background: #f8f8f8;
+}
+
+.ms-Nav-groupContent {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.ms-Nav-group.is-expanded .ms-Nav-groupContent {
+  display: block;
+}
+
+.ms-u-slideDownIn20 {
+  animation-name: fade,slideDownIn20;
+  -webkit-animation-duration: 367ms;
+     -moz-animation-duration: 367ms;
+      -ms-animation-duration: 367ms;
+       -o-animation-duration: 367ms;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+#ContentContainer {
+  position: absolute;
+  top: 47px;
+  bottom: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  transform: translateZ(0);
+  -webkit-overflow-scrolling: touch;
+}
+
+.LinkContainer {
+  margin-bottom: 20px;
+}
+
+.LinkContainer a {
+  display: block;
+  padding: 10px 40px;
+}
+
+.LinkContainer a.is-selected {
+  background-color: #f4f4f4;
+  position: relative;
+  color: #333333;
+}
+
+.LinkContainer a.is-selected:after {
+  content: '';
+  position: absolute;
+  border-left: 2px solid black;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

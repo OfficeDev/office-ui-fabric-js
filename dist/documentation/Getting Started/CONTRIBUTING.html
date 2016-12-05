@@ -1,0 +1,73 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started Page</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../../css/fabric.min.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.min.css">
+  <link rel="stylesheet" href="../../demo.css">
+  
+</head>
+
+<body class="componentDemo">
+<h1 id="contributing">Contributing</h1>
+<p>Office UI Fabric JS is an evolving snapshot of the Office 365 Design Language&#39;s components, provided by the OneDrive and SharePoint Design Studio.</p>
+<p>Currently, the Fabric team is focusing on other control sets, but we are still open to contributions that help improve the stability or usability of the components.</p>
+<p>This project has a few key tenets that are worth noting:</p>
+<ul>
+<li>No use of jQuery, please! (only the DatePicker uses jQuery)</li>
+<li>TypeScript is used for the components&#39; included functionality</li>
+</ul>
+<h3 id="pull-requests">Pull requests</h3>
+<p>We gladly welcome PRs regarding…</p>
+<ul>
+<li>Bug fixes (of course!)</li>
+<li>Variants on components</li>
+<li>Documentation updates</li>
+<li>Things we haven&#39;t thought of yet :-)</li>
+</ul>
+<p>When creating a pull request, please describe in detail the problem you are solving and reference an <a href="https://github.com/OfficeDev/Office-UI-Fabric-js/issues">open issue</a> if possible. Screenshots or a <a href="http://codepen.io/pen?template=gPGzgX">demonstration on CodePen</a> are also appreciated. </p>
+<h3 id="feature-requests">Feature requests</h3>
+<p>Please be sure to open an issue before starting a hefty PR so we can let you know if we&#39;re likely to consider your request--and to make sure we aren&#39;t already planning on doing the work.</p>
+<h3 id="contribution-license-agreement">Contribution license agreement</h3>
+<p>For pull requests affecting fewer than 15 lines of code, you will need to sign a <a href="https://cla.microsoft.com/">Contribution License Agreement (CLA)</a> before your contribution can be incorporated. To complete the CLA, you will need to submit the request via the form and then electronically sign the CLA when you receive the email containing the link to the document.</p>
+<p>This needs to only be done once for any Microsoft open source project.</p>
+<h3 id="issue-tracker-labels">Issue tracker labels</h3>
+<p>We track community issues via GitHub&#39;s <a href="https://github.com/OfficeDev/Office-UI-Fabric-js/issues">issue tracker</a>. To help us keep track of the different areas, please use the following labels:</p>
+<ul>
+<li><code>accessibility</code> - Issues or PRs that pertain to keyboard support, high contrast mode, screen reader support, etc.</li>
+<li><code>bug</code> - Issues or PRs that address unexpected behavior or broken components.</li>
+<li><code>build-system</code> - Issues and PRs related to the build process.</li>
+<li><code>documentation</code> - Issues and PRs that pertain to the documentation included with the repository.</li>
+<li><code>enhancement</code> - Issues or PRs that address potential improvements to components.</li>
+<li><code>needs-design</code> - Issues or PRs that need Design guidance.</li>
+<li><code>needs-discussion</code> - Issues or PRs that need discussion among the Fabric team.</li>
+<li><code>question</code> - Issues that don&#39;t necessarily require code and usually consist of clarifications.</li>
+<li><code>waiting-for-author</code> - Issues or PRs that are awaiting a repsonse from the original author.</li>
+<li><code>waiting-for-details</code> - Issues or PRs that need more details before they can be acted upon.</li>
+<li><code>waiting-to-merge</code> - PRs that are close to being merged in but are stalled.</li>
+</ul>
+
+</body>
+<script>
+  // Get external links and add target _blank to them
+  function fixExternalLinks() {
+    var links = document.getElementsByTagName('a');
+    var len = links.length;
+
+    for(var i=0; i<len; i++) {
+      var pattern = new RegExp("^https?:\/\/", "i");
+      var url = links[i].getAttribute('href');
+      if (pattern.test(url)) {
+        links[i].target = "_blank";
+      }
+    }
+  }
+
+  fixExternalLinks();
+</script>
+</html>

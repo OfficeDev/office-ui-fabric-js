@@ -1,0 +1,125 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dropdown</title>
+  <link rel="stylesheet" href="../../../css/fabric.min.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.min.css">
+  <link rel="stylesheet" href="../../demo.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../../lib/pickadate.js"></script>
+</head>
+
+<body class="componentDemo">
+<h1 id="dropdown">Dropdown</h1>
+<p>Allows for the selection of one option from a list.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+
+<!-- Future implementation to be discussed -->
+<div class="ms-Dropdown  " tabindex="0">
+    <label class="ms-Label">Dropdown label</label>
+    <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"></i>
+    <select class="ms-Dropdown-select">
+      <option>Choose a sound&amp;hellip;</option>
+      <option>Dog barking</option>
+      <option>Wind blowing</option>
+      <option>Duck quacking</option>
+      <option>Cow mooing</option>
+  </select>
+</div>
+<h3 id="disabled">Disabled</h3>
+
+
+<!-- Future implementation to be discussed -->
+<div class="ms-Dropdown  is-disabled" tabindex="0">
+    <label class="ms-Label">Dropdown label</label>
+    <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"></i>
+    <select class="ms-Dropdown-select">
+      <option>Choose a sound&amp;hellip;</option>
+      <option>Dog barking</option>
+      <option>Wind blowing</option>
+      <option>Duck quacking</option>
+      <option>Cow mooing</option>
+  </select>
+</div>
+<h2 id="states">States</h2>
+<table>
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Applied to</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>.is-disabled</code></td>
+            <td><code>.ms-Dropdown</code></td>
+            <td>Disables the dropdown.</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+    <li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+    <li>Copy the HTML from the sample above into your page. For example:
+        <pre>
+ <code>
+ 
+
+
+&lt;div class&#x3D;&quot;ms-Dropdown  &quot; tabindex&#x3D;&quot;0&quot;&gt;
+  &lt;label class&#x3D;&quot;ms-Label&quot;&gt;Dropdown label&lt;/label&gt;
+  &lt;i class&#x3D;&quot;ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown&quot;&gt;&lt;/i&gt;
+  &lt;select class&#x3D;&quot;ms-Dropdown-select&quot;&gt;
+      &lt;option&gt;Choose a sound&amp;amp;hellip;&lt;/option&gt;
+      &lt;option&gt;Dog barking&lt;/option&gt;
+      &lt;option&gt;Wind blowing&lt;/option&gt;
+      &lt;option&gt;Duck quacking&lt;/option&gt;
+      &lt;option&gt;Cow mooing&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+ </code>
+</pre>
+    </li>
+    <li>Add the following <code>&lt;script&gt;</code> tag to your page to instantiate all Dropdown components on the page:
+        <pre>
+ <code>
+ &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+  var DropdownHTMLElements &#x3D; document.querySelectorAll(&#x27;.ms-Dropdown&#x27;);
+  for (var i &#x3D; 0; i &lt; DropdownHTMLElements.length; ++i) {
+    var Dropdown &#x3D; new fabric[&#x27;Dropdown&#x27;](DropdownHTMLElements[i]);
+  }
+&lt;/script&gt;
+
+ </code>
+</pre>
+    </li>
+    <li>Verify that the component is working the same as in the sample above.</li>
+    <li>Replace the sample HTML content (such as the options within <code>.ms-Dropdown-select</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component depends on Panel for when it is rendered on mobile.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>More details will be added here.</p>
+
+<script type="text/javascript">
+    var DropdownHTMLElements = document.querySelectorAll('.ms-Dropdown');
+    for (var i = 0; i < DropdownHTMLElements.length; ++i) {
+        var Dropdown = new fabric['Dropdown'](DropdownHTMLElements[i]);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DatePicker</title>
+  <link rel="stylesheet" href="../../../css/fabric.min.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.min.css">
+  <link rel="stylesheet" href="../../demo.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../../lib/pickadate.js"></script>
+</head>
+
+<body class="componentDemo">
+<h1 id="date-picker">Date Picker</h1>
+<p>Allows for the selection of a date into a text field.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+<!-- This is a sample Date Picker that works for Gregorian calendars. It uses jQuery and pickadate.js for demonstration. -->
+<!-- For more information on this version of pickadate.js (3.5.3), go here: https://github.com/amsul/pickadate.js/tree/505e00b9208a81ffb169338042c0b9c781e76fb7 -->
+
+<div class="ms-DatePicker">
+    <div class="ms-TextField">
+        <label class="ms-Label">Start date</label>
+        <i class="ms-DatePicker-event ms-Icon ms-Icon--Event"></i>
+        <input class="ms-TextField-field" type="text" placeholder="Select a date&hellip;">
+    </div>
+    <div class="ms-DatePicker-monthComponents">
+        <span class="ms-DatePicker-nextMonth js-nextMonth"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+        <span class="ms-DatePicker-prevMonth js-prevMonth"><i class="ms-Icon ms-Icon--ChevronLeft"></i></span>
+        <div class="ms-DatePicker-headerToggleView js-showMonthPicker"></div>
+    </div>
+    <span class="ms-DatePicker-goToday js-goToday">Go to today</span>
+    <div class="ms-DatePicker-monthPicker">
+        <div class="ms-DatePicker-header">
+            <div class="ms-DatePicker-yearComponents">
+                <span class="ms-DatePicker-nextYear js-nextYear"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+                <span class="ms-DatePicker-prevYear js-prevYear"><i class="ms-Icon ms-Icon--ChevronLeft"></i></span>
+            </div>
+            <div class="ms-DatePicker-currentYear js-showYearPicker"></div>
+        </div>
+        <div class="ms-DatePicker-optionGrid">
+            <span class="ms-DatePicker-monthOption js-changeDate" data-month="0">Jan</span>
+            <span class="ms-DatePicker-monthOption js-changeDate" data-month="1">Feb</span>
+            <span class="ms-DatePicker-monthOption js-changeDate" data-month="2">Mar</span>
+            <span class="ms-DatePicker-monthOption js-changeDate" data-month="3">Apr</span>
+            <span class="ms-DatePicker-monthOption js-changeDate" data-month="4">May</span>
+            <span class="ms-DatePicker-monthOption js-changeDate" data-month="5">Jun</span>
+            <span class="ms-DatePicker-monthOption js-changeDate" data-month="6">Jul</span>
+            <span class="ms-DatePicker-monthOption js-changeDate" data-month="7">Aug</span>
+            <span class="ms-DatePicker-monthOption js-changeDate" data-month="8">Sep</span>
+            <span class="ms-DatePicker-monthOption js-changeDate" data-month="9">Oct</span>
+            <span class="ms-DatePicker-monthOption js-changeDate" data-month="10">Nov</span>
+            <span class="ms-DatePicker-monthOption js-changeDate" data-month="11">Dec</span>
+        </div>
+    </div>
+    <div class="ms-DatePicker-yearPicker">
+        <div class="ms-DatePicker-decadeComponents">
+            <span class="ms-DatePicker-nextDecade js-nextDecade"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+            <span class="ms-DatePicker-prevDecade js-prevDecade"><i class="ms-Icon ms-Icon--ChevronLeft"></i></span>
+        </div>
+    </div>
+</div>
+
+<h2 id="states">States</h2>
+<table>
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Applied to</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>.is-highlighted</code></td>
+            <td><code>.ms-DatePicker-monthOption</code>, <code>.ms-DatePicker-yearOption</code></td>
+            <td>Marks a month or year as selected.</td>
+        </tr>
+        <tr>
+            <td><code>.is-pickingYears</code></td>
+            <td><code>.ms-DatePicker</code></td>
+            <td>Displays a set of years to choose from.</td>
+        </tr>
+        <tr>
+            <td><code>.is-pickingMonths</code></td>
+            <td><code>.ms-DatePicker</code></td>
+            <td>Displays a set of months to choose from.</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+    <li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery and PickaDate.js library:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;fabric.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;PickaDate.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+    <li>Copy the HTML from one of the samples above into your page. For example:
+        <pre>
+ <code>
+ 
+
+
+&lt;div class&#x3D;&quot;ms-DatePicker&quot;&gt;
+  &lt;div class&#x3D;&quot;ms-TextField&quot;&gt;
+    &lt;label class&#x3D;&quot;ms-Label&quot;&gt;Start date&lt;/label&gt;
+    &lt;i class&#x3D;&quot;ms-DatePicker-event ms-Icon ms-Icon--Event&quot;&gt;&lt;/i&gt;
+    &lt;input class&#x3D;&quot;ms-TextField-field&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Select a date&amp;hellip;&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;ms-DatePicker-monthComponents&quot;&gt;
+    &lt;span class&#x3D;&quot;ms-DatePicker-nextMonth js-nextMonth&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;span class&#x3D;&quot;ms-DatePicker-prevMonth js-prevMonth&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronLeft&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;div class&#x3D;&quot;ms-DatePicker-headerToggleView js-showMonthPicker&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class&#x3D;&quot;ms-DatePicker-goToday js-goToday&quot;&gt;Go to today&lt;/span&gt;
+  &lt;div class&#x3D;&quot;ms-DatePicker-monthPicker&quot;&gt;
+    &lt;div class&#x3D;&quot;ms-DatePicker-header&quot;&gt;
+      &lt;div class&#x3D;&quot;ms-DatePicker-yearComponents&quot;&gt;
+        &lt;span class&#x3D;&quot;ms-DatePicker-nextYear js-nextYear&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;ms-DatePicker-prevYear js-prevYear&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronLeft&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;ms-DatePicker-currentYear js-showYearPicker&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;ms-DatePicker-optionGrid&quot;&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;0&quot;&gt;Jan&lt;/span&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;1&quot;&gt;Feb&lt;/span&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;2&quot;&gt;Mar&lt;/span&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;3&quot;&gt;Apr&lt;/span&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;4&quot;&gt;May&lt;/span&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;5&quot;&gt;Jun&lt;/span&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;6&quot;&gt;Jul&lt;/span&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;7&quot;&gt;Aug&lt;/span&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;8&quot;&gt;Sep&lt;/span&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;9&quot;&gt;Oct&lt;/span&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;10&quot;&gt;Nov&lt;/span&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;11&quot;&gt;Dec&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;ms-DatePicker-yearPicker&quot;&gt;
+    &lt;div class&#x3D;&quot;ms-DatePicker-decadeComponents&quot;&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-nextDecade js-nextDecade&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+      &lt;span class&#x3D;&quot;ms-DatePicker-prevDecade js-prevDecade&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronLeft&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+ </code>
+</pre>
+    </li>
+    <li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to PickaDate and Fabric&#39;s JS, to instantiate all DatePicker components on the page:
+        <pre>
+ <code>
+ &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+  var DatePickerElements &#x3D; document.querySelectorAll(&quot;.ms-DatePicker&quot;);
+  for(var i &#x3D; 0; i &lt; DatePickerElements.length; i++) {
+    new fabric[&#x27;DatePicker&#x27;](DatePickerElements[i]);
+  }
+&lt;/script&gt;
+
+ </code>
+</pre>
+    </li>
+    <li>Verify that the component is working the same as in the sample above.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies on other components. It does, however, require <a href="https://github.com/amsul/pickadate.js/releases/tag/3.5.3">pickadate.js 3.5.3</a>. Once you have downloaded the ZIP, you&#39;ll find <code>picker.js</code> and <code>picker.date.js</code>    in the <code>lib</code> folder.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>More details will be added here.</p>
+
+<script type="text/javascript">
+    var DatePickerElements = document.querySelectorAll(".ms-DatePicker");
+    for (var i = 0; i < DatePickerElements.length; i++) {
+        new fabric['DatePicker'](DatePickerElements[i]);
+    }
+</script>
+</body>
+</html>

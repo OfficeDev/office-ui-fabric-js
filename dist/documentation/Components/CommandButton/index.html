@@ -1,0 +1,221 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CommandButton</title>
+  <link rel="stylesheet" href="../../../css/fabric.min.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.min.css">
+  <link rel="stylesheet" href="../../demo.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../../lib/pickadate.js"></script>
+</head>
+
+<body class="componentDemo">
+<h1 id="commandbutton">CommandButton</h1>
+<p>Allows users to take action, such as submitting a form or dismissing a message. Primary use is in command bar or in Callout.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+<div class="ms-CommandButton    ">
+    <button class="ms-CommandButton-button">
+      <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--CircleRing"></i></span><span class="ms-CommandButton-label">Command</span>  </button>
+</div>
+<h3 id="action-button">Action Button</h3>
+
+<div class="ms-CommandButton  ms-CommandButton--actionButton  ">
+    <button class="ms-CommandButton-button">
+      <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--CircleRing"></i></span><span class="ms-CommandButton-label"></span>  </button>
+</div>
+<h3 id="disabled">Disabled</h3>
+
+<div class="ms-CommandButton    is-disabled">
+    <button class="ms-CommandButton-button" tabIndex="-1">
+      <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--CircleRing"></i></span><span class="ms-CommandButton-label">Command</span>  </button>
+</div>
+<h3 id="dropdown">Dropdown</h3>
+
+<div class="ms-CommandButton    ">
+    <button class="ms-CommandButton-button">
+      <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--CircleRing"></i></span><span class="ms-CommandButton-label">New</span><span class="ms-CommandButton-dropdownIcon"><i class="ms-Icon ms-Icon--ChevronDown"></i></span>
+  </button>
+    <ul class="ms-ContextualMenu  is-opened ms-ContextualMenu--hasIcons">
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link " tabindex="1">Folder</a>
+            <i class="ms-Icon ms-Icon--Folder "></i>
+        </li>
+        <li class="ms-ContextualMenu-item ms-ContextualMenu-item--divider"></li>
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link " tabindex="1">Plain Text Document</a>
+            <i class="ms-Icon ms-Icon--Document "></i>
+        </li>
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link " tabindex="1">Smile</a>
+            <i class="ms-Icon ms-Icon--Emoji2 "></i>
+        </li>
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link " tabindex="1">Globe</a>
+            <i class="ms-Icon ms-Icon--Globe "></i>
+        </li>
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link " tabindex="1">Money</a>
+            <i class="ms-Icon ms-Icon--Money "></i>
+        </li>
+    </ul>
+</div>
+<h3 id="inline">Inline</h3>
+
+<div class="ms-CommandButton  ms-CommandButton--inline  ">
+    <button class="ms-CommandButton-button">
+      <span class="ms-CommandButton-icon ms-fontColor-green"><i class="ms-Icon ms-Icon--CircleRing"></i></span><span class="ms-CommandButton-label">Command</span>  </button>
+</div>
+<h3 id="no-label">No Label</h3>
+
+<div class="ms-CommandButton  ms-CommandButton--noLabel  ">
+    <button class="ms-CommandButton-button">
+      <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--CircleRing"></i></span><span class="ms-CommandButton-label"></span>  </button>
+</div>
+<h3 id="no-label-split">No Label Split</h3>
+
+<div class="ms-CommandButton  ms-CommandButton--noLabel  ">
+    <button class="ms-CommandButton-button">
+      <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--CircleRing"></i></span><span class="ms-CommandButton-label"></span>  </button>
+    <button class="ms-CommandButton-splitIcon">
+      <i class="ms-Icon ms-Icon--ChevronDown"></i>
+    </button>
+    <ul class="ms-ContextualMenu  ">
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link " tabindex="1">Reply</a>
+
+        </li>
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link " tabindex="1">Reply all</a>
+
+        </li>
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link  is-selected " tabindex="1">Forward</a>
+
+        </li>
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link " tabindex="1">Flag</a>
+
+        </li>
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link  is-disabled " tabindex="1">Delete</a>
+
+        </li>
+    </ul>
+</div>
+<h3 id="pivot">Pivot</h3>
+
+<div class="ms-CommandButton  ms-CommandButton--pivot is-active ">
+    <button class="ms-CommandButton-button">
+      <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--CircleRing"></i></span><span class="ms-CommandButton-label">New</span><span class="ms-CommandButton-dropdownIcon"><i class="ms-Icon ms-Icon--ChevronDown"></i></span>
+  </button>
+</div>
+<h3 id="split">Split</h3>
+
+<div class="ms-CommandButton    ">
+    <button class="ms-CommandButton-button">
+      <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--CircleRing"></i></span><span class="ms-CommandButton-label">Reply</span>  </button>
+    <button class="ms-CommandButton-splitIcon">
+      <i class="ms-Icon ms-Icon--ChevronDown"></i>
+    </button>
+    <ul class="ms-ContextualMenu  is-opened ">
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link " tabindex="1">Reply</a>
+
+        </li>
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link " tabindex="1">Reply all</a>
+
+        </li>
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link  is-selected " tabindex="1">Forward</a>
+
+        </li>
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link " tabindex="1">Flag</a>
+
+        </li>
+        <li class="ms-ContextualMenu-item ">
+            <a class="ms-ContextualMenu-link  is-disabled " tabindex="1">Delete</a>
+
+        </li>
+    </ul>
+</div>
+<h3 id="text-only">Text Only</h3>
+
+<div class="ms-CommandButton  ms-CommandButton--TextOnly  ">
+    <button class="ms-CommandButton-button">
+<span class="ms-CommandButton-label">Command</span>  </button>
+</div>
+<h2 id="states">States</h2>
+<table>
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Applied to</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>.is-disabled</code></td>
+            <td><code>.ms-Button</code></td>
+            <td>When using an <code>&lt;a&gt;</code> element, apply this class to disable the button. When using a <code>&lt;button&gt;</code>, the <code>disabled</code> attribute can be used instead.</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+    <li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+    <li>Copy the HTML from one of the samples above into your page. For example:
+        <pre>
+ <code>
+ 
+&lt;div class&#x3D;&quot;ms-CommandButton    &quot;&gt;
+  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
+      &lt;span class&#x3D;&quot;ms-CommandButton-icon ms-fontColor-themePrimary&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--CircleRing&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;Command&lt;/span&gt;  &lt;/button&gt;
+&lt;/div&gt;
+ </code>
+</pre>
+    </li>
+    <li>Replace the sample HTML content (such as the content of <code>.ms-CommandButton-label</code>) with your content.</li>
+    <li>If you are using any of CommandButton&#39;s variants that use a dropdown, the below JavaScript is required.
+        <pre>
+ <code>
+ &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+  var CommandButtonElements &#x3D; document.querySelectorAll(&quot;.ms-CommandButton&quot;);
+  for(var i &#x3D; 0; i &lt; CommandButtonElements.length; i++) {
+    new fabric[&#x27;CommandButton&#x27;](CommandButtonElements[i]);
+  }
+&lt;/script&gt;
+
+ </code>
+</pre>
+
+    </li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>ContextualMenu, ContextualHost</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>Focus styles are included for keyboard navigation.</p>
+
+<script type="text/javascript">
+    var CommandButtonElements = document.querySelectorAll(".ms-CommandButton");
+    for (var i = 0; i < CommandButtonElements.length; i++) {
+        new fabric['CommandButton'](CommandButtonElements[i]);
+    }
+</script>
+</body>
+</html>
