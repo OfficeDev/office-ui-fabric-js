@@ -46,7 +46,7 @@ var Config = function() {
   this.paths.srcDocs = this.paths.src + '/documentation';
   this.paths.srcDocImages = this.paths.srcDocs + '/images';
   this.paths.srcDocsPages = this.paths.srcDocs + '/pages';
-  this.paths.srcDocsJSCompPages = this.paths.srcDocsPages + '/JS_Components';
+  this.paths.srcDocsJSCompPages = this.paths.srcDocsPages + '/Components';
   // this.paths.srcDocsComponents = this.paths.srcDocs + '/components';
   this.paths.srcTemplate = this.paths.srcDocs + '/templates';
   this.paths.srcDocumentationSCSS = this.paths.srcDocs + '/sass';
@@ -160,10 +160,22 @@ var Config = function() {
       helpers:  {
         renderDocPage: function(page) {
           var hbs = Plugins.handlebars.Handlebars;
-          var fileContents = Plugins.fs.readFileSync(this.paths.docPages + '/' + page + '/' + page +'.hbs',  "utf8");
+
+          console.log(page.data.root.page);
+          var pagePath = page.data.root.page
+          var fileContents = Plugins.fs.readFileSync(this.paths.docPages + '/' + pagePath + '/' + pagePath +'.hbs',  "utf8");
           var template = hbs.compile(fileContents);
-          // var thisProps = {props: props};
+          console.log('RENDER DOC PAGE', fileContents);
           return new hbs.SafeString(template());
+        }.bind(this),
+
+        renderComponentExample: function(component, exampleName, props) {
+          var hbs = Plugins.handlebars.Handlebars;
+          var fileContents = Plugins.fs.readFileSync(this.paths.srcDocsJSCompPages + '/' + component + '/examples/' + exampleName +'.hbs',  "utf8");
+          console.log('FILE CONTENT', fileContents, component, exampleName, props);
+          var template = hbs.compile(fileContents);
+          var thisProps = {props: props};
+          return new hbs.SafeString(template(thisProps));
         }.bind(this),
 
         renderPartial: function(partial, props) {

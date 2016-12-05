@@ -20,13 +20,16 @@ gulp.task('DocumentationViewer', ['FabricComponents', 'Documentation', 'Samples'
         });
     }
 
+    var templateData = {
+        page: 'HomePage'
+    }
+
     return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.hbs')
         .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
         .pipe(Plugins.data(function () {
             return { "components" : components };
         }))
-        .pipe(Plugins.handlebars({}, Config.handleBarsConfig))
-        .pipe(Plugins.template())
+        .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
         .pipe(Plugins.rename('index.html'))
         .pipe(gulp.dest(Config.paths.distDocumentation));
 });

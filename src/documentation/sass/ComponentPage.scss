@@ -97,7 +97,6 @@ $dontColor: #A61E22;
 }
 
 .ComponentPage-overviewSection,
-.ComponentPage-bestPracticesSection,
 .ComponentPage-variantsSection,
 .ComponentPage-usingSection,
 .ComponentPage-statesSection,
@@ -125,7 +124,7 @@ $dontColor: #A61E22;
   }
 }
 
-.ComponentPage-bestPracticesSection {
+.ComponentPage-usingSection {
   background-color: $ms-color-neutralLighterAlt;
 }
 
@@ -176,7 +175,6 @@ $dontColor: #A61E22;
 }
 
 .ComponentPage-overviewSection,
-.ComponentPage-bestPracticesSection,
 .ComponentPage-variantsSection,
 .ComponentPage-usingSection,
 .ComponentPage-statesSection,

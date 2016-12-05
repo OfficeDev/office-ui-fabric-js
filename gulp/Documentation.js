@@ -140,13 +140,16 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
 
         // Go through and find the view model for each example handlebars file and store in context
         if(exampleModels.length > 0) {
+          var modelsData = {};
           for(var x = 0; x < exampleModels.length; x++) {
               var file = exampleModels[x];
               var modelName = file.replace('.js', '');
               modelName = modelName.replace(" ", '');
               var modelFile = reload('../' + exampleFolderName + '/' + file);
-              templateData[modelName] = modelFile;
+              modelsData[modelName] = modelFile;
           }
+          templateData['models'] = modelsData;
+          console.log('MODELS', templateData['models']);
         }
 
         jsonFile = Utilities.getFilesByExtension(compFolderPath, '.js');

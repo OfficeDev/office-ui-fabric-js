@@ -19,34 +19,7 @@
                 <div class="ComponentPage-overviewSectionContent">
                     <div class="ComponentPage-overview">
                         <div>
-                            {{pageInfo.overview}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ComponentPage-bestPracticesSection">
-                <div class="ComponentPage-usage" id="Best Practices">
-                    <h2 class="ComponentPage-subHeading">Best practices</h2>
-                </div>
-                <div class="ComponentPage-doSections">
-                    <div class="ComponentPage-doSection">
-                        <h3>Do</h3>
-                        <div>
-                            <ul>
-                                {{#each pageInfo.bestPractices.dos}}
-                                    <li>{{item}}
-                                {{/each}}
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="ComponentPage-doSection ComponentPage-doSection--dont">
-                        <h3>Don’t</h3>
-                        <div>
-                            <ul>
-                                {{#each pageInfo.bestPractices.donts}}
-                                    <li>{{item}}
-                                {{/each}}
-                            </ul>
+                            {{{pageInfo.overview}}}
                         </div>
                     </div>
                 </div>
@@ -75,40 +48,15 @@
                     <div class="ExampleCard-code">
                         <pre>
                             <code>
-                            {{../pageInfo.componentName}}
-                            {{renderPartialPre "Breadcrumb" "BreadcrumbExample" BreadcrumbExampleModel false}}
+                            {{renderPartialPre ../pageInfo.componentName this.modelName this.props false}}
                             </code>
                         </pre>
                     </div>
                     <div class="ExampleCard-example">
-                        <div>hello this should be here {{../BreadcrumbExampleModel.baseClass}}{{../pageInfo.componentName}}</div>
-                        {{> BreadcrumbExample props=BreadcrumbExampleModel }}
+                        {{renderComponentExample ../pageInfo.componentName this.modelName (lookup ../models this.props)}}
                     </div>
                 </div>
                 {{/each}}
-                <div class="ExampleCard">
-                    <div class="ExampleCard-header">
-                        <span class="ExampleCard-title ms-font-l">Default Breadcrumb</span>
-                        <div class="ExampleCard-toggleButtons ms-font-l">
-                            <button class="ExampleCard-codeButton ms-Button ms-Button--icon" icon="Embed">
-                                <span class="ms-Button-icon">
-                                    <i class="ms-Icon ms-Icon--Embed"></i>
-                                </span>
-                                <span class="ms-Button-label">Show Code</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="ExampleCard-code">
-                        <pre>
-                            <code>
-                            {{renderPartialPre "Breadcrumb" "BreadcrumbExample" BreadcrumbExampleModel false}}
-                            </code>
-                        </pre>
-                    </div>
-                    <div class="ExampleCard-example">
-                        {{> BreadcrumbExample props=BreadcrumbExampleModel }}
-                    </div>
-                </div>
             </div>
             <div class="ComponentPage-statesSection">
                 <h2 class="ComponentPage-subHeading ComponentPage-statesTitle" id="Variants">States</h2>
