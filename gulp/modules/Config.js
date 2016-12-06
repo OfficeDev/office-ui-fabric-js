@@ -158,6 +158,26 @@ var Config = function() {
       },
       batch: [],
       helpers:  {
+        outputCode: function(text) {
+          var hbs = Plugins.handlebars.Handlebars;
+          text = text.trim();
+          text = text.replace(/^\s+|\s+$/g, '');
+          text = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+          text = text.replace(/(\r\n|\n|\r)/gm, '<br>');
+          return new hbs.SafeString(text);
+        },
+
+        codeBlock: function(code) {
+          var hbs = Plugins.handlebars.Handlebars;
+          console.log(code);
+          var fileContents = Plugins.fs.readFileSync(this.paths.srcTemplate + '/codeBlock.hbs',  "utf8");
+          var template = hbs.compile(fileContents);
+          var templateData = {
+            code: code
+          }
+          return new hbs.SafeString(template(templateData));
+        }.bind(this),
+
         renderDocPage: function(page) {
           var hbs = Plugins.handlebars.Handlebars;
           var pagePath = page.data.root.page;
@@ -172,7 +192,6 @@ var Config = function() {
         renderComponentExample: function(component, exampleName, props) {
           var hbs = Plugins.handlebars.Handlebars;
           var fileContents = Plugins.fs.readFileSync(this.paths.srcDocsJSCompPages + '/' + component + '/examples/' + exampleName +'.hbs',  "utf8");
-          console.log('FILE CONTENT', fileContents, component, exampleName, props);
           var template = hbs.compile(fileContents);
           var thisProps = {props: props};
           return new hbs.SafeString(template(thisProps));
