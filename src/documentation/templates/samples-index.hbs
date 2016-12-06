@@ -4,9 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Office Fabric JS</title>
-    <link rel="stylesheet" href="../styles.css">
-	<link rel="stylesheet" href="../css/fabric.min.css">
-	<link rel="stylesheet" href="../css/fabric.components.min.css">
+
+    <link rel="stylesheet" href="/styles.css">
+	<link rel="stylesheet" href="/css/fabric.min.css">
+	<link rel="stylesheet" href="/css/fabric.components.min.css">
 </head>
 <body>
     <div id="main">
@@ -15,7 +16,7 @@
                 <div class="od-Header-banner">
                     <div class="od-Header-logo">
                         <div class="od-Logo-link">
-                            <img src="./images/logo-office-dev.svg" width="190" height="48" alt="Office dev center logo image">
+                            <img src="/images/logo-office-dev.svg" width="190" height="48" alt="Office dev center logo image">
                         </div>
                     </div>
                 </div>
@@ -35,7 +36,7 @@
                                 <ul class="links isSubMenu">
                                     <% components.forEach(function(component) { %>
                                         <li class="link">
-                                            <a href="#!/Components/<%= component.name %>/<%= component.name %>"><%= component.name %></a>
+                                            <a href="Components/<%= component.name %>/<%= component.name %>.html"><%= component.name %></a>
                                         </li>
                                     <% }); %>
                                 </ul>
@@ -57,7 +58,6 @@
 (function(){
     var mainContainer = document.getElementById('mainContent');
     var toggleLinks = document.querySelectorAll('.linkToggle > a');
-    var navLinks = document.getElementsByTagName('a');
     function linkToggle() {
         (this.parentNode.classList.contains('isActive')) ?
         this.parentNode.classList.remove('isActive') :
@@ -68,44 +68,6 @@
     for (var i = 0; i < toggleLinks.length; i++) {
         toggleLinks[i].addEventListener('click', linkToggle);
     }
-
-    function navLinkAction(e) {
-        e.preventDefault();
-        var url = this.getAttribute('href');
-        var pattern = new RegExp(/\w+/, 'g');
-        var urlSections = [];
-        console.log(url);
-        var match = null;
-        while (match = pattern.exec(url)) {
-            console.log(match);
-            urlSections.push(match[0]);
-        }
-
-        if (urlSections.length) {
-            var path = "./";
-            urlSections.forEach(function(section, idx) {
-                var end = (idx === urlSections.length - 1) ? ".html" : "/";
-                path += section + end;
-            });
-            console.log(path);
-
-            var xhr= new XMLHttpRequest();
-            xhr.open('GET', path, true);
-            xhr.onreadystatechange= function() {
-                if (this.readyState!==4) return;
-                if (this.status!==200) return; // or whatever error handling you want
-                mainContainer.innerHTML= this.responseText;
-            };
-            xhr.send();
-        }
-    }
-
-
-    for (var i = 0; i < navLinks.length; i++) {
-        navLinks[i].addEventListener('click', navLinkAction);
-    }
-
-
 })();
 
     

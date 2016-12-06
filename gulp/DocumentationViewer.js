@@ -21,8 +21,10 @@ gulp.task('DocumentationViewer', ['FabricComponents', 'Documentation', 'Samples'
     }
 
     var templateData = {
-        page: 'HomePage'
-    }
+        page: 'HomePage',
+        template: 'HomePage',
+        isHome: true
+    };
 
     return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.hbs')
         .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
@@ -30,6 +32,7 @@ gulp.task('DocumentationViewer', ['FabricComponents', 'Documentation', 'Samples'
             return { "components" : components };
         }))
         .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+        .pipe(Plugins.template())
         .pipe(Plugins.rename('index.html'))
         .pipe(gulp.dest(Config.paths.distDocumentation));
 });

@@ -115,12 +115,17 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
        
     var demoPagesList = Utilities.getFolders(Config.paths.srcDocsJSCompPages);
 
+    console.log(demoPagesList);
     // Current Page Folder path
-    srcFolderName = Config.paths.srcDocsJSCompPages + '/';
+    srcFolderName = Config.paths.srcDocsJSCompPages;
     for (var i=0; i < demoPagesList.length; i++) {
        
         templateData = {};
         pageName = demoPagesList[i];
+        console.log('PAGENAME', pageName);
+        if (pageName === 'Button') {
+          console.log(pageName, 'wtf');
+        }
         var exampleModels = [];
 
         // Component Page folder path
@@ -132,6 +137,7 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
         // Dist folder name for page
         distFolderName = Config.paths.distDocumentation + '/' + pageName;
 
+        console.log(pageName, '\n', compFolderPath, '\n', exampleFolderName, '\n', distFolderName);
         try {
           fs.statSync(exampleFolderName);
           exampleModels = Utilities.getFilesByExtension(exampleFolderName, '.js');
@@ -149,23 +155,30 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
               modelsData[modelName] = modelFile;
           }
           templateData['models'] = modelsData;
-          console.log('MODELS', templateData['models']);
+          // console.log('MODELS', templateData['models']);
         }
 
         jsonFile = Utilities.getFilesByExtension(compFolderPath, '.js');
         if (jsonFile.length > 0) {
-          for (var i = 0; i < jsonFile.length; i++) {
-            var file = jsonFile[i];
+          for (var j = 0; j < jsonFile.length; j++) {
+            var file = jsonFile[j];
             var pageInfo = reload('../' + compFolderPath + '/' + file);
-            console.log(pageInfo);
+            // console.log(pageInfo);
             templateData['pageInfo'] = pageInfo;
           }
         }
 
-        console.log('TEMPLATE DATA', templateData);
 
        // hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.hbs', '.html');
-        hbs = srcFolderName + 'ComponentPageTmpl.hbs';
+        // hbs = srcFolderName + 'ComponentPageTmpl.hbs';
+
+        templateData['page'] = 'Components';
+        templateData['template'] = 'ComponentPageTmpl';
+        templateData['isHome'] = false;
+
+        hbs = Config.paths.srcTemplate + '/'+ 'samples-index.hbs';
+        // console.log('TEMPLATE DATA', templateData);
+        console.log('pagename', pageName, '\n');
         componentPipe = gulp.src(hbs)
             .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({

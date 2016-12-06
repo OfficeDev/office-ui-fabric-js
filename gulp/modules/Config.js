@@ -160,13 +160,13 @@ var Config = function() {
       helpers:  {
         renderDocPage: function(page) {
           var hbs = Plugins.handlebars.Handlebars;
-
-          console.log(page.data.root.page);
-          var pagePath = page.data.root.page
-          var fileContents = Plugins.fs.readFileSync(this.paths.docPages + '/' + pagePath + '/' + pagePath +'.hbs',  "utf8");
+          var pagePath = page.data.root.page;
+          var tmplFile = page.data.root.template;
+          var fileContents = Plugins.fs.readFileSync(this.paths.docPages + '/' + pagePath + '/' + tmplFile +'.hbs',  "utf8");
           var template = hbs.compile(fileContents);
-          console.log('RENDER DOC PAGE', fileContents);
-          return new hbs.SafeString(template());
+          // console.log('RENDER DOC PAGE', fileContents);
+          // console.log('page data root', page.data.root);
+          return new hbs.SafeString(template(page.data.root));
         }.bind(this),
 
         renderComponentExample: function(component, exampleName, props) {
