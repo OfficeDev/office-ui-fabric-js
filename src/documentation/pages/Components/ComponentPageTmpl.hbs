@@ -48,12 +48,12 @@
                     <div class="ExampleCard-code">
                         <pre>
                             <code>
-                            {{renderPartialPre ../pageInfo.componentName this.modelName this.props false}}
+                            {{renderPartialPre ../pageInfo.componentName this.templateFile this.model false}}
                             </code>
                         </pre>
                     </div>
                     <div class="ExampleCard-example">
-                        {{renderComponentExample ../pageInfo.componentName this.modelName (lookup ../models this.props)}}
+                        {{renderComponentExample ../pageInfo.componentName this.templateFile (lookup ../models this.model)}}
                     </div>
                 </div>
                 {{/each}}

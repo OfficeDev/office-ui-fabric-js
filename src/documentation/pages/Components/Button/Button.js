@@ -18,23 +18,23 @@ var data = {
    variants: [
       {
          name: "Normal Button",
-         modelName: "ButtonExample",
-         props: "ButtonExampleModel"
+         templateFile: "ButtonExample",
+         model: "ButtonExampleModel"
       },
       {
          name: "Primary Button",
-         modelName: "ButtonExample",
-         props: "ButtonExamplePrimaryModel"
+         templateFile: "ButtonExample",
+         model: "ButtonExamplePrimaryModel"
       },
       {
          name: "Hero Button",
-         modelName: "ButtonExample",
-         props: "ButtonExampleHeroModel"
+         templateFile: "ButtonExample",
+         model: "ButtonExampleHeroModel"
       },
       {
          name: "Compound Button",
-         modelName: "ButtonExample",
-         props: "ButonExampleCompoundModel"
+         templateFile: "ButtonExample",
+         model: "ButtonExampleCompoundModel"
       }
    ],
    states: [

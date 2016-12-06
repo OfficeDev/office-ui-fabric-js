@@ -18,8 +18,8 @@ var data = {
    variants: [
       {
          name: "Default Breadcrumb",
-         modelName: "BreadcrumbExample",
-         props: "BreadcrumbExampleModel"
+         templateFile: "BreadcrumbExample",
+         model: "BreadcrumbExampleModel"
       }
    ],
    states: [
