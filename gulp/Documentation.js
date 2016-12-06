@@ -13,6 +13,17 @@ var demoPagesList = Utilities.getFolders(Config.paths.srcDocsJSCompPages);
 var reload = require('require-reload')(require);
 var BuildConfig = require('./modules/BuildConfig');
 
+
+var componentSidebarList = [];
+var componentsList = Utilities.getFolders(Config.paths.srcDocsJSCompPages);
+for (var i = 0; i < componentsList.length; i++) {
+    componentSidebarList.push({
+        "name": componentsList[i]
+    });
+}
+
+console.log('HELLOOOOOO', Config.paths.srcDocsJSCompPages);
+
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
@@ -95,6 +106,51 @@ gulp.task('Documentation-handlebars', function(cb) {
 });
 
 //
+// Sample Index Page Build
+// ----------------------------------------------------------------------------
+
+gulp.task('DocumentationViewer', ['FabricComponents', 'Samples'], function() {
+    // Get components and save to template navigation
+
+    var templateData = {
+        page: 'HomePage',
+        template: 'HomePage',
+        isHome: true
+    };
+
+    return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.hbs')
+        .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
+        .pipe(Plugins.data(function () {
+            return { "components" : componentSidebarList };
+        }))
+        .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+        .pipe(Plugins.template())
+        .pipe(Plugins.rename('index.html'))
+        .pipe(gulp.dest(Config.paths.distDocumentation));
+});
+
+//
+// Get Started Page Building
+// ----------------------------------------------------------------------------
+gulp.task('Documentation-getStartedPage', ['Documentation-handlebars'], function() {
+    var templateData = {
+        page: 'GetStarted',
+        template: 'GetStarted',
+        isHome: true
+    };
+
+    return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.hbs')
+        .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
+        .pipe(Plugins.data(function () {
+            return { "components" : componentSidebarList };
+        }))
+        .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+        .pipe(Plugins.template())
+        .pipe(Plugins.rename('GetStarted.html'))
+        .pipe(gulp.dest(Config.paths.distDocsGettingStarted));
+});
+
+//
 // Sample Component Building
 // ----------------------------------------------------------------------------
 gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
@@ -115,17 +171,12 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
        
     var demoPagesList = Utilities.getFolders(Config.paths.srcDocsJSCompPages);
 
-    console.log(demoPagesList);
     // Current Page Folder path
     srcFolderName = Config.paths.srcDocsJSCompPages;
-    for (var i=0; i < demoPagesList.length; i++) {
-       
+    for (var i=0; i < demoPagesList.length; i++) {       
         templateData = {};
         pageName = demoPagesList[i];
-        console.log('PAGENAME', pageName);
-        if (pageName === 'Button') {
-          console.log(pageName, 'wtf');
-        }
+
         var exampleModels = [];
 
         // Component Page folder path
@@ -137,12 +188,10 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
         // Dist folder name for page
         distFolderName = Config.paths.distDocumentation + '/' + pageName;
 
-        console.log(pageName, '\n', compFolderPath, '\n', exampleFolderName, '\n', distFolderName);
         try {
           fs.statSync(exampleFolderName);
           exampleModels = Utilities.getFilesByExtension(exampleFolderName, '.js');
         } catch (err) {}
-
 
         // Go through and find the view model for each example handlebars file and store in context
         if(exampleModels.length > 0) {
@@ -155,7 +204,6 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
               modelsData[modelName] = modelFile;
           }
           templateData['models'] = modelsData;
-          // console.log('MODELS', templateData['models']);
         }
 
         jsonFile = Utilities.getFilesByExtension(compFolderPath, '.js');
@@ -163,22 +211,17 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
           for (var j = 0; j < jsonFile.length; j++) {
             var file = jsonFile[j];
             var pageInfo = reload('../' + compFolderPath + '/' + file);
-            // console.log(pageInfo);
             templateData['pageInfo'] = pageInfo;
           }
         }
 
-
        // hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.hbs', '.html');
-        // hbs = srcFolderName + 'ComponentPageTmpl.hbs';
 
         templateData['page'] = 'Components';
         templateData['template'] = 'ComponentPageTmpl';
         templateData['isHome'] = false;
 
         hbs = Config.paths.srcTemplate + '/'+ 'samples-index.hbs';
-        // console.log('TEMPLATE DATA', templateData);
-        console.log('pagename', pageName, '\n');
         componentPipe = gulp.src(hbs)
             .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -194,9 +237,13 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
             // .pipe(Plugins.replace("---->", ""))
             // .pipe(Plugins.replace("<!---", ""))
             // .pipe(Plugins.replace("--->", ""))
+            .pipe(Plugins.data(function () {
+                return { "components" : componentSidebarList };
+            }))
             .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
             // .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
             // .pipe(Plugins.htmlbeautify())
+            .pipe(Plugins.template())
             .pipe(Plugins.rename(pageName + ".html"))
             // .pipe(Plugins.wrap(
             //     {
@@ -266,36 +313,19 @@ gulp.task('Documentation-buildStyles', function () {
                       .pipe(gulp.dest(Config.paths.distDocumentationCSS));
 });
 
-gulp.task('Documentation-convertMarkdown', function() {
-  return gulp.src('./ghdocs/*.md')
-          .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-          .pipe(Plugins.debug({
-            title: "Building Getting Started Documentation"
-          }))
-          .pipe(Plugins.marked())
-          .pipe(Plugins.wrap(
-              {
-                  src:  Config.paths.srcTemplate + '/gettingStartedTemplate.html'  
-              },
-              {
-                  pageName: 'Getting Started Page'
-              }
-         ))
-          .pipe(gulp.dest(Config.paths.distDocsGettingStarted))
-});
-
 //
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
 var DocumentationTasks = [
+  'DocumentationViewer',
   'Documentation-build',
+  'Documentation-getStartedPage',
   'Documentation-copyDocImages',
   'Documentation-copyAssets',
   'ComponentJS',
   'Documentation-copyIgnoredFiles',
-  'Documentation-buildStyles',
-  'Documentation-convertMarkdown'
+  'Documentation-buildStyles'
 ];
 
 //Build Fabric Component Samples

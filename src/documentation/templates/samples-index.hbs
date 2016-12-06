@@ -28,15 +28,15 @@
                             <li class="link isHomePage fabricPage">
                                 <a href="#/" title="Home page" aria-label="Home Page">Fabric JS</a>
                             </li>
-                            <li class="link getStartedPage">
-                                <a href="#!/GetStarted">Get Started</a>
+                            <li class="link GetStarted getStartedPage">
+                                <a class="getStarted" href="/GetStarted/GetStarted.html">Get Started</a>
                             </li>
-                            <li class="link linkToggle jsComponents">
-                                <a href="#">JS Components</a>
+                            <li class="link linkToggle Components">
+                                <a href="#">Components</a>
                                 <ul class="links isSubMenu">
                                     <% components.forEach(function(component) { %>
                                         <li class="link">
-                                            <a href="Components/<%= component.name %>/<%= component.name %>.html"><%= component.name %></a>
+                                            <a href="/Components/<%= component.name %>/<%= component.name %>.html"><%= component.name %></a>
                                         </li>
                                     <% }); %>
                                 </ul>
@@ -64,10 +64,22 @@
         this.parentNode.classList.add('isActive');
     }
 
-
     for (var i = 0; i < toggleLinks.length; i++) {
         toggleLinks[i].addEventListener('click', linkToggle);
     }
+
+    function navLinkHighlight() {
+        const NAV_LINKS = document.querySelectorAll('.nav > .links > .link');
+        let URL_PATH = window.location.pathname;
+        URL_PATH = URL_PATH.split('/');
+
+        var selected = document.getElementsByClassName(URL_PATH[1])[0];
+        if (selected) {
+            selected.classList.add('isActive');
+        }
+    }
+
+    navLinkHighlight();
 })();
 
     
