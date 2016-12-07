@@ -22,8 +22,6 @@ for (var i = 0; i < componentsList.length; i++) {
     });
 }
 
-console.log('HELLOOOOOO', Config.paths.srcDocsJSCompPages);
-
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
@@ -220,7 +218,6 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
         templateData['page'] = 'Components';
         templateData['template'] = 'ComponentPageTmpl';
         templateData['isHome'] = false;
-        console.log(templateData);
         hbs = Config.paths.srcTemplate + '/'+ 'samples-index.hbs';
         componentPipe = gulp.src(hbs)
             .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))

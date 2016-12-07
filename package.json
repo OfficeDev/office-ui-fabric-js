@@ -51,6 +51,7 @@
     "handlebars": "^4.0.5",
     "highlight.js": "^9.8.0",
     "htmlparser2": "^3.9.0",
+    "js-beautify": "^1.6.4",
     "jshint": "^2.8.0",
     "map-stream": "0.0.6",
     "merge-stream": "^1.0.0",

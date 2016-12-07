@@ -170,11 +170,14 @@ var Config = function() {
         },
 
         renderCode: function(text, language) {
+          var beautify_html = Plugins.jsbeautify.html;
           var fs = Plugins.fs;
           var hljs = Plugins.hljs;
           var code = text.toString();
           code = code.replace(/(<!--.+-->)+/g, "");
           code = code.replace(/^\s+|\s+$/g, "");
+          code = beautify_html(code, { indent_size: 2 });
+          console.log('CODE AFTER', code);
           code = "<pre class=\"hljs\"><code class=\"" + language + "\">"  
            + hljs.highlight(language, code).value 
            + "</code></pre>";
@@ -200,13 +203,10 @@ var Config = function() {
           var tmplFile = page.data.root.template;
           var fileContents = Plugins.fs.readFileSync(this.paths.docPages + '/' + pagePath + '/' + tmplFile +'.hbs',  "utf8");
           var template = hbs.compile(fileContents);
-          // console.log('RENDER DOC PAGE', fileContents);
-          // console.log('page data root', page.data.root);
           return new hbs.SafeString(template(page.data.root));
         }.bind(this),
 
         renderComponentExample: function(component, exampleName, props) {
-          console.log(component, exampleName, props);
           var hbs = Plugins.handlebars.Handlebars;
           var fileContents = Plugins.fs.readFileSync(this.paths.srcDocsJSCompPages + '/' + component + '/examples/' + exampleName +'.hbs',  "utf8");
           var template = hbs.compile(fileContents);

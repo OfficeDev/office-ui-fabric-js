@@ -19,6 +19,7 @@ var Plugins = function() {
 	this.fileinclude = require('gulp-file-include');
 	this.header = require('gulp-header');
 	this.htmlbeautify = require('gulp-html-beautify');
+	this.jsbeautify = require('js-beautify');
 	this.gulpif = require('gulp-if');
 	this.lintspaces = require('gulp-lintspaces');
 	this.marked = require('gulp-marked');
