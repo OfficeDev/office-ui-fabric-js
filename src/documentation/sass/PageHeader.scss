@@ -126,7 +126,8 @@
   // The mobile nav is no longer present, so the attached page header is higher up
   .pageHeader.isAttached {
     .content {
-      top: $Header-height;
+      top: $Header-height; 
+      box-sizing: border-box;
     }
   }
 }
