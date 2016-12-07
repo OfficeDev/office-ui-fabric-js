@@ -8,14 +8,14 @@ var data = {
          model: "CheckBoxBasicModel"
       },
       {
-         name: "Selected CheckBox",
-         templateFile: "CheckBoxElem",
-         model: "CheckBoxSelectedModel"
-      },
-      {
          name: "Disabled CheckBox",
          templateFile: "CheckBoxElem",
          model: "CheckBoxDisabledModel"
+      },
+      {
+         name: "Selected CheckBox",
+         templateFile: "CheckBoxElem",
+         model: "CheckBoxSelectedModel"
       }
    ],
    jsFile: "CheckBoxJS"
