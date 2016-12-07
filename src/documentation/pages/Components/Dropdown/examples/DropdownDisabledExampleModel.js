@@ -1,6 +1,7 @@
-var DropdownExampleModel = {
-  "label": "Dropdown label",
-    "items": [
+var DropdownDisabledExampleModel = {
+   "label": "Dropdown label",
+   "state": "is-disabled",
+   "items": [
       {
         "name": "Choose a sound&hellip;"  
       },
@@ -16,7 +17,7 @@ var DropdownExampleModel = {
       {
         "name": "Cow mooing"
       }
-    ]
+   ]
 }
 
-module.exports = DropdownExampleModel;
+module.exports = DropdownDisabledExampleModel;
