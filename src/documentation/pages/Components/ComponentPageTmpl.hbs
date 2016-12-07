@@ -47,7 +47,7 @@
                     </div>
                     <div class="ExampleCard-code">
                         {{{renderCode (renderComponentExample ../pageInfo.componentName this.templateFile (lookup ../models this.model)) 'html' }}}
-                        {{#if pageInfo.jsFile}}
+                        {{#if ../pageInfo.jsFile}}
                             {{{renderCode (renderComponentExample ../pageInfo.componentName ../pageInfo.jsFile null) "javascript" }}}
                         {{/if}}
                     </div>
