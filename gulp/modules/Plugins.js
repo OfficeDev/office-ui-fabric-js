@@ -42,6 +42,7 @@ var Plugins = function() {
 	this.tsc = require('gulp-typescript');
 	this.runSequence = require('run-sequence');
 	this.walkSync = require('walk-sync');
+	this.hljs = require('highlight.js');
 };
 
 module.exports = new Plugins();

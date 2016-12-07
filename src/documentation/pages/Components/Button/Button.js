@@ -43,7 +43,8 @@ var data = {
          applied: ".ms-Button",
          result: "When using an <code>&lt;a&gt;</code> element, apply this class to disable the button. When using a <code>&lt;button&gt;</code>, the <code>disabled</code> attribute can be used instead."
       }
-   ]
+   ],
+   jsFile: "ButtonExampleJS"
 }
 
 module.exports = data;

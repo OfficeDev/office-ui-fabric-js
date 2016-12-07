@@ -33,7 +33,8 @@ var data = {
          applied: ".ms-Breadcrumb-overflowMenu",
          result: "Displays the overflow menu."
       }
-   ]
+   ],
+   jsFile: "BreadcrumbExampleJS"
 }
 
 module.exports = data;

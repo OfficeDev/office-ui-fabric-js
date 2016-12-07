@@ -49,6 +49,7 @@
     "gulp-util": "^3.0.1",
     "gulp-wrap": "^0.11.0",
     "handlebars": "^4.0.5",
+    "highlight.js": "^9.8.0",
     "htmlparser2": "^3.9.0",
     "jshint": "^2.8.0",
     "map-stream": "0.0.6",

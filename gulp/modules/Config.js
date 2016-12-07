@@ -157,24 +157,40 @@ var Config = function() {
 
       },
       batch: [],
-      helpers:  {
-        outputCode: function(text) {
+      helpers:  { 
+        // Helper function for codeBlock helper to highlight code
+        outputCode: function(text, language) {
           var hbs = Plugins.handlebars.Handlebars;
+          var hljs = Plugins.hljs;
           text = text.trim();
-          text = text.replace(/^\s+|\s+$/g, '');
-          text = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-          text = text.replace(/(\r\n|\n|\r)/gm, '<br>');
-          return new hbs.SafeString(text);
+          text = text.replace(/(<!--.+-->)+/g, "");
+          text = text.replace(/^\s+|\s+$/g, "");
+          text = hljs.highlight(language, text).value;
+          return text;
         },
 
-        codeBlock: function(code) {
+        renderCode: function(text, language) {
+          var fs = Plugins.fs;
+          var hljs = Plugins.hljs;
+          var code = text.toString();
+          code = code.replace(/(<!--.+-->)+/g, "");
+          code = code.replace(/^\s+|\s+$/g, "");
+          code = "<pre class=\"hljs\"><code class=\"" + language + "\">"  
+           + hljs.highlight(language, code).value 
+           + "</code></pre>";
+          return code;
+        },
+
+        // Output code from a string
+        codeBlock: function(code, language) {
           var hbs = Plugins.handlebars.Handlebars;
-          console.log(code);
           var fileContents = Plugins.fs.readFileSync(this.paths.srcTemplate + '/codeBlock.hbs',  "utf8");
           var template = hbs.compile(fileContents);
           var templateData = {
-            code: code
+            code: code,
+            language: language
           }
+
           return new hbs.SafeString(template(templateData));
         }.bind(this),
 
@@ -190,6 +206,7 @@ var Config = function() {
         }.bind(this),
 
         renderComponentExample: function(component, exampleName, props) {
+          console.log(component, exampleName, props);
           var hbs = Plugins.handlebars.Handlebars;
           var fileContents = Plugins.fs.readFileSync(this.paths.srcDocsJSCompPages + '/' + component + '/examples/' + exampleName +'.hbs',  "utf8");
           var template = hbs.compile(fileContents);

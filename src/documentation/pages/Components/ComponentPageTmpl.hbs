@@ -46,11 +46,10 @@
                         </div>
                     </div>
                     <div class="ExampleCard-code">
-                        <pre>
-                            <code>
-                            {{renderPartialPre ../pageInfo.componentName this.templateFile this.model false}}
-                            </code>
-                        </pre>
+                        {{{renderCode (renderComponentExample ../pageInfo.componentName this.templateFile (lookup ../models this.model)) 'html' }}}
+                        {{#if pageInfo.jsFile}}
+                            {{{renderCode (renderComponentExample ../pageInfo.componentName ../pageInfo.jsFile null) "javascript" }}}
+                        {{/if}}
                     </div>
                     <div class="ExampleCard-example">
                         {{renderComponentExample ../pageInfo.componentName this.templateFile (lookup ../models this.model)}}
@@ -58,6 +57,7 @@
                 </div>
                 {{/each}}
             </div>
+            {{#if pageInfo.states}}
             <div class="ComponentPage-statesSection">
                 <h2 class="ComponentPage-subHeading ComponentPage-statesTitle" id="Variants">States</h2>
                 <div>
@@ -81,8 +81,30 @@
                     </table>
                 </div>
             </div>
+            {{/if}}
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    (function() {
+        function findAncestor (el, cls) {
+            while ((el = el.parentElement) && !el.classList.contains(cls));
+            return el;
+        }
 
-<!-- TODO: ADD JAVASCRIPT FOR PAGE AND COMPONENT HERE -->
+        let codeButtons = document.getElementsByClassName('ExampleCard-codeButton');
+        for (let i = 0; i < codeButtons.length; i++) {
+            codeButtons[i].addEventListener('click', toggleCode);
+        }
+
+        function toggleCode(e) {
+            let container = findAncestor(e.target, 'ExampleCard');
+            container.classList.contains('is-codeVisible') ?
+                container.classList.remove('is-codeVisible') :
+                container.classList.add('is-codeVisible');
+        }
+    })();
+</script>
+{{#if pageInfo.jsFile}}
+{{renderComponentExample pageInfo.componentName pageInfo.jsFile null }}
+{{/if}}

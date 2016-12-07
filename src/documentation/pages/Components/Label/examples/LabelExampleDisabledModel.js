@@ -1,5 +1,6 @@
 var LabelExampleModel = {
-  "label": "Name"
+   "label": "Name",
+   "state": "is-disabled"
 }
 
 module.exports = LabelExampleModel;
