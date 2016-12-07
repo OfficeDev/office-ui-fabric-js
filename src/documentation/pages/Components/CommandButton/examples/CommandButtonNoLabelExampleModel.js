@@ -1,6 +1,6 @@
 var CommandButtonExampleModel = {
-  "label": "Command",
   "icon": "CircleRing",
+  "modifier": "noLabel",
   "tag": "button",
   "iconColor": "themePrimary"
 }

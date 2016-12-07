@@ -2,7 +2,8 @@ var CommandButtonExampleModel = {
   "label": "Command",
   "icon": "CircleRing",
   "tag": "button",
-  "iconColor": "themePrimary"
+  "iconColor": "themePrimary",
+  "disabled": true
 }
 
 module.exports = CommandButtonExampleModel;

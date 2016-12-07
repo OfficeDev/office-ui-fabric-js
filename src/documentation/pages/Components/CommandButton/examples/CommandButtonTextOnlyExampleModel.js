@@ -1,8 +1,7 @@
 var CommandButtonExampleModel = {
+  "modifier": "TextOnly",
   "label": "Command",
-  "icon": "CircleRing",
-  "tag": "button",
-  "iconColor": "themePrimary"
+  "tag": "button"
 }
 
 module.exports = CommandButtonExampleModel;
