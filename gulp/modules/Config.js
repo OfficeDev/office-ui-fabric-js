@@ -157,7 +157,7 @@ var Config = function() {
 
       },
       batch: [],
-      helpers:  { 
+      helpers:  {
         // Helper function for codeBlock helper to highlight code
         outputCode: function(text, language) {
           var hbs = Plugins.handlebars.Handlebars;
@@ -170,14 +170,11 @@ var Config = function() {
         },
 
         renderCode: function(text, language) {
-          var beautify_html = Plugins.jsbeautify.html;
-          var fs = Plugins.fs;
           var hljs = Plugins.hljs;
           var code = text.toString();
           code = code.replace(/(<!--.+-->)+/g, "");
           code = code.replace(/^\s+|\s+$/g, "");
-          code = beautify_html(code, { indent_size: 2 });
-          console.log('CODE AFTER', code);
+          code = Plugins.pretty(code);
           code = "<pre class=\"hljs\"><code class=\"" + language + "\">"  
            + hljs.highlight(language, code).value 
            + "</code></pre>";
