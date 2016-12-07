@@ -12,7 +12,29 @@ var ContexualMenuExampleModel = {
     },
     {
       "title": "Books",
-      "state": ""
+      "state": "",
+      "subMenuItems": [
+        {
+          "title": "Fiction",
+          "state": ""
+        },
+        {
+          "title": "Humor",
+          "state": ""
+        },
+        {
+          "title": "Magazines",
+          "state": "is-selected"
+        },
+        {
+          "title": "Non-fiction",
+          "state": ""
+        },
+        {
+          "title": "Textbooks",
+          "state": ""
+        }
+      ]
     },
     {
       "title": "Education",
