@@ -27,7 +27,27 @@
       <div class="ComponentPage-usingSection">
         <h2 class="ComponentPage-subHeading ComponentsPage-usingTitle" id="Using">Using this Component</h2>
           <div>
-            using this component section blah blah
+            {{#if pageInfo.isDatePicker}}
+              Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery and PickaDate.js library:
+              {{renderCode 
+'<link rel="stylesheet" href="fabric.min.css">
+<link rel="stylesheet" href="fabric.components.min.css">
+<script src="jquery.min.js"></script>
+<script src="fabric.min.js"></script>
+<script src="PickaDate.js"></script>' 'html'}}
+            {{else}}
+              Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:
+              {{renderCode 
+'<link rel="stylesheet" href="fabric.min.css">
+<link rel="stylesheet" href="fabric.components.min.css">
+<script src="fabric.min.js"></script>' 'html'}}
+            {{/if}}
+          </div>
+          <div>
+          Copy the HTML from one of the samples below into your page. For example:
+          {{pageInfo.variants.[0].templateFile}}
+
+          {{{renderCode (renderComponentExample pageInfo.componentName pageInfo.variants.[0].templateFile (lookup ../models pageInfo.variants.[0].model)) 'html' }}}
           </div>
       </div>
       <div class="ComponentPage-variantsSection">

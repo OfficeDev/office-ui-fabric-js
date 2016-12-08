@@ -10,6 +10,10 @@
 	<link rel="stylesheet" href="/css/fabric.min.css">
 	<link rel="stylesheet" href="/css/fabric.components.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+    {{#if pageInfo.isDatePicker}}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
+    <script type="text/javascript" src="/lib/PickaDate.js"></script>
+    {{/if}}
 </head>
 <body>
     <div id="main">
