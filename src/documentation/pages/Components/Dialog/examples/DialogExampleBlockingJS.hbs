@@ -15,34 +15,29 @@
   
   // Wire up the checkBoxes
   for(var i = 0; i < checkBoxElements.length; i++) {
-      checkBoxComponents[i] = new fabric['CheckBox'](checkBoxElements[i]);
+    checkBoxComponents[i] = new fabric['CheckBox'](checkBoxElements[i]);
   }
   
   // Wire up the buttons
   for(var i = 0; i < actionButtonElements.length; i++) {
-      actionButtonComponents[i] = new fabric['Button'](actionButtonElements[i], actionHandler);
+    actionButtonComponents[i] = new fabric['Button'](actionButtonElements[i], actionHandler);
   }
 
   // When clicking the button, open the dialog
   button.onclick = function() {
-      openDialog(dialog);
-    };
+    dialogComponent.open();
+  };
     
   function actionHandler(event) {
-   var labelText = "";
-   var counter = 0;
-   for(var i = 0; i < checkBoxComponents.length; i++) {
+    var labelText = "";
+    var counter = 0;
+    for (var i = 0; i < checkBoxComponents.length; i++) {
       if(checkBoxComponents[i].getValue()) {
-          counter++;
+        counter++;
       }
     }
     labelText += counter + " option(s) selected. " + this.innerText.trim() + " clicked" ;
     label.innerText = labelText;
-  }
-  
-  function openDialog(dialog) {
-    // Open the dialog
-    dialogComponent.open();
   }
 }());
 </script>
