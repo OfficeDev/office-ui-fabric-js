@@ -57,6 +57,12 @@
             {{{renderCode (renderComponentExample pageInfo.componentName pageInfo.variants.[0].templateFile (lookup models pageInfo.variants.[0].model)) 'html' }}}
           {{/if}}
           </li>
+          {{#if pageInfo.jsFile}}
+          <li>
+            <p>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to Fabric&#39;s JS, to instantiate all {{pageInfo.componentName}} components on the page:</p>
+            {{{renderCode (renderComponentExample pageInfo.componentName pageInfo.jsFile null) "javascript" }}}
+          </li>
+          {{/if}}
           <li>
             <p>Replace the sample HTML content with your content.</p>
           </li>
