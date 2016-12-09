@@ -5,14 +5,14 @@
 	<meta charset="utf-8">
 	<title>Office Fabric JS</title>
 
-    <script type="text/javascript" src="/js/fabric.min.js"></script>
-    <link rel="stylesheet" href="/styles.css">
-	<link rel="stylesheet" href="/css/fabric.min.css">
-	<link rel="stylesheet" href="/css/fabric.components.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+    <script type="text/javascript" src="{{relativePath}}../js/fabric.min.js"></script>
+    <link rel="stylesheet" href="{{relativePath}}styles.css">
+	<link rel="stylesheet" href="{{relativePath}}../css/fabric.min.css">
+	<link rel="stylesheet" href="{{relativePath}}../css/fabric.components.min.css">
+    <script type="text/javascript" src="{{relativePath}}../lib/jquery.js"></script>
+    <script type="text/javascript" src="{{relativePath}}../lib/animatescroll.min.js"></script>
     {{#if pageInfo.isDatePicker}}
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
-    <script type="text/javascript" src="/lib/PickaDate.js"></script>
+    <script type="text/javascript" src="{{relativePath}}../lib/PickaDate.js"></script>
     {{/if}}
 </head>
 <body>
@@ -22,27 +22,32 @@
                 <div class="od-Header-banner">
                     <div class="od-Header-logo">
                         <div class="od-Logo-link">
-                            <img src="/images/logo-office-dev.svg" width="190" height="48" alt="Office dev center logo image">
+                            <img src="{{relativePath}}images/logo-office-dev.svg" width="190" height="48" alt="Office dev center logo image">
                         </div>
                     </div>
                 </div>
             </header>
             <div class="App-wrapper">
+                <div class="App-mobileNavBar">
+                    <button class="menuButton"><i class="ms-Icon ms-Icon--GlobalNavButton"></i></button>
+                    <div class="siteTitle">Fabric JS</div>
+                </div>
+                <div class="App-mobileNavOverlay"></div>
                 <div class="App-nav">
                     <nav class="nav">
                         <ul class="links">
                             <li class="link isHomePage fabricPage">
-                                <a href="#/" title="Home page" aria-label="Home Page">Fabric JS</a>
+                                <a href="{{relativePath}}index.html" title="Home page" aria-label="Home Page">Fabric JS</a>
                             </li>
                             <li class="link GetStarted getStartedPage">
-                                <a class="getStarted" href="/GetStarted/GetStarted.html">Get Started</a>
+                                <a class="getStarted" href="{{relativePath}}GetStarted/GetStarted.html">Get Started</a>
                             </li>
                             <li class="link linkToggle Components">
                                 <a href="#">Components</a>
                                 <ul class="links isSubMenu">
                                     <% components.forEach(function(component) { %>
                                         <li class="link">
-                                            <a href="/Components/<%= component.name %>/<%= component.name %>.html"><%= component.name %></a>
+                                            <a href="{{relativePath}}Components/<%= component.name %>/<%= component.name %>.html"><%= component.name %></a>
                                         </li>
                                     <% }); %>
                                 </ul>
@@ -86,6 +91,49 @@
     }
 
     navLinkHighlight();
+
+    var navState = false;
+    var appContainer = document.querySelector(".App");
+    var navButton = document.querySelector(".menuButton");
+    var navButtonIcon = navButton.querySelector('.ms-Icon');
+    navButton.addEventListener("click", toggleNav);
+    function toggleNav() {
+        if (navState) {
+            appContainer.classList.remove("is-navOpen");
+            navButtonIcon.classList.add("ms-Icon--GlobalNavButton");
+            navButtonIcon.classList.remove("ms-Icon--ChromeClose");
+        } else {
+            appContainer.classList.add("is-navOpen");
+            navButtonIcon.classList.add("ms-Icon--ChromeClose");
+            navButtonIcon.classList.remove("ms-Icon--GlobalNavButton");
+        }
+        navState = !navState;
+    }
+
+    // Add isAttached to pageHeader on scroll
+    const FULL_HEADER_HEIGHT = 236;
+    const ATTACHED_HEADER_HEIGHT = 128;
+    const SCROLL_THRESHHOLD = FULL_HEADER_HEIGHT - ATTACHED_HEADER_HEIGHT;
+    var isAttached;
+    const pageHeader = document.querySelector('.pageHeader');
+    if (pageHeader) {
+        window.onscroll = checkHeaderAttachment;
+        checkHeaderAttachment();
+        function checkHeaderAttachment() {
+            if (window.scrollY >= SCROLL_THRESHHOLD) {
+              isAttached = true;
+              if (!pageHeader.classList.contains('isAttached')) {
+                pageHeader.classList.add('isAttached');
+              }
+            } else {
+              isAttached = false;
+              if (pageHeader.classList.contains('isAttached')) {
+                pageHeader.classList.remove('isAttached');
+              }
+            }
+        }
+    }
+
 })();
 
     

@@ -175,7 +175,7 @@ var Config = function() {
           code = code.replace(/(<!--.+-->)+/g, "");
           code = code.replace(/^\s+|\s+$/g, "");
           code = Plugins.pretty(code);
-          code = "<div class=\"codeBlock isLightTheme\"><pre class=\"hljs\"><code class=\"" + language + "\">"  
+          code = "<div class=\"codeBlock isDarkTheme\"><pre class=\"hljs\"><code class=\"" + language + "\">"  
            + hljs.highlight(language, code).value 
            + "</code></pre></div>";
           return code;

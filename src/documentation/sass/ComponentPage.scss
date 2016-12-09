@@ -1,9 +1,14 @@
-$componentPageColor: #0f8387;
 $componentPagePadding: 50px;
 $componentPageDividingMargin: 40px;
 $componentSubHeadMargin: 24px;
 $dosColor: #177D3E;
 $dontColor: #A61E22;
+
+.ComponentPageWrapper {
+  .content {
+    background-color: $ms-color-greenDark;
+  }
+}
 
 .ComponentPage {
   @include fullWidth(); // Component page has its own padding
@@ -13,13 +18,6 @@ $dontColor: #A61E22;
 
 .ComponentPage {
   background-color: $ms-color-white;
-}
-
-.ComponentPage-header {
-  background-color: $componentPageColor;
-  min-height: 245px;
-  padding: $componentPagePadding;
-  padding-bottom: 0;
 }
 
 .ComponentPage-title {

@@ -113,7 +113,8 @@ gulp.task('DocumentationViewer', ['FabricComponents', 'Samples'], function() {
     var templateData = {
         page: 'HomePage',
         template: 'HomePage',
-        isHome: true
+        isHome: true,
+        relativePath: './'
     };
 
     return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.hbs')
@@ -134,7 +135,8 @@ gulp.task('Documentation-getStartedPage', ['Documentation-handlebars'], function
     var templateData = {
         page: 'GetStarted',
         template: 'GetStarted',
-        isHome: true
+        isHome: true,
+        relativePath: '../'
     };
 
     return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.hbs')
@@ -218,6 +220,7 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
         templateData['page'] = 'Components';
         templateData['template'] = 'ComponentPageTmpl';
         templateData['isHome'] = false;
+        templateData['relativePath'] = '../../';
         hbs = Config.paths.srcTemplate + '/'+ 'samples-index.hbs';
         componentPipe = gulp.src(hbs)
             .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))

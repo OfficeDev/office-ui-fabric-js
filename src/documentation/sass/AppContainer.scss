@@ -99,6 +99,10 @@
 
     .App-mobileNavBar {
       @include padding-left(36px); // Align to menu items
+
+      .siteTitle {
+        display: none;
+      }
     }
 
     .App-mobileNavOverlay {

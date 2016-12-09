@@ -1,13 +1,13 @@
 <div class="ComponentPageWrapper">
   <div class="pageHeader">
-    <div class="content" style="background-color: blue;">
+    <div class="content">
       <h1 id="{{pageInfo.componentName}}" class="pageTitle">{{pageInfo.componentName}}</h1>
         <nav class="pageNav" aria-label="In page navigation">
           <ul>
             <li><a href="#" data-title="Overview">Overview</a></li>
-            <li><a href="#" data-title="Best Practices">Best Practices</a></li>
+            <li><a href="#" data-title="Using">Using this Component</a></li>
             <li><a href="#" data-title="Variants">Variants</a></li>
-            <li><a href="#" data-title="Implementation">Implementation</a></li>
+            <li><a href="#" data-title="States">States</a></li>
           </ul>
         </nav>
     </div>
@@ -95,7 +95,7 @@
       </div>
       {{#if pageInfo.states}}
       <div class="ComponentPage-statesSection">
-        <h2 class="ComponentPage-subHeading ComponentPage-statesTitle" id="Variants">States</h2>
+        <h2 class="ComponentPage-subHeading ComponentPage-statesTitle" id="States">States</h2>
         <div>
            <table>
               <thead>
@@ -141,29 +141,19 @@
     container.classList.add('is-codeVisible');
   }
 
+  const MOBILE_BP = 1024;
+  var pageNavLinks = document.querySelectorAll(".pageNav a");
+  for (var i = 0; i < pageNavLinks.length; i++) {
+    pageNavLinks[i].addEventListener("click", scrollToLink)
+  }
 
-  // Add isAttached to pageHeader on scroll
-  const FULL_HEADER_HEIGHT = 236;
-  const ATTACHED_HEADER_HEIGHT = 128;
-  const SCROLL_THRESHHOLD = FULL_HEADER_HEIGHT - ATTACHED_HEADER_HEIGHT;
-  var isAttached;
-  const pageHeader = document.querySelector('.pageHeader');
-
-  window.onscroll = checkHeaderAttachment;
-  checkHeaderAttachment();
-  
-  function checkHeaderAttachment() {
-    if (window.scrollY >= SCROLL_THRESHHOLD) {
-      isAttached = true;
-      if (!pageHeader.classList.contains('isAttached')) {
-        pageHeader.classList.add('isAttached');
-      }
-    } else {
-      isAttached = false;
-      if (pageHeader.classList.contains('isAttached')) {
-        pageHeader.classList.remove('isAttached');
-      }
-    }
+  function scrollToLink(e) {
+    e.preventDefault();
+    var targetSection = e.target.getAttribute("data-title");
+    var padding = (window.innerWidth < MOBILE_BP) ? 230 : 180;
+    $('#' + targetSection).animatescroll({
+      padding: padding
+    });
   }
 })();
 </script>
