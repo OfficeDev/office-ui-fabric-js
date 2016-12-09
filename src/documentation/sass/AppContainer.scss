@@ -24,6 +24,7 @@
   z-index: 600;
 
   .menuButton {
+    background: transparent;
     color: $ms-color-white;
     font-size: $font-size-big;
     font-weight: $ms-font-weight-regular;
@@ -31,6 +32,7 @@
     line-height: $App-mobileNavBarHeight;
     @include margin-right(12px);
     padding: 0;
+    border: 0;
 
     &:focus {
       outline: 0;
