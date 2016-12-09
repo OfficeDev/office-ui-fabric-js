@@ -37,6 +37,14 @@ for(var i = 0; i < ButtonElements.length; i++) {
   });
 }
 </script>' 'javascript'}}
+        <p>Or, for example add the appropriate &lt;script&gt; tag to your page to instantiate a single Button component on the page</p>
+        {{codeBlock
+'<script type="text/javascript">
+var ButtonComponent = document.querySelector(".ms-Button");
+new fabric["Button"](ButtonComponent, function() {
+  // Insert Event Here
+});
+</script>' 'javascript'}}
         <p>Fabric’s JavaScript is lightweight and simple. You can extend, gut, or use what’s included as-is.</p>
       </li>
       <li>
