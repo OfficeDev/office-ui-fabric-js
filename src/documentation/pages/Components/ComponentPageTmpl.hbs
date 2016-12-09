@@ -26,9 +26,10 @@
       </div>
       <div class="ComponentPage-usingSection">
         <h2 class="ComponentPage-subHeading ComponentsPage-usingTitle" id="Using">Using this Component</h2>
-          <div>
+        <ol class="steps">
+          <li>
             {{#if pageInfo.isDatePicker}}
-              Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery and PickaDate.js library:
+              <p>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery and PickaDate.js library:</p>
               {{codeBlock 
 '<link rel="stylesheet" href="fabric.min.css">
 <link rel="stylesheet" href="fabric.components.min.css">
@@ -36,19 +37,23 @@
 <script src="fabric.min.js"></script>
 <script src="PickaDate.js"></script>' 'html'}}
             {{else}}
-              Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:
+              <p>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:</p>
               {{codeBlock 
 '<link rel="stylesheet" href="fabric.min.css">
 <link rel="stylesheet" href="fabric.components.min.css">
 <script src="fabric.min.js"></script>' 'html'}}
             {{/if}}
-          </div>
-          <div>
+          </li>
+          <li>
           {{#if pageInfo.variants}}
-            Copy the HTML from one of the samples below into your page. For example:
+            <p>Copy the HTML from one of the samples below into your page. For example:</p>
             {{{renderCode (renderComponentExample pageInfo.componentName pageInfo.variants.[0].templateFile (lookup models pageInfo.variants.[0].model)) 'html' }}}
           {{/if}}
-          </div>
+          </li>
+          <li>
+            <p>Replace the sample HTML content with your content.</p>
+          </li>
+        </ol>
       </div>
       <div class="ComponentPage-variantsSection">
         <h2 class="ComponentPage-subHeading ComponentPage-variantsTitle" id="Variants">Variants</h2>
@@ -58,9 +63,7 @@
             <span class="ExampleCard-title ms-font-l">{{this.name}}</span>
             <div class="ExampleCard-toggleButtons ms-font-l">
               <button class="ExampleCard-codeButton ms-Button ms-Button--icon" icon="Embed">
-                <span class="ms-Button-icon">
-                  <i class="ms-Icon ms-Icon--Embed"></i>
-                </span>
+                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Embed"></i></span>
                 <span class="ms-Button-label">Show Code</span>
                 </button>
             </div>

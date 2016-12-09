@@ -126,6 +126,10 @@ $dontColor: #A61E22;
 
 .ComponentPage-usingSection {
   background-color: $ms-color-neutralLighterAlt;
+
+  .steps {
+    max-width: 100%;
+  }
 }
 
 .ComponentPage-doSection {
