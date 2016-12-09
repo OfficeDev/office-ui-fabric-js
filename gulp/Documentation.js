@@ -59,10 +59,10 @@ gulp.task('Documentation-copyDocImages', function() {
 
 gulp.task('Documentation-copyAssets', function() {
     var paths = [
-        Config.paths.srcDocsPages + '/**/*.jpg', 
-        Config.paths.srcDocsPages + '/**/*.png',
-        Config.paths.srcDocsPages + '/**/*.gif',
-        Config.paths.srcDocsPages + '/**/*.svg'
+        Config.paths.srcDocsJSCompPages + '/**/*.jpg', 
+        Config.paths.srcDocsJSCompPages + '/**/*.png',
+        Config.paths.srcDocsJSCompPages + '/**/*.gif',
+        Config.paths.srcDocsJSCompPages + '/**/*.svg'
     ];
 
     return gulp.src(paths)

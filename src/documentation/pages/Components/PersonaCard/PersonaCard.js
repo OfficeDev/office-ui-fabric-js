@@ -5,7 +5,7 @@ var data = {
       {
          name: "Default PersonaCard",
          templateFile: "PersonaCardExample",
-         model: "PersonaCardExampleMoel"
+         model: "PersonaCardExampleModel"
       }
    ],
    jsFile: "PersonaCardExampleJS"

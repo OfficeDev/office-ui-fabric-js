@@ -1,11 +1,8 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
-
 <div class="ms-Persona
-  {{#if props.modifiers}}
-    {{#each props.modifiers}}
-      ms-Persona--{{name}}
-     {{/each}}
-  {{/if}}">
+  {{~#if props.modifiers}}
+    {{~#each props.modifiers}} ms-Persona--{{name}}{{/each~}}
+  {{/if~}}">
   <div class="ms-Persona-imageArea">
     {{#if props.initials}}
       <div class="ms-Persona-initials ms-Persona-initials--{{props.initialsColor}}">{{props.initials}}</div>
