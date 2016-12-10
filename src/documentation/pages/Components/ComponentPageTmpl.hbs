@@ -31,8 +31,8 @@
             {{#if pageInfo.isDatePicker}}
               <p>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery and PickaDate.js library:</p>
               {{codeBlock 
-'<link rel="stylesheet" href="fabric.min.css">
-<link rel="stylesheet" href="fabric.components.min.css">
+'<link rel="stylesheet" href="fabric.min.css" />
+<link rel="stylesheet" href="fabric.components.min.css" />
 <script src="jquery.min.js"></script>
 <script src="fabric.min.js"></script>
 <script src="PickaDate.js"></script>' 'html'}}
@@ -40,14 +40,14 @@
               {{#if pageInfo.jsFile }}
                 <p>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:</p>
                 {{codeBlock 
-'<link rel="stylesheet" href="fabric.min.css">
-<link rel="stylesheet" href="fabric.components.min.css">
+'<link rel="stylesheet" href="fabric.min.css" />
+<link rel="stylesheet" href="fabric.components.min.css" />
 <script src="fabric.min.js"></script>' 'html'}}
               {{else}}
               <p>Confirm that you have references to Fabric&#39;s CSS on your page:</p>
               {{codeBlock 
-'<link rel="stylesheet" href="fabric.min.css">
-<link rel="stylesheet" href="fabric.components.min.css">' 'html'}}
+'<link rel="stylesheet" href="fabric.min.css" />
+<link rel="stylesheet" href="fabric.components.min.css" />' 'html'}}
               {{/if}}
             {{/if}}
           </li>
