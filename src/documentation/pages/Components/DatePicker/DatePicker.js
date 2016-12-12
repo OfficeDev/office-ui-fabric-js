@@ -8,6 +8,18 @@ var data = {
       model: null
     }
   ],
+  methods: [
+    {
+      name: "changeHighlightedDate(dateArr)",
+      parameters: [
+        {
+          name: "dateArr",
+          type: "{Array} The new date in [YEAR, MONTH, DATE] format", 
+        }
+      ],
+      description: "Highlights a new date in the component"
+    }
+  ],
   jsFile: "DatePickerExampleJS",
   isDatePicker: true
 }

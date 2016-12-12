@@ -8,6 +8,14 @@ var data = {
          model: "ChoiceFieldGroupModel"
       }
    ],
+   methods: [
+      {
+         name: "removeListeners()",
+         parameters: [
+         ],
+         description: "Remove all event listeners from component"
+      }
+   ],
    jsFile: "ChoiceFieldGroupJS"
 }
 

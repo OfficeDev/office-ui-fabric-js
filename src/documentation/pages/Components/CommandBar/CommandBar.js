@@ -20,13 +20,13 @@ var data = {
    ],
    states: [
       {
-         name: ".is-hidden",
-         applied: ".ms-CommandBarItem",
+         name: "<code>.is-hidden</code>",
+         applied: "<code>.ms-CommandBarItem</code>",
          result: "Hides a Command Bar item from view."
       },
       {
-         name: ".is-active",
-         applied: ".ms-CommandBarSearch",
+         name: "<code>.is-active</code>",
+         applied: "<code>.ms-CommandBarSearch</code>",
          result: "Expands the search field for use."
       }
    ],

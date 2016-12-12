@@ -33,32 +33,27 @@ var data = {
    methods: [
       {
          name: "getValue()",
-         parameters: [
-         ],
+         parameters: [],
          description: "Returns <code>true</code> or <code>false</code> whether the component is checked or not"
       },
       {
          name: "toggle()",
-         parameters: [
-         ],
+         parameters: [],
          description: "Toggles the component"
       },
       {
          name: "check()",
-         parameters: [
-         ],
+         parameters: [],
          description: "Sets component to checked"
       },
       {
          name: "unCheck()",
-         parameters: [
-         ],
+         parameters: [],
          description: "Sets component to unchecked"
       },
       {
          name: "removeListeners()",
-         parameters: [
-         ],
+         parameters: [],
          description: "Remove all event listeners from component"
       }
    ],
