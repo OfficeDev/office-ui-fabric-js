@@ -1,6 +1,15 @@
+html, body {
+  height: 100%;
+}
+
 .App {
   background-color: $ms-color-neutralDark;
   justify-content: center;
+
+  /* Z-index overrides for components */
+  .ms-Overlay {
+    z-index: 7;
+  }
 }
 
 // Element that wraps everything except for the header

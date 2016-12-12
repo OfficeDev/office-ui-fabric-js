@@ -28,6 +28,13 @@ var data = {
          model: "TextFieldDisabledExampleModel"
       }
    ],
+   states: [
+      {
+         name: ".is-disabled",
+         applied: ".ms-TextField",
+         result: "Disables user input on TextField"
+      }
+   ],
    jsFile: "TextFieldExampleJS"
 }
 
