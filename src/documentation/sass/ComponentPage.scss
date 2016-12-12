@@ -8,6 +8,16 @@ $dontColor: #A61E22;
   .content {
     background-color: $ms-color-greenDark;
   }
+
+  .ms-Table .nowrap {
+    white-space: nowrap;
+    width: 1%;
+  }
+
+  .ms-Table p {
+    margin-bottom: 0;
+    line-height: 24px;
+  }
 }
 
 .ComponentPage {
@@ -98,6 +108,7 @@ $dontColor: #A61E22;
 .ComponentPage-variantsSection,
 .ComponentPage-usingSection,
 .ComponentPage-statesSection,
+.ComponentPage-methodsSection,
 .ComponentPage-implementationSection {
   padding: $componentPagePadding;
 }
@@ -180,6 +191,7 @@ $dontColor: #A61E22;
 .ComponentPage-variantsSection,
 .ComponentPage-usingSection,
 .ComponentPage-statesSection,
+.ComponentPage-methodsSection,
 .ComponentPage-implementationSection {
   @include contentPadding(50px, 50px);  // Override padding to match this website
 }

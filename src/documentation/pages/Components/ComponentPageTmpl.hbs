@@ -96,26 +96,55 @@
       {{#if pageInfo.states}}
       <div class="ComponentPage-statesSection">
         <h2 class="ComponentPage-subHeading ComponentPage-statesTitle" id="States">States</h2>
-        <div>
-           <table>
-              <thead>
-                <tr>
-                  <th>State</th>
-                  <th>Applied to</th>
-                  <th>Result</th>
-                </tr>
-              </thead>
-              <tbody>
-                {{#each pageInfo.states}}
-                <tr>
-                  <td><code>{{this.name}}</code></td>
-                  <td><code>{{this.applied}}</code></td>
-                  <td>{{this.result}}</td>
-                </tr>
+         <table class="ms-Table">
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>Applied to</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each pageInfo.states}}
+              <tr>
+                <td class="nowrap">{{{this.name}}}</td>
+                <td class="nowrap">{{{this.applied}}}</td>
+                <td>{{{this.result}}}</td>
+              </tr>
+              {{/each}}
+            </tbody>
+         </table>
+      </div>
+      {{/if}}
+      {{#if pageInfo.methods}}
+      <div class="ComponentPage-methodsSection">
+        <h2 class="ComponentPage-subHeading ComponentPage-methodsTitle" id="Methods">Methods</h2>
+        <table class="ms-Table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Parameters</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each pageInfo.methods}}
+            <tr>
+              <td class="nowrap"><code>{{this.name}}</code></td>
+              <td class="nowrap">
+              {{~#if this.parameters}}
+                {{#each this.parameters}}
+                  <p><strong>{{this.name}}</strong>: {{this.type}}</p>
                 {{/each}}
-              </tbody>
-           </table>
-        </div>
+                {{else}}
+                  <p>None</p>
+              {{/if~}}
+              </td>
+              <td>{{{this.description}}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
       </div>
       {{/if}}
     </div>
@@ -154,6 +183,11 @@
     $('#' + targetSection).animatescroll({
       padding: padding
     });
+  }
+
+  var TableElements = document.querySelectorAll(".ms-Table");
+  for (var i = 0; i < TableElements.length; i++) {
+    new fabric['Table'](TableElements[i]);
   }
 })();
 </script>

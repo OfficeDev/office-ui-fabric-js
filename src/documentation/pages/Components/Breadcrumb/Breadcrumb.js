@@ -24,14 +24,62 @@ var data = {
    ],
    states: [
       {
-         name: ".is-overflow",
+         name: "<code>.is-overflow</code>",
          applied: ".ms-Breadcrumb",
          result: "Use this class to show an ellipsis, which opens a Contextual Menu of additional breadcrumbs. Without this class items that do not fit will be unavailable."
       },
       {
-         name: ".is-open",
+         name: "<code>.is-open</code>",
          applied: ".ms-Breadcrumb-overflowMenu",
          result: "Displays the overflow menu."
+      }
+   ],
+   methods: [
+      {
+         name: "removeOutlinesOnClick()",
+         parameters: [
+         ],
+         description: "Removes focus outlines so they don\"t linger after click"
+      },
+      {
+         name: "addItem(itemLabel, itemLink)",
+         parameters: [
+            {
+               name: "itemLabel",
+               type: "{String} the item's text label"
+            },
+            {
+               name: "itemLink",
+               type: "{String} the item's href link"
+            }
+         ],
+         description: "Adds a breadcrumb item to a breadcrumb"
+      },
+      {
+         name: "removeItemByLabel(itemLabel)",
+         parameters: [
+            {
+               name: "itemLabel",
+               type: "{String} the item's text label"
+            }
+         ],
+         description: "Removes a breadcrumb item by item label in the breadcrumbs list"
+      },
+      {
+         name: "removeItemByPosition(value)",
+         parameters: [
+            {
+               name: "value",
+               type: "{number} the item's index"
+            }
+         ],
+         description: "Removes a breadcrumb item by position in the breadcrumb's list. Index starts at 0"
+      },
+      {
+         name: "init()",
+         parameters: [
+         ],
+         description: "Initializes component"
       }
    ],
    jsFile: "BreadcrumbExampleJS"
