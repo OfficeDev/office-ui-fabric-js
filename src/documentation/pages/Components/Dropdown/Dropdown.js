@@ -13,6 +13,13 @@ var data = {
          model: "DropdownDisabledExampleModel"
       }
    ],
+   states: [
+      {
+         name: ".is-disabled",
+         applied: ".ms-Dropdown",
+         result: "Disables the dropdown."
+      }
+   ],
    jsFile: "DropdownExampleJS"
 }
 

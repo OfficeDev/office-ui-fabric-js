@@ -17,6 +17,18 @@ var data = {
          templateFile: "LabelExample",
          model: "LabelExampleRequiredModel"
       }
+   ],
+   states: [
+      {
+         name: ".is-required",
+         applied: ".ms-Label",
+         result: "Marks the form element as required."
+      },
+      {
+         name: ".is-disabled",
+         applied: ".ms-Label",
+         result: "Marks the form element as disabled."
+      }
    ]
 }
 

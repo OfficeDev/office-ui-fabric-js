@@ -8,6 +8,18 @@ var data = {
          model: "FacePileModels"
       }
    ],
+   states: [
+      {
+         name: ".is-active",
+         applied: ".ms-PersonaCard",
+         result: "Makes the PersonaCard for a person visible."
+      },
+      {
+         name: ".is-active",
+         applied: ".ms-FacePile-itemBtn--overflow",
+         result: "Makes the overflow item for additional people visible."
+      }
+   ],
    jsFile: "FacePileJS"
 }
 

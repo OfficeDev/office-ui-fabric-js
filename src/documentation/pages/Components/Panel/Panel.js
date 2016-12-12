@@ -38,6 +38,13 @@ var data = {
          model: "PanelLeftExampleModel"
       }
    ],
+   states: [
+      {
+         name: ".is-open",
+         applied: ".ms-Panel",
+         result: "The panel is closed by default. Apply this class to open it."
+      }
+   ],
    jsFile: "PanelDocExampleJS"
 }
 

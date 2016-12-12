@@ -18,6 +18,18 @@ var data = {
          model: "CommandBarNavbarExampleModel"
       }
    ],
+   states: [
+      {
+         name: ".is-hidden",
+         applied: ".ms-CommandBarItem",
+         result: "Hides a Command Bar item from view."
+      },
+      {
+         name: ".is-active",
+         applied: ".ms-CommandBarSearch",
+         result: "Expands the search field for use."
+      }
+   ],
    jsFile: "CommandBarExampleJS"
 }
 

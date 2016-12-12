@@ -23,6 +23,23 @@ var data = {
          model: "ContextualMenuDividersExampleModel"
       }
    ],
+   states: [
+      {
+         name: ".is-open",
+         applied: ".ms-ContextualMenu",
+         result: "The ContextualMenu is hidden by default. Toggle this class to show or hide it."
+      },
+      {
+         name: ".is-selected",
+         applied: ".ms-ContextualMenu-link",
+         result: "Marks that item as selected. Only available for the multiselect variant."
+      },
+      {
+         name: ".is-disabled",
+         applied: ".ms-ContextualMenu-link",
+         result: "Disables that item in the menu."
+      }
+   ],
    jsFile: "ContextualMenuExampleJS"
 }
 
