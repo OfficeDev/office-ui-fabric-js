@@ -6,8 +6,15 @@
           <ul>
             <li><a href="#" data-title="Overview">Overview</a></li>
             <li><a href="#" data-title="Using">Using this Component</a></li>
+            {{#if pageInfo.variants}}
             <li><a href="#" data-title="Variants">Variants</a></li>
+            {{/if}}
+            {{#if pageInfo.states}}
             <li><a href="#" data-title="States">States</a></li>
+            {{/if}}
+            {{#if pageInfo.methods}}
+            <li><a href="#" data-title="Methods">Methods</a></li>
+            {{/if}}
           </ul>
         </nav>
     </div>
