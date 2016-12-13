@@ -8,6 +8,18 @@ var data = {
       model: "DialogExampleModel"
     }
   ],
+  methods: [
+    {
+      name: "open()",
+      parameters: [],
+      description: "Opens the component"
+    },
+    {
+      name: "close()",
+      parameters: [],
+      description: "Closes the component"
+    }
+  ],
   jsFile: "DialogDocAllElementsJS"
 }
 

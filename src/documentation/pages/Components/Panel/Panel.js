@@ -45,6 +45,18 @@ var data = {
          result: "The panel is closed by default. Apply this class to open it."
       }
    ],
+  methods: [
+    {
+      name: "dismiss(callback)",
+      parameters: [
+         {
+          name: "callback",
+          type: "{Function} Optional callback function", 
+        }
+      ],
+      description: "Dismisses the component and executes callback function"
+    }
+  ],
    jsFile: "PanelDocExampleJS"
 }
 
