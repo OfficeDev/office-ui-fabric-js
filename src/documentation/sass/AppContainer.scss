@@ -1,10 +1,24 @@
-html, body {
+html {
   height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+// Fill page height
+.main, 
+.App {
+  height: inherit;
 }
 
 .App {
   background-color: $ms-color-neutralDark;
   justify-content: center;
+  overflow-y: auto;
 
   /* Z-index overrides for components */
   .ms-Overlay {
@@ -19,6 +33,7 @@ html, body {
   margin: 0 auto;
   max-width: $App-maximumWidth;
   padding-top: $Header-height; // Keep content from being covered by the header
+  box-sizing: border-box;
 }
 
 .App-mobileNavBar {
@@ -60,7 +75,7 @@ html, body {
   -webkit-overflow-scrolling: touch; // Improves scrolling performance
   bottom: 0;
   @include left(-$Nav-width);
-  overflow-y: auto;
+  // overflow-y: auto;
   position: fixed;
   top: $Header-height + $App-mobileNavBarHeight;
   transition: $ms-duration2 $ms-ease1;
@@ -75,9 +90,10 @@ html, body {
   flex-grow: 1;
   left: 0;
   margin-top: $App-mobileNavBarHeight; // Move it down below the mobile nav bar
-  overflow: hidden;
   position: relative;
   transition: all $ms-duration2 $ms-ease1;
+  overflow-x: hidden;
+  overflow-y: visible;
 
   @include high-contrast {
     border-right: 1px solid $ms-color-white;
@@ -152,7 +168,6 @@ html, body {
     @include left(auto);
     top: auto; // Mobile nav bar is no longer there
     position: relative;
-    overflow-y: visible
   }
 
   .App-content {

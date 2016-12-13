@@ -22,8 +22,8 @@ $dontColor: #A61E22;
 
 .ComponentPage {
   @include fullWidth(); // Component page has its own padding
-  @include fullHeight(); // Remove padding at bottom of App-content
-  padding-bottom: 100px; // Pad the content instead
+  // @include fullHeight(); // Remove padding at bottom of App-content
+  // padding-bottom: 100px; // Pad the content instead
 }
 
 .ComponentPage {

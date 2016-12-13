@@ -90,13 +90,14 @@
 //== Flavors
 
 .flavors {
-  @include contentPadding(40px, 0px);
+  @include contentPadding(62px, 0px);
   @include fullWidth();
   background: $ms-color-neutralPrimary;
   display: flex;
   flex-wrap: wrap; // Wrap the 4th around to the second row
   justify-content: space-around; // Center the items in available space
-  flex-direction: column;
+  flex-direction: row;
+  padding-bottom: 72px;
 }
 
 .flavor {
@@ -105,6 +106,8 @@
   flex-direction: column;
   margin-bottom: 60px;
   order: -1;
+  position: relative;
+  top: -96px;
 
   img {
     margin-bottom: 12px;
@@ -155,8 +158,6 @@
     margin-bottom: 0;
 
     order: 0; // Restore default order
-    position: relative;
-    top: -96px;
   }
 }
 

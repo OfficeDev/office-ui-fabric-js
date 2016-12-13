@@ -16,7 +16,7 @@
   {{/if}}
 </head>
 <body>
-  <div id="main">
+  <div class="main">
     <div class="ms-Fabric ms-font-m App">
       <header class="od-Header">
         <div class="od-Header-banner">
@@ -51,9 +51,6 @@
                   </li>
                   <% }); %>
                 </ul>
-              </li>
-              <li class="link backToFabricSite">
-                <a href="https://dev.office.com/fabric">Back to Fabric Site</a>
               </li>
             </ul>
           </nav>
@@ -121,10 +118,11 @@
       var isAttached;
       const pageHeader = document.querySelector('.pageHeader');
       if (pageHeader) {
-        window.onscroll = checkHeaderAttachment;
+        appContainer.addEventListener('scroll', checkHeaderAttachment);
         checkHeaderAttachment();
         function checkHeaderAttachment() {
-          if (window.scrollY >= SCROLL_THRESHHOLD) {
+          console.log('test');
+          if (appContainer.scrollTop >= SCROLL_THRESHHOLD) {
             isAttached = true;
             if (!pageHeader.classList.contains('isAttached')) {
               pageHeader.classList.add('isAttached');
