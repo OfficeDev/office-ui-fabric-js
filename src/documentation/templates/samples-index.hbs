@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
 <head>
 	<meta charset="utf-8">
-	<title>Office Fabric JS</title>
+	<title>Office UI Fabric JS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link href="{{relativePath}}images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
   <script type="text/javascript" src="{{relativePath}}../js/fabric.min.js"></script>
@@ -157,11 +157,11 @@
       var isAttached;
       const pageHeader = document.querySelector('.pageHeader');
       if (pageHeader) {
-        appContainer.addEventListener('scroll', checkHeaderAttachment);
+        window.onscroll = checkHeaderAttachment;
         checkHeaderAttachment();
 
         function checkHeaderAttachment() {
-          if (appContainer.scrollTop >= SCROLL_THRESHHOLD) {
+          if (window.scrollY >= SCROLL_THRESHHOLD) {
             isAttached = true;
             if (!pageHeader.classList.contains('isAttached')) {
               pageHeader.classList.add('isAttached');
