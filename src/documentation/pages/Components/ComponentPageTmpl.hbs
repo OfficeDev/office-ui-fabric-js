@@ -192,11 +192,11 @@
   function scrollToLink(e) {
     e.preventDefault();
     var targetSection = e.target.getAttribute("data-title");
-    var padding = (window.innerWidth < MOBILE_BP) ? 100 : 50;
+    var padding = (window.innerWidth < MOBILE_BP) ? 230 : 180;
     var scrollTo = $('#' + targetSection);
 
     CONTAINER.animate({
-      scrollTop: scrollTo.offset().top - CONTAINER.offset().top + CONTAINER.scrollTop() - padding
+      scrollTop: scrollTo.offset().top - CONTAINER.offset().top - padding
     });
   }
 
