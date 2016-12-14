@@ -29,6 +29,11 @@
               {{{pageInfo.overview}}}
             </div>
           </div>
+          {{#if pageInfo.availableReact}}
+          <div class="ComponentPage-related">
+            <span class="ComponentPage-relatedTitle">Also available in</span><a href="https://dev.office.com/fabric#/components/{{pageInfo.componentName}}">Fabric React</a>
+          </div>
+          {{/if}}
         </div>
       </div>
       <div class="ComponentPage-usingSection">

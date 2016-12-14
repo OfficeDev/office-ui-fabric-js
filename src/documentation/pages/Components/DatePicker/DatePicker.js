@@ -1,6 +1,7 @@
 var data = {
   componentName: "DatePicker",
   overview: "<p>Allows for the selection of a date into a text field.</p>",
+  availableReact: true,
   variants: [
     {
       name: "Default DatePicker",

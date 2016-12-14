@@ -1,6 +1,7 @@
 var data = {
   componentName: "Overlay",
   overview: "<p>Partially obscures the page to create a modal experience and focus the user&#39;s attention. Typically used with a Dialog or Panel.</p>",
+  availableReact: true,
   variants: [
     {
       name: "Default Overlay",

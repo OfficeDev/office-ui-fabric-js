@@ -1,6 +1,7 @@
 var data = {
   componentName: "Spinner",
   overview: "<p>Displays the progress of an operation when the percentage complete can not be determined. Do you know how much of the operation is complete? Use a ProgressIndicator instead.</p>",
+  availableReact: true,
   variants: [
     {
       name: "Default Spinner",
