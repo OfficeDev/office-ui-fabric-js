@@ -158,6 +158,9 @@ var Config = function() {
       },
       batch: [],
       helpers:  {
+        toLowerCase: function(text) {
+          return text.toLowerCase();
+        },
         // Helper function for codeBlock helper to highlight code
         outputCode: function(text, language) {
           var hbs = Plugins.handlebars.Handlebars;
