@@ -183,12 +183,15 @@
     pageNavLinks[i].addEventListener("click", scrollToLink)
   }
 
+  const CONTAINER = $('.App');
   function scrollToLink(e) {
     e.preventDefault();
     var targetSection = e.target.getAttribute("data-title");
     var padding = (window.innerWidth < MOBILE_BP) ? 230 : 180;
-    $('#' + targetSection).animatescroll({
-      padding: padding
+    var scrollTo = $('#' + targetSection);
+
+    CONTAINER.animate({
+      scrollTop: scrollTo.offset().top - CONTAINER.offset().top + CONTAINER.scrollTop() - padding
     });
   }
 

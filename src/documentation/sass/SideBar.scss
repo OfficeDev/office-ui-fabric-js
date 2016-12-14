@@ -81,6 +81,12 @@ $nav-group-header-height: 40px;
       display: block;
     }
   }
+
+  &.hideChildren {
+    > .links {
+      display: none;
+    }
+  }
 }
 
 // The home page link

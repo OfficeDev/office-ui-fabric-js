@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="{{relativePath}}../css/fabric.min.css" />
   <link rel="stylesheet" href="{{relativePath}}../css/fabric.components.min.css" />
   <script type="text/javascript" src="{{relativePath}}../lib/jquery.js"></script>
-  <script type="text/javascript" src="{{relativePath}}../lib/animatescroll.min.js"></script>
   {{#if pageInfo.isDatePicker}}
   <script type="text/javascript" src="{{relativePath}}../lib/PickaDate.js"></script>
   {{/if}}
@@ -66,9 +65,16 @@
       var mainContainer = document.getElementById('mainContent');
       var toggleLinks = document.querySelectorAll('.linkToggle > a');
       function linkToggle() {
-        (this.parentNode.classList.contains('isActive')) ?
-        this.parentNode.classList.remove('isActive') :
-        this.parentNode.classList.add('isActive');
+        console.log(this.parentNode.classList.contains('isActive'));
+        if (this.parentNode.classList.contains('hasActiveChild')) {
+          (this.parentNode.classList.contains('hideChildren')) ?
+          this.parentNode.classList.remove('hideChildren') :
+          this.parentNode.classList.add('hideChildren');
+        } else {
+          (this.parentNode.classList.contains('isActive')) ?
+          this.parentNode.classList.remove('isActive') :
+          this.parentNode.classList.add('isActive');
+        }
       }
 
       for (var i = 0; i < toggleLinks.length; i++) {
@@ -86,6 +92,7 @@
             ALL_NAV_LINKS[i].parentNode.classList.add("isActive");
             if (ALL_NAV_LINKS[i].parentNode.parentNode.parentNode) {
               ALL_NAV_LINKS[i].parentNode.parentNode.parentNode.classList.add("hasActiveChild");
+              ALL_NAV_LINKS[i].parentNode.parentNode.parentNode.classList.add("isActive");
             }
           }
         }
@@ -120,8 +127,8 @@
       if (pageHeader) {
         appContainer.addEventListener('scroll', checkHeaderAttachment);
         checkHeaderAttachment();
+
         function checkHeaderAttachment() {
-          console.log('test');
           if (appContainer.scrollTop >= SCROLL_THRESHHOLD) {
             isAttached = true;
             if (!pageHeader.classList.contains('isAttached')) {
