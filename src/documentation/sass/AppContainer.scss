@@ -1,24 +1,12 @@
-html {
-  height: 100%;
-}
-
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
-  overflow-y: auto;
-}
-
-// Fill page height
-.main, 
-.App {
-  height: inherit;
+  background: $ms-color-black;
 }
 
 .App {
   background-color: $ms-color-neutralDark;
   justify-content: center;
-  overflow-y: auto;
 
   /* Z-index overrides for components */
   .ms-Overlay {
@@ -75,7 +63,6 @@ body {
   -webkit-overflow-scrolling: touch; // Improves scrolling performance
   bottom: 0;
   @include left(-$Nav-width);
-  // overflow-y: auto;
   position: fixed;
   top: $Header-height + $App-mobileNavBarHeight;
   transition: $ms-duration2 $ms-ease1;
@@ -93,7 +80,6 @@ body {
   position: relative;
   transition: all $ms-duration2 $ms-ease1;
   overflow-x: hidden;
-  overflow-y: visible;
 
   @include high-contrast {
     border-right: 1px solid $ms-color-white;

@@ -183,11 +183,11 @@
     pageNavLinks[i].addEventListener("click", scrollToLink)
   }
 
-  const CONTAINER = $('.App');
+  const CONTAINER = $('body');
   function scrollToLink(e) {
     e.preventDefault();
     var targetSection = e.target.getAttribute("data-title");
-    var padding = (window.innerWidth < MOBILE_BP) ? 230 : 180;
+    var padding = (window.innerWidth < MOBILE_BP) ? 100 : 50;
     var scrollTo = $('#' + targetSection);
 
     CONTAINER.animate({
