@@ -50,6 +50,10 @@
       padding-bottom: 6px;
     }
 
+    .hideSpan {
+      display: none;
+    }
+
     &.is-active,
     &:hover {
       background-color: $ms-color-neutralDark;
@@ -104,6 +108,23 @@
     min-height: 100px;
     border: 1px solid #212121;
     border-top: 0;
+  }
+
+  .ExampleCard-codeButton {
+    background-color: $ms-color-neutralDark;
+
+    .ms-Button-icon,
+    .ms-Button-label {
+      color: $ms-color-white;
+    }
+
+    .hideSpan {
+      display: inline;
+    }
+
+    .showSpan {
+      display: none;
+    }
   }
 }
 

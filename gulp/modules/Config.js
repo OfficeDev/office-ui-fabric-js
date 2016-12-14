@@ -182,13 +182,14 @@ var Config = function() {
         },
 
         // Output code from a string
-        codeBlock: function(code, language) {
+        codeBlock: function(code, language, theme) {
           var hbs = Plugins.handlebars.Handlebars;
           var fileContents = Plugins.fs.readFileSync(this.paths.srcTemplate + '/codeBlock.hbs',  "utf8");
           var template = hbs.compile(fileContents);
           var templateData = {
             code: code,
-            language: language
+            language: language,
+            theme: theme
           }
 
           return new hbs.SafeString(template(templateData));

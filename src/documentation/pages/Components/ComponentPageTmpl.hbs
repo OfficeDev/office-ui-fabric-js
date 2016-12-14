@@ -42,19 +42,19 @@
 <link rel="stylesheet" href="fabric.components.min.css" />
 <script src="jquery.min.js"></script>
 <script src="fabric.min.js"></script>
-<script src="PickaDate.js"></script>' 'html'}}
+<script src="PickaDate.js"></script>' 'html' 'isDarkTheme'}}
             {{else}}
               {{#if pageInfo.jsFile }}
                 <p>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:</p>
                 {{codeBlock 
 '<link rel="stylesheet" href="fabric.min.css" />
 <link rel="stylesheet" href="fabric.components.min.css" />
-<script src="fabric.min.js"></script>' 'html'}}
+<script src="fabric.min.js"></script>' 'html' 'isDarkTheme'}}
               {{else}}
               <p>Confirm that you have references to Fabric&#39;s CSS on your page:</p>
               {{codeBlock 
 '<link rel="stylesheet" href="fabric.min.css" />
-<link rel="stylesheet" href="fabric.components.min.css" />' 'html'}}
+<link rel="stylesheet" href="fabric.components.min.css" />' 'html' 'isDarkTheme'}}
               {{/if}}
             {{/if}}
           </li>
@@ -84,7 +84,7 @@
             <div class="ExampleCard-toggleButtons ms-font-l">
               <button class="ExampleCard-codeButton ms-Button ms-Button--icon">
                 <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Embed"></i></span>
-                <span class="ms-Button-label">Show Code</span>
+                <span class="ms-Button-label"><span class="showSpan">Show</span><span class="hideSpan">Hide</span> Code</span>
                 </button>
             </div>
           </div>

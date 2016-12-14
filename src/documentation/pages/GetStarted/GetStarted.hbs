@@ -15,7 +15,7 @@
         {{codeBlock 
 '<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css" />
 <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css" />
-<script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>' 'html'}}
+<script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>' 'html' 'isLightTheme'}}
         <p>To reference the latest version, just change the version number in the URL to your desired version. All versions of Fabric are on the CDN, and the latest version is @TODO: ADD VERSION NUMBER DYNAMICALLY.</p>
       </li>
       <li>
@@ -23,7 +23,7 @@
       {{codeBlock
 '<button class="ms-Button">
   <span class="ms-Button-label">Create Account</span>
-</button>' 'html'}}
+</button>' 'html' 'isLightTheme'}}
       </li>
       <li>
         <p>Add the appropriate &lt;script&gt; tag to your page below the references to Fabric's JavaScript to instantiate, for example, all the Button components on the page:
@@ -36,7 +36,7 @@ for(var i = 0; i < ButtonElements.length; i++) {
     // Insert Event Here
   });
 }
-</script>' 'javascript'}}
+</script>' 'javascript' 'isLightTheme'}}
         <p>Or, for example add the appropriate &lt;script&gt; tag to your page to instantiate a single Button component on the page</p>
         {{codeBlock
 '<script type="text/javascript">
@@ -44,12 +44,12 @@ var ButtonComponent = document.querySelector(".ms-Button");
 new fabric["Button"](ButtonComponent, function() {
   // Insert Event Here
 });
-</script>' 'javascript'}}
+</script>' 'javascript' 'isLightTheme'}}
         <p>Fabric’s JavaScript is lightweight and simple. You can extend, gut, or use what’s included as-is.</p>
       </li>
       <li>
         <p>You can also reference styles from Fabric Core, such as the type styles:</p>
-        {{codeBlock '<span class="ms-font-su ms-fontColor-themePrimary">Big blue text</span>' 'html'}}
+        {{codeBlock '<span class="ms-font-su ms-fontColor-themePrimary">Big blue text</span>' 'html' 'isLightTheme'}}
         <p>For more information on assets and styles available in Fabric Core, check out the <a href="https://dev.office.com/fabric#/styles">Styles documentation</a>.</p>
       </li>
     </ol>
