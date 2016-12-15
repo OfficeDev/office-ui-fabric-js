@@ -24,6 +24,7 @@ var data = {
   </ul>
   <h2 class="ms-font-xl">SearchBox with no parent container</h2>
   <p>Use a SearchBox without a parent container when it is not restricted to a certain width to accommodate other content. This search box will span the entire width of the space it's in.</p>`,
+  availableReact: true,
   variants: [
     {
       name: "Default SearchBox",
