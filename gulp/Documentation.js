@@ -114,6 +114,7 @@ gulp.task('DocumentationViewer', ['FabricComponents', 'Samples'], function() {
         page: 'HomePage',
         template: 'HomePage',
         isHome: true,
+        packageData: Config.packageData,
         relativePath: './'
     };
 
@@ -136,6 +137,7 @@ gulp.task('Documentation-getStartedPage', ['Documentation-handlebars'], function
         page: 'GetStarted',
         template: 'GetStarted',
         isHome: true,
+        packageData: Config.packageData,
         relativePath: '../'
     };
 
@@ -221,6 +223,7 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
         templateData['template'] = 'ComponentPageTmpl';
         templateData['isHome'] = false;
         templateData['relativePath'] = '../../';
+        templateData['packageData'] = Config.packageData;
         hbs = Config.paths.srcTemplate + '/'+ 'samples-index.hbs';
         componentPipe = gulp.src(hbs)
             .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))

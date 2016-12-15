@@ -11,7 +11,7 @@ var Config = function() {
   this.sassExtension = "scss";
   this.buildSass = false;
   this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
-  
+  this.packageData = pkg;
   this.paths = {
     dist: 'dist',
     src: 'src',
@@ -158,6 +158,10 @@ var Config = function() {
       },
       batch: [],
       helpers:  {
+        compileHBS: function(text) {
+          var hbs = Plugins.handlebars.Handlebars;
+          return text;
+        },
         toLowerCase: function(text) {
           return text.toLowerCase();
         },
