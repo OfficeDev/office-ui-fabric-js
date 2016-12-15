@@ -70,6 +70,7 @@ $dontColor: #A61E22;
   max-width: 50em;
   @include padding-right(60px);
   margin-bottom: -6px; // Trim padding off last paragraph
+  box-sizing: border-box;
 
   p {
     margin: 0;

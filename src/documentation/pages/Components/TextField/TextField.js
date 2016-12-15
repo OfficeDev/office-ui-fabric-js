@@ -1,6 +1,6 @@
 var data = {
   componentName: "TextField",
-  overview: "<p>Allows for the input of text. Can be a single line or multiple lines. Typically used to accept user input within a form.</p>",
+  overview: `<p>The TextField component enables a user to type text into an app. It's typically used to capture a single line of text, but can be configured to capture multiple lines of text. The text displays on the screen in a simple, uniform format.</p>`,
   availableReact: true,
   variants: [
     {

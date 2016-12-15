@@ -1,6 +1,14 @@
 var data = {
   componentName: "Panel",
-  overview: "<p>Presents content by sliding over the rest of the application, which is covered by a partially-transparent overlay. Best used for experiences that do not require explicit context for heavy-weight creation/edit/management tasks such as settings, multi-field forms, and permissions. For containers used for complex tasks that requires context, use a separate Pane alongside the existing experience such as a List/Details layout.</p>",
+  overview: `<p>Panels are modal UI overlays that provide contextual app information. They often request some kind of creation or management action from the user. Panels are paired with the Overlay component, also known as a Light Dismiss. The Overlay blocks interactions with the app view until dismissed either through clicking or tapping on the Overlay or by selecting a close or completion action within the Panel.</p>
+  <h2 class="ms-font-xl">Examples of experiences that use Panels</h2>
+  <ul>
+    <li>Member or group list creation or management</li>
+    <li>Document list creation or management</li>
+    <li>Permissions creation or management</li>
+    <li>Settings creation or management</li>
+    <li>Multi-field forms</li>
+  </ul>`,
   availableReact: true,
   variants: [
     {

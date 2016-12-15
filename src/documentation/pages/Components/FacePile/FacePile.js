@@ -1,6 +1,6 @@
 var data = {
   componentName: "FacePile",
-  overview: "<p>Displays several people with the option to add additional people or view the details of a person. Although not baked into the component, adding new people to a FacePile (the listing of faces horizontally) should occur through a panel using the FacePile PeoplePicker variant.</p>",
+  overview: `<p>The Facepile shows a list of faces or initials in a horizontal lockup. Each circle represents a person. Many times this component is used when sharing who has access to a specific view or file or when assigning a user to a task within a workflow.</p>`,
   availableReact: true,
   variants: [
     {

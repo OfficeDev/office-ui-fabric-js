@@ -1,6 +1,6 @@
 var data = {
   componentName: "MessageBar",
-  overview: "<p>Lowest level of caution. Use when you want to present timely, concise information that accelerates a workflow, or to provide key information or actions that avoid a dead end in the experience.</p>",
+  overview: "<p>A MessageBar is an area at the top of a primary view that displays relevant status information. You can use a MessageBar to tell the user about a situation that does not require their immediate attention and therefore does not need to block other activities.</p>",
   availableReact: true,
   variants: [
     {
