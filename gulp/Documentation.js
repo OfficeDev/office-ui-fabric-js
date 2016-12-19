@@ -113,7 +113,6 @@ gulp.task('DocumentationViewer', ['FabricComponents', 'Samples'], function() {
     var templateData = {
         page: 'HomePage',
         template: 'HomePage',
-        isHome: true,
         packageData: Config.packageData,
         relativePath: './'
     };
@@ -136,7 +135,6 @@ gulp.task('Documentation-getStartedPage', ['Documentation-handlebars'], function
     var templateData = {
         page: 'GetStarted',
         template: 'GetStarted',
-        isHome: true,
         packageData: Config.packageData,
         relativePath: '../'
     };
@@ -176,7 +174,12 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
     // Current Page Folder path
     srcFolderName = Config.paths.srcDocsJSCompPages;
     for (var i=0; i < demoPagesList.length; i++) {       
-        templateData = {};
+        templateData = {
+          page: 'Components',
+          template: 'ComponentPageTmpl',
+          relativePath: '../../',
+          packageData: Config.packageData
+        };
         pageName = demoPagesList[i];
 
         var exampleModels = [];
@@ -217,70 +220,21 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
           }
         }
 
-       // hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.hbs', '.html');
-
-        templateData['page'] = 'Components';
-        templateData['template'] = 'ComponentPageTmpl';
-        templateData['isHome'] = false;
-        templateData['relativePath'] = '../../';
-        templateData['packageData'] = Config.packageData;
+        // Grab page tempalte
         hbs = Config.paths.srcTemplate + '/'+ 'samples-index.hbs';
         componentPipe = gulp.src(hbs)
             .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Building documentation page " + pageName
             })))
-            // .pipe(Plugins.replace(/<!---i(.|\s)*?i--->/img, ""))
-            // .pipe(Plugins.marked())
-            // .on('error', function(err) {
-            //     console.log(err);  
-            // })
-            // .pipe(Plugins.fileinclude())
-            // .pipe(Plugins.replace("<!----", ""))
-            // .pipe(Plugins.replace("---->", ""))
-            // .pipe(Plugins.replace("<!---", ""))
-            // .pipe(Plugins.replace("--->", ""))
             .pipe(Plugins.data(function () {
                 return { "components" : componentSidebarList };
             }))
             .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
-            // .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
-            // .pipe(Plugins.htmlbeautify())
             .pipe(Plugins.template())
             .pipe(Plugins.rename(pageName + ".html"))
-            // .pipe(Plugins.wrap(
-            //     {
-            //         src:  Config.paths.srcTemplate + '/componentDemo.html' 
-            //     },
-            //     {
-            //         pageName: pageName
-            //     }
-            // ));
-            // Replace Comments to hide code
             .pipe(gulp.dest(Config.paths.distDocsComponents + '/' + pageName));
 
-
-        // markdownPipe = gulp.src(markdown)
-        //     .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-        //     .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-        //             title: "Building documentation page " + pageName
-        //         })))
-        //     .on('error', function(err) {
-        //         console.log(err);  
-        //         })
-        //     .pipe(Plugins.fileinclude())
-        //     .pipe(Plugins.replace(/<!----(.|\s)*?---->/img, ""))
-        //     .pipe(Plugins.replace("<!---i", ""))
-        //     .pipe(Plugins.replace("i--->", ""))
-        //     .pipe(Plugins.replace("<!---", ""))
-        //     .pipe(Plugins.replace("--->", ""))
-        //     .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
-        //     .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
-        //     // Replace Comments to hide code
-        //     .pipe(gulp.dest('./ghdocs/components/'));
-
-        // // Add stream
-        // streams.push(markdownPipe);
         streams.push(componentPipe);
    }
    
@@ -301,7 +255,6 @@ gulp.task('Documentation-buildStyles', function () {
                       .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
                       .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
                       .pipe(Plugins.rename('styles.css'))
-                      // .pipe(Plugins.changed(Config.paths.distDocumentationCSS, {extension: '.css'}))
                       .pipe(Plugins.autoprefixer({
                         browsers: ['last 3 versions', 'ie >= 9'],
                         cascade: false
