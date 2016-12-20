@@ -5,8 +5,33 @@ var data = {
   variants: [
     {
       name: "Default Dialog",
-      templateFile: "DialogExample",
-      model: "DialogExampleModel"
+      templateFile: "DialogDefaultExample",
+      model: "DialogExampleModel",
+      jsFile: "DialogExampleDefaultJS"
+    },
+    {
+      name: "Multiline Dialog",
+      templateFile: "DialogMultilineExample",
+      model: "DialogMultilineExampleModel",
+      jsFile: "DialogMultilineExampleJS"
+    },
+    {
+      name: "Large Header Dialog",
+      templateFile: "DialogLgHeaderExample",
+      model: "DialogLgHeaderExampleModel",
+      jsFile: "DialogLgHeaderExampleJS"
+    },
+    {
+      name: "Blocking Dialog",
+      templateFile: "DialogBlockingExample",
+      model: "DialogBlockingExampleModel",
+      jsFile: "DialogBlockingExampleJS"
+    },
+    {
+      name: "Close Dialog",
+      templateFile: "DialogCloseExample",
+      model: "DialogCloseExampleModel",
+      jsFile: "DialogCloseExampleJS"
     }
   ],
   methods: [

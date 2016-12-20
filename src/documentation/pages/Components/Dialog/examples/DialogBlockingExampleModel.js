@@ -1,6 +1,7 @@
 var DialogExampleModel = {
-  "title": "All emails together",
-  "subText": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
+  "modifier": "blocking",
+  "title": "Unsaved changes",
+  "subText": "Are you sure you want to discard these changes?.",
   "components": [
     {
       "component": "CheckBox",
@@ -40,7 +41,7 @@ var DialogExampleModel = {
     {
       "component": "Button",
       "props": {
-        "label": "Cancel",
+        "label": "Delete",
         "tag": "button",
         "customClasses": "ms-Dialog-action"
       }

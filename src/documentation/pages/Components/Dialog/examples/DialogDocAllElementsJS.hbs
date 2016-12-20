@@ -1,53 +1,9 @@
 <script type="text/javascript">
-  var DialogElements = document.querySelectorAll(".ms-DialogExample");
+  var DialogElements = document.querySelectorAll(".ms-Dialog");
   var DialogComponents = [];
   for (var i = 0; i < DialogElements.length; i++) {
-    (function(i){
-      var example = DialogElements[i];
-      var button = example.querySelector(".docs-DialogExample-button");
-      var dialog = example.querySelector(".ms-Dialog");
-      var label = example.querySelector(".docs-DialogExample-label")
-      
-      var checkBoxElements = example.querySelectorAll(".ms-CheckBox");
-      var actionButtonElements = example.querySelectorAll(".ms-Dialog-action");
-      var checkBoxComponents = [];
-      var actionButtonComponents = [];
-      
-      // Wire up the dialog
-      var dialogComponent = new fabric['Dialog'](dialog);
-      
-      // Wire up the checkBoxes
-      (function(){
-        for(var j = 0; i < checkBoxElements.length; j++) {
-          checkBoxComponents[j] = new fabric['CheckBox'](checkBoxElements[j]);
-        }
-      }());
-      
-      
-      // Wire up the buttons
-      (function(){
-        for(var k = 0; i < actionButtonElements.length; k++) {
-          actionButtonComponents[k] = new fabric['Button'](actionButtonElements[k], actionHandler);
-        }
-      }());
-
-      // When clicking the button, open the dialog
-      button.onclick = function() {
-        dialogComponent.open();
-      };
-        
-      function actionHandler(event) {
-        var labelText = "";
-        var counter = 0;
-        for (var x = 0; x < checkBoxComponents.length; x++) {
-          if(checkBoxComponents[x].getValue()) {
-            counter++;
-          }
-        }
-        labelText += counter + " option(s) selected. " + this.innerText.trim() + " clicked" ;
-        label.innerText = labelText;
-      }
-      console.log(i);
-    }(i));
+    (function(){
+			DialogComponents[i] = new fabric['Dialog'](DialogElements[i]);
+		}());
   }
 </script>

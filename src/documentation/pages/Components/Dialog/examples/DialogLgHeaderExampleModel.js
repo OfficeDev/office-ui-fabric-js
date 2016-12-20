@@ -1,32 +1,7 @@
 var DialogExampleModel = {
+  "modifier": "lgHeader",
   "title": "All emails together",
   "subText": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
-  "components": [
-    {
-      "component": "CheckBox",
-      "props":  {
-        "label": "Option1",
-        "modifier": "",
-        "name": "checkboxa",
-        "id": "checkboxa",
-        "checked": false,
-        "disabled": false,
-        "type": "checkbox"
-      }
-    },
-    {
-      "component": "CheckBox",
-      "props":  {
-        "label": "Option2",
-        "modifier": "",
-        "name": "checkboxa",
-        "id": "checkboxa",
-        "checked": false,
-        "disabled": false,
-        "type": "checkbox"
-      }
-    }
-  ],
   "actions": [
     {
       "component": "Button",

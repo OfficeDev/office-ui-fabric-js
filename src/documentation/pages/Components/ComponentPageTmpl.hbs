@@ -95,12 +95,19 @@
           </div>
           <div class="ExampleCard-code">
             {{{renderCode (renderComponentExample ../pageInfo.componentName this.templateFile (lookup ../models this.model)) 'html' }}}
-            {{#if ../pageInfo.jsFile}}
-            {{{renderCode (renderComponentExample ../pageInfo.componentName ../pageInfo.jsFile null) "javascript" }}}
+            {{#if this.jsFile}}
+              {{{renderCode (renderComponentExample ../pageInfo.componentName this.jsFile null) "javascript" }}}
+            {{else}}
+              {{#if ../pageInfo.jsFile}}
+                {{{renderCode (renderComponentExample ../pageInfo.componentName ../pageInfo.jsFile null) "javascript" }}}
+              {{/if}}
             {{/if}}
           </div>
           <div class="ExampleCard-example">
             {{renderComponentExample ../pageInfo.componentName this.templateFile (lookup ../models this.model)}}
+            {{#if this.jsFile}}
+              {{renderComponentExample ../pageInfo.componentName this.jsFile null }}
+            {{/if}}
           </div>
         </div>
         {{/each}}
