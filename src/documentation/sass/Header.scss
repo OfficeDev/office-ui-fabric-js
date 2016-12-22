@@ -30,3 +30,37 @@ $od-Header-bannerWidth: 1300px;
     @include padding-left(8px);
   }
 }
+
+
+.od-Header-navigationContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: $od-Header-height;
+  background-color: $ms-color-black;
+  display: none;
+  padding-bottom: 1px;
+  box-sizing: content-box;
+
+  &.is-open {
+    display: block;
+  }
+
+  @include high-contrast {
+    border: 1px solid $ms-color-white;
+    border-top: 0;
+  }
+  
+  @include high-contrast-black-on-white  {
+    border: 1px solid $ms-color-black;
+    border-top: 0;
+  }
+
+}
+
+
+@media (min-width: $od-Header-bannerWidth) {
+  .docs-showNavigation {
+    display: block;
+  }
+}
