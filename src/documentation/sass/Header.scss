@@ -12,6 +12,7 @@ $od-Header-bannerWidth: 1300px;
   top: 0;
   width: 100%;
   z-index: 9;
+  box-sizing: border-box;
 }
 
 .od-Header-banner {
@@ -31,6 +32,18 @@ $od-Header-bannerWidth: 1300px;
   }
 }
 
+.od-Header-searchContainer {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 330px;
+  height: $od-Header-searchHeight;
+  display: none;
+
+   @media screen and (min-width: $ms-screen-xxl-min) {
+     display: block;
+   }
+}
 
 .od-Header-navigationContainer {
   position: absolute;
@@ -58,6 +71,31 @@ $od-Header-bannerWidth: 1300px;
 
 }
 
+.od-Header-hamburgerButton {
+  position: absolute;
+  right: 14px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  color: $ms-color-white;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  display: none;
+
+  &:focus {
+    box-shadow: inset 0px 0px 0px 1px $ms-color-white;
+    
+    @include high-contrast {
+      box-shadow: inset 0px 0px 0px 1px $ms-color-white;
+    }
+    
+    @include high-contrast-black-on-white  {
+      box-shadow: inset 0px 0px 0px 1px $high-contrast-purpleBG;
+    }
+  }
+}
 
 @media (min-width: $od-Header-bannerWidth) {
   .docs-showNavigation {

@@ -25,6 +25,17 @@
               <img src="{{relativePath}}images/logo-office-dev.svg" width="190" height="48" alt="Office dev center logo image">
             </div>
           </div>
+          <div class="od-Header-searchContainer">
+            <div class="od-SearchBox">
+              <form class="od-SearchBox-searchForm ng-pristine ng-valid" action="http://dev.office.com/Search" method="get">
+                <fieldset>
+                  <input name="q" id="q" role="Search" aria-label="Search Office Dev Center" type="text" placeholder="Search dev.office.com" class="od-SearchBox-field" value="">
+                  <input name="culture" id="culture" type="hidden" value="en-US">
+                  <button type="submit" class="od-SearchBox-button ms-Icon ms-Icon--Search">Search</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
         </div>
         <div class="od-Header-navigationContainer ms-u-slideUpOut20">
           <div class="od-Navigation">
@@ -308,7 +319,6 @@
       var mainContainer = document.getElementById('mainContent');
       var toggleLinks = document.querySelectorAll('.linkToggle > a');
       function linkToggle() {
-        console.log(this.parentNode.classList.contains('isActive'));
         if (this.parentNode.classList.contains('hasActiveChild')) {
           (this.parentNode.classList.contains('hideChildren')) ?
           this.parentNode.classList.remove('hideChildren') :
