@@ -128,7 +128,11 @@
               <tr>
                 <td class="nowrap">{{{this.name}}}</td>
                 <td class="nowrap">{{{this.applied}}}</td>
-                <td>{{{this.result}}}</td>
+                <td class="tableMinWidth">
+                  <div>
+                    {{{this.result}}}
+                  </div>
+                </td>
               </tr>
               {{/each}}
             </tbody>
@@ -159,7 +163,11 @@
                   <p>None</p>
               {{/if~}}
               </td>
-              <td>{{{this.description}}}</td>
+              <td class="tableMinWidth">
+                <div>
+                  {{{this.description}}}
+                </div>
+              </td>
             </tr>
             {{/each}}
           </tbody>

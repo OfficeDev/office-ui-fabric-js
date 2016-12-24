@@ -41,7 +41,7 @@ var data = {
          name: "removeOutlinesOnClick()",
          parameters: [
          ],
-         description: "Removes focus outlines so they don\"t linger after click"
+         description: "Removes focus outlines so they don't linger after click"
       },
       {
          name: "addItem(itemLabel, itemLink)",

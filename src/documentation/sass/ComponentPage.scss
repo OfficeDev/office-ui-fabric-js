@@ -196,3 +196,18 @@ $dontColor: #A61E22;
 .ComponentPage-implementationSection {
   @include contentPadding(50px, 50px);  // Override padding to match this website
 }
+
+.ComponentPage-statesSection,
+.ComponentPage-methodsSection {
+  overflow: scroll;
+}
+
+
+.ms-Table {
+  .tableMinWidth {
+    div {
+      min-width: 200px;
+      max-width: 350px;
+    }
+  }
+}
