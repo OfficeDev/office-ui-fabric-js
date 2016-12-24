@@ -69,7 +69,6 @@ body {
   @include transition-property(left);
   width: $Nav-width;
   min-width: $Nav-width; // @TODO: Figure out why width by itself isn't working
-  overflow-y: scroll;
 }
 
 .App-content {
