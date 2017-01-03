@@ -13,19 +13,20 @@ $nav-group-header-height: 40px;
   line-height: 1.5;
 
   a {
-    color: $ms-color-neutralTertiary;
+    // color: $ms-color-neutralTertiary;
+    color: #767676;
     display: block;
     margin-bottom: 12px;
 
     &:hover {
-      color: $ms-color-white;
+      color: $ms-color-neutralDark;
     }
   }
 
   &.isActive:not(.isHomePage),
   &:hover:not(.isHomePage),
   &.hasActiveChild {
-    color: $ms-color-white;
+    color: $ms-color-neutralPrimary;
     position: relative;
 
     &::before {
@@ -74,7 +75,8 @@ $nav-group-header-height: 40px;
   &.hasActiveChild {
 
     a {
-      color: $ms-color-white;
+      color: #767676;
+      // color: $ms-color-white;
     }
 
     > .links {
@@ -94,7 +96,7 @@ $nav-group-header-height: 40px;
 .isHomePage.isActive a {
   font-size: $ms-font-size-xl;
   font-weight: $ms-font-weight-semibold;
-  color: $ms-color-white;
+  color: $ms-color-neutralPrimary;
 }
 
 // Second-level links
@@ -108,14 +110,14 @@ $nav-group-header-height: 40px;
       font-weight: $ms-font-weight-regular;
 
       &:hover {
-        color: $ms-color-white;
+        color: $ms-color-neutralPrimary;
       }
     }
 
     &.isActive,
     &:hover {
       > a:first-child {
-        color: $ms-color-white;
+        color: $ms-color-neutralPrimary;
       }
 
       // Hide the line indicators on submenus
