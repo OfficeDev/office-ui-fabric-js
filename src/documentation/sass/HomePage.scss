@@ -56,7 +56,7 @@
 .primaryButton {
   @include ghostButton($ms-color-white, $color-home-darker);
   background-color: $ms-color-white;
-  color: $color-home-darker;
+  color: #038387;
 
   &:hover {
     background-color: $ms-color-neutralLight;
@@ -64,7 +64,7 @@
 }
 
 .version {
-  color: $color-home-lighter;
+  color: $ms-color-white;
   font-size: $ms-font-size-xs;
   font-weight: $ms-font-weight-regular;
   margin-top: 16px;
@@ -107,7 +107,7 @@
   margin-bottom: 60px;
   order: -1;
   position: relative;
-  top: -96px;
+  top: -110px;
 
   img {
     margin-bottom: 12px;
@@ -124,7 +124,7 @@
   }
 
   .button {
-    @include ghostButton($color-home-lighter, $ms-color-neutralPrimaryAlt);
+    @include ghostButton(#30C6CC, $ms-color-neutralPrimaryAlt);
     font-size: $ms-font-size-m;
   }
 }

@@ -13,8 +13,7 @@ $nav-group-header-height: 40px;
   line-height: 1.5;
 
   a {
-    // color: $ms-color-neutralTertiary;
-    color: #767676;
+    color: $ms-color-neutralSecondary;
     display: block;
     margin-bottom: 12px;
 
@@ -75,7 +74,7 @@ $nav-group-header-height: 40px;
   &.hasActiveChild {
 
     a {
-      color: #767676;
+      color: $ms-color-neutralDark;
       // color: $ms-color-white;
     }
 
@@ -105,7 +104,7 @@ $nav-group-header-height: 40px;
 
   .link {
     a {
-      color: $ms-color-neutralTertiary;
+      color: $ms-color-neutralSecondary;
       font-size: $ms-font-size-m;
       font-weight: $ms-font-weight-regular;
 
