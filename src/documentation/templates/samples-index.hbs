@@ -591,9 +591,9 @@
       window.addEventListener('resize', _windowsResizeHandler, false);
       document.addEventListener('keyup', _closeDropdownHandler, true);
 
-      for (let i = 0; i < _containers.length; i++) {
-        currentContainer = _containers[i];
-        currentButton = _containers[i].querySelector(LINKS_CLASS);
+      for (var j = 0; j < _containers.length; j++) {
+        currentContainer = _containers[j];
+        currentButton = _containers[j].querySelector(LINKS_CLASS);
         submenu = currentContainer.querySelector(SUBMENU_CLASS);
 
         if (submenu) {

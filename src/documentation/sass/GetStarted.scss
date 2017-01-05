@@ -1,7 +1,7 @@
 #design {
   .pageHeader,
   .content {
-    background-color: $ms-color-blueMid;
+    background-color: $color-getStarted;
   }
 }
 
@@ -48,7 +48,7 @@
 
 .designSection {
   @include headerAngles($ms-color-neutralPrimary);
-  background-color:$color-getStarted-darker;
+  background-color:$color-getStarted;
   color: $ms-color-neutralLighter;
 }
 

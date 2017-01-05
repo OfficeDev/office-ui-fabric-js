@@ -43,23 +43,11 @@ $nav-group-header-height: 40px;
     }
 
     &.getStartedPage::before {
-      background-color: $color-getStarted-medium;
-    }
-    
-    &.stylesPage::before {
-      background-color: $color-styles-medium;
+      background-color: $color-getStarted;
     }
 
     &.Components::before {
-      background-color: $color-components-darker;
-    }
-
-    &.resourcesPage::before {
-      background-color: $color-resources-medium;
-    }
-
-    &.resourcesPage::before {
-      background-color: $color-blog-medium;
+      background-color: $color-components;
     }
   }
 
