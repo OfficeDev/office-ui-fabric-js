@@ -1,0 +1,78 @@
+<h1 id="progress-indicator">Progress Indicator</h1>
+<p>Progress Indicators are used to show the completion status of an operation lasting more than 2 seconds. If the state of progress cannot be determined, use a Spinner instead. Progress Indicators can appear in a new panel, a flyout, under the UI initiating
+    the operation, or even replacing the initiating UI, as long as the UI can return if the operation is canceled or is stopped.</p>
+<p>Progress Indicators feature a bar showing total units to completion, and total units finished. The description of the operation appears above the bar, and the status in text appears below. The description should tell someone exactly what the operation
+    is doing. Examples of formatting include:</p>
+<p><strong>[Object]</strong> is being <strong>[operation name]</strong>, or<br/>
+    <strong>[Object]</strong> is being <strong>[operation name]</strong> to <strong>[destination name]</strong> or<br/>
+    <strong>[Object]</strong> is being <strong>[operation name]</strong> from <strong>[source name]</strong> to <strong>[destination name]</strong> </p>
+<p>Status text is generally in units elapsed and total units. If the operation can be canceled, an “X” glyph is used and should be placed in the upper right, aligned with the baseline of the operation name. When an error occurs, replace the status text with
+    the error description using ms-fontColor-redDark.</p>
+<p>Real-world examples include copying files to a storage location, saving edits to a file, and more. Use units that are informative and relevant to give the best idea to users of how long the operation will take to complete. Avoid time units as they are
+    rarely accurate enough to be trustworthy. Also combine steps of a complex operation into one total bar to avoid “rewinding” the bar. Instead change the operation description to reflect the change if necessary. Bars moving backwards reduce confidence
+    in the service.</p>
+<h2 id="best-practices">Best Practices</h2>
+<table>
+    <thead>
+        <tr>
+            <th style="text-align:left">Do</th>
+            <th style="text-align:left">Don&#39;t</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align:left">Use a Progress indicator when the total units to completion is known</td>
+            <td style="text-align:left">Use a Progress indicator when the total units to completion is indeterminate</td>
+        </tr>
+        <tr>
+            <td style="text-align:left">Display operation description</td>
+            <td style="text-align:left">Use only a single word description</td>
+        </tr>
+        <tr>
+            <td style="text-align:left">Show text above and/or below the bar</td>
+            <td style="text-align:left">Show text to the right or left of the bar</td>
+        </tr>
+        <tr>
+            <td style="text-align:left">Combine steps of a single operation into one bar</td>
+            <td style="text-align:left">Cause progress to “rewind” to show new steps</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+{{> ProgressIndicator props=ProgressIndicatorExampleProps.default }}
+
+<h2 id="states">States</h2>
+<p>Active Error
+</p>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+    <li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+    <li>Copy the HTML from the sample above into your page. For example:
+        <pre>
+ <code>
+{{renderPartialPre "ProgressIndicator" "ProgressIndicatorExample" PivotExampleProps.default false}}
+ </code>
+</pre>
+    </li>
+    <li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to Fabric&#39;s JS, to instantiate all ProgressIndicators on the page:
+        <pre>
+ <code>
+{{renderPartialPre "ProgressIndicator" "ProgressIndicatorExampleJS" "" false}}
+ </code>
+</pre>
+    </li>
+    <li>Verify that the component is working the same as in the sample above.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependency on other components.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>Focus styles are included for all of the actions included within a Progress Indicator.</p>
+
+{{> ProgressIndicatorExampleJS }}

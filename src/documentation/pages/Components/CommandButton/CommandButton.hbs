@@ -1,0 +1,91 @@
+<h1 id="commandbutton">CommandButton</h1>
+<p>Allows users to take action, such as submitting a form or dismissing a message. Primary use is in command bar or in Callout.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+{{> CommandButton props=CommandButtonExampleModel.props}}
+
+<h3 id="action-button">Action Button</h3>
+
+{{> CommandButton props=CommandButtonExampleModel.propsActionButton}}
+
+<h3 id="disabled">Disabled</h3>
+
+{{> CommandButton props=CommandButtonExampleModel.propsDisabled}}
+
+<h3 id="dropdown">Dropdown</h3>
+
+{{> CommandButton props=CommandButtonExampleModel.propsDropdown}}
+
+<h3 id="inline">Inline</h3>
+
+{{> CommandButton props=CommandButtonExampleModel.propsInline}}
+
+<h3 id="no-label">No Label</h3>
+
+{{> CommandButton props=CommandButtonExampleModel.propsNoLabel}}
+
+<h3 id="no-label-split">No Label Split</h3>
+
+{{> CommandButton props=CommandButtonExampleModel.propsNoLabelSplit}}
+
+<h3 id="pivot">Pivot</h3>
+
+{{> CommandButton props=CommandButtonExampleModel.propsPivot}}
+
+<h3 id="split">Split</h3>
+
+{{> CommandButton props=CommandButtonExampleModel.propsSplit}}
+
+<h3 id="text-only">Text Only</h3>
+
+{{> CommandButton props=CommandButtonExampleModel.propsTextOnly}}
+
+<h2 id="states">States</h2>
+<table>
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Applied to</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>.is-disabled</code></td>
+            <td><code>.ms-Button</code></td>
+            <td>When using an <code>&lt;a&gt;</code> element, apply this class to disable the button. When using a <code>&lt;button&gt;</code>, the <code>disabled</code> attribute can be used instead.</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+    <li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+    <li>Copy the HTML from one of the samples above into your page. For example:
+        <pre>
+ <code>
+{{renderPartialPre "CommandButton" "CommandButtonExample" CommandButtonExampleModel.props false}}
+ </code>
+</pre>
+    </li>
+    <li>Replace the sample HTML content (such as the content of <code>.ms-CommandButton-label</code>) with your content.</li>
+    <li>If you are using any of CommandButton&#39;s variants that use a dropdown, the below JavaScript is required.
+        <pre>
+ <code>
+{{renderPartialPre "CommandButton" "CommandButtonExampleJS" ""  false}}
+ </code>
+</pre>
+
+    </li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>ContextualMenu, ContextualHost</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>Focus styles are included for keyboard navigation.</p>
+
+{{> CommandButtonExampleJS }}

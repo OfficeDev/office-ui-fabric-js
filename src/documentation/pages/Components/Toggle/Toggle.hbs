@@ -1,0 +1,44 @@
+<h1 id="toggle">Toggle</h1>
+<p>Allows for turning on or off a setting. This is best suited for simple, singular configuration (e.g. application level settings) whereas the ChoiceField is better suited when there is a longer list of individual choices or in a form (e.g. signing up for
+    different newsletters during registration for an event).</p>
+<h2 id="variants">Variants</h2>
+<h3 id="label-above-default-">Label above (default)</h3>
+
+{{> ToggleElem props=ToggleModels.basic }}
+
+<h3 id="label-on-left">Label on left</h3>
+
+{{> ToggleElem props=ToggleModels.textLeft }}
+
+<h3 id="disabled">Disabled</h3>
+
+{{> ToggleElem props=ToggleModels.disabled }}
+
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+    <li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+    <li>Copy the HTML from one of the samples above into your page. For example:
+        <pre>
+ <code>
+{{renderPartialPre "Toggle" "ToggleElem" ToggleModels.basic false}}
+ </code>
+</pre>
+    </li>
+    <li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to Fabric&#39;s JS, to instantiate all Toggle components on the page:
+        <pre>
+ <code>
+{{renderPartialPre "Toggle" "ToggleJS" "" false}}
+ </code>
+</pre>
+    </li>
+    <li>Update the <code>.ms-Label</code> to contain your label text.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has a dependency on the Label component.</p>
+
+{{> ToggleJS }}
