@@ -115,7 +115,7 @@
       {{#if pageInfo.states}}
       <div class="ComponentPage-statesSection">
         <h2 class="ComponentPage-subHeading ComponentPage-statesTitle" id="States">States</h2>
-         <table class="ms-Table">
+         <table class="ms-Table ms-TableData">
             <thead>
               <tr>
                 <th>State</th>
@@ -142,7 +142,7 @@
       {{#if pageInfo.methods}}
       <div class="ComponentPage-methodsSection">
         <h2 class="ComponentPage-subHeading ComponentPage-methodsTitle" id="Methods">Methods</h2>
-        <table class="ms-Table">
+        <table class="ms-Table ms-TableData">
           <thead>
             <tr>
               <th>Name</th>
@@ -215,7 +215,7 @@
     });
   }
 
-  var TableElements = document.querySelectorAll(".ms-Table");
+  var TableElements = document.querySelectorAll(".ms-TableData");
   for (var i = 0; i < TableElements.length; i++) {
     new fabric['Table'](TableElements[i]);
   }
