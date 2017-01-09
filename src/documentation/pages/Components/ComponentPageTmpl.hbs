@@ -4,16 +4,16 @@
       <h1 id="{{pageInfo.componentName}}" class="pageTitle">{{pageInfo.componentName}}</h1>
         <nav class="pageNav" aria-label="In page navigation">
           <ul>
-            <li><a href="#" data-title="Overview">Overview</a></li>
-            <li><a href="#" data-title="Using">Using this Component</a></li>
+            <li><a href="#" data-title="Overview" data-sectionname="Overview">Overview</a></li>
+            <li><a href="#" data-title="Using" data-sectionname="Using this Component">Using this Component</a></li>
             {{#if pageInfo.variants}}
-            <li><a href="#" data-title="Variants">Variants</a></li>
+            <li><a href="#" data-title="Variants" data-sectionname="Variants">Variants</a></li>
             {{/if}}
             {{#if pageInfo.states}}
-            <li><a href="#" data-title="States">States</a></li>
+            <li><a href="#" data-title="States" data-sectionname="States">States</a></li>
             {{/if}}
             {{#if pageInfo.methods}}
-            <li><a href="#" data-title="Methods">Methods</a></li>
+            <li><a href="#" data-title="Methods" data-sectionname="Methods">Methods</a></li>
             {{/if}}
           </ul>
         </nav>

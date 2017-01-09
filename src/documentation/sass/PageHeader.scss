@@ -110,7 +110,7 @@
         // Make room for the heavier text of the selected state
         &::after {
           color: transparent;
-          content: attr(data-title);
+          content: attr(data-sectionname);
           display: block;
           font-weight: bold;
           height: 1px;
