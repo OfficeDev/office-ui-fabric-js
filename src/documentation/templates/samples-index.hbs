@@ -362,7 +362,9 @@
       var appContainer = document.querySelector(".App");
       var navButton = document.querySelector(".menuButton");
       var navButtonIcon = navButton.querySelector('.ms-Icon');
+      var navOverlay = document.querySelector(".App-mobileNavOverlay");
       navButton.addEventListener("click", toggleNav);
+      navOverlay.addEventListener("click", toggleNav);
       function toggleNav() {
         if (navState) {
           appContainer.classList.remove("is-navOpen");
