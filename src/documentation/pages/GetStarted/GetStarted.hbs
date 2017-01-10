@@ -28,21 +28,33 @@
       <li>
         <p>Add the appropriate &lt;script&gt; tag to your page below the references to Fabric's JavaScript to instantiate, for example, all the Button components on the page:
         </p>
+        <button class="ms-Button ms-Button--primary AlertExamples">
+          <span class="ms-Button-label">New User</span>
+        </button>
+        <button class="ms-Button ms-Button--primary AlertExamples">
+          <span class="ms-Button-label">New User</span>
+        </button>
+        <button class="ms-Button ms-Button--primary AlertExamples">
+          <span class="ms-Button-label">New User</span>
+        </button>
         {{codeBlock
 '<script type="text/javascript">
-var ButtonElements = document.querySelectorAll(".ms-Button");
+var ButtonElements = document.querySelectorAll(".ms-Button.AlertExamples");
 for(var i = 0; i < ButtonElements.length; i++) {
   new fabric["Button"](ButtonElements[i], function() {
-    // Insert Event Here
+    alert("You clicked a New User button");
   });
 }
 </script>' 'javascript' 'isLightTheme'}}
         <p>Or, for example add the appropriate &lt;script&gt; tag to your page to instantiate a single Button component on the page</p>
+        <button class="ms-Button ms-Button--primary AlertExample">
+          <span class="ms-Button-label">Create Account</span>
+        </button>
         {{codeBlock
 '<script type="text/javascript">
-var ButtonComponent = document.querySelector(".ms-Button");
+var ButtonComponent = document.querySelector(".ms-Button.AlertExample");
 new fabric["Button"](ButtonComponent, function() {
-  // Insert Event Here
+  alert("You clicked the Create Account button");
 });
 </script>' 'javascript' 'isLightTheme'}}
       </li>
@@ -60,3 +72,16 @@ new fabric["Button"](ButtonComponent, function() {
     <p>Check the <a href="https://trello.com/b/wq7oIK87/office-ui-fabric-js-requests">Fabric JS Trello board</a> and vote up the request so we can track it. If you don’t see an existing card, please <a href="https://github.com/OfficeDev/office-ui-fabric-js/issues/new">file an issue in the repository</a> and we’ll add the card for you.</p>
   </div>
 </div>
+<script type="text/javascript">
+var ButtonElements = document.querySelectorAll(".ms-Button.AlertExamples");
+for(var i = 0; i < ButtonElements.length; i++) {
+  new fabric["Button"](ButtonElements[i], function() {
+    alert("You clicked a New User button");
+  });
+}
+
+var ButtonComponent = document.querySelector(".ms-Button.AlertExample");
+new fabric["Button"](ButtonComponent, function() {
+  alert("You clicked the Create Account button");
+});
+</script>
