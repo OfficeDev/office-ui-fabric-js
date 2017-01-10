@@ -31,7 +31,12 @@
           </div>
           {{#if pageInfo.availableReact}}
           <div class="ComponentPage-related">
-            <span class="ComponentPage-relatedTitle">Also available in</span><a href="https://dev.office.com/fabric#/components/{{toLowerCase pageInfo.componentName}}">Fabric React</a>
+            <span class="ComponentPage-relatedTitle">Also available in</span>
+            {{#if pageInfo.reactComponent}}
+            <a href="https://dev.office.com/fabric#/components/{{toLowerCase pageInfo.reactComponent}}">Fabric React</a>
+            {{else}}
+            <a href="https://dev.office.com/fabric#/components/{{toLowerCase pageInfo.componentName}}">Fabric React</a>
+            {{/if}}
           </div>
           {{/if}}
         </div>
