@@ -133,17 +133,17 @@
   align-items: center;
   background-color: transparent;
   border: 0;
-  display: flex;
   padding: 0;
+  position: relative;
 
   .ms-Button-icon {
     color: $ms-color-themePrimary;
     display: inline-block;
     font-size: $ms-font-size-s;
     margin-right: 4px;
-    position: relative;
-    top: 1px;
+    padding-top: 5px;
     text-align: center;
+
 
     .ms-Icon {
       border-radius: 18px;
@@ -161,6 +161,7 @@
     font-weight: $ms-font-weight-light;
     position: relative;
     text-decoration: none;
+    vertical-align: top;
   }
 
   &:hover,
