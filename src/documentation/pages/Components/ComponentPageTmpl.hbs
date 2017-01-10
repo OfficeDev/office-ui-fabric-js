@@ -208,7 +208,7 @@
     pageNavLinks[i].addEventListener("click", scrollToLink)
   }
 
-  const CONTAINER = $('body');
+  const CONTAINER = $('body, html');
   function scrollToLink(e) {
     e.preventDefault();
     var targetSection = e.target.getAttribute("data-title");
