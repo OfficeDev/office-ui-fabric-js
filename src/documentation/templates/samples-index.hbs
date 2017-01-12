@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="{{relativePath}}styles.css" />
   <link rel="stylesheet" href="{{relativePath}}../css/fabric.min.css" />
   <link rel="stylesheet" href="{{relativePath}}../css/fabric.components.min.css" />
-  <script type="text/javascript" src="{{relativePath}}../lib/jquery.js"></script>
+  <script type="text/javascript" src="{{relativePath}}../lib/scrollTo.js"></script>
   {{#if pageInfo.isDatePicker}}
+  <script type="text/javascript" src="{{relativePath}}../lib/jquery.js"></script>
   <script type="text/javascript" src="{{relativePath}}../lib/PickaDate.js"></script>
   {{/if}}
 </head>
@@ -307,7 +308,7 @@
           </ul>
           <div class="od-OfficeFooter-microsoft">
             <img src="{{relativePath}}images/logo-microsoft.png" width="123" height="24" alt="Microsoft logo" />
-            <div>&copy; 2017 Microsoft</div>
+            <div>&copy; <span id="currYear"></span> Microsoft</div>
           </div>
         </div>
       </footer>
@@ -315,6 +316,7 @@
   </div>
   <script type="text/javascript">
     (function(){
+      document.getElementById('currYear').innerHTML = new Date().getFullYear();
       var mainContainer = document.getElementById('mainContent');
       var toggleLinks = document.querySelectorAll('.linkToggle > a');
       function linkToggle() {
@@ -389,7 +391,8 @@
         checkHeaderAttachment();
 
         function checkHeaderAttachment() {
-          if (window.scrollY >= SCROLL_THRESHHOLD) {
+          var scroll = window.scrollY || document.documentElement.scrollTop;
+          if (scroll >= SCROLL_THRESHHOLD) {
             isAttached = true;
             if (!pageHeader.classList.contains('isAttached')) {
               pageHeader.classList.add('isAttached');

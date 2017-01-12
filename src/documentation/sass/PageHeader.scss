@@ -2,7 +2,7 @@
 .pageHeader {
   @include fullWidth();
   position: relative;
-  z-index: 11;
+  z-index: $ms-zIndex-4;
 }
 
 .content {

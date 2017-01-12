@@ -190,13 +190,13 @@
   }
 
   // Toggle code buttons
-  let codeButtons = document.getElementsByClassName('ExampleCard-codeButton');
-  for (let i = 0; i < codeButtons.length; i++) {
+  var codeButtons = document.getElementsByClassName('ExampleCard-codeButton');
+  for (var i = 0; i < codeButtons.length; i++) {
     codeButtons[i].addEventListener('click', toggleCode);
   }
 
   function toggleCode(e) {
-    let container = findAncestor(e.target, 'ExampleCard');
+    var container = findAncestor(e.target, 'ExampleCard');
     container.classList.contains('is-codeVisible') ?
     container.classList.remove('is-codeVisible') :
     container.classList.add('is-codeVisible');
@@ -208,16 +208,14 @@
     pageNavLinks[i].addEventListener("click", scrollToLink)
   }
 
-  const CONTAINER = $('body, html');
   function scrollToLink(e) {
     e.preventDefault();
     var targetSection = e.target.getAttribute("data-title");
-    var padding = (window.innerWidth < MOBILE_BP) ? 230 : 180;
-    var scrollTo = $('#' + targetSection);
+    var padding = (window.innerWidth < MOBILE_BP) ? 130 : 150;
+    var scrollToElem = document.querySelector('#' + targetSection);
+    var docElem = (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ? document.documentElement : document.body;
 
-    CONTAINER.animate({
-      scrollTop: scrollTo.offset().top - CONTAINER.offset().top - padding
-    });
+    scrollIt(scrollToElem.offsetTop - padding, 700, 'easeInQuad');
   }
 
   var TableElements = document.querySelectorAll(".ms-TableData");
