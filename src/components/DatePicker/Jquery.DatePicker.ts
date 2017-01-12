@@ -78,9 +78,6 @@ namespace fabric {
       $picker.on({
         render: () => {
           this.updateCustomView($datePicker);
-        },
-        open: () => {
-          this.scrollUp($datePicker);
         }
       });
     }
@@ -271,13 +268,6 @@ namespace fabric {
       /** Highlight the current year. */
       $yearPicker.find(".ms-DatePicker-yearOption").removeClass("is-highlighted");
       $yearPicker.find(".ms-DatePicker-yearOption[data-year='" + $picker.get("highlight").year + "']").addClass("is-highlighted");
-    }
-
-    /** Scroll the page up so that the field the date picker is attached to is at the top. */
-    public scrollUp($datePicker) {
-      $("html, body").animate({
-        scrollTop: $datePicker.offset().top
-      }, 367);
     }
 
     private setDateAttributes(dateArr: any): any[] {

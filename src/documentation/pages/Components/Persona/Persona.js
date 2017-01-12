@@ -16,7 +16,7 @@ var data = {
     {
       name: "Small Persona",
       templateFile: "PersonaExample",
-      model: "PersonaExtraSmallExampleModel"
+      model: "PersonaSmallExampleModel"
     },
     {
       name: "Default Persona",
@@ -34,7 +34,7 @@ var data = {
       model: "PersonaExtraLargeExampleModel"
     },
     {
-      name: "initials Persona",
+      name: "Initials Persona",
       templateFile: "PersonaExample",
       model: "PersonaInitialsExampleModel"
     },

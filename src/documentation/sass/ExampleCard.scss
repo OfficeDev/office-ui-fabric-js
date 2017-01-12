@@ -88,7 +88,7 @@
     margin: 0;
     max-height: 0;
     padding: 0;
-    overflow: auto;
+    overflow: hidden;
     transition: all $ms-duration3 $ms-ease1;
   }
 
@@ -107,6 +107,7 @@
     max-height: 480px;
     border: 1px solid $ms-color-neutralDark;
     border-top: 0;
+    overflow: auto;
   }
 
   .ExampleCard-codeButton {

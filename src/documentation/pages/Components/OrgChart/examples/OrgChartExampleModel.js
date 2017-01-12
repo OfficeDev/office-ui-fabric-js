@@ -51,36 +51,6 @@ var OrgChartModels = {
             "primaryText": "Harvey Wallin",
             "secondaryText": "Public Relations"
            }
-        },
-        {
-           "component": "Persona",
-           "props": {
-            "initials": "RM",
-            "initialsColor": "blue",
-            "image": "../persona/Persona.Person2.png",
-            "primaryText": "Marcus Lauer",
-            "secondaryText": "Technical Support"
-           }
-        },
-        {
-           "component": "Persona",
-           "props": {
-            "initials": "RM",
-            "initialsColor": "blue",
-            "image": "../persona/Persona.Person2.png",
-            "primaryText": "Marcel Groce",
-            "secondaryText": "Delivery"
-           }
-        },
-        {
-           "component": "Persona",
-           "props": {
-            "initials": "RM",
-            "initialsColor": "blue",
-            "image": "../persona/Persona.Person2.png",
-            "primaryText": "Jessica Fischer",
-            "secondaryText": "Marketing"
-           }
         }
       ]
     }

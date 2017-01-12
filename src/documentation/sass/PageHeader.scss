@@ -2,7 +2,7 @@
 .pageHeader {
   @include fullWidth();
   position: relative;
-  z-index: 6;
+  z-index: $ms-zIndex-4;
 }
 
 .content {
@@ -26,7 +26,6 @@
   font-weight: $ms-font-weight-light;
   line-height: 1;
   padding: 40px 0;
-  transition: font-size $ms-duration1 $ms-ease1;
 }
 
 .pageNav {
@@ -66,6 +65,7 @@
         font-size: $font-size-big;
         font-weight: $ms-font-weight-regular;
         padding-top: 32px;
+        transition: font-size $ms-duration1 $ms-ease1;
       }
     }
   }
@@ -110,7 +110,7 @@
         // Make room for the heavier text of the selected state
         &::after {
           color: transparent;
-          content: attr(data-title);
+          content: attr(data-sectionname);
           display: block;
           font-weight: bold;
           height: 1px;

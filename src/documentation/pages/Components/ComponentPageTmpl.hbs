@@ -4,16 +4,16 @@
       <h1 id="{{pageInfo.componentName}}" class="pageTitle">{{pageInfo.componentName}}</h1>
         <nav class="pageNav" aria-label="In page navigation">
           <ul>
-            <li><a href="#" data-title="Overview">Overview</a></li>
-            <li><a href="#" data-title="Using">Using this Component</a></li>
+            <li><a href="#" data-title="Overview" data-sectionname="Overview">Overview</a></li>
+            <li><a href="#" data-title="Using" data-sectionname="Using this Component">Using this Component</a></li>
             {{#if pageInfo.variants}}
-            <li><a href="#" data-title="Variants">Variants</a></li>
+            <li><a href="#" data-title="Variants" data-sectionname="Variants">Variants</a></li>
             {{/if}}
             {{#if pageInfo.states}}
-            <li><a href="#" data-title="States">States</a></li>
+            <li><a href="#" data-title="States" data-sectionname="States">States</a></li>
             {{/if}}
             {{#if pageInfo.methods}}
-            <li><a href="#" data-title="Methods">Methods</a></li>
+            <li><a href="#" data-title="Methods" data-sectionname="Methods">Methods</a></li>
             {{/if}}
           </ul>
         </nav>
@@ -31,7 +31,12 @@
           </div>
           {{#if pageInfo.availableReact}}
           <div class="ComponentPage-related">
-            <span class="ComponentPage-relatedTitle">Also available in</span><a href="https://dev.office.com/fabric#/components/{{toLowerCase pageInfo.componentName}}">Fabric React</a>
+            <span class="ComponentPage-relatedTitle">Also available in</span>
+            {{#if pageInfo.reactComponent}}
+            <a href="https://dev.office.com/fabric#/components/{{toLowerCase pageInfo.reactComponent}}">Fabric React</a>
+            {{else}}
+            <a href="https://dev.office.com/fabric#/components/{{toLowerCase pageInfo.componentName}}">Fabric React</a>
+            {{/if}}
           </div>
           {{/if}}
         </div>
@@ -115,7 +120,7 @@
       {{#if pageInfo.states}}
       <div class="ComponentPage-statesSection">
         <h2 class="ComponentPage-subHeading ComponentPage-statesTitle" id="States">States</h2>
-         <table class="ms-Table">
+         <table class="ms-Table ms-TableData">
             <thead>
               <tr>
                 <th>State</th>
@@ -142,7 +147,7 @@
       {{#if pageInfo.methods}}
       <div class="ComponentPage-methodsSection">
         <h2 class="ComponentPage-subHeading ComponentPage-methodsTitle" id="Methods">Methods</h2>
-        <table class="ms-Table">
+        <table class="ms-Table ms-TableData">
           <thead>
             <tr>
               <th>Name</th>
@@ -185,13 +190,13 @@
   }
 
   // Toggle code buttons
-  let codeButtons = document.getElementsByClassName('ExampleCard-codeButton');
-  for (let i = 0; i < codeButtons.length; i++) {
+  var codeButtons = document.getElementsByClassName('ExampleCard-codeButton');
+  for (var i = 0; i < codeButtons.length; i++) {
     codeButtons[i].addEventListener('click', toggleCode);
   }
 
   function toggleCode(e) {
-    let container = findAncestor(e.target, 'ExampleCard');
+    var container = findAncestor(e.target, 'ExampleCard');
     container.classList.contains('is-codeVisible') ?
     container.classList.remove('is-codeVisible') :
     container.classList.add('is-codeVisible');
@@ -203,19 +208,17 @@
     pageNavLinks[i].addEventListener("click", scrollToLink)
   }
 
-  const CONTAINER = $('body');
   function scrollToLink(e) {
     e.preventDefault();
     var targetSection = e.target.getAttribute("data-title");
-    var padding = (window.innerWidth < MOBILE_BP) ? 230 : 180;
-    var scrollTo = $('#' + targetSection);
+    var padding = (window.innerWidth < MOBILE_BP) ? 130 : 150;
+    var scrollToElem = document.querySelector('#' + targetSection);
+    var docElem = (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ? document.documentElement : document.body;
 
-    CONTAINER.animate({
-      scrollTop: scrollTo.offset().top - CONTAINER.offset().top - padding
-    });
+    scrollIt(scrollToElem.offsetTop - padding, 700, 'easeInQuad');
   }
 
-  var TableElements = document.querySelectorAll(".ms-Table");
+  var TableElements = document.querySelectorAll(".ms-TableData");
   for (var i = 0; i < TableElements.length; i++) {
     new fabric['Table'](TableElements[i]);
   }

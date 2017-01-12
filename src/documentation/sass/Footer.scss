@@ -6,7 +6,7 @@
   font-size: $ms-font-size-m;
   padding: 32px 20px;
   position: relative;
-  z-index: 6;
+  z-index: $ms-zIndex-4;
 
   ul, li {
     list-style: none;
