@@ -12,7 +12,12 @@ var folderList = Utilities.getFolders(Config.paths.componentsPath);
 var demoPagesList = Utilities.getFolders(Config.paths.srcDocsJSCompPages);
 var reload = require('require-reload')(require);
 var BuildConfig = require('./modules/BuildConfig');
+var production = process.argv.indexOf('--production') >= 0;
+var relativePath = "/";
 
+if (production) {
+    relavtivePath = "/fabric-js/";
+}
 
 var componentSidebarList = [];
 var componentsList = Utilities.getFolders(Config.paths.srcDocsJSCompPages);
@@ -114,7 +119,8 @@ gulp.task('DocumentationViewer', ['FabricComponents', 'Samples'], function() {
         page: 'HomePage',
         template: 'HomePage',
         packageData: Config.packageData,
-        relativePath: './'
+        relativePath: relativePath,
+        production: production
     };
 
     return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.hbs')
@@ -136,7 +142,7 @@ gulp.task('Documentation-getStartedPage', ['Documentation-handlebars'], function
         page: 'GetStarted',
         template: 'GetStarted',
         packageData: Config.packageData,
-        relativePath: '../'
+        relativePath: relativePath
     };
 
     return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.hbs')
@@ -177,7 +183,7 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
         templateData = {
           page: 'Components',
           template: 'ComponentPageTmpl',
-          relativePath: '../../',
+          relativePath: relativePath,
           packageData: Config.packageData
         };
         pageName = demoPagesList[i];
