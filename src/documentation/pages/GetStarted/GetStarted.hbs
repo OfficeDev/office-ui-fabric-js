@@ -1,0 +1,87 @@
+<div id="design">
+  <div class="pageHeader">
+    <div class="content">
+      <h1 class="pageTitle">Get started</h1>
+    </div>
+  </div>
+  <div class="instructionsSection">
+    <h2 id="fabricjs">Get started with Fabric JS</h2>
+    <p>
+      <span>Use the CDN, Bower, NPM, or Nuget to get the components and core styling.</span>
+    </p>
+    <ol class="steps">
+      <li>
+        <p>The easiest way to get Fabric is by referencing the CDN. Include the following in the &lt;head&gt; of your page:</p>
+        {{codeBlock 
+'<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css" />
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css" />
+<script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>' 'html' 'isLightTheme'}}
+        <p>To reference the latest version, just change the version number in the URL to your desired version. All versions of Fabric are on the CDN, and the latest version is {{packageData.version}}.</p>
+      </li>
+      <li>
+        <p>Copy the HTML from one of the samples into your page. For example with the button</p>
+      {{codeBlock
+'<button class="ms-Button">
+  <span class="ms-Button-label">Create Account</span>
+</button>' 'html' 'isLightTheme'}}
+      </li>
+      <li>
+        <p>Add the appropriate &lt;script&gt; tag to your page below the references to Fabric's JavaScript to instantiate, for example, all the Button components on the page:
+        </p>
+        <button class="ms-Button ms-Button--primary AlertExamples">
+          <span class="ms-Button-label">New User</span>
+        </button>
+        <button class="ms-Button ms-Button--primary AlertExamples">
+          <span class="ms-Button-label">New User</span>
+        </button>
+        <button class="ms-Button ms-Button--primary AlertExamples">
+          <span class="ms-Button-label">New User</span>
+        </button>
+        {{codeBlock
+'<script type="text/javascript">
+var ButtonElements = document.querySelectorAll(".ms-Button.AlertExamples");
+for(var i = 0; i < ButtonElements.length; i++) {
+  new fabric["Button"](ButtonElements[i], function() {
+    alert("You clicked a New User button");
+  });
+}
+</script>' 'javascript' 'isLightTheme'}}
+        <p>Or, for example add the appropriate &lt;script&gt; tag to your page to instantiate a single Button component on the page</p>
+        <button class="ms-Button ms-Button--primary AlertExample">
+          <span class="ms-Button-label">Create Account</span>
+        </button>
+        {{codeBlock
+'<script type="text/javascript">
+var ButtonComponent = document.querySelector(".ms-Button.AlertExample");
+new fabric["Button"](ButtonComponent, function() {
+  alert("You clicked the Create Account button");
+});
+</script>' 'javascript' 'isLightTheme'}}
+      </li>
+      <li>
+        <p>You can also reference styles from Fabric Core, such as the type styles:</p>
+        {{codeBlock '<span class="ms-font-su ms-fontColor-themePrimary">Big blue text</span>' 'html' 'isLightTheme'}}
+        <p>For more information on assets and styles available in Fabric Core, check out the <a href="https://dev.office.com/fabric#/styles">Styles documentation</a>.</p>
+      </li>
+    </ol>
+    <h3>Other ways to get Fabric JS</h3>
+    <p>
+      To build Fabric JS locally, you can follow the steps outlined in the <a href="https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/BUILDING.md">building documentation</a>. To get Fabric via a package manager such as NuGet, npm, or Bower, you can follow the <a href="https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/PACKAGES.md">package manager documentation</a>.
+    </p>
+    <h3>Need a component Fabric JS doesn’t have?</h3>
+    <p>Check the <a href="https://trello.com/b/wq7oIK87/office-ui-fabric-js-requests">Fabric JS Trello board</a> and vote up the request so we can track it. If you don’t see an existing card, please <a href="https://github.com/OfficeDev/office-ui-fabric-js/issues/new">file an issue in the repository</a> and we’ll add the card for you.</p>
+  </div>
+</div>
+<script type="text/javascript">
+var ButtonElements = document.querySelectorAll(".ms-Button.AlertExamples");
+for(var i = 0; i < ButtonElements.length; i++) {
+  new fabric["Button"](ButtonElements[i], function() {
+    alert("You clicked a New User button");
+  });
+}
+
+var ButtonComponent = document.querySelector(".ms-Button.AlertExample");
+new fabric["Button"](ButtonComponent, function() {
+  alert("You clicked the Create Account button");
+});
+</script>

@@ -1,7 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-/// <reference path="../../../dist/js/fabric.templates.ts"/>
-
 /**
  * ContextualHost
  *
@@ -22,8 +20,8 @@ namespace fabric {
 
   const CONTEXT_STATE_CLASS = "is-open";
   const MODAL_STATE_POSITIONED = "is-positioned";
-  const CONTEXT_HOST_MAIN_CLASS = ".ms-ContextualHost-main";
-  const CONTEXT_HOST_BEAK_CLASS = ".ms-ContextualHost-beak";
+  const CONTEXT_HOST_MAIN_CLASS = "ms-ContextualHost-main";
+  const CONTEXT_HOST_BEAK_CLASS = "ms-ContextualHost-beak";
   const ARROW_LEFT_CLASS = "ms-ContextualHost--arrowLeft";
   const ARROW_TOP_CLASS = "ms-ContextualHost--arrowTop";
   const ARROW_BOTTOM_CLASS = "ms-ContextualHost--arrowBottom";
@@ -47,7 +45,6 @@ namespace fabric {
     private _disposalCallback: Function;
     private _targetElement;
     private _matchTargetWidth;
-    private _ftl = new FabricTemplateLibrary();
     private _contextualHostMain: Element;
     private _children: Array<ContextualHost>;
     private _hasArrow: boolean;
@@ -64,14 +61,15 @@ namespace fabric {
       ) {
       this._resizeAction = this._resizeAction.bind(this);
       this._dismissAction = this._dismissAction.bind(this);
+      this._handleKeyUpDismiss = this._handleKeyUpDismiss.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
-      this._container = this._ftl.ContextualHost();
+      this._container = this.createContainer();
       this._contextualHost = this._container;
-      this._contextualHostMain = this._contextualHost.querySelector(CONTEXT_HOST_MAIN_CLASS);
+      this._contextualHostMain = this._contextualHost.getElementsByClassName(CONTEXT_HOST_MAIN_CLASS)[0];
       this._contextualHostMain.appendChild(content);
       this._hasArrow = hasArrow;
-      this._arrow = this._container.querySelector(CONTEXT_HOST_BEAK_CLASS);
+      this._arrow = this._container.getElementsByClassName(CONTEXT_HOST_BEAK_CLASS)[0];
 
       this._targetElement = targetElement;
       this._openModal();
@@ -98,6 +96,7 @@ namespace fabric {
       if (ContextualHost.hosts.length > 0) {
         window.removeEventListener("resize", this._resizeAction, false);
         document.removeEventListener("click", this._dismissAction, true);
+        document.removeEventListener("keyup", this._handleKeyUpDismiss, true);
         this._container.parentNode.removeChild(this._container);
         if (this._disposalCallback) {
           this._disposalCallback();
@@ -124,6 +123,22 @@ namespace fabric {
 
     public contains(value: HTMLElement): boolean {
       return this._container.contains(value);
+    }
+
+    private createContainer() {
+      let ContextualHost0 = document.createElement("div");
+      ContextualHost0.setAttribute("class", "ms-ContextualHost");
+      ContextualHost0.innerHTML += " ";
+      let ContextualHost0c1 = document.createElement("div");
+      ContextualHost0c1.setAttribute("class", CONTEXT_HOST_MAIN_CLASS);
+      ContextualHost0c1.innerHTML += " ";
+      ContextualHost0.appendChild(ContextualHost0c1);
+      ContextualHost0.innerHTML += " ";
+      let ContextualHost0c3 = document.createElement("div");
+      ContextualHost0c3.setAttribute("class", CONTEXT_HOST_BEAK_CLASS);
+      ContextualHost0.appendChild(ContextualHost0c3);
+      ContextualHost0.innerHTML += "";
+      return ContextualHost0;
     }
 
     private _openModal(): void {
@@ -219,11 +234,14 @@ namespace fabric {
       let teLeft = teBR.left;
       let teRight = teBR.right;
       let teTop = teBR.top;
+      let teWidth = teBR.width;
       let teHeight = teBR.height;
       let mHLeft;
       let mHTop;
       let mWidth = "";
       let arrowTop;
+      let arrowLeft;
+      let windowX = window.scrollX ? window.scrollX : 0;
       let windowY = window.scrollY ? window.scrollY : 0;
       let arrowSpace = (this._hasArrow) ? ARROW_SIZE : 0;
 
@@ -233,7 +251,7 @@ namespace fabric {
 
       switch (curDirection) {
         case "left":
-          mHLeft = (teLeft - this._modalWidth) + arrowSpace;
+          mHLeft = teLeft - this._modalWidth - arrowSpace;
           mHTop = this._calcTop(this._modalHeight, teHeight, teTop);
           mHTop += window.scrollY ? window.scrollY : 0;
           this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
@@ -260,12 +278,15 @@ namespace fabric {
         break;
         case "top":
           mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
-          mHTop = (teTop - this._modalHeight) + arrowSpace;
+          mHTop = teTop - this._modalHeight - arrowSpace;
           mHTop += windowY;
           this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._container.classList.add(MODAL_STATE_POSITIONED);
 
           if (this._hasArrow) {
+            arrowTop = this._modalHeight - (arrowSpace / 2);
+            arrowLeft = Math.max(windowX + teLeft - mHLeft + ((teWidth - arrowSpace) / 2), ARROW_OFFSET);
+            this._arrow.setAttribute("style", "top: " + arrowTop + "px; left: " + arrowLeft + "px;");
             this._container.classList.add(ARROW_BOTTOM_CLASS);
           }
         break;
@@ -277,6 +298,8 @@ namespace fabric {
           this._container.classList.add(MODAL_STATE_POSITIONED);
 
           if (this._hasArrow) {
+            arrowLeft = Math.max(windowX + teLeft - mHLeft + ((teWidth - arrowSpace) / 2), ARROW_OFFSET);
+            this._arrow.setAttribute("style", "left: " + arrowLeft + "px;");
             this._container.classList.add(ARROW_TOP_CLASS);
           }
         break;
@@ -384,12 +407,13 @@ namespace fabric {
 
     private _setDismissClick() {
       document.addEventListener("click", this._dismissAction, true);
-      document.addEventListener("focus", this._dismissAction, true);
-      document.addEventListener("keyup", (e: KeyboardEvent) => {
-        if (e.keyCode === 32 || e.keyCode === 27) {
-          this._dismissAction(e);
-        }
-      }, true);
+      document.addEventListener("keyup", this._handleKeyUpDismiss, true);
+    }
+
+    private _handleKeyUpDismiss(e: KeyboardEvent) {
+      if (e.keyCode === 32 || e.keyCode === 27) {
+        this._dismissAction(e);
+      }
     }
 
     private _resizeAction() {

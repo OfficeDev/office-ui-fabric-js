@@ -1,6 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-/// <reference path="../../../dist/js/fabric.templates.ts"/>
 /// <reference path="../ContextualHost/ContextualHost.ts"/>
 /// <reference path="../Button/Button.ts"/>
 
@@ -16,6 +15,7 @@ namespace fabric {
     private _hostTarget: Element;
     private _position: string;
     private _host: ContextualHost;
+    private _isOpen: boolean;
 
     constructor(
         container: Element,
@@ -25,6 +25,7 @@ namespace fabric {
       this._container = container;
       this._hostTarget = hostTarget;
       this._position = position ? position : MODAL_POSITION;
+      this._isOpen = false;
       this._setOpener(hostTarget);
       this._init();
     }
@@ -35,6 +36,15 @@ namespace fabric {
 
     private _init(): void {
       this._container.addEventListener("click", this._onContextualMenuClick.bind(this), true);
+      document.addEventListener("click", this._onDocumentClick.bind(this), false);
+    }
+
+    private _onDocumentClick(event: Event): void {
+      const target: HTMLElement = <HTMLElement>event.target;
+      const classList: DOMTokenList = target.classList;
+      if (!this._hostTarget.contains(target) && !classList.contains("ms-ContextualMenu-link")) {
+        this._isOpen = false;
+      }
     }
 
     private _onContextualMenuClick(event: Event): void {
@@ -47,6 +57,7 @@ namespace fabric {
           this._singleSelect(target);
           if (!target.parentElement.classList.contains("ms-ContextualMenu-item--hasMenu")) {
             this._host.disposeModal();
+            this._isOpen = false;
           }
         }
       }
@@ -69,10 +80,15 @@ namespace fabric {
       target.classList.add("is-selected");
     }
 
+    private _toggleMenu(event): void {
+      (!this._isOpen) ? this._openContextMenu(event) : this._host.disposeModal();
+      this._isOpen = !this._isOpen;
+    }
+
     private _setOpener(hostTarget: Element): void {
       hostTarget.addEventListener("click", (event) => {
           event.preventDefault();
-          this._openContextMenu(event);
+          this._toggleMenu(event);
         }
       );
     }

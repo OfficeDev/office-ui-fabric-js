@@ -9,7 +9,7 @@ The [Office UI Fabric React](https://github.com/OfficeDev/office-ui-fabric-react
  - [Breadcrumb](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Breadcrumb.md)
  - [Button](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Button.md)
  - [Callout](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Callout.md)
- - [CheckBox](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Checkbox.md)
+ - [CheckBox](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/CheckBox.md)
  - [ChoiceFieldGroup](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ChoiceFieldGroup.md)
  - [CommandBar](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/CommandBar.md)
  - [CommandButton](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/CommandButton.md)

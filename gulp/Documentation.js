@@ -9,10 +9,18 @@ var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
-var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
-var Template = require('./modules/Template');
+var demoPagesList = Utilities.getFolders(Config.paths.srcDocsJSCompPages);
 var reload = require('require-reload')(require);
 var BuildConfig = require('./modules/BuildConfig');
+
+
+var componentSidebarList = [];
+var componentsList = Utilities.getFolders(Config.paths.srcDocsJSCompPages);
+for (var i = 0; i < componentsList.length; i++) {
+    componentSidebarList.push({
+        "name": componentsList[i]
+    });
+}
 
 //
 // Clean/Delete Tasks
@@ -40,12 +48,21 @@ gulp.task('Documentation-copyIgnoredFiles', function() {
     });
 });
 
+gulp.task('Documentation-copyDocImages', function() {
+  return gulp.src(Config.paths.srcDocImages + '/*')
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Copying Documentation Images"
+            })))
+            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+            .pipe(gulp.dest(Config.paths.distImages));
+});
+
 gulp.task('Documentation-copyAssets', function() {
     var paths = [
-        Config.paths.srcDocsPages + '/**/*.jpg', 
-        Config.paths.srcDocsPages + '/**/*.png',
-        Config.paths.srcDocsPages + '/**/*.gif',
-        Config.paths.srcDocsPages + '/**/*.svg'
+        Config.paths.srcDocsJSCompPages + '/**/*.jpg', 
+        Config.paths.srcDocsJSCompPages + '/**/*.png',
+        Config.paths.srcDocsJSCompPages + '/**/*.gif',
+        Config.paths.srcDocsJSCompPages + '/**/*.svg'
     ];
 
     return gulp.src(paths)
@@ -76,8 +93,8 @@ gulp.task('Documentation-handlebars', function(cb) {
    // Next get all example partials inside of the pages folders
    for (var i = 0; i < demoPagesList.length; i++) {
     _folderName = demoPagesList[i];
-    _srcFolderName = Config.paths.srcDocsPages + '/' + _folderName + '/' + Config.paths.srcDocsPagesExamples;
-    
+    _srcFolderName = Config.paths.srcDocsJSCompPages + '/' + _folderName + '/' + Config.paths.srcDocsPagesExamples;
+
     if (fs.existsSync(_srcFolderName)) {
         Config.handleBarsConfig.batch.push('./' + _srcFolderName);
     }
@@ -86,133 +103,138 @@ gulp.task('Documentation-handlebars', function(cb) {
    cb();
 });
 
-gulp.task('Documentation-template', ["Documentation-handlebars"], function(cb) {
-  var _template = new Template(folderList, Config.paths.distJS, Config.paths.componentsPath, function() {
-    gulp.src(Config.paths.distJS + "/fabric.templates.ts")
-    .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
-    .pipe(Plugins.header(Banners.getJSCopyRight()))
-    .pipe(Plugins.tsc(Config.typescriptProject))
-    .js.pipe(gulp.dest(Config.paths.distJS))
-    .on('end', function() {
-      cb();
-    });
-  }.bind(this));
-  _template.init();
+//
+// Sample Index Page Build
+// ----------------------------------------------------------------------------
+
+gulp.task('DocumentationViewer', ['FabricComponents', 'Samples'], function() {
+    // Get components and save to template navigation
+
+    var templateData = {
+        page: 'HomePage',
+        template: 'HomePage',
+        packageData: Config.packageData,
+        relativePath: './'
+    };
+
+    return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.hbs')
+        .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
+        .pipe(Plugins.data(function () {
+            return { "components" : componentSidebarList };
+        }))
+        .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+        .pipe(Plugins.template())
+        .pipe(Plugins.rename('index.html'))
+        .pipe(gulp.dest(Config.paths.distDocumentation));
 });
 
-gulp.task('Documentation-templateAddHeader', ['Documentation-template'], function(){
-  gulp.src(Config.paths.distJS + "/fabric.templates.ts")
-    .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
-    .pipe(Plugins.header(Banners.getJSCopyRight()))
-    .pipe(gulp.dest(Config.paths.distJS));
+//
+// Get Started Page Building
+// ----------------------------------------------------------------------------
+gulp.task('Documentation-getStartedPage', ['Documentation-handlebars'], function() {
+    var templateData = {
+        page: 'GetStarted',
+        template: 'GetStarted',
+        packageData: Config.packageData,
+        relativePath: '../'
+    };
+
+    return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.hbs')
+        .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
+        .pipe(Plugins.data(function () {
+            return { "components" : componentSidebarList };
+        }))
+        .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+        .pipe(Plugins.template())
+        .pipe(Plugins.rename('GetStarted.html'))
+        .pipe(gulp.dest(Config.paths.distDocsGettingStarted));
 });
 
 //
 // Sample Component Building
 // ----------------------------------------------------------------------------
 gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
-   var streams = [],
-       pageName,
-       srcFolderName,
-       distFolderName,
-       hasFileChanged,
-       manifest,
-       filesArray,
-       componentPipe,
-       markdown,
-       templateData,
-       exampleModels;
+    var streams = [],
+        pageName,
+        srcFolderName,
+        jsonFolderName,
+        distFolderName,
+        exampleFolderName,
+        hasFileChanged,
+        manifest,
+        filesArray,
+        componentPipe,
+        hbs,
+        templateData,
+        jsonFile
+        exampleModels;
        
-   var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
-  
-   for (var i=0; i < demoPagesList.length; i++) {
-       
-       templateData = {};
-       pageName = demoPagesList[i];
-       var exampleModels = [];
-       
-       // Current Page Folder path
-       srcFolderName = Config.paths.srcDocsPages + '/' + pageName;
-       
-       // Current Page example folder path
-       exampleFolderName = srcFolderName + '/' + Config.paths.srcDocsPagesExamples;
-       
-       // Dist folder name for page
-       distFolderName = Config.paths.distDocumentation + '/' + pageName;
-     
-       try {
-        fs.statSync(exampleFolderName);
-        exampleModels = Utilities.getFilesByExtension(exampleFolderName, '.js');
-       } catch (err) {}
-       
-       
-       // Go through and find the view model for each example handlebars file and store in context
+    var demoPagesList = Utilities.getFolders(Config.paths.srcDocsJSCompPages);
+
+    // Current Page Folder path
+    srcFolderName = Config.paths.srcDocsJSCompPages;
+    for (var i=0; i < demoPagesList.length; i++) {       
+        templateData = {
+          page: 'Components',
+          template: 'ComponentPageTmpl',
+          relativePath: '../../',
+          packageData: Config.packageData
+        };
+        pageName = demoPagesList[i];
+
+        var exampleModels = [];
+
+        // Component Page folder path
+        compFolderPath = srcFolderName + '/'  + pageName;
+
+        // Current Page example folder path
+        exampleFolderName = compFolderPath + '/' + Config.paths.srcDocsPagesExamples;
+
+        // Dist folder name for page
+        distFolderName = Config.paths.distDocumentation + '/' + pageName;
+
+        try {
+          fs.statSync(exampleFolderName);
+          exampleModels = Utilities.getFilesByExtension(exampleFolderName, '.js');
+        } catch (err) {}
+
+        // Go through and find the view model for each example handlebars file and store in context
         if(exampleModels.length > 0) {
-            for(var x = 0; x < exampleModels.length; x++) {
-                var file = exampleModels[x];
-                var modelName = file.replace('.js', '');
-                modelName = modelName.replace(" ", '');
-                var modelFile = reload('../' + exampleFolderName + '/' + file);
-                templateData[modelName] = modelFile;
-               
-            }
+          var modelsData = {};
+          for(var x = 0; x < exampleModels.length; x++) {
+              var file = exampleModels[x];
+              var modelName = file.replace('.js', '');
+              modelName = modelName.replace(" ", '');
+              var modelFile = reload('../' + exampleFolderName + '/' + file);
+              modelsData[modelName] = modelFile;
+          }
+          templateData['models'] = modelsData;
         }
 
-       hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.md', '.html');
-        markdown = srcFolderName + '/' + pageName + '.md';
+        jsonFile = Utilities.getFilesByExtension(compFolderPath, '.js');
+        if (jsonFile.length > 0) {
+          for (var j = 0; j < jsonFile.length; j++) {
+            var file = jsonFile[j];
+            var pageInfo = reload('../' + compFolderPath + '/' + file);
+            templateData['pageInfo'] = pageInfo;
+          }
+        }
 
-        componentPipe = gulp.src(markdown)
+        // Grab page tempalte
+        hbs = Config.paths.srcTemplate + '/'+ 'samples-index.hbs';
+        componentPipe = gulp.src(hbs)
             .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Building documentation page " + pageName
             })))
-            .pipe(Plugins.replace(/<!---i(.|\s)*?i--->/img, ""))
-            .pipe(Plugins.marked())
-            .on('error', function(err) {
-                console.log(err);  
-            })
-            .pipe(Plugins.fileinclude())
-            .pipe(Plugins.replace("<!----", ""))
-            .pipe(Plugins.replace("---->", ""))
-            .pipe(Plugins.replace("<!---", ""))
-            .pipe(Plugins.replace("--->", ""))
+            .pipe(Plugins.data(function () {
+                return { "components" : componentSidebarList };
+            }))
             .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
-            .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
-            .pipe(Plugins.htmlbeautify({indent_char: ' ', indentSize: 2}))
-            .pipe(Plugins.rename("index.html"))
-            .pipe(Plugins.wrap(
-                {
-                    src:  Config.paths.srcTemplate + '/componentDemo.html'  
-                },
-                {
-                    pageName: pageName
-                }
-            ))
-            // Replace Comments to hide code
+            .pipe(Plugins.template())
+            .pipe(Plugins.rename(pageName + ".html"))
             .pipe(gulp.dest(Config.paths.distDocsComponents + '/' + pageName));
 
-
-        markdownPipe = gulp.src(markdown)
-            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building documentation page " + pageName
-                })))
-            .on('error', function(err) {
-                console.log(err);  
-                })
-            .pipe(Plugins.fileinclude())
-            .pipe(Plugins.replace(/<!----(.|\s)*?---->/img, ""))
-            .pipe(Plugins.replace("<!---i", ""))
-            .pipe(Plugins.replace("i--->", ""))
-            .pipe(Plugins.replace("<!---", ""))
-            .pipe(Plugins.replace("--->", ""))
-            .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
-            .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
-            // Replace Comments to hide code
-            .pipe(gulp.dest('./ghdocs/components/'));
-
-        // Add stream
-        streams.push(markdownPipe);
         streams.push(componentPipe);
    }
    
@@ -224,48 +246,27 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
 });
 
 gulp.task('Documentation-buildStyles', function () {
-    return gulp.src(Config.paths.srcDocumentationCSS + '/' + 'demo.scss')
-            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-            .pipe(Plugins.debug({
-              title: "Building Documentation SASS " + BuildConfig.fileExtension + " File"
-            }))
-            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
-            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
-            .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
-            .pipe(Plugins.rename('demo.css'))
-            .pipe(Plugins.changed(Config.paths.distDocumentationCSS, {extension: '.css'}))
-            .pipe(Plugins.autoprefixer({
-              browsers: ['last 2 versions', 'ie >= 9'],
-              cascade: false
-            }))
-            .pipe(Plugins.cssbeautify())
-            .pipe(Plugins.csscomb())
-            .pipe(gulp.dest(Config.paths.distDocumentationCSS))
-            .pipe(Plugins.rename('demo.min.css'))
-            .pipe(Plugins.cssMinify())
-            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
-            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
-            .pipe(gulp.dest(Config.paths.distDocumentationCSS));
-                
-});
-
-gulp.task('Documentation-convertMarkdown', function() {
-  return gulp.src('./ghdocs/*.md')
-          .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-          .pipe(Plugins.debug({
-            title: "Building Getting Started Documentation"
-          }))
-          .pipe(Plugins.marked())
-          .pipe(Plugins.wrap(
-              {
-                  src:  Config.paths.srcTemplate + '/gettingStartedTemplate.html'  
-              },
-              {
-                  pageName: 'Getting Started Page'
-              }
-         ))
-          .pipe(gulp.dest(Config.paths.distDocsGettingStarted))
-          
+  return gulp.src(Config.paths.srcDocumentationSCSS + '/' + 'style.scss')
+                      .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+                      .pipe(Plugins.debug({
+                        title: "Building Documentation SASS " + BuildConfig.fileExtension + " File"
+                      }))
+                      .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+                      .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+                      .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
+                      .pipe(Plugins.rename('styles.css'))
+                      .pipe(Plugins.autoprefixer({
+                        browsers: ['last 3 versions', 'ie >= 9'],
+                        cascade: false
+                      }))
+                      .pipe(Plugins.cssbeautify())
+                      .pipe(Plugins.csscomb())
+                      .pipe(gulp.dest(Config.paths.distDocumentationCSS))
+                      .pipe(Plugins.rename('styles.min.css'))
+                      .pipe(Plugins.cssMinify())
+                      .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+                      .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+                      .pipe(gulp.dest(Config.paths.distDocumentationCSS));
 });
 
 //
@@ -273,14 +274,14 @@ gulp.task('Documentation-convertMarkdown', function() {
 // ----------------------------------------------------------------------------
 
 var DocumentationTasks = [
-    'Documentation-build', 
-    'Documentation-copyAssets',
-    'ComponentJS',
-    'Documentation-copyIgnoredFiles',
-    "Documentation-template",
-    "Documentation-templateAddHeader",
-    "Documentation-buildStyles",
-    "Documentation-convertMarkdown"
+  'DocumentationViewer',
+  'Documentation-build',
+  'Documentation-getStartedPage',
+  'Documentation-copyDocImages',
+  'Documentation-copyAssets',
+  'ComponentJS',
+  'Documentation-copyIgnoredFiles',
+  'Documentation-buildStyles'
 ];
 
 //Build Fabric Component Samples

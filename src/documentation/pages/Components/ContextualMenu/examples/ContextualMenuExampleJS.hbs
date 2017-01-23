@@ -1,0 +1,8 @@
+<script type="text/javascript">
+  var ContextualMenuElements = document.querySelectorAll(".ms-ContextualMenuExample");
+  for(var i = 0; i < ContextualMenuElements.length; i++) {
+    var ButtonElement = ContextualMenuElements[i].querySelector(".ms-Button");
+    var ContextualMenuElement = ContextualMenuElements[i].querySelector(".ms-ContextualMenu");
+    new fabric['ContextualMenu'](ContextualMenuElement, ButtonElement);
+  }
+</script>

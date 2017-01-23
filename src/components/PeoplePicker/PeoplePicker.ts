@@ -22,7 +22,9 @@ namespace fabric {
     private _peoplePickerSearchBox: Element;
     private _peoplePickerResults: NodeListOf<Element>;
     private _isContextualMenuOpen: Boolean;
-    private _selectedPeople: NodeListOf<Element>;
+    private _selectedPeople: Element;
+    private _selectedCount: Element;
+    private _selectedPlural: HTMLElement;
 
     /**
      *
@@ -34,8 +36,15 @@ namespace fabric {
       this._peoplePickerMenu = this._container.querySelector(".ms-PeoplePicker-results");
       this._peoplePickerSearch = this._container.querySelector(".ms-TextField-field");
       this._peoplePickerSearchBox = this._container.querySelector(".ms-PeoplePicker-searchBox");
-      this._selectedPeople = this._container.querySelectorAll(".ms-PeoplePicker-selectedPeople");
+      this._selectedPeople = this._container.querySelector(".ms-PeoplePicker-selectedPeople");
+
       this._assignClicks();
+
+      if (this._selectedPeople) {
+        this._assignRemoveHandler();
+        this._selectedCount = this._container.querySelector(".ms-PeoplePicker-selectedCount");
+        this._selectedPlural = <HTMLElement>this._container.querySelector(".ms-PeoplePicker-selectedCountPlural");
+      }
 
       if (this._peoplePickerMenu) {
         this._peoplePickerMenu.setAttribute("style", "display: none;");
@@ -72,7 +81,10 @@ namespace fabric {
 
       // Add _selectResult listeners to each result
       for (let i = 0; i < this._peoplePickerResults.length; i++) {
-        this._peoplePickerResults[i].addEventListener("click", this._selectResult.bind(this), true);
+        let personaResult = this._peoplePickerResults[i].querySelector(".ms-Persona");
+        let removeButton = this._peoplePickerResults[i].querySelector(".ms-PeoplePicker-resultAction");
+        personaResult.addEventListener("click", this._selectResult.bind(this), true);
+        removeButton.addEventListener("click", this._removeItem.bind(this), true);
       }
     }
 
@@ -89,6 +101,7 @@ namespace fabric {
         this._tokenizeResult(clonedResult);
       }
 
+      this._updateCount();
       // Close the open contextual host
       this._contextualHostView.disposeModal();
     }
@@ -131,6 +144,20 @@ namespace fabric {
     private _removeResult(e) {
       let currentResult = this._findElement(e.target, "ms-PeoplePicker-selectedPerson");
       currentResult.remove();
+      this._updateCount();
+    }
+
+    private _removeItem(e) {
+      let currentItem = this._findElement(e.target, "ms-PeoplePicker-result");
+      currentItem.remove();
+    }
+
+    private _updateCount() {
+      if (this._selectedPeople) {
+        let count = this._selectedPeople.querySelectorAll(".ms-PeoplePicker-selectedPerson").length;
+        this._selectedCount.textContent = count.toString();
+        this._selectedPlural.style.display = (count === 1) ? "none" : "inline";
+      }
     }
 
     private _tokenizeResult(tokenResult: Element) {
@@ -180,6 +207,13 @@ namespace fabric {
         if (e.keyCode !== 27 && !this._isContextualMenuOpen) {
           this._clickHandler(e);
         }}, true);
+    }
+
+    private _assignRemoveHandler() {
+      let selectedPeople = this._selectedPeople.querySelectorAll(".ms-PeoplePicker-selectedPerson");
+      for (let i = 0; i < selectedPeople.length; i++) {
+        selectedPeople[i].querySelector(".ms-PeoplePicker-resultAction").addEventListener("click", this._removeResult.bind(this), true);
+      }
     }
 
     private _contextHostCallBack() {
