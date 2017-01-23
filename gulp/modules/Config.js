@@ -11,12 +11,13 @@ var Config = function() {
   this.sassExtension = "scss";
   this.buildSass = false;
   this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
-  
+  this.packageData = pkg;
   this.paths = {
     dist: 'dist',
     src: 'src',
     srcDocsPagesExamples: 'examples',
 		componentsPath : 'src/components',
+    docPages : 'src/documentation/pages',
     srcLibPath: 'lib',
     uiCorePath: 'node_modules/office-ui-fabric-core',
 	};
@@ -28,10 +29,11 @@ var Config = function() {
   this.paths.distDocumentationCSS = this.paths.distDocumentation;
   this.paths.distSamples = this.paths.dist + '/samples';
   this.paths.distSampleComponents = this.paths.dist + '/samples/' + '/Components';
+  this.paths.distImages = this.paths.distDocumentation + '/images';
   this.paths.distJS = this.paths.dist + '/js';
   this.paths.distPackages = this.paths.dist + '/packages';
   this.paths.distDocsComponents = this.paths.distDocumentation + '/Components';
-  this.paths.distDocsGettingStarted = this.paths.distDocumentation + '/Getting Started';
+  this.paths.distDocsGettingStarted = this.paths.distDocumentation + '/GetStarted';
   this.paths.distDocsSamples = this.paths.distDocumentation + '/Samples';
   this.paths.distDocsStyles = this.paths.distDocumentation + '/Styles';
   this.paths.bundlePath = this.paths.dist + '/bundles';
@@ -42,10 +44,12 @@ var Config = function() {
   this.paths.srcSamples = this.paths.src + '/samples';
   this.paths.srcSass = this.paths.src + '/sass';
   this.paths.srcDocs = this.paths.src + '/documentation';
+  this.paths.srcDocImages = this.paths.srcDocs + '/images';
   this.paths.srcDocsPages = this.paths.srcDocs + '/pages';
+  this.paths.srcDocsJSCompPages = this.paths.srcDocsPages + '/Components';
   // this.paths.srcDocsComponents = this.paths.srcDocs + '/components';
   this.paths.srcTemplate = this.paths.srcDocs + '/templates';
-  this.paths.srcDocumentationCSS = this.paths.srcDocs;
+  this.paths.srcDocumentationSCSS = this.paths.srcDocs + '/sass';
   
 	this.port =  process.env.PORT || 2020;
 	this.projectURL =  "http://localhost";
@@ -154,6 +158,67 @@ var Config = function() {
       },
       batch: [],
       helpers:  {
+        compileHBS: function(text) {
+          var hbs = Plugins.handlebars.Handlebars;
+          return text;
+        },
+        toLowerCase: function(text) {
+          return text.toLowerCase();
+        },
+        // Helper function for codeBlock helper to highlight code
+        outputCode: function(text, language) {
+          var hbs = Plugins.handlebars.Handlebars;
+          var hljs = Plugins.hljs;
+          text = text.trim();
+          text = text.replace(/(<!--.+-->)+/g, "");
+          text = text.replace(/^\s+|\s+$/g, "");
+          text = hljs.highlight(language, text).value;
+          return text;
+        },
+
+        renderCode: function(text, language) {
+          var hljs = Plugins.hljs;
+          var code = text.toString();
+          code = code.replace(/(<!--.+-->)+/g, "");
+          code = code.replace(/^\s+|\s+$/g, "");
+          code = Plugins.pretty(code);
+          code = "<div class=\"codeBlock isDarkTheme\"><pre class=\"hljs\"><code class=\"" + language + "\">"  
+           + hljs.highlight(language, code).value 
+           + "</code></pre></div>";
+          return code;
+        },
+
+        // Output code from a string
+        codeBlock: function(code, language, theme) {
+          var hbs = Plugins.handlebars.Handlebars;
+          var fileContents = Plugins.fs.readFileSync(this.paths.srcTemplate + '/codeBlock.hbs',  "utf8");
+          var template = hbs.compile(fileContents);
+          var templateData = {
+            code: code,
+            language: language,
+            theme: theme
+          }
+
+          return new hbs.SafeString(template(templateData));
+        }.bind(this),
+
+        renderDocPage: function(page) {
+          var hbs = Plugins.handlebars.Handlebars;
+          var pagePath = page.data.root.page;
+          var tmplFile = page.data.root.template;
+          var fileContents = Plugins.fs.readFileSync(this.paths.docPages + '/' + pagePath + '/' + tmplFile +'.hbs',  "utf8");
+          var template = hbs.compile(fileContents);
+          return new hbs.SafeString(template(page.data.root));
+        }.bind(this),
+
+        renderComponentExample: function(component, exampleName, props) {
+          var hbs = Plugins.handlebars.Handlebars;
+          var fileContents = Plugins.fs.readFileSync(this.paths.srcDocsJSCompPages + '/' + component + '/examples/' + exampleName +'.hbs',  "utf8");
+          var template = hbs.compile(fileContents);
+          var thisProps = {props: props};
+          return new hbs.SafeString(template(thisProps));
+        }.bind(this),
+
         renderPartial: function(partial, props) {
           var hbs = Plugins.handlebars.Handlebars;
           var fileContents = Plugins.fs.readFileSync(this.paths.componentsPath + '/' + partial + '/' + partial +'.hbs',  "utf8");
@@ -168,9 +233,9 @@ var Config = function() {
           if (isComponent) {
             var fileContents = Plugins.fs.readFileSync(this.paths.componentsPath + '/' + partial + '/' + partial +'.hbs',  "utf8");
           } else {
-            var fileContents = Plugins.fs.readFileSync(this.paths.srcDocsPages + '/' + partial + '/examples/' + examplePartial +'.hbs',  "utf8");
+            var fileContents = Plugins.fs.readFileSync(this.paths.srcDocsJSCompPages + '/' + partial + '/examples/' + examplePartial +'.hbs',  "utf8");
           }
-          
+
           var template = hbs.compile(fileContents);
           var thisProps = {props: props};
           var templateString = new hbs.SafeString(template(thisProps));

@@ -1,0 +1,127 @@
+$nav-group-header-height: 40px;
+
+.nav {
+  padding-top: 20px;
+  @include padding-right(12px);
+  padding-bottom: 60px;
+  @include padding-left(36px);
+}
+
+.link {
+  font-size: $ms-font-size-l;
+  font-weight: $ms-font-weight-light;
+  line-height: 1.5;
+
+  a {
+    color: $ms-color-neutralSecondary;
+    display: block;
+    margin-bottom: 12px;
+
+    &:hover {
+      color: $ms-color-neutralDark;
+    }
+  }
+
+  &.isActive:not(.isHomePage),
+  &:hover:not(.isHomePage),
+  &.hasActiveChild {
+    color: $ms-color-neutralPrimary;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 2px;
+      height: 20px;
+      background: $ms-color-neutralTertiary;
+      position: absolute;
+      top: 3px;
+      @include left(-16px);
+    }
+
+    &.fabricPage::before {
+      background-color: $color-home-medium;
+    }
+
+    &.getStartedPage::before {
+      background-color: $color-getStarted;
+    }
+
+    &.Components::before {
+      background-color: $color-components;
+    }
+  }
+
+
+  // Closed by default
+  .links {
+    display: none;
+  }
+
+  // Open when immediate parent or one of the children is active
+  &.isActive,
+  &.hasActiveChild {
+
+    a {
+      color: $ms-color-neutralDark;
+      // color: $ms-color-white;
+    }
+
+    > .links {
+      display: block;
+    }
+  }
+
+  &.hideChildren {
+    > .links {
+      display: none;
+    }
+  }
+}
+
+// The home page link
+.isHomePage a,
+.isHomePage.isActive a {
+  font-size: $ms-font-size-xl;
+  font-weight: $ms-font-weight-semibold;
+  color: $ms-color-neutralPrimary;
+}
+
+// Second-level links
+.isSubMenu {
+  @include margin-left(8px);
+
+  .link {
+    a {
+      color: $ms-color-neutralSecondary;
+      font-size: $ms-font-size-m;
+      font-weight: $ms-font-weight-regular;
+
+      &:hover {
+        color: $ms-color-neutralPrimary;
+      }
+    }
+
+    &.isActive,
+    &:hover {
+      > a:first-child {
+        color: $ms-color-neutralPrimary;
+      }
+
+      // Hide the line indicators on submenus
+      &::before {
+        display: none;
+      }
+    }
+
+    &.hasActiveChild {
+      > a:first-child {
+        color: $ms-color-white;
+        font-weight: $ms-font-weight-semibold;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

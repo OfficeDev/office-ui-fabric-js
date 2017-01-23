@@ -14,7 +14,7 @@ var FabricServer = function() {
 	this.rootPath;
 	this.specificPaths = [
 		{
-			'urlPath': '/img',
+			'urlPath': '/images',
 			'folderPath': '../some/other/directory/img'
 		}
 	];
