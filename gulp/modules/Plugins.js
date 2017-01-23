@@ -19,6 +19,7 @@ var Plugins = function() {
 	this.fileinclude = require('gulp-file-include');
 	this.header = require('gulp-header');
 	this.htmlbeautify = require('gulp-html-beautify');
+	this.pretty = require('pretty');
 	this.gulpif = require('gulp-if');
 	this.lintspaces = require('gulp-lintspaces');
 	this.marked = require('gulp-marked');
@@ -42,6 +43,7 @@ var Plugins = function() {
 	this.tsc = require('gulp-typescript');
 	this.runSequence = require('run-sequence');
 	this.walkSync = require('walk-sync');
+	this.hljs = require('highlight.js');
 };
 
 module.exports = new Plugins();

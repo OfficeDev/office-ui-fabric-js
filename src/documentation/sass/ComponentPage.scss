@@ -1,0 +1,219 @@
+$componentPagePadding: 50px;
+$componentPageDividingMargin: 40px;
+$componentSubHeadMargin: 24px;
+$dosColor: #177D3E;
+$dontColor: #A61E22;
+
+.ComponentPageWrapper {
+  .content {
+    background-color: $color-components;
+  }
+
+  .ms-Table .nowrap {
+    white-space: nowrap;
+    width: 1%;
+  }
+
+  .ms-Table p {
+    margin-bottom: 0;
+    line-height: 24px;
+  }
+}
+
+.ComponentPage {
+  @include fullWidth(); // Component page has its own padding
+  // @include fullHeight(); // Remove padding at bottom of App-content
+  // padding-bottom: 100px; // Pad the content instead
+}
+
+.ComponentPage {
+  background-color: $ms-color-white;
+}
+
+.ComponentPage-title {
+  @include ms-font-xxl;
+  font-size: 82px;
+  line-height: 94px;
+  color: $ms-color-white;
+  display: inline-block;
+  width: 100%;
+  margin-top: $componentPagePadding;
+  margin-bottom: $componentPagePadding;
+}
+
+.ComponentPage-subHeading {
+  @include ms-font-xxl;
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: $componentSubHeadMargin;
+}
+
+.ComponentPage-smallSubHeading {
+  @include ms-font-l;
+  line-height: $ms-font-size-xl;
+  margin-bottom: 18px;
+}
+
+.ComponentPage-overviewSectionContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media(min-width: $ms-screen-xl-min) {
+    flex-direction: row;
+  }
+}
+
+.ComponentPage-overview {
+  font-size: $ms-font-size-m;
+  line-height: 1.5;
+  max-width: 50em;
+  @include padding-right(60px);
+  margin-bottom: -6px; // Trim padding off last paragraph
+  box-sizing: border-box;
+
+  p {
+    margin: 0;
+    padding: 16px 0;
+  }
+
+  ul {
+    @include padding-left(18px);
+  }
+
+  li {
+    @include ms-font-m;
+    list-style: disc;
+    margin-bottom: 16px;
+  }
+}
+
+.ComponentPage-related {
+  min-width: 200px;
+
+  .ComponentPage-relatedTitle {
+    color: $ms-color-neutralSecondary;
+    display: block;
+    font-size: $ms-font-size-l;
+    font-weight: $ms-font-weight-semibold;
+    margin-bottom: 12px;
+  }
+
+  a, a:visited {
+    @include ms-font-l;
+    text-decoration: none;
+  }
+}
+
+.ComponentPage-overviewSection,
+.ComponentPage-variantsSection,
+.ComponentPage-usingSection,
+.ComponentPage-statesSection,
+.ComponentPage-methodsSection,
+.ComponentPage-implementationSection {
+  padding: $componentPagePadding;
+}
+
+.ComponentPage-navigation {
+  width: 100%;
+}
+
+.ComponentPage-navLink {
+  display: inline-block;
+  @include margin-right(40px);
+}
+
+.ComponentPage-navLink .ms-Link {
+  color: $ms-color-white;
+  text-decoration: none;
+  @include ms-font-l;
+  color: $ms-color-white;
+
+  &:hover {
+    color: $ms-color-neutralLight;
+  }
+}
+
+.ComponentPage-usingSection {
+  background-color: $ms-color-neutralLighterAlt;
+
+  .steps {
+    max-width: 100%;
+  }
+}
+
+.ComponentPage-doSection {
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 20px;
+
+  h3 {
+    margin: 16px 0 40px 0;
+    @include ms-font-xl;
+
+    &::after {
+      background-color: #a4cf0c;
+      border-radius: 3px;
+      content: '';
+      display: block;
+      height: 8px;
+      margin: 12px 0;
+    }
+  }
+
+  ul {
+    @include padding-left(18px);
+  }
+
+  li {
+    list-style: disc;
+    margin-bottom: 20px;
+  }
+
+  &:first-child {
+    @include margin-right(116px);  // @TODO: Needs to match fabric react site (120px)
+  }
+}
+
+.ComponentPage-doSection--dont h3::after {
+  background-color: #e74856;
+}
+
+@media screen and (min-width: $ms-screen-lg-min) {
+  .ComponentPage-doSection {
+    margin-bottom: -10px; // Trim last list item
+    width: calc(50% - 60px);
+  }
+}
+
+.ComponentPage-overviewSection,
+.ComponentPage-variantsSection,
+.ComponentPage-usingSection,
+.ComponentPage-statesSection,
+.ComponentPage-methodsSection,
+.ComponentPage-implementationSection {
+  @include contentPadding(50px, 50px);  // Override padding to match this website
+}
+
+.ComponentPage-statesSection,
+.ComponentPage-methodsSection {
+  overflow: auto;
+}
+
+
+.ms-TableData {
+  tbody td {
+    line-height: 2;
+  }
+}
+
+.ms-Table {
+  .tableMinWidth {
+    div {
+      min-width: 200px;
+      max-width: 350px;
+    }
+  }
+}

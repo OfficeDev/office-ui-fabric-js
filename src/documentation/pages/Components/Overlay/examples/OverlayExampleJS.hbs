@@ -1,0 +1,13 @@
+<script type="text/javascript">
+	var OverlayExamples = document.querySelectorAll(".ms-OverlayExample");
+	for (var i = 0; i < OverlayExamples.length; i++) {
+	  (function(){
+	    var OverlayExampleButton = OverlayExamples[i].querySelector(".ms-Button");
+	    var OverlayComponent = OverlayExamples[i].querySelector(".ms-Overlay");
+	    var Overlay = new fabric['Overlay'](OverlayComponent);
+	    OverlayExampleButton.onclick = function() {
+	      Overlay.show();
+	    };
+	  }());
+	}
+</script>

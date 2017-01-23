@@ -1,0 +1,229 @@
+<div class="ComponentPageWrapper">
+  <div class="pageHeader">
+    <div class="content">
+      <h1 id="{{pageInfo.componentName}}" class="pageTitle">{{pageInfo.componentName}}</h1>
+        <nav class="pageNav" aria-label="In page navigation">
+          <ul>
+            <li><a href="#" data-title="Overview" data-sectionname="Overview">Overview</a></li>
+            <li><a href="#" data-title="Using" data-sectionname="Using this Component">Using this Component</a></li>
+            {{#if pageInfo.variants}}
+            <li><a href="#" data-title="Variants" data-sectionname="Variants">Variants</a></li>
+            {{/if}}
+            {{#if pageInfo.states}}
+            <li><a href="#" data-title="States" data-sectionname="States">States</a></li>
+            {{/if}}
+            {{#if pageInfo.methods}}
+            <li><a href="#" data-title="Methods" data-sectionname="Methods">Methods</a></li>
+            {{/if}}
+          </ul>
+        </nav>
+    </div>
+  </div>
+  <div class="ComponentPage">
+    <div class="ComponentPage-body">
+      <div class="ComponentPage-overviewSection">
+        <h2 class="ComponentPage-subHeading" id="Overview">Overview</h2>
+        <div class="ComponentPage-overviewSectionContent">
+          <div class="ComponentPage-overview">
+            <div>
+              {{{pageInfo.overview}}}
+            </div>
+          </div>
+          {{#if pageInfo.availableReact}}
+          <div class="ComponentPage-related">
+            <span class="ComponentPage-relatedTitle">Also available in</span>
+            {{#if pageInfo.reactComponent}}
+            <a href="https://dev.office.com/fabric#/components/{{toLowerCase pageInfo.reactComponent}}">Fabric React</a>
+            {{else}}
+            <a href="https://dev.office.com/fabric#/components/{{toLowerCase pageInfo.componentName}}">Fabric React</a>
+            {{/if}}
+          </div>
+          {{/if}}
+        </div>
+      </div>
+      <div class="ComponentPage-usingSection">
+        <h2 class="ComponentPage-subHeading ComponentsPage-usingTitle" id="Using">Using this Component</h2>
+        <ol class="steps">
+          <li>
+            {{#if pageInfo.isDatePicker}}
+              <p>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery and PickaDate.js library:</p>
+              {{codeBlock 
+'<link rel="stylesheet" href="fabric.min.css" />
+<link rel="stylesheet" href="fabric.components.min.css" />
+<script src="jquery.min.js"></script>
+<script src="fabric.min.js"></script>
+<script src="PickaDate.js"></script>' 'html' 'isDarkTheme'}}
+            {{else}}
+              {{#if pageInfo.jsFile }}
+                <p>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page:</p>
+                {{codeBlock 
+'<link rel="stylesheet" href="fabric.min.css" />
+<link rel="stylesheet" href="fabric.components.min.css" />
+<script src="fabric.min.js"></script>' 'html' 'isDarkTheme'}}
+              {{else}}
+              <p>Confirm that you have references to Fabric&#39;s CSS on your page:</p>
+              {{codeBlock 
+'<link rel="stylesheet" href="fabric.min.css" />
+<link rel="stylesheet" href="fabric.components.min.css" />' 'html' 'isDarkTheme'}}
+              {{/if}}
+            {{/if}}
+          </li>
+          <li>
+          {{#if pageInfo.variants}}
+            <p>Copy the HTML from one of the samples below into your page. For example:</p>
+            {{{renderCode (renderComponentExample pageInfo.componentName pageInfo.variants.[0].templateFile (lookup models pageInfo.variants.[0].model)) 'html' }}}
+          {{/if}}
+          </li>
+          {{#if pageInfo.jsFile}}
+          <li>
+            <p>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to Fabric&#39;s JS, to instantiate all {{pageInfo.componentName}} components on the page:</p>
+            {{{renderCode (renderComponentExample pageInfo.componentName pageInfo.jsFile null) "javascript" }}}
+          </li>
+          {{/if}}
+          <li>
+            <p>Replace the sample HTML content with your content.</p>
+          </li>
+        </ol>
+      </div>
+      <div class="ComponentPage-variantsSection">
+        <h2 class="ComponentPage-subHeading ComponentPage-variantsTitle" id="Variants">Variants</h2>
+        {{#each pageInfo.variants}}
+        <div class="ExampleCard">
+          <div class="ExampleCard-header">
+            <span class="ExampleCard-title ms-font-l">{{this.name}}</span>
+            <div class="ExampleCard-toggleButtons ms-font-l">
+              <button class="ExampleCard-codeButton ms-Button ms-Button--icon">
+                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Embed"></i></span>
+                <span class="ms-Button-label"><span class="showSpan">Show</span><span class="hideSpan">Hide</span> Code</span>
+                </button>
+            </div>
+          </div>
+          <div class="ExampleCard-code">
+            {{{renderCode (renderComponentExample ../pageInfo.componentName this.templateFile (lookup ../models this.model)) 'html' }}}
+            {{#if this.jsFile}}
+              {{{renderCode (renderComponentExample ../pageInfo.componentName this.jsFile null) "javascript" }}}
+            {{else}}
+              {{#if ../pageInfo.jsFile}}
+                {{{renderCode (renderComponentExample ../pageInfo.componentName ../pageInfo.jsFile null) "javascript" }}}
+              {{/if}}
+            {{/if}}
+          </div>
+          <div class="ExampleCard-example">
+            {{renderComponentExample ../pageInfo.componentName this.templateFile (lookup ../models this.model)}}
+            {{#if this.jsFile}}
+              {{renderComponentExample ../pageInfo.componentName this.jsFile null }}
+            {{/if}}
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{#if pageInfo.states}}
+      <div class="ComponentPage-statesSection">
+        <h2 class="ComponentPage-subHeading ComponentPage-statesTitle" id="States">States</h2>
+         <table class="ms-Table ms-TableData">
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>Applied to</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each pageInfo.states}}
+              <tr>
+                <td class="nowrap">{{{this.name}}}</td>
+                <td class="nowrap">{{{this.applied}}}</td>
+                <td class="tableMinWidth">
+                  <div>
+                    {{{this.result}}}
+                  </div>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+         </table>
+      </div>
+      {{/if}}
+      {{#if pageInfo.methods}}
+      <div class="ComponentPage-methodsSection">
+        <h2 class="ComponentPage-subHeading ComponentPage-methodsTitle" id="Methods">Methods</h2>
+        <table class="ms-Table ms-TableData">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Parameters</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each pageInfo.methods}}
+            <tr>
+              <td class="nowrap"><code>{{this.name}}</code></td>
+              <td class="nowrap">
+              {{~#if this.parameters}}
+                {{#each this.parameters}}
+                  <p><strong>{{this.name}}</strong>: {{this.type}}</p>
+                {{/each}}
+                {{else}}
+                  <p>None</p>
+              {{/if~}}
+              </td>
+              <td class="tableMinWidth">
+                <div>
+                  {{{this.description}}}
+                </div>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+(function() {
+  function findAncestor (el, cls) {
+     while ((el = el.parentElement) && !el.classList.contains(cls));
+     return el;
+  }
+
+  // Toggle code buttons
+  var codeButtons = document.getElementsByClassName('ExampleCard-codeButton');
+  for (var i = 0; i < codeButtons.length; i++) {
+    codeButtons[i].addEventListener('click', toggleCode);
+  }
+
+  function toggleCode(e) {
+    var container = findAncestor(e.target, 'ExampleCard');
+    container.classList.contains('is-codeVisible') ?
+    container.classList.remove('is-codeVisible') :
+    container.classList.add('is-codeVisible');
+  }
+
+  const MOBILE_BP = 1024;
+  var pageNavLinks = document.querySelectorAll(".pageNav a");
+  for (var i = 0; i < pageNavLinks.length; i++) {
+    pageNavLinks[i].addEventListener("click", scrollToLink)
+  }
+
+  function scrollToLink(e) {
+    e.preventDefault();
+    var targetSection = e.target.getAttribute("data-title");
+    var padding = (window.innerWidth < MOBILE_BP) ? 130 : 150;
+    var scrollToElem = document.querySelector('#' + targetSection);
+    var docElem = (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ? document.documentElement : document.body;
+
+    scrollIt(scrollToElem.offsetTop - padding, 700, 'easeInQuad');
+  }
+
+  var TableElements = document.querySelectorAll(".ms-TableData");
+  for (var i = 0; i < TableElements.length; i++) {
+    new fabric['Table'](TableElements[i]);
+  }
+})();
+</script>
+{{#if pageInfo.jsFile}}
+{{renderComponentExample pageInfo.componentName pageInfo.jsFile null }}
+{{/if}}
