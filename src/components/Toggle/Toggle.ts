@@ -40,6 +40,7 @@ namespace fabric {
     }
 
     private _toggleHandler(): void {
+      this._toggleField.classList.toggle("is-selected");
     }
   }
 }
