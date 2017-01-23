@@ -126,6 +126,20 @@
   }
 }
 
+//== Modifier: Small button
+//
+.ms-Button.ms-Button--small {
+  min-width: 60px;
+  min-height: 24px;
+  height: auto;
+  padding-top: 0;
+  padding-bottom: 4px;
+
+  .ms-Button-label {
+    font-weight: $ms-font-weight-regular;
+    font-size: $ms-font-size-s;
+  }
+}
 
 //== Modifier: Hero button
 //
