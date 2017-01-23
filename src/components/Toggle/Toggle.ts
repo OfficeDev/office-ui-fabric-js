@@ -13,6 +13,7 @@ namespace fabric {
 
     private _container: HTMLElement;
     private _toggleField: HTMLElement;
+    private _toggleId: string;
 
     /**
      *
@@ -22,6 +23,10 @@ namespace fabric {
     constructor(container: HTMLElement) {
       this._container = container;
       this._toggleField = <HTMLElement>this._container.querySelector(".ms-Toggle-field");
+      this._toggleId = this._toggleField.getAttribute("for"); 
+      if(!!this._container.querySelector("#"+this._toggleId).getAttribute("checked")){
+          this._toggleField.classList.toggle("is-selected");
+      }
       this._addListeners();
     }
 
@@ -35,7 +40,6 @@ namespace fabric {
     }
 
     private _toggleHandler(): void {
-      this._toggleField.classList.toggle("is-selected");
     }
   }
 }
