@@ -335,6 +335,12 @@ namespace fabric {
         const newClink: HTMLElement = <HTMLElement>this.contextualItemLink.cloneNode(false);
         const iconClass =  this.overflowCommands[i].icon;
         newClink.innerText = this.overflowCommands[i].label;
+
+  	    var btn = <HTMLButtonElement>this.overflowCommands[i].item.querySelector(".ms-CommandButton-button");
+        if(btn.getAttribute("onclick")){
+          var uri = btn.getAttribute("onclick").split("href=");
+          newClink.setAttribute("href", uri[1].replace("'",""));
+        }
         newCItem.appendChild(newClink);
 
         if (iconClass) {
