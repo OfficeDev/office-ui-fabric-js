@@ -33,7 +33,7 @@ Used to indicate a single choice from multiple options.
   &lt;ul class&#x3D;&quot;ms-ChoiceFieldGroup-list&quot;&gt;
     
 
-&lt;div class&#x3D;&quot;ms-RadioButton&quot;&gt; 
+&lt;li class&#x3D;&quot;ms-RadioButton&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;ms-RadioButton-input&quot;&gt;
     &lt;label role&#x3D;&quot;radio&quot;
         class&#x3D;&quot;ms-RadioButton-field &quot;
@@ -43,10 +43,10 @@ Used to indicate a single choice from multiple options.
 &gt;
         &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option 1&lt;/span&gt;
     &lt;/label&gt;
-&lt;/div&gt; 
+&lt;/li&gt; 
     
 
-&lt;div class&#x3D;&quot;ms-RadioButton&quot;&gt; 
+&lt;li class&#x3D;&quot;ms-RadioButton&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;ms-RadioButton-input&quot;&gt;
     &lt;label role&#x3D;&quot;radio&quot;
         class&#x3D;&quot;ms-RadioButton-field &quot;
@@ -56,10 +56,10 @@ Used to indicate a single choice from multiple options.
 &gt;
         &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option 2&lt;/span&gt;
     &lt;/label&gt;
-&lt;/div&gt; 
+&lt;/li&gt; 
     
 
-&lt;div class&#x3D;&quot;ms-RadioButton&quot;&gt; 
+&lt;li class&#x3D;&quot;ms-RadioButton&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;ms-RadioButton-input&quot;&gt;
     &lt;label role&#x3D;&quot;radio&quot;
         class&#x3D;&quot;ms-RadioButton-field  is-disabled &quot;
@@ -70,10 +70,10 @@ Used to indicate a single choice from multiple options.
         &gt;
         &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option 3&lt;/span&gt;
     &lt;/label&gt;
-&lt;/div&gt; 
+&lt;/li&gt; 
     
 
-&lt;div class&#x3D;&quot;ms-RadioButton&quot;&gt; 
+&lt;li class&#x3D;&quot;ms-RadioButton&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;ms-RadioButton-input&quot;&gt;
     &lt;label role&#x3D;&quot;radio&quot;
         class&#x3D;&quot;ms-RadioButton-field &quot;
@@ -83,7 +83,7 @@ Used to indicate a single choice from multiple options.
 &gt;
         &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option 4&lt;/span&gt;
     &lt;/label&gt;
-&lt;/div&gt; 
+&lt;/li&gt; 
   &lt;/ul&gt;
 &lt;/div&gt; 
     </code>
