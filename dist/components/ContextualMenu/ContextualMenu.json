@@ -1,0 +1,6 @@
+{
+  "name": "ContextualMenu",
+  "dependencies": [
+    "ContextualHost"
+  ]
+}

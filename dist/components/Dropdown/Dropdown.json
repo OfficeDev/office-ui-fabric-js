@@ -1,0 +1,6 @@
+{
+  "name": "Dropdown",
+  "dependencies": [
+    "Label"
+  ]
+}
