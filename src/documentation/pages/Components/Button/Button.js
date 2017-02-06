@@ -38,6 +38,11 @@ var data = {
          name: "Compound Button",
          templateFile: "ButtonExample",
          model: "ButtonExampleCompoundModel"
+      },
+      {
+         name: "Small Button",
+         templateFile: "ButtonExample",
+         model: "ButtonExampleSmallButtonModel"
       }
    ],
    states: [
