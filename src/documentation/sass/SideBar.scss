@@ -105,6 +105,7 @@ $nav-group-header-height: 40px;
     &:hover {
       > a:first-child {
         color: $ms-color-neutralPrimary;
+        font-weight: $ms-font-weight-semibold;
       }
 
       // Hide the line indicators on submenus
