@@ -30,15 +30,16 @@ namespace fabric {
      */
     private _toggleRowSelection(event: MouseEvent): void {
       let selectedRow = (<HTMLElement>event.target).parentElement;
-      let selectedStateClass = "is-selected";
+      if (selectedRow.tagName === "TR") {
+        let selectedStateClass = "is-selected";
 
-      // Toggle the selected state class
-      if (selectedRow.className === selectedStateClass) {
-        selectedRow.className = "";
-      } else {
-        selectedRow.className = selectedStateClass;
+        // Toggle the selected state class
+        if (selectedRow.className === selectedStateClass) {
+          selectedRow.className = "";
+        } else {
+          selectedRow.className = selectedStateClass;
+        }
       }
-
     }
 
   }
