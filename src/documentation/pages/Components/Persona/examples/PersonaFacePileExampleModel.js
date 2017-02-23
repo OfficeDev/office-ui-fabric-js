@@ -1,7 +1,7 @@
 var PersonaExampleProps = {
   "initials": "AL",
   "initialsColor": "blue",
-  "image": "Persona.Person2.png",
+  "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
   "modifiers": [
     {
       "name": "facePile"
@@ -19,7 +19,7 @@ var PersonaExampleProps = {
     "personaProps": {
       "initials": "AL",
       "initialsColor": "blue",
-      "image": "../persona/Persona.Person2.png",
+      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
       "primaryText": "Alton Lafferty",
       "secondaryText": "Accountant",
       "tertiaryText": "In a meeting",
@@ -39,7 +39,7 @@ var PersonaExampleProps = {
               "props": {
                 "initials": "RM",
                 "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
+                "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                 "primaryText": "Russel Miller",
                 "secondaryText": "Sales"
               }
@@ -49,7 +49,7 @@ var PersonaExampleProps = {
               "props": {
                 "initials": "RM",
                 "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
+                "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                 "primaryText": "Douglas Fielder",
                 "secondaryText": "Public Relations"
               }
@@ -64,7 +64,7 @@ var PersonaExampleProps = {
               "props": {
                 "initials": "RM",
                 "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
+                "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                 "primaryText": "Grant Steel",
                 "secondaryText": "Sales"
               }
@@ -79,7 +79,7 @@ var PersonaExampleProps = {
               "props": {
                 "initials": "RM",
                 "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
+                "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                 "primaryText": "Harvey Wallin",
                 "secondaryText": "Public Relations"
               }
@@ -89,7 +89,7 @@ var PersonaExampleProps = {
               "props": {
                 "initials": "RM",
                 "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
+                "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                 "primaryText": "Marcus Lauer",
                 "secondaryText": "Technical Support"
               }
@@ -99,7 +99,7 @@ var PersonaExampleProps = {
               "props": {
                 "initials": "RM",
                 "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
+                "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                 "primaryText": "Marcel Groce",
                 "secondaryText": "Delivery"
               }
@@ -109,7 +109,7 @@ var PersonaExampleProps = {
               "props": {
                 "initials": "RM",
                 "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
+                "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                 "primaryText": "Jessica Fischer",
                 "secondaryText": "Marketing"
               }
