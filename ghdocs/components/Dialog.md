@@ -45,9 +45,11 @@ Includes a close button at the top right, as an additional way to dismiss the di
 
 
 ## States
+
 This component has only the default state.
 
 ## Using this component
+
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
     ```
     <head>
@@ -129,19 +131,17 @@ This component has only the default state.
     </code>
 </pre>
 
+3. (b) or add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a single Dialog component on the page:
 
-    or add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a single Dialog component on the page:
+<pre>
+    <code>
+    &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+        var DialogElement &#x3D; document.querySelector(&quot;.ms-Dialog&quot;);
+        var dialogComponent &#x3D; new fabric[&#x27;Dialog&#x27;](DialogElement);
+    &lt;/script&gt;
+    </code>
+</pre>
 
-    
-    <pre>
-        <code>
-     &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-    var DialogElement &#x3D; document.querySelector(&quot;.ms-Dialog&quot;);
-    var dialogComponent &#x3D; new fabric[&#x27;Dialog&#x27;](DialogElement);
-&lt;/script&gt;
-        </code>
-    </pre>
-    
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content (such as the content of `.ms-Dialog-content`) with your content.
 
