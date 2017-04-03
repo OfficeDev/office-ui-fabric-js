@@ -75,7 +75,7 @@ namespace fabric {
       for (let i = 0; i < _originalOptions.length; ++i) {
         let option = <HTMLOptionElement>_originalOptions[i];
         if (option.selected) {
-          this._newDropdownLabel.innerHTML = option.text;
+            this._newDropdownLabel.innerHTML = option.text;
         }
 
         let newItem = document.createElement("li");
@@ -196,6 +196,7 @@ namespace fabric {
     }
 
     private _onOpenDropdown(evt: Event) {
+
       let isDisabled = this._container.classList.contains(IS_DISABLED_CLASS);
       let isOpen = this._container.classList.contains(IS_OPEN_CLASS);
       if (!isDisabled && !isOpen) {
@@ -214,6 +215,15 @@ namespace fabric {
           this._openDropdownAsPanel();
         }
       }
+
+      let offsetTop : number = 0;
+      for (let i = 0; i < this._dropdownItems.length; ++i) {
+        if (this._dropdownItems[i].newItem.classList.contains(IS_SELECTED_CLASS)) {
+            offsetTop = this._dropdownItems[i].newItem.offsetTop - this._dropdownItems[i].newItem.clientHeight;
+            break;
+        }
+      }
+      this._newDropdown.scrollTop = offsetTop;
     }
 
     private _closeOtherDropdowns() {
