@@ -40,10 +40,12 @@ namespace fabric {
     }
 
     private _onDocumentClick(event: Event): void {
-      const target: HTMLElement = <HTMLElement>event.target;
-      const classList: DOMTokenList = target.classList;
-      if (!this._hostTarget.contains(target) && !classList.contains("ms-ContextualMenu-link")) {
-        this._isOpen = false;
+      if (event.target instanceof HTMLElement) {
+        const target: HTMLElement = <HTMLElement>event.target;
+        const classList: DOMTokenList = target.classList;
+        if (!this._hostTarget.contains(target) && !classList.contains("ms-ContextualMenu-link")) {
+          this._isOpen = false;
+        }
       }
     }
 
