@@ -53,7 +53,7 @@ namespace fabric {
     /**
      * shows banner if the banner is hidden
      */
-    public showBanner(): void {
+    public show(): void {
       this._errorBanner.className = "ms-MessageBanner";
     }
 
@@ -144,7 +144,7 @@ namespace fabric {
     /**
      * hides banner when close button is clicked
      */
-    private _hideBanner(): void {
+    public _hide(): void {
       if (this._errorBanner.className.indexOf("hide") === -1) {
         this._errorBanner.className += " hide";
         setTimeout(this._hideMessageBanner.bind(this), 500);
@@ -157,7 +157,7 @@ namespace fabric {
     private _setListeners(): void {
       window.addEventListener("resize", this._onResize.bind(this), false);
       this._chevronButton.addEventListener("click", this._toggleExpansion.bind(this), false);
-      this._closeButton.addEventListener("click", this._hideBanner.bind(this), false);
+      this._closeButton.addEventListener("click", this._hide.bind(this), false);
     }
   }
 } // end fabric namespace
