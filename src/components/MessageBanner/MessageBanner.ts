@@ -56,6 +56,20 @@ namespace fabric {
     public show(): void {
       this._errorBanner.className = "ms-MessageBanner";
     }
+      
+    /**
+     * hides banner when close button is clicked
+     */
+    public hide(): void {
+        if (this._errorBanner.className.indexOf("hide") === -1) {
+            this._errorBanner.className += " hide";
+            setTimeout(this._hideMessageBanner.bind(this), 500);
+        }
+    }
+
+    private _hideMessageBanner(): void {
+        this._errorBanner.className = "ms-MessageBanner is-hidden";
+    }
 
     /**
      * sets styles on resize
@@ -135,21 +149,7 @@ namespace fabric {
       } else {
         this._expand();
       }
-    }
-
-    private _hideMessageBanner(): void {
-      this._errorBanner.className = "ms-MessageBanner is-hidden";
-    }
-
-    /**
-     * hides banner when close button is clicked
-     */
-    public _hide(): void {
-      if (this._errorBanner.className.indexOf("hide") === -1) {
-        this._errorBanner.className += " hide";
-        setTimeout(this._hideMessageBanner.bind(this), 500);
-      }
-    }
+    }         
 
     /**
      * sets handlers for resize and button click events
