@@ -58,6 +58,13 @@ namespace fabric {
     }
 
     /**
+   * shows banner if the banner is hidden (deprecated)
+   */
+    public showBanner(): void {
+        this.show();
+    }
+
+    /**
      * hides banner when close button is clicked
      */
     public hide(): void {
