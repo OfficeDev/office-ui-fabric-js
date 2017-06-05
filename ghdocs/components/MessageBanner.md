@@ -88,22 +88,3 @@ This component has only the default state.
 ## Dependencies
 This component has a dependency on Button.
 
-<script type="text/javascript">
-  var MessageBannerExample = document.querySelector('.docs-MessageBannerExample');
-  var MessageBanner = new fabric['MessageBanner'](MessageBannerExample.querySelector('.ms-MessageBanner'));
-  var MessageBannerButton = MessageBannerExample.querySelector('.docs-MessageBannerExample-button');
-  var MessageBannerCloseButton = MessageBannerExample.querySelector('.ms-MessageBanner-close');
-
-  // When clicking the button, open the MessageBanner
-  MessageBannerButton.onclick = function() {
-    MessageBanner.show();
-    this.classList.add("is-hidden");
-  };
-
-  // Hide "Show the Banner Button" when banner is active
-  MessageBannerCloseButton.addEventListener("click", function(){
-  	setTimeout(function() {
-  		MessageBannerButton.classList.remove("is-hidden");
-  	}, 500);
-  });
-</>

@@ -74,12 +74,8 @@ This component has only the default state.
 
 <pre>
     <code>
- &lt;div class&#x3D;&quot;ms-CalloutExample&quot;&gt;  
-  
-  
-  &lt;div class&#x3D;&quot;ms-Callout 
-       
-       is-hidden&quot;&gt;
+ &lt;div class&#x3D;&quot;ms-CalloutExample&quot;&gt;
+  &lt;div class&#x3D;&quot;ms-Callout is-hidden&quot;&gt;
     &lt;div class&#x3D;&quot;ms-Callout-main&quot;&gt;
       &lt;div class&#x3D;&quot;ms-Callout-header&quot;&gt;
         &lt;p class&#x3D;&quot;ms-Callout-title&quot;&gt;All of your favorite people&lt;/p&gt;
@@ -88,28 +84,18 @@ This component has only the default state.
         &lt;div class&#x3D;&quot;ms-Callout-content&quot;&gt;
           &lt;p class&#x3D;&quot;ms-Callout-subText  ms-Callout-subText-- &quot;&gt;Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.&lt;/p&gt;
         &lt;/div&gt;
-        &lt;div class&#x3D;&quot;ms-Callout-actions&quot;&gt;
-              
-  
-  &lt;a class&#x3D;&quot;ms-Link  &quot; 
-     
-     
-    &gt;Learn more&lt;/a&gt;
-  
-  
+        &lt;div class&#x3D;&quot;ms-Callout-actions&quot;&gt;&lt;a class&#x3D;&quot;ms-Link&quot;&gt;Learn more&lt;/a&gt;
         &lt;/div&gt;
       &lt;/div&gt;     
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class&#x3D;&quot;ms-CalloutExample-button&quot;&gt;
-    
-    &lt;button class&#x3D;&quot;ms-Button 
-      
-      &quot;&gt;
+  &lt;div class&#x3D;&quot;ms-CalloutExample-button&quot;&gt;&lt;button class&#x3D;&quot;ms-Button&quot;&gt;
       &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Open Callout&lt;/span&gt;
-    &lt;/button&gt;  &lt;/div&gt;
+    &lt;/button&gt;  
+  &lt;/div&gt;
 &lt;/div&gt;
-    </code>
+    
+</code>
 </pre>
 
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a Callout component on the page:
@@ -125,9 +111,8 @@ This component has only the default state.
     new fabric[&#x27;Callout&#x27;](
           CalloutElement, 
           ExampleButtonElement,
-          &quot;right&quot;
-    );
-  }
+          &quot;right&quot;); 
+    }
 &lt;/script&gt;
     </code>
 </pre>

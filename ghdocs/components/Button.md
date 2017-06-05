@@ -67,11 +67,8 @@ State | Applied to | Result
 2. Copy the HTML from one of the samples above into your page. For example:
 
 <pre>
-    <code>
- 
-&lt;button class&#x3D;&quot;ms-Button 
-  
-  &quot;&gt;
+    <code> 
+&lt;button class&#x3D;&quot;ms-Button&quot;&gt;
   &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Create Account&lt;/span&gt;
 &lt;/button&gt;
     </code>

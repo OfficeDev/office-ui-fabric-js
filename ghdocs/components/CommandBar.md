@@ -43,119 +43,117 @@ State | Applied to | Result
     <code>
  
 &lt;div class&#x3D;&quot;ms-CommandBar &quot;&gt;
-    &lt;div class&#x3D;&quot;ms-CommandBar-sideCommands&quot;&gt;
-        
-&lt;div class&#x3D;&quot;ms-CommandButton  ms-CommandButton--noLabel  &quot;&gt;
-  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
+  &lt;div class&#x3D;&quot;ms-CommandBar-sideCommands&quot;&gt;
+    &lt;div class&#x3D;&quot;ms-CommandButton  ms-CommandButton--noLabel&quot;&gt;
+      &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;&gt;
       &lt;span class&#x3D;&quot;ms-CommandButton-icon ms-fontColor-themePrimary&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--CircleRing&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;&lt;/span&gt;  &lt;/button&gt;
-&lt;/div&gt;
     &lt;/div&gt;
-  &lt;div class&#x3D;&quot;ms-CommandBar-mainArea&quot;&gt;
-      
+  &lt;/div&gt;
 
-&lt;div class&#x3D;&quot;ms-SearchBox  ms-SearchBox--commandBar  &quot;&gt;
-  &lt;input class&#x3D;&quot;ms-SearchBox-field&quot; type&#x3D;&quot;text&quot; value&#x3D;&quot;&quot;&gt;
-  &lt;label class&#x3D;&quot;ms-SearchBox-label&quot;&gt;
-    &lt;i class&#x3D;&quot;ms-SearchBox-icon ms-Icon ms-Icon--Search&quot;&gt;&lt;/i&gt;
-    &lt;span class&#x3D;&quot;ms-SearchBox-text&quot;&gt;Search&lt;/span&gt;
-  &lt;/label&gt;
+  &lt;div class&#x3D;&quot;ms-CommandBar-mainArea&quot;&gt;
+    &lt;div class&#x3D;&quot;ms-SearchBox ms-SearchBox--commandBar&quot;&gt;
+      &lt;input class&#x3D;&quot;ms-SearchBox-field&quot; type&#x3D;&quot;text&quot; value&#x3D;&quot;&quot;&gt;
+      &lt;label class&#x3D;&quot;ms-SearchBox-label&quot;&gt;
+        &lt;i class&#x3D;&quot;ms-SearchBox-icon ms-Icon ms-Icon--Search&quot;&gt;&lt;/i&gt;
+        &lt;span class&#x3D;&quot;ms-SearchBox-text&quot;&gt;Search&lt;/span&gt;
+      &lt;/label&gt;
   
-&lt;div class&#x3D;&quot;ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel  &quot;&gt;
-  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
-      &lt;span class&#x3D;&quot;ms-CommandButton-icon &quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--Cancel&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;&lt;/span&gt;  &lt;/button&gt;
-&lt;/div&gt;
+  &lt;div class&#x3D;&quot;ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel&quot;&gt;
+  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;&gt;
+      &lt;span class&#x3D;&quot;ms-CommandButton-icon &quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--Cancel&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
   
-&lt;div class&#x3D;&quot;ms-CommandButton ms-SearchBox-exit ms-CommandButton--noLabel  &quot;&gt;
-  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
-      &lt;span class&#x3D;&quot;ms-CommandButton-icon &quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChromeBack&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;&lt;/span&gt;  &lt;/button&gt;
-&lt;/div&gt;
+  &lt;div class&#x3D;&quot;ms-CommandButton ms-SearchBox-exit ms-CommandButton--noLabel&quot;&gt;
+    &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;&gt;
+      &lt;span class&#x3D;&quot;ms-CommandButton-icon&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChromeBack&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
   
-&lt;div class&#x3D;&quot;ms-CommandButton ms-SearchBox-filter ms-CommandButton--noLabel  &quot;&gt;
-  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
-      &lt;span class&#x3D;&quot;ms-CommandButton-icon &quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--Filter&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;&lt;/span&gt;  &lt;/button&gt;
-&lt;/div&gt;
+  &lt;div class&#x3D;&quot;ms-CommandButton ms-SearchBox-filter ms-CommandButton--noLabel&quot;&gt;
+  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;&gt;
+    &lt;span class&#x3D;&quot;ms-CommandButton-icon&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--Filter&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
       
-&lt;div class&#x3D;&quot;ms-CommandButton    &quot;&gt;
-  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
+&lt;div class&#x3D;&quot;ms-CommandButton&quot;&gt;
+  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;&gt;
       &lt;span class&#x3D;&quot;ms-CommandButton-icon ms-fontColor-themePrimary&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--CircleRing&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;Command&lt;/span&gt;  &lt;/button&gt;
 &lt;/div&gt;
       
-&lt;div class&#x3D;&quot;ms-CommandButton    &quot;&gt;
-  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
+&lt;div class&#x3D;&quot;ms-CommandButton&quot;&gt;
+  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;&gt;
       &lt;span class&#x3D;&quot;ms-CommandButton-icon ms-fontColor-themePrimary&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--CircleRing&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;New&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-dropdownIcon&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronDown&quot;&gt;&lt;/i&gt;&lt;/span&gt;
   &lt;/button&gt;
     
 &lt;ul class&#x3D;&quot;ms-ContextualMenu  is-opened ms-ContextualMenu--hasIcons&quot;&gt;
-      &lt;li class&#x3D;&quot;ms-ContextualMenu-item &quot;&gt;
+      &lt;li class&#x3D;&quot;ms-ContextualMenu-item&quot;&gt;
         &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot; tabindex&#x3D;&quot;1&quot; &gt;Folder&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Folder &quot;&gt;&lt;/i&gt;
+        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Folder&quot;&gt;&lt;/i&gt;
       &lt;/li&gt;
       &lt;li class&#x3D;&quot;ms-ContextualMenu-item ms-ContextualMenu-item--divider&quot;&gt;&lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-ContextualMenu-item &quot;&gt;
-        &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot; tabindex&#x3D;&quot;1&quot; &gt;Plain Text Document&lt;/a&gt;
+      &lt;li class&#x3D;&quot;ms-ContextualMenu-item&quot;&gt;
+        &lt;a class&#x3D;&quot;ms-ContextualMenu-link&quot; tabindex&#x3D;&quot;1&quot;&gt;Plain Text Document&lt;/a&gt;
         &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Page &quot;&gt;&lt;/i&gt;
       &lt;/li&gt;
       &lt;li class&#x3D;&quot;ms-ContextualMenu-item &quot;&gt;
-        &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot; tabindex&#x3D;&quot;1&quot; &gt;A Coffee&lt;/a&gt;
+        &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot;tabindex&#x3D;&quot;1&quot;&gt;A Coffee&lt;/a&gt;
         &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Coffee &quot;&gt;&lt;/i&gt;
       &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-ContextualMenu-item &quot;&gt;
-        &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot; tabindex&#x3D;&quot;1&quot; &gt;Picture&lt;/a&gt;
+      &lt;li class&#x3D;&quot;ms-ContextualMenu-item&quot;&gt;
+        &lt;a class&#x3D;&quot;ms-ContextualMenu-link&quot; tabindex&#x3D;&quot;1&quot;&gt;Picture&lt;/a&gt;
         &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Picture &quot;&gt;&lt;/i&gt;
       &lt;/li&gt;
       &lt;li class&#x3D;&quot;ms-ContextualMenu-item &quot;&gt;
-        &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot; tabindex&#x3D;&quot;1&quot; &gt;Money&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Money &quot;&gt;&lt;/i&gt;
+        &lt;a class&#x3D;&quot;ms-ContextualMenu-link&quot;tabindex&#x3D;&quot;1&quot;&gt;Money&lt;/a&gt;
+        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Money&quot;&gt;&lt;/i&gt;
       &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
       
-&lt;div class&#x3D;&quot;ms-CommandButton    &quot;&gt;
-  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
+&lt;div class&#x3D;&quot;ms-CommandButton&quot;&gt;
+  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;&gt;
       &lt;span class&#x3D;&quot;ms-CommandButton-icon ms-fontColor-themePrimary&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--CircleRing&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;Command&lt;/span&gt;  &lt;/button&gt;
 &lt;/div&gt;
       
-&lt;div class&#x3D;&quot;ms-CommandButton    &quot;&gt;
-  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
+&lt;div class&#x3D;&quot;ms-CommandButton&quot;&gt;
+  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;&gt;
       &lt;span class&#x3D;&quot;ms-CommandButton-icon ms-fontColor-themePrimary&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--CircleRing&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;Command&lt;/span&gt;  &lt;/button&gt;
 &lt;/div&gt;
       
-&lt;div class&#x3D;&quot;ms-CommandButton    &quot;&gt;
-  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
-      &lt;span class&#x3D;&quot;ms-CommandButton-icon ms-fontColor-themePrimary&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--CircleRing&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;Command&lt;/span&gt;  &lt;/button&gt;
+&lt;div class&#x3D;&quot;ms-CommandButton&quot;&gt;
+  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;&gt;
+      &lt;span class&#x3D;&quot;ms-CommandButton-icon ms-fontColor-themePrimary&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--CircleRing&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;Command&lt;/span&gt;&lt;/button&gt;
 &lt;/div&gt;
       
         
-&lt;div class&#x3D;&quot;ms-CommandButton ms-CommandBar-overflowButton ms-CommandButton--noLabel  &quot;&gt;
-  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
-      &lt;span class&#x3D;&quot;ms-CommandButton-icon &quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--More&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;&lt;/span&gt;  &lt;/button&gt;
+&lt;div class&#x3D;&quot;ms-CommandButton ms-CommandBar-overflowButton ms-CommandButton--noLabel&quot;&gt;
+  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;&gt;
+      &lt;span class&#x3D;&quot;ms-CommandButton-icon &quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--More&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;&lt;/span&gt;&lt;/button&gt;
     
-&lt;ul class&#x3D;&quot;ms-ContextualMenu  is-opened ms-ContextualMenu--hasIcons&quot;&gt;
-      &lt;li class&#x3D;&quot;ms-ContextualMenu-item &quot;&gt;
-        &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot; tabindex&#x3D;&quot;1&quot; &gt;Folder&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Folder &quot;&gt;&lt;/i&gt;
+&lt;ul class&#x3D;&quot;ms-ContextualMenu is-opened ms-ContextualMenu--hasIcons&quot;&gt;
+      &lt;li class&#x3D;&quot;ms-ContextualMenu-item&quot;&gt;
+        &lt;a class&#x3D;&quot;ms-ContextualMenu-link&quot; tabindex&#x3D;&quot;1&quot; &gt;Folder&lt;/a&gt;
+        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Folder&quot;&gt;&lt;/i&gt;
       &lt;/li&gt;
       &lt;li class&#x3D;&quot;ms-ContextualMenu-item ms-ContextualMenu-item--divider&quot;&gt;&lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-ContextualMenu-item &quot;&gt;
-        &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot; tabindex&#x3D;&quot;1&quot; &gt;Plain Text Document&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Page &quot;&gt;&lt;/i&gt;
+      &lt;li class&#x3D;&quot;ms-ContextualMenu-item&quot;&gt;
+        &lt;a class&#x3D;&quot;ms-ContextualMenu-link&quot; tabindex&#x3D;&quot;1&quot;&gt;Plain Text Document&lt;/a&gt;
+        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Page&quot;&gt;&lt;/i&gt;
       &lt;/li&gt;
       &lt;li class&#x3D;&quot;ms-ContextualMenu-item &quot;&gt;
-        &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot; tabindex&#x3D;&quot;1&quot; &gt;A Coffee&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Coffee &quot;&gt;&lt;/i&gt;
+        &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot; tabindex&#x3D;&quot;1&quot;&gt;A Coffee&lt;/a&gt;
+        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Coffee&quot;&gt;&lt;/i&gt;
       &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-ContextualMenu-item &quot;&gt;
-        &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot; tabindex&#x3D;&quot;1&quot; &gt;Picture&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Picture &quot;&gt;&lt;/i&gt;
+      &lt;li class&#x3D;&quot;ms-ContextualMenu-item&quot;&gt;
+        &lt;a class&#x3D;&quot;ms-ContextualMenu-link&quot; tabindex&#x3D;&quot;1&quot;&gt;Picture&lt;/a&gt;
+        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Picture&quot;&gt;&lt;/i&gt;
       &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-ContextualMenu-item &quot;&gt;
-        &lt;a class&#x3D;&quot;ms-ContextualMenu-link &quot; tabindex&#x3D;&quot;1&quot; &gt;Money&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Money &quot;&gt;&lt;/i&gt;
+      &lt;li class&#x3D;&quot;ms-ContextualMenu-item&quot;&gt;
+        &lt;a class&#x3D;&quot;ms-ContextualMenu-link&quot; tabindex&#x3D;&quot;1&quot;&gt;Money&lt;/a&gt;
+        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Money&quot;&gt;&lt;/i&gt;
       &lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-      
+    &lt;/ul&gt;
+    &lt;/div&gt;      
   &lt;/div&gt;
 &lt;/div&gt;
     </code>
@@ -171,7 +169,6 @@ State | Applied to | Result
     new fabric[&#x27;CommandBar&#x27;](CommandBarElements[i]);
   }
 &lt;/script&gt;
-
     </code>
 </pre>
 

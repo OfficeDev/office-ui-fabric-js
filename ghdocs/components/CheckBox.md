@@ -31,16 +31,13 @@ State | Applied to | Result
 
 <pre>
     <code>
- 
-
 &lt;div class&#x3D;&quot;ms-CheckBox&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;ms-CheckBox-input&quot;&gt;
     &lt;label role&#x3D;&quot;checkbox&quot;
         class&#x3D;&quot;ms-CheckBox-field &quot;
         tabindex&#x3D;&quot;0&quot;
         aria-checked&#x3D;&quot;false&quot;
-        name&#x3D;&quot;checkboxa&quot;
-&gt;
+        name&#x3D;&quot;checkboxa&quot;&gt;
         &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Checkbox&lt;/span&gt;
     &lt;/label&gt;
 &lt;/div&gt;

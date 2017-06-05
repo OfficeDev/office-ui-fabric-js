@@ -70,11 +70,10 @@ This component has only the default state.
 &lt;div class&#x3D;&quot;ms-CheckBox&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;ms-CheckBox-input&quot;&gt;
     &lt;label role&#x3D;&quot;checkbox&quot;
-        class&#x3D;&quot;ms-CheckBox-field &quot;
+        class&#x3D;&quot;ms-CheckBox-field&quot;
         tabindex&#x3D;&quot;0&quot;
         aria-checked&#x3D;&quot;false&quot;
-        name&#x3D;&quot;checkboxa&quot;
-&gt;
+        name&#x3D;&quot;checkboxa&quot;&gt;
         &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option1&lt;/span&gt;
     &lt;/label&gt;
 &lt;/div&gt;
@@ -84,27 +83,21 @@ This component has only the default state.
 &lt;div class&#x3D;&quot;ms-CheckBox&quot;&gt; 
     &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;ms-CheckBox-input&quot;&gt;
     &lt;label role&#x3D;&quot;checkbox&quot;
-        class&#x3D;&quot;ms-CheckBox-field &quot;
+        class&#x3D;&quot;ms-CheckBox-field&quot;
         tabindex&#x3D;&quot;0&quot;
         aria-checked&#x3D;&quot;false&quot;
-        name&#x3D;&quot;checkboxa&quot;
-&gt;
+        name&#x3D;&quot;checkboxa&quot;&gt;
         &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option2&lt;/span&gt;
     &lt;/label&gt;
 &lt;/div&gt;
 
     &lt;/div&gt;
-      &lt;div class&#x3D;&quot;ms-Dialog-actions&quot;&gt;
-          
-&lt;button class&#x3D;&quot;ms-Button ms-Dialog-action
-  ms-Button--primary
-  &quot;&gt;
+      &lt;div class&#x3D;&quot;ms-Dialog-actions&quot;&gt;&lt;button class&#x3D;&quot;ms-Button ms-Dialog-action
+  ms-Button--primary&quot;&gt;
   &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Save&lt;/span&gt;
 &lt;/button&gt;
           
-&lt;button class&#x3D;&quot;ms-Button ms-Dialog-action
-  
-  &quot;&gt;
+&lt;button class&#x3D;&quot;ms-Button ms-Dialog-action&quot;&gt;
   &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Cancel&lt;/span&gt;
 &lt;/button&gt;
       &lt;/div&gt;
@@ -129,11 +122,9 @@ This component has only the default state.
     </code>
 </pre>
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a single Dialog component on the page:
 
-    or add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a single Dialog component on the page:
-
-    
-    <pre>
+   <pre>
         <code>
      &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
     var DialogElement &#x3D; document.querySelector(&quot;.ms-Dialog&quot;);
