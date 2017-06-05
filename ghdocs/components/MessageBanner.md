@@ -97,7 +97,7 @@ This component has a dependency on Button.
 
   // When clicking the button, open the MessageBanner
   MessageBannerButton.onclick = function() {
-    MessageBanner.showBanner();
+    MessageBanner.show();
     this.classList.add("is-hidden");
   };
 
