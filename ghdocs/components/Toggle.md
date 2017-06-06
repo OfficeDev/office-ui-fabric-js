@@ -34,17 +34,14 @@ Allows for turning on or off a setting. This is best suited for simple, singular
 
 <pre>
     <code>
- 
-
-&lt;div class&#x3D;&quot;ms-Toggle  &quot;&gt;
-  &lt;span class&#x3D;&quot;ms-Toggle-description&quot;&gt;Let apps use my location&lt;/span&gt;
-  &lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;demo-toggle-3&quot; class&#x3D;&quot;ms-Toggle-input&quot; /&gt;
-  &lt;label for&#x3D;&quot;demo-toggle-3&quot; class&#x3D;&quot;ms-Toggle-field&quot;  tabindex&#x3D;&quot;0&quot; &gt;
-    &lt;span class&#x3D;&quot;ms-Label ms-Label--off&quot;&gt;Off&lt;/span&gt;
-    &lt;span class&#x3D;&quot;ms-Label ms-Label--on&quot;&gt;On&lt;/span&gt;
-  &lt;/label&gt;
-&lt;/div&gt;
-
+<div class="ms-Toggle">
+  <span class="ms-Toggle-description">Let apps use my location</span>
+  <input type="checkbox" id="demo-toggle-3" class="ms-Toggle-input"/>
+  <label for="demo-toggle-3" class="ms-Toggle-field"  tabindex="0">
+    <span class="ms-Label ms-Label--off">Off</span>
+    <span class="ms-Label ms-Label--on">On</span>
+  </label>
+</div>
     </code>
 </pre>
 
@@ -52,12 +49,12 @@ Allows for turning on or off a setting. This is best suited for simple, singular
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-    var ToggleElements &#x3D; document.querySelectorAll(&quot;.ms-Toggle&quot;);
-    for(var i &#x3D; 0; i &lt; ToggleElements.length; i++) {
-        new fabric[&#x27;Toggle&#x27;](ToggleElements[i]);
+ <script type="text/javascript">
+    var ToggleElements = document.querySelectorAll(".ms-Toggle");
+    for(var i = 0; i < ToggleElements.length; i++) {
+        new fabric['Toggle'](ToggleElements[i]);
     }
-&lt;/script&gt;
+</script>
     </code>
 </pre>
 
@@ -65,11 +62,3 @@ Allows for turning on or off a setting. This is best suited for simple, singular
 
 ## Dependencies
 This component has a dependency on the Label component.
-
-
-<script type="text/javascript">
-    var ToggleElements = document.querySelectorAll(".ms-Toggle");
-    for(var i = 0; i < ToggleElements.length; i++) {
-        new fabric['Toggle'](ToggleElements[i]);
-    }
-</script>

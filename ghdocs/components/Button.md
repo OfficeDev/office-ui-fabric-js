@@ -68,9 +68,9 @@ State | Applied to | Result
 
 <pre>
     <code> 
-&lt;button class&#x3D;&quot;ms-Button&quot;&gt;
-  &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Create Account&lt;/span&gt;
-&lt;/button&gt;
+<button class="ms-Button">
+  <span class="ms-Button-label">Create Account</span>
+</button>
     </code>
 </pre>
 
@@ -78,15 +78,14 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-    var ButtonElements &#x3D; document.querySelectorAll(&quot;.ms-Button&quot;);
-    for(var i &#x3D; 0; i &lt; ButtonElements.length; i++) {
-        new fabric[&#x27;Button&#x27;](ButtonElements[i], function() {
+ <script type="text/javascript">
+    var ButtonElements = document.querySelectorAll(".ms-Button");
+    for(var i = 0; i < ButtonElements.length; i++) {
+        new fabric['Button'](ButtonElements[i], function() {
         	// Insert Event Here
         });
     }
-&lt;/script&gt;
-
+</script>
     </code>
 </pre>
 
@@ -97,14 +96,3 @@ This component has no dependencies.
 
 ## Accessibility
 Focus styles are included for keyboard navigation.
-
-
-<script type="text/javascript">
-    var ButtonElements = document.querySelectorAll(".ms-Button");
-    for(var i = 0; i < ButtonElements.length; i++) {
-        new fabric['Button'](ButtonElements[i], function() {
-        	// Insert Event Here
-        });
-    }
-</script>
-

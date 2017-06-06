@@ -48,15 +48,10 @@ Allows for the input of text. Can be a single line or multiple lines. Typically 
 
 <pre>
     <code>
- 
-
-&lt;div class&#x3D;&quot;ms-TextField  &quot;&gt;
-  &lt;label class&#x3D;&quot;ms-Label&quot;&gt;Name&lt;/label&gt;
-  &lt;input class&#x3D;&quot;ms-TextField-field&quot; type&#x3D;&quot;text&quot; value&#x3D;&quot;&quot; placeholder&#x3D;&quot;&quot; &gt;
-  
-  
-&lt;/div&gt;
-
+<div class="ms-TextField">
+  <label class="ms-Label">Name</label>
+  <input class="ms-TextField-field" type="text" value="" placeholder="">  
+</div>
     </code>
 </pre>
 
@@ -64,12 +59,12 @@ Allows for the input of text. Can be a single line or multiple lines. Typically 
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-    var TextFieldElements &#x3D; document.querySelectorAll(&quot;.ms-TextField&quot;);
-    for(var i &#x3D; 0; i &lt; TextFieldElements.length; i++) {
-        new fabric[&#x27;TextField&#x27;](TextFieldElements[i]);
+ <script type="text/javascript">
+    var TextFieldElements = document.querySelectorAll(".ms-TextField");
+    for(var i = 0; i < TextFieldElements.length; i++) {
+        new fabric['TextField'](TextFieldElements[i]);
     }
-&lt;/script&gt;
+</script>
     </code>
 </pre>
 

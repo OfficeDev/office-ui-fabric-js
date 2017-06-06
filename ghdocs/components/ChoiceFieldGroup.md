@@ -25,58 +25,58 @@ Used to indicate a single choice from multiple options.
 
 <pre>
     <code>
-&lt;div class&#x3D;&quot;ms-ChoiceFieldGroup&quot; id&#x3D;&quot;choicefieldgroup&quot; role&#x3D;&quot;radiogroup&quot;&gt;
-  &lt;div class&#x3D;&quot;ms-ChoiceFieldGroup-title&quot;&gt;
-    &lt;label class&#x3D;&quot;ms-Label  is-required &quot;&gt;Unselected&lt;/label&gt;
-  &lt;/div&gt;
+<div class="ms-ChoiceFieldGroup" id="choicefieldgroup" role="radiogroup">
+  <div class="ms-ChoiceFieldGroup-title">
+    <label class="ms-Label  is-required ">Unselected</label>
+  </div>
   
-&lt;ul class&#x3D;&quot;ms-ChoiceFieldGroup-list&quot;&gt;
-  &lt;li class&#x3D;&quot;ms-RadioButton&quot;&gt; 
-    &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;ms-RadioButton-input&quot;&gt;
-    &lt;label role&#x3D;&quot;radio&quot;
-        class&#x3D;&quot;ms-RadioButton-field&quot;
-        tabindex&#x3D;&quot;0&quot;
-        aria-checked&#x3D;&quot;false&quot;
-        name&#x3D;&quot;choicefieldgroup&quot;&gt;
-        &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option 1&lt;/span&gt;
-    &lt;/label&gt;
-  &lt;/li&gt; 
+<ul class="ms-ChoiceFieldGroup-list">
+  <li class="ms-RadioButton"> 
+    <input tabindex="-1" type="radio" class="ms-RadioButton-input">
+    <label role="radio"
+        class="ms-RadioButton-field"
+        tabindex="0"
+        aria-checked="false"
+        name="choicefieldgroup">
+        <span class="ms-Label">Option 1</span>
+    </label>
+  </li> 
   
-  &lt;li class&#x3D;&quot;ms-RadioButton&quot;&gt; 
-    &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;ms-RadioButton-input&quot;&gt;
-    &lt;label role&#x3D;&quot;radio&quot;
-        class&#x3D;&quot;ms-RadioButton-field&quot;
-        tabindex&#x3D;&quot;0&quot;
-        aria-checked&#x3D;&quot;false&quot;
-        name&#x3D;&quot;choicefieldgroup&quot;&gt;
-        &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option 2&lt;/span&gt;
-    &lt;/label&gt;
-   &lt;/li&gt; 
+  <li class="ms-RadioButton"> 
+    <input tabindex="-1" type="radio" class="ms-RadioButton-input">
+    <label role="radio"
+        class="ms-RadioButton-field"
+        tabindex="0"
+        aria-checked="false"
+        name="choicefieldgroup">
+        <span class="ms-Label">Option 2</span>
+    </label>
+   </li> 
    
-  &lt;li class&#x3D;&quot;ms-RadioButton&quot;&gt; 
-    &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;ms-RadioButton-input&quot;&gt;
-    &lt;label role&#x3D;&quot;radio&quot;
-        class&#x3D;&quot;ms-RadioButton-field is-disabled&quot;
-        tabindex&#x3D;&quot;0&quot;
-        aria-checked&#x3D;&quot;false&quot;
-        name&#x3D;&quot;choicefieldgroup&quot;
-        aria-disabled&#x3D;&quot;true&quot;&gt;
-        &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option 3&lt;/span&gt;
-    &lt;/label&gt;
-  &lt;/li&gt; 
+  <li class="ms-RadioButton"> 
+    <input tabindex="-1" type="radio" class="ms-RadioButton-input">
+    <label role="radio"
+        class="ms-RadioButton-field is-disabled"
+        tabindex="0"
+        aria-checked="false"
+        name="choicefieldgroup"
+        aria-disabled="true">
+        <span class="ms-Label">Option 3</span>
+    </label>
+  </li> 
   
-  &lt;li class&#x3D;&quot;ms-RadioButton&quot;&gt; 
-    &lt;input tabindex&#x3D;&quot;-1&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;ms-RadioButton-input&quot;&gt;
-    &lt;label role&#x3D;&quot;radio&quot;
-        class&#x3D;&quot;ms-RadioButton-field&quot;
-        tabindex&#x3D;&quot;0&quot;
-        aria-checked&#x3D;&quot;false&quot;
-        name&#x3D;&quot;choicefieldgroup&quot;&gt;
-        &lt;span class&#x3D;&quot;ms-Label&quot;&gt;Option 4&lt;/span&gt;
-    &lt;/label&gt;
-   &lt;/li&gt; 
- &lt;/ul&gt;
-&lt;/div&gt; 
+  <li class="ms-RadioButton"> 
+    <input tabindex="-1" type="radio" class="ms-RadioButton-input">
+    <label role="radio"
+        class="ms-RadioButton-field"
+        tabindex="0"
+        aria-checked="false"
+        name="choicefieldgroup">
+        <span class="ms-Label">Option 4</span>
+    </label>
+   </li> 
+ </ul>
+</div> 
     </code>
 </pre>
 
@@ -84,12 +84,12 @@ Used to indicate a single choice from multiple options.
 
 <pre>
     <code>
-&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-  var ChoiceFieldGroupElements &#x3D; document.querySelectorAll(&quot;.ms-ChoiceFieldGroup&quot;);
-  for(var i &#x3D; 0; i &lt; ChoiceFieldGroupElements.length; i++) {
-        new fabric[&#x27;ChoiceFieldGroup&#x27;](ChoiceFieldGroupElements[i]);
+<script type="text/javascript">
+  var ChoiceFieldGroupElements = document.querySelectorAll(".ms-ChoiceFieldGroup");
+  for(var i = 0; i < ChoiceFieldGroupElements.length; i++) {
+        new fabric['ChoiceFieldGroup'](ChoiceFieldGroupElements[i]);
     }
-&lt;/script&gt;
+</script>
     </code>
 </pre>
 

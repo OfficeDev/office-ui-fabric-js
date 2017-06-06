@@ -33,20 +33,17 @@ State | Applied to | Result
 
 <pre>
     <code>
- 
-
-
-&lt;div class&#x3D;&quot;ms-Dropdown  &quot; tabindex&#x3D;&quot;0&quot;&gt;
-  &lt;label class&#x3D;&quot;ms-Label&quot;&gt;Dropdown label&lt;/label&gt;
-  &lt;i class&#x3D;&quot;ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown&quot;&gt;&lt;/i&gt;
-  &lt;select class&#x3D;&quot;ms-Dropdown-select&quot;&gt;
-      &lt;option&gt;Choose a sound&amp;amp;hellip;&lt;/option&gt;
-      &lt;option&gt;Dog barking&lt;/option&gt;
-      &lt;option&gt;Wind blowing&lt;/option&gt;
-      &lt;option&gt;Duck quacking&lt;/option&gt;
-      &lt;option&gt;Cow mooing&lt;/option&gt;
-  &lt;/select&gt;
-&lt;/div&gt;
+<div class="ms-Dropdown  " tabindex="0">
+  <label class="ms-Label">Dropdown label</label>
+  <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"></i>
+  <select class="ms-Dropdown-select">
+      <option>Choose a sound&amp;hellip;</option>
+      <option>Dog barking</option>
+      <option>Wind blowing</option>
+      <option>Duck quacking</option>
+      <option>Cow mooing</option>
+  </select>
+</div>
     </code>
 </pre>
 
@@ -54,13 +51,12 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-  var DropdownHTMLElements &#x3D; document.querySelectorAll(&#x27;.ms-Dropdown&#x27;);
-  for (var i &#x3D; 0; i &lt; DropdownHTMLElements.length; ++i) {
-    var Dropdown &#x3D; new fabric[&#x27;Dropdown&#x27;](DropdownHTMLElements[i]);
+ <script type="text/javascript">
+  var DropdownHTMLElements = document.querySelectorAll('.ms-Dropdown');
+  for (var i = 0; i < DropdownHTMLElements.length; ++i) {
+    var Dropdown = new fabric['Dropdown'](DropdownHTMLElements[i]);
   }
-&lt;/script&gt;
-
+  </script>
     </code>
 </pre>
 
@@ -72,11 +68,3 @@ This component depends on Panel for when it is rendered on mobile.
 
 ## Accessibility
 More details will be added here.
-
-
-<script type="text/javascript">
-  var DropdownHTMLElements = document.querySelectorAll('.ms-Dropdown');
-  for (var i = 0; i < DropdownHTMLElements.length; ++i) {
-    var Dropdown = new fabric['Dropdown'](DropdownHTMLElements[i]);
-  }
-</script>

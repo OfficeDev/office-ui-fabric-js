@@ -32,10 +32,10 @@ Partially obscures the page to create a modal experience and focus the user's at
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-    var OverlayElement &#x3D; document.querySelector(&#x27;.ms-Overlay&#x27;);
-    var Overlay &#x3D; new fabric[&#x27;Overlay&#x27;](OverlayElement);
-&lt;/script&gt;
+ <script type="text/javascript">
+    var OverlayElement = document.querySelector('.ms-Overlay');
+    var Overlay = new fabric['Overlay'](OverlayElement);
+</script>
     </code>
 </pre>
 

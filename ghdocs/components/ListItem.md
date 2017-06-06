@@ -51,26 +51,19 @@ Use `is-unread` to indicate that the item has not been read.
 
 <pre>
     <code>
- 
-
-&lt;li class&#x3D;&quot;ms-ListItem  &quot; tabindex&#x3D;&quot;0&quot;&gt;
-  
-  &lt;span class&#x3D;&quot;ms-ListItem-primaryText&quot;&gt;Alton Lafferty&lt;/span&gt;
-  &lt;span class&#x3D;&quot;ms-ListItem-secondaryText&quot;&gt;Meeting notes&lt;/span&gt;
-  &lt;span class&#x3D;&quot;ms-ListItem-tertiaryText&quot;&gt;Today we discussed the importance of a, b, and c in regards to d.&lt;/span&gt;
-  &lt;span class&#x3D;&quot;ms-ListItem-metaText&quot;&gt;2:42p&lt;/span&gt;
-  
-  &lt;div class&#x3D;&quot;ms-ListItem-selectionTarget&quot;&gt;&lt;/div&gt;
-  &lt;div class&#x3D;&quot;ms-ListItem-actions&quot;&gt;
-    
-    &lt;div class&#x3D;&quot;ms-ListItem-action&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--Mail&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;ms-ListItem-action&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--Delete&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;ms-ListItem-action&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--Flag&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;ms-ListItem-action&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--Pinned&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/li&gt;
-
-
+<li class="ms-ListItem" tabindex="0">  
+  <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+  <span class="ms-ListItem-secondaryText">Meeting notes</span>
+  <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+  <span class="ms-ListItem-metaText">2:42p</span>  
+  <div class="ms-ListItem-selectionTarget"></div>
+  <div class="ms-ListItem-actions">    
+    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Mail"></i></div>
+    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Delete"></i></div>
+    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Flag"></i></div>
+    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Pinned"></i></div>
+  </div>
+</li>
     </code>
 </pre>
 
@@ -78,12 +71,12 @@ Use `is-unread` to indicate that the item has not been read.
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-    var ListItemElements &#x3D; document.querySelectorAll(&quot;.ms-ListItem&quot;);
-    for(var i &#x3D; 0; i &lt; ListItemElements.length; i++) {
-        new fabric[&#x27;ListItem&#x27;](ListItemElements[i]);
+ <script type="text/javascript">
+    var ListItemElements = document.querySelectorAll(".ms-ListItem");
+    for(var i = 0; i < ListItemElements.length; i++) {
+        new fabric['ListItem'](ListItemElements[i]);
     }
-&lt;/script&gt;
+</script>
     </code>
 </pre>
 
@@ -95,11 +88,3 @@ This component has no dependencies on other components, although it is most ofte
 
 ## Accessibility
 More details will be added here.
-
-
-<script type="text/javascript">
-    var ListItemElements = document.querySelectorAll(".ms-ListItem");
-    for(var i = 0; i < ListItemElements.length; i++) {
-        new fabric['ListItem'](ListItemElements[i]);
-    }
-</script>

@@ -74,26 +74,26 @@ This component has only the default state.
 
 <pre>
     <code>
- &lt;div class&#x3D;&quot;ms-CalloutExample&quot;&gt;
-  &lt;div class&#x3D;&quot;ms-Callout is-hidden&quot;&gt;
-    &lt;div class&#x3D;&quot;ms-Callout-main&quot;&gt;
-      &lt;div class&#x3D;&quot;ms-Callout-header&quot;&gt;
-        &lt;p class&#x3D;&quot;ms-Callout-title&quot;&gt;All of your favorite people&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;ms-Callout-inner&quot;&gt;
-        &lt;div class&#x3D;&quot;ms-Callout-content&quot;&gt;
-          &lt;p class&#x3D;&quot;ms-Callout-subText  ms-Callout-subText-- &quot;&gt;Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;ms-Callout-actions&quot;&gt;&lt;a class&#x3D;&quot;ms-Link&quot;&gt;Learn more&lt;/a&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;     
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;ms-CalloutExample-button&quot;&gt;&lt;button class&#x3D;&quot;ms-Button&quot;&gt;
-      &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Open Callout&lt;/span&gt;
-    &lt;/button&gt;  
-  &lt;/div&gt;
-&lt;/div&gt;
+ <div class="ms-CalloutExample">
+  <div class="ms-Callout is-hidden">
+    <div class="ms-Callout-main">
+      <div class="ms-Callout-header">
+        <p class="ms-Callout-title">All of your favorite people</p>
+      </div>
+      <div class="ms-Callout-inner">
+        <div class="ms-Callout-content">
+          <p class="ms-Callout-subText ms-Callout-subText--">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
+        </div>
+        <div class="ms-Callout-actions"><a class="ms-Link">Learn more</a>
+        </div>
+      </div>     
+    </div>
+  </div>
+  <div class="ms-CalloutExample-button"><button class="ms-Button">
+      <span class="ms-Button-label">Open Callout</span>
+    </button>  
+  </div>
+</div>
     
 </code>
 </pre>
@@ -102,18 +102,18 @@ This component has only the default state.
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-  var CalloutExamples &#x3D; document.querySelectorAll(&quot;.ms-CalloutExample&quot;);
-  for(var i &#x3D; 0; i &lt; CalloutExamples.length; i++) {
-    var Example &#x3D; CalloutExamples[i];
-    var ExampleButtonElement &#x3D; Example.querySelector(&quot;.ms-CalloutExample-button .ms-Button&quot;);
-    var CalloutElement &#x3D; Example.querySelector(&quot;.ms-Callout&quot;);
-    new fabric[&#x27;Callout&#x27;](
+ <script type="text/javascript">
+  var CalloutExamples = document.querySelectorAll(".ms-CalloutExample");
+  for(var i = 0; i < CalloutExamples.length; i++) {
+    var Example = CalloutExamples[i];
+    var ExampleButtonElement = Example.querySelector(".ms-CalloutExample-button .ms-Button");
+    var CalloutElement = Example.querySelector(".ms-Callout");
+    new fabric['Callout'](
           CalloutElement, 
           ExampleButtonElement,
-          &quot;right&quot;); 
+          "right"); 
     }
-&lt;/script&gt;
+</script>
     </code>
 </pre>
 
@@ -125,17 +125,3 @@ Button, Label, Link, ContextualHost, CommandButton
 ## Accessibility
 Focus styles are included for all of the actions (links and buttons) included within a Callout.
 
-
-<script type="text/javascript">
-  var CalloutExamples = document.querySelectorAll(".ms-CalloutExample");
-  for(var i = 0; i < CalloutExamples.length; i++) {
-    var Example = CalloutExamples[i];
-    var ExampleButtonElement = Example.querySelector(".ms-CalloutExample-button .ms-Button");
-    var CalloutElement = Example.querySelector(".ms-Callout");
-    new fabric['Callout'](
-          CalloutElement, 
-          ExampleButtonElement,
-          "right"
-    );
-  }
-</script>

@@ -25,34 +25,34 @@ This component has only the default state.
 
 <pre>
     <code>
- &lt;div class&#x3D;&quot;docs-MessageBannerExample&quot;&gt;
+ <div class="docs-MessageBannerExample">
   
   
-  &lt;div class&#x3D;&quot;ms-MessageBanner&quot;&gt;
-    &lt;div class&#x3D;&quot;ms-MessageBanner-content&quot;&gt;
-      &lt;div class&#x3D;&quot;ms-MessageBanner-text&quot;&gt;
-        &lt;div class&#x3D;&quot;ms-MessageBanner-clipper&quot;&gt;
-          You&amp;#x27;ve reached your total storage on OneDrive. Please upgrade your storage plan if you need more storage.
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;button class&#x3D;&quot;ms-MessageBanner-expand&quot;&gt;
-        &lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronDown&quot;&gt;&lt;/i&gt;
-      &lt;/button&gt;
-      &lt;div class&#x3D;&quot;ms-MessageBanner-action&quot;&gt;
+  <div class="ms-MessageBanner">
+    <div class="ms-MessageBanner-content">
+      <div class="ms-MessageBanner-text">
+        <div class="ms-MessageBanner-clipper">
+          You&#x27;ve reached your total storage on OneDrive. Please upgrade your storage plan if you need more storage.
+        </div>
+      </div>
+      <button class="ms-MessageBanner-expand">
+        <i class="ms-Icon ms-Icon--ChevronDown"></i>
+      </button>
+      <div class="ms-MessageBanner-action">
         
-  &lt;button class&#x3D;&quot;ms-Button 
+  <button class="ms-Button 
     ms-Button--primary
-    &quot;&gt;
-    &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Get More Storage&lt;/span&gt;
-  &lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;button class&#x3D;&quot;ms-MessageBanner-close&quot;&gt;
-      &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Clear&quot;&gt;&lt;/i&gt;
-    &lt;/button&gt;
-  &lt;/div&gt;
-  &lt;button class&#x3D;&quot;ms-Button docs-MessageBannerExample-button is-hidden&quot;&gt;Show the banner&lt;/button&gt;
-&lt;/div&gt;
+    ">
+    <span class="ms-Button-label">Get More Storage</span>
+  </button>
+      </div>
+    </div>
+    <button class="ms-MessageBanner-close">
+      <i class="ms-Icon ms-Icon--Clear"></i>
+    </button>
+  </div>
+  <button class="ms-Button docs-MessageBannerExample-button is-hidden">Show the banner</button>
+</div>
     </code>
 </pre>
 
@@ -60,25 +60,25 @@ This component has only the default state.
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-  var MessageBannerExample &#x3D; document.querySelector(&#x27;.docs-MessageBannerExample&#x27;);
-  var MessageBanner &#x3D; new fabric[&#x27;MessageBanner&#x27;](MessageBannerExample.querySelector(&#x27;.ms-MessageBanner&#x27;));
-  var MessageBannerButton &#x3D; MessageBannerExample.querySelector(&#x27;.docs-MessageBannerExample-button&#x27;);
-  var MessageBannerCloseButton &#x3D; MessageBannerExample.querySelector(&#x27;.ms-MessageBanner-close&#x27;);
+ <script type="text/javascript">
+  var MessageBannerExample = document.querySelector('.docs-MessageBannerExample');
+  var MessageBanner = new fabric['MessageBanner'](MessageBannerExample.querySelector('.ms-MessageBanner'));
+  var MessageBannerButton = MessageBannerExample.querySelector('.docs-MessageBannerExample-button');
+  var MessageBannerCloseButton = MessageBannerExample.querySelector('.ms-MessageBanner-close');
 
   // When clicking the button, open the MessageBanner
-  MessageBannerButton.onclick &#x3D; function() {
+  MessageBannerButton.onclick = function() {
     MessageBanner.show();
-    this.classList.add(&quot;is-hidden&quot;);
+    this.classList.add("is-hidden");
   };
 
-  // Hide &quot;Show the Banner Button&quot; when banner is active
-  MessageBannerCloseButton.addEventListener(&quot;click&quot;, function(){
+  // Hide "Show the Banner Button" when banner is active
+  MessageBannerCloseButton.addEventListener("click", function(){
   	setTimeout(function() {
-  		MessageBannerButton.classList.remove(&quot;is-hidden&quot;);
+  		MessageBannerButton.classList.remove("is-hidden");
   	}, 500);
   });
-&lt;/script&gt;
+</script>
     </code>
 </pre>
 

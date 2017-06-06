@@ -62,19 +62,17 @@ Use sparingly when there's an exceptional need to tell the use that something we
 
 <pre>
     <code>
- 
-
-&lt;div class&#x3D;&quot;ms-MessageBar &quot;&gt;
-  &lt;div class&#x3D;&quot;ms-MessageBar-content&quot;&gt;
-    &lt;div class&#x3D;&quot;ms-MessageBar-icon&quot;&gt;
-      &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Info&quot;&gt;&lt;/i&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;ms-MessageBar-text&quot;&gt;
-      Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.&lt;br&gt;
-      &lt;a href&#x3D;&quot;&quot; class&#x3D;&quot;ms-Link&quot;&gt;Hyperlink string&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+<div class="ms-MessageBar">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--Info"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
 
     </code>
 </pre>

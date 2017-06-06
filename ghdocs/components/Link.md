@@ -24,15 +24,12 @@ This component has only the default state.
 
 <pre>
     <code>
- &lt;div class&#x3D;&quot;ms-font-m&quot;&gt;
-    
-    
-    &lt;a class&#x3D;&quot;ms-Link  &quot; 
-       href&#x3D;&quot;#&quot;  
-       title&#x3D;&quot;More info about Example Link&quot;  
-      &gt;Example Link&lt;/a&gt;
-    
-&lt;/div&gt;
+ <div class="ms-font-m">
+    <a class="ms-Link" 
+       href="#"  
+       title="More info about Example Link"  
+      >Example Link</a>    
+</div>
     </code>
 </pre>
 

@@ -31,51 +31,48 @@ State | Applied to | Result
 
 <pre>
     <code>
- 
-
-
-&lt;div class&#x3D;&quot;ms-DatePicker&quot;&gt;
-  &lt;div class&#x3D;&quot;ms-TextField&quot;&gt;
-    &lt;label class&#x3D;&quot;ms-Label&quot;&gt;Start date&lt;/label&gt;
-    &lt;i class&#x3D;&quot;ms-DatePicker-event ms-Icon ms-Icon--Event&quot;&gt;&lt;/i&gt;
-    &lt;input class&#x3D;&quot;ms-TextField-field&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Select a date&amp;hellip;&quot;&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;ms-DatePicker-monthComponents&quot;&gt;
-    &lt;span class&#x3D;&quot;ms-DatePicker-nextMonth js-nextMonth&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-    &lt;span class&#x3D;&quot;ms-DatePicker-prevMonth js-prevMonth&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronLeft&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-    &lt;div class&#x3D;&quot;ms-DatePicker-headerToggleView js-showMonthPicker&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;span class&#x3D;&quot;ms-DatePicker-goToday js-goToday&quot;&gt;Go to today&lt;/span&gt;
-  &lt;div class&#x3D;&quot;ms-DatePicker-monthPicker&quot;&gt;
-    &lt;div class&#x3D;&quot;ms-DatePicker-header&quot;&gt;
-      &lt;div class&#x3D;&quot;ms-DatePicker-yearComponents&quot;&gt;
-        &lt;span class&#x3D;&quot;ms-DatePicker-nextYear js-nextYear&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-        &lt;span class&#x3D;&quot;ms-DatePicker-prevYear js-prevYear&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronLeft&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;ms-DatePicker-currentYear js-showYearPicker&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;ms-DatePicker-optionGrid&quot;&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;0&quot;&gt;Jan&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;1&quot;&gt;Feb&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;2&quot;&gt;Mar&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;3&quot;&gt;Apr&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;4&quot;&gt;May&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;5&quot;&gt;Jun&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;6&quot;&gt;Jul&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;7&quot;&gt;Aug&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;8&quot;&gt;Sep&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;9&quot;&gt;Oct&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;10&quot;&gt;Nov&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month&#x3D;&quot;11&quot;&gt;Dec&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;ms-DatePicker-yearPicker&quot;&gt;
-    &lt;div class&#x3D;&quot;ms-DatePicker-decadeComponents&quot;&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-nextDecade js-nextDecade&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-DatePicker-prevDecade js-prevDecade&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--ChevronLeft&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+<div class="ms-DatePicker">
+  <div class="ms-TextField">
+    <label class="ms-Label">Start date</label>
+    <i class="ms-DatePicker-event ms-Icon ms-Icon--Event"></i>
+    <input class="ms-TextField-field" type="text" placeholder="Select a date&hellip;">
+  </div>
+  <div class="ms-DatePicker-monthComponents">
+    <span class="ms-DatePicker-nextMonth js-nextMonth"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+    <span class="ms-DatePicker-prevMonth js-prevMonth"><i class="ms-Icon ms-Icon--ChevronLeft"></i></span>
+    <div class="ms-DatePicker-headerToggleView js-showMonthPicker"></div>
+  </div>
+  <span class="ms-DatePicker-goToday js-goToday">Go to today</span>
+  <div class="ms-DatePicker-monthPicker">
+    <div class="ms-DatePicker-header">
+      <div class="ms-DatePicker-yearComponents">
+        <span class="ms-DatePicker-nextYear js-nextYear"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+        <span class="ms-DatePicker-prevYear js-prevYear"><i class="ms-Icon ms-Icon--ChevronLeft"></i></span>
+      </div>
+      <div class="ms-DatePicker-currentYear js-showYearPicker"></div>
+    </div>
+    <div class="ms-DatePicker-optionGrid">
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="0">Jan</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="1">Feb</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="2">Mar</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="3">Apr</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="4">May</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="5">Jun</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="6">Jul</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="7">Aug</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="8">Sep</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="9">Oct</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="10">Nov</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="11">Dec</span>
+    </div>
+  </div>
+  <div class="ms-DatePicker-yearPicker">
+    <div class="ms-DatePicker-decadeComponents">
+      <span class="ms-DatePicker-nextDecade js-nextDecade"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+      <span class="ms-DatePicker-prevDecade js-prevDecade"><i class="ms-Icon ms-Icon--ChevronLeft"></i></span>
+    </div>
+  </div>
+</div>
 
     </code>
 </pre>
@@ -84,12 +81,12 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-  var DatePickerElements &#x3D; document.querySelectorAll(&quot;.ms-DatePicker&quot;);
-  for(var i &#x3D; 0; i &lt; DatePickerElements.length; i++) {
-    new fabric[&#x27;DatePicker&#x27;](DatePickerElements[i]);
+ <script type="text/javascript">
+  var DatePickerElements = document.querySelectorAll(".ms-DatePicker");
+  for(var i = 0; i < DatePickerElements.length; i++) {
+    new fabric['DatePicker'](DatePickerElements[i]);
   }
-&lt;/script&gt;
+</script>
 
     </code>
 </pre>
@@ -101,12 +98,4 @@ This component has no dependencies on other components. It does, however, requir
 
 ## Accessibility
 More details will be added here.
-
-
-<script type="text/javascript">
-  var DatePickerElements = document.querySelectorAll(".ms-DatePicker");
-  for(var i = 0; i < DatePickerElements.length; i++) {
-    new fabric['DatePicker'](DatePickerElements[i]);
-  }
-</script>
 

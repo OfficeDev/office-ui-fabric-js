@@ -40,34 +40,31 @@ A layout component that allows a user to switch between different sets of conten
 
 <pre>
     <code>
- 
-
-&lt;div class&#x3D;&quot;ms-Pivot &quot;&gt;
-  &lt;ul class&#x3D;&quot;ms-Pivot-links&quot;&gt;
-      &lt;li class&#x3D;&quot;ms-Pivot-link is-selected&quot; data-content&#x3D;&quot;files&quot; title&#x3D;&quot;My files&quot; tabindex&#x3D;&quot;1&quot;&gt;
+<div class="ms-Pivot">
+  <ul class="ms-Pivot-links">
+      <li class="ms-Pivot-link is-selected" data-content="files" title="My files" tabindex="1">
         My files
-      &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-Pivot-link &quot; data-content&#x3D;&quot;recent&quot; title&#x3D;&quot;Recent&quot; tabindex&#x3D;&quot;1&quot;&gt;
+      </li>
+      <li class="ms-Pivot-link" data-content="recent" title="Recent" tabindex="1">
         Recent
-      &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-Pivot-link &quot; data-content&#x3D;&quot;shared&quot; title&#x3D;&quot;Shared with me&quot; tabindex&#x3D;&quot;1&quot;&gt;
+      </li>
+      <li class="ms-Pivot-link" data-content="shared" title="Shared with me" tabindex="1">
         Shared with me
-      &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-Pivot-link&quot; tabindex&#x3D;&quot;1&quot;&gt;
-        &lt;i class&#x3D;&quot;ms-Pivot-ellipsis ms-Icon ms-Icon--More&quot;&gt;&lt;/i&gt;
-      &lt;/li&gt;
-  &lt;/ul&gt;
-    &lt;div class&#x3D;&quot;ms-Pivot-content&quot; data-content&#x3D;&quot;files&quot;&gt;
+      </li>
+      <li class="ms-Pivot-link" tabindex="1">
+        <i class="ms-Pivot-ellipsis ms-Icon ms-Icon--More"></i>
+      </li>
+  </ul>
+    <div class="ms-Pivot-content" data-content="files">
       This is the my files tab.
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;ms-Pivot-content&quot; data-content&#x3D;&quot;recent&quot;&gt;
+    </div>
+    <div class="ms-Pivot-content" data-content="recent">
       This is the recent tab.
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;ms-Pivot-content&quot; data-content&#x3D;&quot;shared&quot;&gt;
+    </div>
+    <div class="ms-Pivot-content" data-content="shared">
       This is the shared with me tab.
-    &lt;/div&gt;
-&lt;/div&gt;
-
+    </div>
+</div>
     </code>
 </pre>
 
@@ -75,12 +72,12 @@ A layout component that allows a user to switch between different sets of conten
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-  var PivotElements &#x3D; document.querySelectorAll(&quot;.ms-Pivot&quot;);
-  for(var i &#x3D; 0; i &lt; PivotElements.length; i++) {
-    new fabric[&#x27;Pivot&#x27;](PivotElements[i]);
+ <script type="text/javascript">
+  var PivotElements = document.querySelectorAll(".ms-Pivot");
+  for(var i = 0; i < PivotElements.length; i++) {
+    new fabric['Pivot'](PivotElements[i]);
   }
-&lt;/script&gt;
+</script>
 
     </code>
 </pre>
@@ -90,11 +87,3 @@ A layout component that allows a user to switch between different sets of conten
 
 ## Dependencies
 This component has no dependency on other components.
-
-
-<script type="text/javascript">
-  var PivotElements = document.querySelectorAll(".ms-Pivot");
-  for(var i = 0; i < PivotElements.length; i++) {
-    new fabric['Pivot'](PivotElements[i]);
-  }
-</script>

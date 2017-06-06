@@ -82,12 +82,12 @@ State | Applied to | Result
 <pre>
     <code>
  
-&lt;div class&#x3D;&quot;ms-CommandButton&quot;&gt;
-  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;&gt;
-      &lt;span class&#x3D;&quot;ms-CommandButton-icon ms-fontColor-themePrimary&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--CircleRing&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-      &lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;Command&lt;/span&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
+<div class="ms-CommandButton">
+  <button class="ms-CommandButton-button">
+      <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--CircleRing"></i></span>
+      <span class="ms-CommandButton-label">Command</span>
+  </button>
+</div>
     </code>
 </pre>
 
@@ -96,12 +96,12 @@ State | Applied to | Result
 
 <pre>
     <code>
-&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-  var CommandButtonElements &#x3D; document.querySelectorAll(&quot;.ms-CommandButton&quot;);
-  for(var i &#x3D; 0; i &lt; CommandButtonElements.length; i++) {
-    new fabric[&#x27;CommandButton&#x27;](CommandButtonElements[i]);
+<script type="text/javascript">
+  var CommandButtonElements = document.querySelectorAll(".ms-CommandButton");
+  for(var i = 0; i < CommandButtonElements.length; i++) {
+    new fabric['CommandButton'](CommandButtonElements[i]);
   }
-&lt;/script&gt;
+</script>
     </code>
 </pre>
 
@@ -111,11 +111,3 @@ ContextualMenu, ContextualHost
 
 ## Accessibility
 Focus styles are included for keyboard navigation.
-
-
-<script type="text/javascript">
-  var CommandButtonElements = document.querySelectorAll(".ms-CommandButton");
-  for(var i = 0; i < CommandButtonElements.length; i++) {
-    new fabric['CommandButton'](CommandButtonElements[i]);
-  }
-</script>

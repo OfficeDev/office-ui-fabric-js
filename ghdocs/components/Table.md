@@ -37,62 +37,60 @@ Rows can be selected.
 
 <pre>
     <code>
- 
-
-&lt;table class&#x3D;&quot;ms-Table &quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Location&lt;/th&gt;
-        &lt;th&gt;Modified&lt;/th&gt;
-        &lt;th&gt;Type&lt;/th&gt;
-        &lt;th&gt;File Name&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Location&lt;/td&gt;
-          &lt;td&gt;Modified&lt;/td&gt;
-          &lt;td&gt;Type&lt;/td&gt;
-          &lt;td&gt;File Name&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Location&lt;/td&gt;
-          &lt;td&gt;Modified&lt;/td&gt;
-          &lt;td&gt;Type&lt;/td&gt;
-          &lt;td&gt;File Name&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Location&lt;/td&gt;
-          &lt;td&gt;Modified&lt;/td&gt;
-          &lt;td&gt;Type&lt;/td&gt;
-          &lt;td&gt;File Name&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Location&lt;/td&gt;
-          &lt;td&gt;Modified&lt;/td&gt;
-          &lt;td&gt;Type&lt;/td&gt;
-          &lt;td&gt;File Name&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Location&lt;/td&gt;
-          &lt;td&gt;Modified&lt;/td&gt;
-          &lt;td&gt;Type&lt;/td&gt;
-          &lt;td&gt;File Name&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Location&lt;/td&gt;
-          &lt;td&gt;Modified&lt;/td&gt;
-          &lt;td&gt;Type&lt;/td&gt;
-          &lt;td&gt;File Name&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Location&lt;/td&gt;
-          &lt;td&gt;Modified&lt;/td&gt;
-          &lt;td&gt;Type&lt;/td&gt;
-          &lt;td&gt;File Name&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+<table class="ms-Table">
+  <thead>
+    <tr>
+        <th>Location</th>
+        <th>Modified</th>
+        <th>Type</th>
+        <th>File Name</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Location</td>
+          <td>Modified</td>
+          <td>Type</td>
+          <td>File Name</td>
+      </tr>
+      <tr>
+          <td>Location</td>
+          <td>Modified</td>
+          <td>Type</td>
+          <td>File Name</td>
+      </tr>
+      <tr>
+          <td>Location</td>
+          <td>Modified</td>
+          <td>Type</td>
+          <td>File Name</td>
+      </tr>
+      <tr>
+          <td>Location</td>
+          <td>Modified</td>
+          <td>Type</td>
+          <td>File Name</td>
+      </tr>
+      <tr>
+          <td>Location</td>
+          <td>Modified</td>
+          <td>Type</td>
+          <td>File Name</td>
+      </tr>
+      <tr>
+          <td>Location</td>
+          <td>Modified</td>
+          <td>Type</td>
+          <td>File Name</td>
+      </tr>
+      <tr>
+          <td>Location</td>
+          <td>Modified</td>
+          <td>Type</td>
+          <td>File Name</td>
+      </tr>
+  </tbody>
+</table>
 
     </code>
 </pre>
@@ -101,12 +99,12 @@ Rows can be selected.
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-    var TableElements &#x3D; document.querySelectorAll(&quot;.ms-Table&quot;);
-    for(var i &#x3D; 0; i &lt; TableElements.length; i++) {
-        new fabric[&#x27;Table&#x27;](TableElements[i]);
+ <script type="text/javascript">
+    var TableElements = document.querySelectorAll(".ms-Table");
+    for(var i = 0; i < TableElements.length; i++) {
+        new fabric['Table'](TableElements[i]);
     }
-&lt;/script&gt;
+</script>
 
     </code>
 </pre>
@@ -116,11 +114,4 @@ Rows can be selected.
 ## Dependencies
 This component has no dependency on other components.
 
-
-<script type="text/javascript">
-    var TableElements = document.querySelectorAll(".ms-Table");
-    for(var i = 0; i < TableElements.length; i++) {
-        new fabric['Table'](TableElements[i]);
-    }
-</script>
 

@@ -58,28 +58,28 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;div class&#x3D;&quot;ms-ContextualMenu-basic&quot;&gt;    
-    &lt;button class&#x3D;&quot;ms-Button ms-Button--primary&quot;&gt;
-      &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Open Example&lt;/span&gt;
-    &lt;/button&gt;    
-    &lt;ul class&#x3D;&quot;ms-ContextualMenu is-hidden&quot;&gt;
-      &lt;li class&#x3D;&quot;ms-ContextualMenu-item&quot;&gt;
-          &lt;a class&#x3D;&quot;ms-ContextualMenu-link&quot;tabindex&#x3D;&quot;1&quot;&gt;Animals&lt;/a&gt;            
-        &lt;/li&gt;
-        &lt;li class&#x3D;&quot;ms-ContextualMenu-item&quot;&gt;
-          &lt;a class&#x3D;&quot;ms-ContextualMenu-link&quot;tabindex&#x3D;&quot;1&quot;&gt;Books&lt;/a&gt;            
-        &lt;/li&gt;
-        &lt;li class&#x3D;&quot;ms-ContextualMenu-item&quot;&gt;
-          &lt;a class&#x3D;&quot;ms-ContextualMenu-link is-selected&quot;tabindex&#x3D;&quot;1&quot;&gt;Education&lt;/a&gt;            
-        &lt;/li&gt;
-        &lt;li class&#x3D;&quot;ms-ContextualMenu-item&quot;&gt;
-          &lt;a class&#x3D;&quot;ms-ContextualMenu-link&quot;tabindex&#x3D;&quot;1&quot;&gt;Music&lt;/a&gt;            
-        &lt;/li&gt;
-        &lt;li class&#x3D;&quot;ms-ContextualMenu-item&quot;&gt;
-          &lt;a class&#x3D;&quot;ms-ContextualMenu-link is-disabled&quot;tabindex&#x3D;&quot;1&quot;&gt;Sports&lt;/a&gt;            
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;    
+ <div class="ms-ContextualMenu-basic">    
+    <button class="ms-Button ms-Button--primary">
+      <span class="ms-Button-label">Open Example</span>
+    </button>    
+    <ul class="ms-ContextualMenu is-hidden">
+      <li class="ms-ContextualMenu-item">
+          <a class="ms-ContextualMenu-link"tabindex="1">Animals</a>            
+        </li>
+        <li class="ms-ContextualMenu-item">
+          <a class="ms-ContextualMenu-link"tabindex="1">Books</a>            
+        </li>
+        <li class="ms-ContextualMenu-item">
+          <a class="ms-ContextualMenu-link is-selected"tabindex="1">Education</a>            
+        </li>
+        <li class="ms-ContextualMenu-item">
+          <a class="ms-ContextualMenu-link"tabindex="1">Music</a>            
+        </li>
+        <li class="ms-ContextualMenu-item">
+          <a class="ms-ContextualMenu-link is-disabled"tabindex="1">Sports</a>            
+        </li>
+      </ul>
+    </div>    
     </code>
 </pre>
 
@@ -87,11 +87,11 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-    var ButtonElement &#x3D; document.querySelector(&quot;.ms-ContextualMenu-basic .ms-Button&quot;);
-    var ContextualMenuElement &#x3D; document.querySelector(&quot;.ms-ContextualMenu-basic .ms-ContextualMenu&quot;);
-    var contextualMenu &#x3D; new fabric[&#x27;ContextualMenu&#x27;](ContextualMenuElement, ButtonElement);
-&lt;/script&gt;
+ <script type="text/javascript">
+    var ButtonElement = document.querySelector(".ms-ContextualMenu-basic .ms-Button");
+    var ContextualMenuElement = document.querySelector(".ms-ContextualMenu-basic .ms-ContextualMenu");
+    var contextualMenu = new fabric['ContextualMenu'](ContextualMenuElement, ButtonElement);
+</script>
     </code>
 </pre>
 
@@ -103,10 +103,3 @@ This component has no dependencies.
 
 ## Accessibility
 More details will be added here.
-
-
-<script type="text/javascript">
-    var ButtonElement = document.querySelector(".ms-ContextualMenu-basic .ms-Button");
-    var ContextualMenuElement = document.querySelector(".ms-ContextualMenu-basic .ms-ContextualMenu");
-    var contextualMenu = new fabric['ContextualMenu'](ContextualMenuElement, ButtonElement);
-</script>

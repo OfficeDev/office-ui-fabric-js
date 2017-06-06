@@ -40,7 +40,7 @@ State | Applied to | Result
 <pre>
     <code>
  
-&lt;label class&#x3D;&quot;ms-Label  &quot;&gt;Name&lt;/label&gt;
+<label class="ms-Label  ">Name</label>
 
     </code>
 </pre>

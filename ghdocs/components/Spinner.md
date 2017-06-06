@@ -40,11 +40,7 @@ Displays the progress of an operation when the percentage complete can not be de
 
 <pre>
     <code>
- 
-
-&lt;div class&#x3D;&quot;ms-Spinner &quot;&gt;
-&lt;/div&gt;
-
+<div class="ms-Spinner"></div>
     </code>
 </pre>
 
@@ -52,28 +48,7 @@ Displays the progress of an operation when the percentage complete can not be de
 
 <pre>
     <code>
- &lt;script&gt;
-    if (typeof fabric !&#x3D;&#x3D; &quot;undefined&quot;) {
-        if (&#x27;Spinner&#x27; in fabric) {
-            var elements &#x3D; document.querySelectorAll(&#x27;.ms-Spinner&#x27;);
-            var i &#x3D; elements.length;
-            var component;
-            while(i--) {
-                component &#x3D; new fabric[&#x27;Spinner&#x27;](elements[i]);
-            }
-        }
-    }
-&lt;/script&gt;
-    </code>
-</pre>
-
-4. Verify that the component is working the same as in the sample above.
-
-## Dependencies
-This component has no dependency on other components.
-
-
-<script>
+ <script>
     if (typeof fabric !== "undefined") {
         if ('Spinner' in fabric) {
             var elements = document.querySelectorAll('.ms-Spinner');
@@ -85,3 +60,10 @@ This component has no dependency on other components.
         }
     }
 </script>
+    </code>
+</pre>
+
+4. Verify that the component is working the same as in the sample above.
+
+## Dependencies
+This component has no dependency on other components.

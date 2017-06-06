@@ -52,24 +52,21 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;div class&#x3D;&quot;ms-PanelDefaultExample ms-PanelExample&quot;&gt;
-    
-    &lt;button class&#x3D;&quot;ms-Button 
-      
-      &quot;&gt;
-      &lt;span class&#x3D;&quot;ms-Button-label&quot;&gt;Open Panel&lt;/span&gt;
-    &lt;/button&gt;    
-    &lt;div class&#x3D;&quot;ms-Panel &quot;&gt;
-        &lt;button class&#x3D;&quot;ms-Panel-closeButton ms-PanelAction-close&quot;&gt;
-            &lt;i class&#x3D;&quot;ms-Panel-closeIcon ms-Icon ms-Icon--Cancel&quot;&gt;&lt;/i&gt;
-        &lt;/button&gt;
-        &lt;div class&#x3D;&quot;ms-Panel-contentInner&quot;&gt;
-            &lt;p class&#x3D;&quot;ms-Panel-headerText&quot;&gt;Panel&lt;/p&gt;
-            &lt;div class&#x3D;&quot;ms-Panel-content&quot;&gt;
-                &lt;span class&#x3D;&quot;ms-font-m&quot;&gt;Content goes here&lt;/span&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;/div&gt;
+ <div class="ms-PanelDefaultExample ms-PanelExample">    
+    <button class="ms-Button">
+      <span class="ms-Button-label">Open Panel</span>
+    </button>    
+    <div class="ms-Panel">
+        <button class="ms-Panel-closeButton ms-PanelAction-close">
+            <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+        </button>
+        <div class="ms-Panel-contentInner">
+            <p class="ms-Panel-headerText">Panel</p>
+            <div class="ms-Panel-content">
+                <span class="ms-font-m">Content goes here</span>
+            </div>
+        </div>
+    </div></div>
     </code>
 </pre>
 
@@ -77,26 +74,7 @@ State | Applied to | Result
 
 <pre>
     <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-var PanelExamples &#x3D; document.getElementsByClassName(&quot;ms-PanelExample&quot;);
-for (var i &#x3D; 0; i &lt; PanelExamples.length; i++) {
-    (function(){
-        var PanelExampleButton &#x3D; PanelExamples[i].querySelector(&quot;.ms-Button&quot;);
-        var PanelExamplePanel &#x3D; PanelExamples[i].querySelector(&quot;.ms-Panel&quot;);
-        PanelExampleButton.addEventListener(&quot;click&quot;, function(i) {
-            new fabric[&#x27;Panel&#x27;](PanelExamplePanel);
-        });
-    }());
-}
-&lt;/script&gt;
-    </code>
-</pre>
-
-4. Verify that the component is working the same as in the sample above.
-5. Replace the sample HTML content (such as the content of `.ms-Panel-content`) with your content.
-
-
-<script type="text/javascript">
+ <script type="text/javascript">
 var PanelExamples = document.getElementsByClassName("ms-PanelExample");
 for (var i = 0; i < PanelExamples.length; i++) {
     (function(){
@@ -108,3 +86,8 @@ for (var i = 0; i < PanelExamples.length; i++) {
     }());
 }
 </script>
+    </code>
+</pre>
+
+4. Verify that the component is working the same as in the sample above.
+5. Replace the sample HTML content (such as the content of `.ms-Panel-content`) with your content.
