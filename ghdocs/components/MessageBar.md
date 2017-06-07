@@ -52,6 +52,7 @@ Use sparingly when there's an exceptional need to tell the use that something we
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS on your page:
+
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -60,24 +61,19 @@ Use sparingly when there's an exceptional need to tell the use that something we
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
 
-<pre>
-    <code>
- 
-
-&lt;div class&#x3D;&quot;ms-MessageBar &quot;&gt;
-  &lt;div class&#x3D;&quot;ms-MessageBar-content&quot;&gt;
-    &lt;div class&#x3D;&quot;ms-MessageBar-icon&quot;&gt;
-      &lt;i class&#x3D;&quot;ms-Icon ms-Icon--Info&quot;&gt;&lt;/i&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;ms-MessageBar-text&quot;&gt;
-      Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.&lt;br&gt;
-      &lt;a href&#x3D;&quot;&quot; class&#x3D;&quot;ms-Link&quot;&gt;Hyperlink string&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-    </code>
-</pre>
+	```
+    <div class="ms-MessageBar">
+        <div class="ms-MessageBar-content">
+            <div class="ms-MessageBar-icon">
+                <i class="ms-Icon ms-Icon--Info"></i>
+            </div>
+            <div class="ms-MessageBar-text">
+                Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+                <a href="" class="ms-Link">Hyperlink string</a>
+            </div>
+        </div>
+    </div>
+	```
 
 3. Verify that the component is working the same as in the sample above.
 4. Replace the sample HTML content (such as the content of `.ms-MessageBar-text`) with your content.

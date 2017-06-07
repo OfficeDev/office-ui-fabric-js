@@ -15,9 +15,14 @@ var data = {
       description: "Initializes component"
     },
     {
-      name: "showBanner()",
+      name: "show()",
       parameters: [],
       description: "Shows MessageBanner if hidden"
+    },
+    {
+      name: "showBanner()",
+      parameters: [],
+      description: "Shows MessageBanner if hidden, (deprecated) now use show()"
     }
   ],
   jsFile: "MessageBannerExampleJS"
