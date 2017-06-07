@@ -87,14 +87,12 @@ This component has only the default state.
             </div>
         </div>
         <div class="ms-Dialog-actions">
-            <!--- Needs fixing -->
             <button class="ms-Button ms-Dialog-action ms-Button--primary">
-                <button class="ms-Button ms-Dialog-action">
-                    <span class="ms-Button-label">Save</span>
-                </button>
-                <button class="ms-Button ms-Dialog-action">
-                    <span class="ms-Button-label">Cancel</span>
-                </button>
+                <span class="ms-Button-label">Save</span>
+            </button>
+            <button class="ms-Button ms-Dialog-action">
+                <span class="ms-Button-label">Cancel</span>
+            </button>
         </div>
     </div>
 	```
