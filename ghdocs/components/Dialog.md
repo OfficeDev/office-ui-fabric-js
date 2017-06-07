@@ -61,11 +61,10 @@ This component has only the default state.
 2. Copy the HTML from one of the samples above into your page. For example:
 
 	```
- <div class="ms-Dialog ">
+    <div class="ms-Dialog ">
         <div class="ms-Dialog-title">All emails together</div>
         <div class="ms-Dialog-content">
             <p class="ms-Dialog-subText">Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.</p>
-
             <div class="ms-CheckBox">
                 <input tabindex="-1" type="checkbox" class="ms-CheckBox-input">
                 <label role="checkbox"
@@ -76,7 +75,6 @@ This component has only the default state.
                     <span class="ms-Label">Option1</span>
                 </label>
             </div>
-
             <div class="ms-CheckBox">
                 <input tabindex="-1" type="checkbox" class="ms-CheckBox-input">
                 <label role="checkbox"
@@ -88,7 +86,6 @@ This component has only the default state.
                 </label>
             </div>
         </div>
-
         <div class="ms-Dialog-actions">
             <!--- Needs fixing -->
             <button class="ms-Button ms-Dialog-action ms-Button--primary">
@@ -113,10 +110,10 @@ This component has only the default state.
                 DialogComponents[i] = new fabric['Dialog'](DialogElements[i]);
             }());
         }
-    </script> 
+    </script>
 	```
 
-     or add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a single Dialog component on the page:
+	or add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a single Dialog component on the page:
 
 	```
     <script type="text/javascript">
@@ -124,7 +121,6 @@ This component has only the default state.
         var dialogComponent = new fabric['Dialog'](DialogElement);
     </script>
 	```
-
 
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content (such as the content of `.ms-Dialog-content`) with your content.
