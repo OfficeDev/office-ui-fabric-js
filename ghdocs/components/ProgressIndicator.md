@@ -33,6 +33,7 @@ Error
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -40,40 +41,36 @@ Error
         <script src="fabric.min.js"></script>
     </head>
     ```
+
 2. Copy the HTML from the sample above into your page. For example:
 
-<pre>
-    <code>
-<div class="ms-ProgressIndicator">
-  <div class="ms-ProgressIndicator-itemName"></div>
-  <div class="ms-ProgressIndicator-itemProgress">
-    <div class="ms-ProgressIndicator-progressTrack"></div>
-    <div class="ms-ProgressIndicator-progressBar"></div>
-  </div>
-  <div class="ms-ProgressIndicator-itemDescription"></div>
-</div>
-    </code>
-</pre>
+	```
+    <div class="ms-ProgressIndicator">
+        <div class="ms-ProgressIndicator-itemName"></div>
+        <div class="ms-ProgressIndicator-itemProgress">
+            <div class="ms-ProgressIndicator-progressTrack"></div>
+            <div class="ms-ProgressIndicator-progressBar"></div>
+        </div>
+        <div class="ms-ProgressIndicator-itemDescription"></div>
+    </div>
+	```
 
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ProgressIndicators on the page:
 
-<pre>
-    <code>
- <script type="text/javascript">
-  var ProgressIndicatorElements = document.querySelectorAll(".ms-ProgressIndicator");
-  for(var i = 0; i < ProgressIndicatorElements.length; i++) {
-    let ProgressIndicator = new fabric['ProgressIndicator'](ProgressIndicatorElements[i]);
+	```
+    <script type="text/javascript">
+        var ProgressIndicatorElements = document.querySelectorAll(".ms-ProgressIndicator");
+        for (var i = 0; i < ProgressIndicatorElements.length; i++) {
+            let ProgressIndicator = new fabric['ProgressIndicator'](ProgressIndicatorElements[i]);
 
-    setTimeout(
-      function() {
-        ProgressIndicator.setProgressPercent(1);
-      },
-      2000);
-  }
-</script>
-
-    </code>
-</pre>
+            setTimeout(
+              function () {
+                  ProgressIndicator.setProgressPercent(1);
+              },
+              2000);
+        }
+    </script>
+	```
 
 4. Verify that the component is working the same as in the sample above.
 

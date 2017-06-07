@@ -63,59 +63,57 @@ This component has only the default state.
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
-    ```
+	```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
         <script src="fabric.min.js"></script>
     </head>
-    ```
+	```
+
 2. Copy the HTML from one of the samples above into your page. For example:
 
-<pre>
-    <code>
- <div class="ms-CalloutExample">
-  <div class="ms-Callout is-hidden">
-    <div class="ms-Callout-main">
-      <div class="ms-Callout-header">
-        <p class="ms-Callout-title">All of your favorite people</p>
-      </div>
-      <div class="ms-Callout-inner">
-        <div class="ms-Callout-content">
-          <p class="ms-Callout-subText ms-Callout-subText--">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
+	```
+    <div class="ms-CalloutExample">
+        <div class="ms-Callout is-hidden">
+            <div class="ms-Callout-main">
+                <div class="ms-Callout-header">
+                    <p class="ms-Callout-title">All of your favorite people</p>
+                </div>
+                <div class="ms-Callout-inner">
+                    <div class="ms-Callout-content">
+                        <p class="ms-Callout-subText ms-Callout-subText--">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
+                    </div>
+                    <div class="ms-Callout-actions">
+                        <a class="ms-Link">Learn more</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="ms-Callout-actions"><a class="ms-Link">Learn more</a>
+        <div class="ms-CalloutExample-button">
+            <button class="ms-Button">
+                <span class="ms-Button-label">Open Callout</span>
+            </button>
         </div>
-      </div>     
     </div>
-  </div>
-  <div class="ms-CalloutExample-button"><button class="ms-Button">
-      <span class="ms-Button-label">Open Callout</span>
-    </button>  
-  </div>
-</div>
-    
-</code>
-</pre>
+	```
 
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate a Callout component on the page:
 
-<pre>
-    <code>
- <script type="text/javascript">
-  var CalloutExamples = document.querySelectorAll(".ms-CalloutExample");
-  for(var i = 0; i < CalloutExamples.length; i++) {
-    var Example = CalloutExamples[i];
-    var ExampleButtonElement = Example.querySelector(".ms-CalloutExample-button .ms-Button");
-    var CalloutElement = Example.querySelector(".ms-Callout");
-    new fabric['Callout'](
-          CalloutElement, 
-          ExampleButtonElement,
-          "right"); 
-    }
-</script>
-    </code>
-</pre>
+	```
+   <script type="text/javascript">
+        var CalloutExamples = document.querySelectorAll(".ms-CalloutExample");
+        for (var i = 0; i < CalloutExamples.length; i++) {
+            var Example = CalloutExamples[i];
+            var ExampleButtonElement = Example.querySelector(".ms-CalloutExample-button .ms-Button");
+            var CalloutElement = Example.querySelector(".ms-Callout");
+            new fabric['Callout'](
+                CalloutElement,
+                ExampleButtonElement,
+                "right");
+        }
+    </script>
+	```
 
 3. Replace the sample HTML content (such as the content of `.ms-Callout-title`) with your content.
 

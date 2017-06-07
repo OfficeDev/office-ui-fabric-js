@@ -57,37 +57,34 @@ State | Applied to | Result
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS on your page:
-    ```
+	```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
         <script src="fabric.min.js"></script>
     </head>
-    ```
+	```
+
 2. Copy the HTML from one of the samples above into your page. For example:
 
-<pre>
-    <code> 
-<button class="ms-Button">
-  <span class="ms-Button-label">Create Account</span>
-</button>
-    </code>
-</pre>
+	```
+    <button class="ms-Button">
+        <span class="ms-Button-label">Create Account</span>
+    </button>
+	```
 
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Button components on the page:
 
-<pre>
-    <code>
- <script type="text/javascript">
-    var ButtonElements = document.querySelectorAll(".ms-Button");
-    for(var i = 0; i < ButtonElements.length; i++) {
-        new fabric['Button'](ButtonElements[i], function() {
-        	// Insert Event Here
-        });
-    }
-</script>
-    </code>
-</pre>
+	```
+    <script type="text/javascript">
+        var ButtonElements = document.querySelectorAll(".ms-Button");
+        for(var i = 0; i < ButtonElements.length; i++) {
+            new fabric['Button'](ButtonElements[i], function() {
+            	// Insert Event Here
+            });
+        }
+    </script>
+	```
 
 4. Replace the sample HTML content (such as the content of `.ms-Button-label`) with your content.
 

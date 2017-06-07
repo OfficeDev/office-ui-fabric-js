@@ -22,43 +22,41 @@ State | Applied to | Result
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
-    ```
+
+	```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
         <script src="fabric.min.js"></script>
     </head>
-    ```
+	```
+
 2. Copy the HTML from the sample above into your page. For example:
 
-<pre>
-    <code>
-<div class="ms-Dropdown  " tabindex="0">
-  <label class="ms-Label">Dropdown label</label>
-  <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"></i>
-  <select class="ms-Dropdown-select">
-      <option>Choose a sound&amp;hellip;</option>
-      <option>Dog barking</option>
-      <option>Wind blowing</option>
-      <option>Duck quacking</option>
-      <option>Cow mooing</option>
-  </select>
-</div>
-    </code>
-</pre>
+	```
+    <div class="ms-Dropdown  " tabindex="0">
+        <label class="ms-Label">Dropdown label</label>
+        <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"></i>
+        <select class="ms-Dropdown-select">
+            <option>Choose a sound&amp;hellip;</option>
+            <option>Dog barking</option>
+            <option>Wind blowing</option>
+            <option>Duck quacking</option>
+            <option>Cow mooing</option>
+        </select>
+    </div>
+	```
 
 3. Add the following `<script>` tag to your page to instantiate all Dropdown components on the page:
 
-<pre>
-    <code>
- <script type="text/javascript">
-  var DropdownHTMLElements = document.querySelectorAll('.ms-Dropdown');
-  for (var i = 0; i < DropdownHTMLElements.length; ++i) {
-    var Dropdown = new fabric['Dropdown'](DropdownHTMLElements[i]);
-  }
-  </script>
-    </code>
-</pre>
+	```
+    <script type="text/javascript">
+        var DropdownHTMLElements = document.querySelectorAll('.ms-Dropdown');
+        for (var i = 0; i < DropdownHTMLElements.length; ++i) {
+            var Dropdown = new fabric['Dropdown'](DropdownHTMLElements[i]);
+        }
+    </script>
+	```
 
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content (such as the options within `.ms-Dropdown-select`) with your content.

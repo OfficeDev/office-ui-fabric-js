@@ -23,72 +23,70 @@ State | Applied to | Result
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
-    ```
-    <head> 
+
+	```
+    <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
         <script src="fabric.min.js"></script>
     </head>
-    ```
+	```
+
 2. Copy the HTML from the sample above into your page. For example:
 
-<pre>
-    <code>
- <div class="ms-Breadcrumb">
-  <div class="ms-Breadcrumb-overflow">
-    <div class="ms-Breadcrumb-overflowButton ms-Icon ms-Icon--More" tabindex="1"></div>
-    <div class="ms-Breadcrumb-overflowMenu">
-      <ul class="ms-ContextualMenu is-open"></ul>
+	```
+    <div class="ms-Breadcrumb">
+        <div class="ms-Breadcrumb-overflow">
+            <div class="ms-Breadcrumb-overflowButton ms-Icon ms-Icon--More" tabindex="1"></div>
+            <div class="ms-Breadcrumb-overflowMenu">
+                <ul class="ms-ContextualMenu is-open"></ul>
+            </div>
+        </div>
+        <ul class="ms-Breadcrumb-list">
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Files</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 1</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 2</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 3</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 4</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 5</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 6</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 7</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+        </ul>
     </div>
-  </div>
-  <ul class="ms-Breadcrumb-list">
-      <li class="ms-Breadcrumb-listItem">
-        <a class="ms-Breadcrumb-itemLink" tabindex="0">Files</a>
-        <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
-      </li>
-      <li class="ms-Breadcrumb-listItem">
-        <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 1</a>
-        <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
-      </li>
-      <li class="ms-Breadcrumb-listItem">
-        <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 2</a>
-        <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
-      </li>
-      <li class="ms-Breadcrumb-listItem">
-        <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 3</a>
-        <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
-      </li>
-      <li class="ms-Breadcrumb-listItem">
-        <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 4</a>
-        <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
-      </li>
-      <li class="ms-Breadcrumb-listItem">
-        <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 5</a>
-        <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
-      </li>
-      <li class="ms-Breadcrumb-listItem">
-        <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 6</a>
-        <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
-      </li>
-      <li class="ms-Breadcrumb-listItem">
-        <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 7</a>
-        <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
-      </li>
-  </ul>
-</div>
-    </code>
-</pre>
+	```
 
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Breadcrumb components on the page:
 
-<pre>
-    <code>
- <script type="text/javascript">
-    var BreadcrumbHTML = document.querySelector('.ms-Breadcrumb');
-    var Breadcrumb = new fabric['Breadcrumb'](BreadcrumbHTML);
-</script>
-    </code>
-</pre>
+	```
+    <script type="text/javascript">
+        var BreadcrumbHTML = document.querySelector('.ms-Breadcrumb');
+        var Breadcrumb = new fabric['Breadcrumb'](BreadcrumbHTML);
+    </script>
+	```
 
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content (such as the `.ms-Breadcrumb-listItem` elements) with your content.

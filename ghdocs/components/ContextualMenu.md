@@ -47,53 +47,51 @@ State | Applied to | Result
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
-    ```
+
+	```
     <head> 
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
         <script src="fabric.min.js"></script>
     </head>
-    ```
+	```
+
 2. Copy the HTML from one of the samples above into your page. For example:
 
-<pre>
-    <code>
- <div class="ms-ContextualMenu-basic">    
-    <button class="ms-Button ms-Button--primary">
-      <span class="ms-Button-label">Open Example</span>
-    </button>    
-    <ul class="ms-ContextualMenu is-hidden">
-      <li class="ms-ContextualMenu-item">
-          <a class="ms-ContextualMenu-link"tabindex="1">Animals</a>            
-        </li>
-        <li class="ms-ContextualMenu-item">
-          <a class="ms-ContextualMenu-link"tabindex="1">Books</a>            
-        </li>
-        <li class="ms-ContextualMenu-item">
-          <a class="ms-ContextualMenu-link is-selected"tabindex="1">Education</a>            
-        </li>
-        <li class="ms-ContextualMenu-item">
-          <a class="ms-ContextualMenu-link"tabindex="1">Music</a>            
-        </li>
-        <li class="ms-ContextualMenu-item">
-          <a class="ms-ContextualMenu-link is-disabled"tabindex="1">Sports</a>            
-        </li>
-      </ul>
-    </div>    
-    </code>
-</pre>
+	```
+    <div class="ms-ContextualMenu-basic">
+        <button class="ms-Button ms-Button--primary">
+            <span class="ms-Button-label">Open Example</span>
+        </button>
+        <ul class="ms-ContextualMenu is-hidden">
+            <li class="ms-ContextualMenu-item">
+                <a class="ms-ContextualMenu-link" tabindex="1">Animals</a>
+            </li>
+            <li class="ms-ContextualMenu-item">
+                <a class="ms-ContextualMenu-link" tabindex="1">Books</a>
+            </li>
+            <li class="ms-ContextualMenu-item">
+                <a class="ms-ContextualMenu-link is-selected" tabindex="1">Education</a>
+            </li>
+            <li class="ms-ContextualMenu-item">
+                <a class="ms-ContextualMenu-link" tabindex="1">Music</a>
+            </li>
+            <li class="ms-ContextualMenu-item">
+                <a class="ms-ContextualMenu-link is-disabled" tabindex="1">Sports</a>
+            </li>
+        </ul>
+    </div>
+	```
 
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ContextualMenu components on the page:
 
-<pre>
-    <code>
- <script type="text/javascript">
-    var ButtonElement = document.querySelector(".ms-ContextualMenu-basic .ms-Button");
-    var ContextualMenuElement = document.querySelector(".ms-ContextualMenu-basic .ms-ContextualMenu");
-    var contextualMenu = new fabric['ContextualMenu'](ContextualMenuElement, ButtonElement);
-</script>
-    </code>
-</pre>
+	```
+   <script type="text/javascript">
+        var ButtonElement = document.querySelector(".ms-ContextualMenu-basic .ms-Button");
+        var ContextualMenuElement = document.querySelector(".ms-ContextualMenu-basic .ms-ContextualMenu");
+        var contextualMenu = new fabric['ContextualMenu'](ContextualMenuElement, ButtonElement);
+    </script>
+	```
 
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content (such as the `.ms-ContextualMenu-link` elements) with your content.

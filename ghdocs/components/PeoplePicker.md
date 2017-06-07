@@ -27,6 +27,7 @@ Presents the selected people in a list below the search field, rather than inlin
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -34,104 +35,100 @@ Presents the selected people in a list below the search field, rather than inlin
         <script src="fabric.min.js"></script>
     </head>
     ```
+
 2. Copy the HTML from one of the samples above into your page. For example:
 
-<pre>
-    <code>
-<div class="ms-PeoplePicker">
-  <div class="ms-PeoplePicker-searchBox">
-    <div class="ms-TextField  ms-TextField--textFieldUnderlined">      
-      <input class="ms-TextField-field" type="text" value="" placeholder="Select or enter an option" >
+	```
+    <div class="ms-PeoplePicker">
+        <div class="ms-PeoplePicker-searchBox">
+            <div class="ms-TextField  ms-TextField--textFieldUnderlined">
+                <input class="ms-TextField-field" type="text" value="" placeholder="Select or enter an option">
+            </div>
+        </div>
+        <div class="ms-PeoplePicker-results">
+            <div class="ms-PeoplePicker-resultGroup">
+                <div class="ms-PeoplePicker-resultGroupTitle">
+                    Contacts
+                </div>
+                <div class="ms-PeoplePicker-result" tabindex="1">
+                    <div class="ms-Persona ms-Persona--sm">
+                        <div class="ms-Persona-imageArea">
+                            <div class="ms-Persona-initials ms-Persona-initials--blue">RM</div>
+                        </div>
+                        <div class="ms-Persona-presence">
+                        </div>
+                        <div class="ms-Persona-details">
+                            <div class="ms-Persona-primaryText">Russel Miller</div>
+                            <div class="ms-Persona-secondaryText">Sales</div>
+                        </div>
+                    </div>
+                    <button class="ms-PeoplePicker-resultAction"><i class="ms-Icon ms-Icon--Clear"></i></button>
+                </div>
+                <div class="ms-PeoplePicker-result" tabindex="1">
+                    <div class="ms-Persona ms-Persona--sm">
+                        <div class="ms-Persona-imageArea">
+                            <div class="ms-Persona-initials ms-Persona-initials--purple">DF</div>
+                        </div>
+                        <div class="ms-Persona-presence">
+                        </div>
+                        <div class="ms-Persona-details">
+                            <div class="ms-Persona-primaryText">Douglas Fielder</div>
+                            <div class="ms-Persona-secondaryText">Public Relations</div>
+                        </div>
+                    </div>
+                    <button class="ms-PeoplePicker-resultAction"><i class="ms-Icon ms-Icon--Clear"></i></button>
+                </div>
+                <div class="ms-PeoplePicker-result" tabindex="1">
+                    <div class="ms-Persona ms-Persona--sm">
+                        <div class="ms-Persona-imageArea">
+                            <div class="ms-Persona-initials ms-Persona-initials--black">GS</div>
+                        </div>
+                        <div class="ms-Persona-presence">
+                        </div>
+                        <div class="ms-Persona-details">
+                            <div class="ms-Persona-primaryText">Grant Steel</div>
+                            <div class="ms-Persona-secondaryText">Sales</div>
+                        </div>
+                    </div>
+                    <button class="ms-PeoplePicker-resultAction"><i class="ms-Icon ms-Icon--Clear"></i></button>
+                </div>
+                <div class="ms-PeoplePicker-result " tabindex="1">
+                    <div class="ms-Persona ms-Persona--sm">
+                        <div class="ms-Persona-imageArea">
+                            <div class="ms-Persona-initials ms-Persona-initials--green">HW</div>
+                        </div>
+                        <div class="ms-Persona-presence">
+                        </div>
+                        <div class="ms-Persona-details">
+                            <div class="ms-Persona-primaryText">Harvey Wallin</div>
+                            <div class="ms-Persona-secondaryText">Public Relations</div>
+                        </div>
+                    </div>
+                    <button class="ms-PeoplePicker-resultAction"><i class="ms-Icon ms-Icon--Clear"></i></button>
+                </div>
+            </div>
+            <button class="ms-PeoplePicker-searchMore">
+                <div class="ms-PeoplePicker-searchMoreIcon">
+                    <i class="ms-Icon ms-Icon--Search"></i>
+                </div>
+                <div class="ms-PeoplePicker-searchMoreText">
+                    Search my groups
+                </div>
+            </button>
+        </div>
     </div>
-  </div>
-  <div class="ms-PeoplePicker-results">
-      <div class="ms-PeoplePicker-resultGroup">
-        <div class="ms-PeoplePicker-resultGroupTitle">
-          Contacts
-        </div>
-          <div class="ms-PeoplePicker-result" tabindex="1">
-            <div class="ms-Persona ms-Persona--sm">
-              <div class="ms-Persona-imageArea">
-                  <div class="ms-Persona-initials ms-Persona-initials--blue">RM</div>
-              </div>
-              <div class="ms-Persona-presence">
-              </div>
-              <div class="ms-Persona-details">
-                  <div class="ms-Persona-primaryText">Russel Miller</div>
-                  <div class="ms-Persona-secondaryText">Sales</div>
-              </div>
-            </div>
-              <button class="ms-PeoplePicker-resultAction"><i class="ms-Icon ms-Icon--Clear"></i></button>
-          </div>
-          <div class="ms-PeoplePicker-result" tabindex="1">
-            <div class="ms-Persona ms-Persona--sm">
-              <div class="ms-Persona-imageArea">
-                  <div class="ms-Persona-initials ms-Persona-initials--purple">DF</div>
-              </div>
-              <div class="ms-Persona-presence">
-              </div>
-              <div class="ms-Persona-details">
-                  <div class="ms-Persona-primaryText">Douglas Fielder</div>
-                  <div class="ms-Persona-secondaryText">Public Relations</div>
-              </div>
-            </div>
-              <button class="ms-PeoplePicker-resultAction"><i class="ms-Icon ms-Icon--Clear"></i></button>
-          </div>
-          <div class="ms-PeoplePicker-result" tabindex="1">
-            <div class="ms-Persona ms-Persona--sm">
-              <div class="ms-Persona-imageArea">
-                  <div class="ms-Persona-initials ms-Persona-initials--black">GS</div>
-              </div>
-              <div class="ms-Persona-presence">
-              </div>
-              <div class="ms-Persona-details">
-                  <div class="ms-Persona-primaryText">Grant Steel</div>
-                  <div class="ms-Persona-secondaryText">Sales</div>
-              </div>
-            </div>
-              <button class="ms-PeoplePicker-resultAction"><i class="ms-Icon ms-Icon--Clear"></i></button>
-          </div>
-          <div class="ms-PeoplePicker-result " tabindex="1">
-            <div class="ms-Persona ms-Persona--sm">
-              <div class="ms-Persona-imageArea">
-                  <div class="ms-Persona-initials ms-Persona-initials--green">HW</div>
-              </div>
-              <div class="ms-Persona-presence">
-              </div>
-              <div class="ms-Persona-details">
-                  <div class="ms-Persona-primaryText">Harvey Wallin</div>
-                  <div class="ms-Persona-secondaryText">Public Relations</div>
-              </div>
-            </div>
-              <button class="ms-PeoplePicker-resultAction"><i class="ms-Icon ms-Icon--Clear"></i></button>
-          </div>
-      </div>
-      <button class="ms-PeoplePicker-searchMore">
-        <div class="ms-PeoplePicker-searchMoreIcon">
-          <i class="ms-Icon ms-Icon--Search"></i>
-        </div>
-        <div class="ms-PeoplePicker-searchMoreText">
-          Search my groups
-        </div>
-      </button>
-  </div>
-</div>
-    </code>
-</pre>
+	```
 
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all PeoplePicker components on the page:
 
-<pre>
-    <code>
- <script type="text/javascript">
-  var PeoplePickerElements = document.querySelectorAll(".ms-PeoplePicker");
-  for(var i = 0; i < PeoplePickerElements.length; i++) {
-    new fabric['PeoplePicker'](PeoplePickerElements[i]);
-  }
-</script>
-
-    </code>
-</pre>
+	```
+    <script type="text/javascript">
+        var PeoplePickerElements = document.querySelectorAll(".ms-PeoplePicker");
+        for (var i = 0; i < PeoplePickerElements.length; i++) {
+            new fabric['PeoplePicker'](PeoplePickerElements[i]);
+        }
+    </script>
+	```
 
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content with your content.

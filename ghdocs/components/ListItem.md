@@ -40,6 +40,7 @@ Use `is-unread` to indicate that the item has not been read.
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
+
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
@@ -47,38 +48,35 @@ Use `is-unread` to indicate that the item has not been read.
         <script src="fabric.min.js"></script>
     </head>
     ```
+
 2. Copy the HTML from one of the samples above into your page. For example:
 
-<pre>
-    <code>
-<li class="ms-ListItem" tabindex="0">  
-  <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-  <span class="ms-ListItem-secondaryText">Meeting notes</span>
-  <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
-  <span class="ms-ListItem-metaText">2:42p</span>  
-  <div class="ms-ListItem-selectionTarget"></div>
-  <div class="ms-ListItem-actions">    
-    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Mail"></i></div>
-    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Delete"></i></div>
-    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Flag"></i></div>
-    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Pinned"></i></div>
-  </div>
-</li>
-    </code>
-</pre>
+	```
+    <li class="ms-ListItem" tabindex="0">
+        <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+        <span class="ms-ListItem-secondaryText">Meeting notes</span>
+        <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+        <span class="ms-ListItem-metaText">2:42p</span>
+        <div class="ms-ListItem-selectionTarget"></div>
+        <div class="ms-ListItem-actions">
+            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Mail"></i></div>
+            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Delete"></i></div>
+            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Flag"></i></div>
+            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--Pinned"></i></div>
+        </div>
+    </li>
+	```
 
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all ListItem components on the page:
 
-<pre>
-    <code>
- <script type="text/javascript">
-    var ListItemElements = document.querySelectorAll(".ms-ListItem");
-    for(var i = 0; i < ListItemElements.length; i++) {
-        new fabric['ListItem'](ListItemElements[i]);
-    }
-</script>
-    </code>
-</pre>
+	```
+    <script type="text/javascript">
+        var ListItemElements = document.querySelectorAll(".ms-ListItem");
+        for (var i = 0; i < ListItemElements.length; i++) {
+            new fabric['ListItem'](ListItemElements[i]);
+        }
+    </script>
+	```
 
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content (such as the content of `.ms-ListItem-primaryText`) with your content.
