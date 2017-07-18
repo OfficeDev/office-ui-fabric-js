@@ -83,7 +83,7 @@ namespace fabric {
         if (option.disabled) {
           newItem.classList.add(IS_DISABLED_CLASS);
         }
-		    if(option.selected) {
+		if(option.selected) {
           newItem.classList.add(IS_SELECTED_CLASS);
         }
         newItem.innerHTML = option.text;
