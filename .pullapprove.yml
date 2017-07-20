@@ -5,7 +5,7 @@ groups:
       approve_regex: ^Approved
       enabled: true
       reject_regex: ^Rejected
-    required: 2
+    required: 1
     reset_on_push:
       enabled: false
     users:
