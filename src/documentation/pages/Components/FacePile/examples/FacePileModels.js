@@ -5,7 +5,7 @@ var FacePileModels = {
       "props": {
         "initials": "AL",
         "initialsColor": "blue",
-        "image": "../persona/Persona.Person2.png",
+        "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
         "primaryText": "Alton Lafferty",
         "secondaryText": "Accountant",
         "modifiers": [
@@ -17,7 +17,7 @@ var FacePileModels = {
           "personaProps": {
             "initials": "AL",
             "initialsColor": "blue",
-            "image": "../persona/Persona.Person2.png",
+            "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
             "primaryText": "Alton Lafferty",
             "secondaryText": "Accountant",
             "tertiaryText": "In a meeting",
@@ -37,7 +37,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Russel Miller",
                       "secondaryText": "Sales"
                     }
@@ -47,7 +47,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Douglas Fielder",
                       "secondaryText": "Public Relations"
                     }
@@ -62,7 +62,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Grant Steel",
                       "secondaryText": "Sales"
                     }
@@ -77,7 +77,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Harvey Wallin",
                       "secondaryText": "Public Relations"
                     }
@@ -87,7 +87,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Marcus Lauer",
                       "secondaryText": "Technical Support"
                     }
@@ -97,7 +97,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Marcel Groce",
                       "secondaryText": "Delivery"
                     }
@@ -107,7 +107,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Jessica Fischer",
                       "secondaryText": "Marketing"
                     }
@@ -154,7 +154,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Russel Miller",
                       "secondaryText": "Sales"
                     }
@@ -164,7 +164,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Douglas Fielder",
                       "secondaryText": "Public Relations"
                     }
@@ -179,7 +179,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Grant Steel",
                       "secondaryText": "Sales"
                     }
@@ -194,7 +194,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Harvey Wallin",
                       "secondaryText": "Public Relations"
                     }
@@ -204,7 +204,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Marcus Lauer",
                       "secondaryText": "Technical Support"
                     }
@@ -214,7 +214,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Marcel Groce",
                       "secondaryText": "Delivery"
                     }
@@ -224,7 +224,7 @@ var FacePileModels = {
                     "props": {
                       "initials": "RM",
                       "initialsColor": "blue",
-                      "image": "../persona/Persona.Person2.png",
+                      "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
                       "primaryText": "Jessica Fischer",
                       "secondaryText": "Marketing"
                     }

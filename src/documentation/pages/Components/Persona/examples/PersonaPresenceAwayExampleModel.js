@@ -1,5 +1,5 @@
 var PersonaExampleProps = {
-  "image": "Persona.Person2.png",
+  "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
   "primaryText": "Alton Lafferty",
   "secondaryText": "Accountant",
   "icon": "SkypeClock",

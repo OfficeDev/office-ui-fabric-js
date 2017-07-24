@@ -12,7 +12,8 @@
 
   &.is-overflow {
     .ms-Breadcrumb-overflow {
-      display: inline;
+      display: inline-block;
+      margin-right: -4px;
     }
   }
 }
@@ -21,7 +22,8 @@
   font-size: $ms-font-size-s;
   color: $ms-color-neutralSecondary;
   vertical-align: top;
-  margin: 11px 7px;
+  margin: 13px 4px;
+  line-height: 1;
 }
 
 .ms-Breadcrumb-list {
@@ -62,7 +64,6 @@
 .ms-Breadcrumb-overflowMenu {
   display: none;
   position: absolute;
-  margin-right: -2px;
 
   &.is-open {
     display: block;
@@ -144,13 +145,13 @@
 
   .ms-Breadcrumb-chevron {
     font-size: 10px;
-    margin: 8px 5px;
+    margin: 9px 3px;
   }
 
   .ms-Breadcrumb-overflow {
     .ms-Breadcrumb-overflowButton {
       font-size: 16px;
-      padding: 5px 4px;
+      padding: 2px 0;
     }
   }
 }

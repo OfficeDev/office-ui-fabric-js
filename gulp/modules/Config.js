@@ -188,6 +188,12 @@ var Config = function() {
           return code;
         },
 
+        cdnLinks: function(version) {
+          return `<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/${version}/css/fabric.min.css" />
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/${version}/css/fabric.components.min.css" />
+<script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/${version}/js/fabric.min.js"></script>`;
+        },
+
         // Output code from a string
         codeBlock: function(code, language, theme) {
           var hbs = Plugins.handlebars.Handlebars;

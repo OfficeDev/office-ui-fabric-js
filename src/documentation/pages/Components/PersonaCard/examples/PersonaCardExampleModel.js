@@ -10,7 +10,7 @@ var PersonaCardExampleProps = {
   "personaProps": {
     "initials": "AL",
     "initialsColor": "blue",
-    "image": "../persona/Persona.Person2.png",
+    "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
     "primaryText": "Alton Lafferty",
     "secondaryText": "Accountant",
     "tertiaryText": "In a meeting",
@@ -31,7 +31,7 @@ var PersonaCardExampleProps = {
             "props": {
               "initials": "RM",
               "initialsColor": "blue",
-              "image": "../persona/Persona.Person2.png",
+              "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
               "primaryText": "Russel Miller",
               "secondaryText": "Sales",
               "icon": "SkypeCheck"
@@ -42,7 +42,7 @@ var PersonaCardExampleProps = {
             "props": {
               "initials": "RM",
               "initialsColor": "blue",
-              "image": "../persona/Persona.Person2.png",
+              "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
               "primaryText": "Douglas Fielder",
               "secondaryText": "Public Relations",
               "icon": "SkypeCheck"
@@ -58,7 +58,7 @@ var PersonaCardExampleProps = {
             "props": {
               "initials": "RM",
               "initialsColor": "blue",
-              "image": "../persona/Persona.Person2.png",
+              "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
               "primaryText": "Grant Steel",
               "secondaryText": "Sales",
               "icon": "SkypeCheck"
@@ -74,7 +74,7 @@ var PersonaCardExampleProps = {
             "props": {
               "initials": "RM",
               "initialsColor": "blue",
-              "image": "../persona/Persona.Person2.png",
+              "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
               "primaryText": "Harvey Wallin",
               "secondaryText": "Public Relations",
               "icon": "SkypeCheck"
@@ -85,7 +85,7 @@ var PersonaCardExampleProps = {
             "props": {
               "initials": "RM",
               "initialsColor": "blue",
-              "image": "../persona/Persona.Person2.png",
+              "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
               "primaryText": "Marcus Lauer",
               "secondaryText": "Technical Support",
               "icon": "SkypeCheck"
@@ -96,7 +96,7 @@ var PersonaCardExampleProps = {
             "props": {
               "initials": "RM",
               "initialsColor": "blue",
-              "image": "../persona/Persona.Person2.png",
+              "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
               "primaryText": "Marcel Groce",
               "secondaryText": "Delivery",
               "icon": "SkypeCheck"
@@ -107,7 +107,7 @@ var PersonaCardExampleProps = {
             "props": {
               "initials": "RM",
               "initialsColor": "blue",
-              "image": "../persona/Persona.Person2.png",
+              "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
               "primaryText": "Jessica Fischer",
               "secondaryText": "Marketing",
               "icon": "SkypeCheck"
