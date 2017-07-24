@@ -7,7 +7,7 @@ var OrgChartModels = {
            "props": {
             "initials": "RM",
             "initialsColor": "blue",
-            "image": "../persona/Persona.Person2.png",
+            "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
             "primaryText": "Russel Miller",
             "secondaryText": "Sales"
            }
@@ -17,7 +17,7 @@ var OrgChartModels = {
            "props": {
             "initials": "RM",
             "initialsColor": "blue",
-            "image": "../persona/Persona.Person2.png",
+            "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
             "primaryText": "Douglas Fielder",
             "secondaryText": "Public Relations"
            }
@@ -32,7 +32,7 @@ var OrgChartModels = {
            "props": {
             "initials": "RM",
             "initialsColor": "blue",
-            "image": "../persona/Persona.Person2.png",
+            "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
             "primaryText": "Grant Steel",
             "secondaryText": "Sales"
            }
@@ -47,7 +47,7 @@ var OrgChartModels = {
            "props": {
             "initials": "RM",
             "initialsColor": "blue",
-            "image": "../persona/Persona.Person2.png",
+            "image": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/images/persona.person.png",
             "primaryText": "Harvey Wallin",
             "secondaryText": "Public Relations"
            }

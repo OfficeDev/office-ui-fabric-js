@@ -38,53 +38,36 @@ A persona can have one of seven presences: available, away, blocked, busy, do no
         <link rel="stylesheet" href="fabric.components.min.css">
     </head>
     ```
+
 2. Copy the HTML from one of the samples above into your page. For example:
 
-<pre>
-    <code>
- 
-
-&lt;div class&#x3D;&quot;ms-Persona
-&quot;&gt;
-  &lt;div class&#x3D;&quot;ms-Persona-imageArea&quot;&gt;
-      &lt;img class&#x3D;&quot;ms-Persona-image&quot; src&#x3D;&quot;Persona.Person2.png&quot;&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;ms-Persona-presence&quot;&gt;
-      &lt;i class&#x3D;&quot;ms-Persona-presenceIcon ms-Icon ms-Icon--SkypeCheck&quot;&gt;&lt;/i&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;ms-Persona-details&quot;&gt;
-      &lt;div class&#x3D;&quot;ms-Persona-primaryText&quot;&gt;Alton Lafferty&lt;/div&gt;
-      &lt;div class&#x3D;&quot;ms-Persona-secondaryText&quot;&gt;Accountant&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-    </code>
-</pre>
+	```
+    <div class="ms-Persona">
+        <div class="ms-Persona-imageArea">
+            <img class="ms-Persona-image" src="Persona.Person2.png">
+        </div>
+        <div class="ms-Persona-presence">
+            <i class="ms-Persona-presenceIcon ms-Icon ms-Icon--SkypeCheck"></i>
+        </div>
+        <div class="ms-Persona-details">
+            <div class="ms-Persona-primaryText">Alton Lafferty</div>
+            <div class="ms-Persona-secondaryText">Accountant</div>
+        </div>
+    </div>
+	```
 
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Persona components on the page:
 
-<pre>
-    <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-  var PersonaElements &#x3D; document.querySelectorAll(&quot;.ms-Persona&quot;);
-  for(var i &#x3D; 0; i &lt; PersonaElements.length; i++) {
-    new fabric[&#x27;Persona&#x27;](PersonaElements[i]);
-  }
-&lt;/script&gt;
-
-    </code>
-</pre>
+	```
+    <script type="text/javascript">
+        var PersonaElements = document.querySelectorAll(".ms-Persona");
+        for (var i = 0; i < PersonaElements.length; i++) {
+            new fabric['Persona'](PersonaElements[i]);
+        }
+    </script>
+	```
 
 4. Replace the sample HTML content (such as the name within `.ms-Persona-primaryText`) with your content.
 
 ## Dependencies
 This component has no dependencies.
-
-
-<script type="text/javascript">
-  var PersonaElements = document.querySelectorAll(".ms-Persona");
-  for(var i = 0; i < PersonaElements.length; i++) {
-    new fabric['Persona'](PersonaElements[i]);
-  }
-</script>
-
