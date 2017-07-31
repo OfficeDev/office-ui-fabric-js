@@ -23,73 +23,70 @@ State | Applied to | Result
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
-    ```
-    <head> 
+
+	```
+    <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
         <script src="fabric.min.js"></script>
     </head>
-    ```
+	```
+
 2. Copy the HTML from the sample above into your page. For example:
 
-<pre>
-    <code>
- 
-&lt;div class&#x3D;&quot;ms-Breadcrumb &quot;&gt;
-  &lt;div class&#x3D;&quot;ms-Breadcrumb-overflow&quot;&gt;
-    &lt;div class&#x3D;&quot;ms-Breadcrumb-overflowButton ms-Icon ms-Icon--More&quot; tabindex&#x3D;&quot;1&quot;&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;ms-Breadcrumb-overflowMenu&quot;&gt;
-      &lt;ul class&#x3D;&quot;ms-ContextualMenu is-open&quot;&gt;&lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;ul class&#x3D;&quot;ms-Breadcrumb-list&quot;&gt;
-      &lt;li class&#x3D;&quot;ms-Breadcrumb-listItem&quot;&gt;
-        &lt;a class&#x3D;&quot;ms-Breadcrumb-itemLink&quot; tabindex&#x3D;&quot;0&quot;&gt;Files&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;
-      &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-Breadcrumb-listItem&quot;&gt;
-        &lt;a class&#x3D;&quot;ms-Breadcrumb-itemLink&quot; tabindex&#x3D;&quot;0&quot;&gt;Folder 1&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;
-      &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-Breadcrumb-listItem&quot;&gt;
-        &lt;a class&#x3D;&quot;ms-Breadcrumb-itemLink&quot; tabindex&#x3D;&quot;0&quot;&gt;Folder 2&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;
-      &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-Breadcrumb-listItem&quot;&gt;
-        &lt;a class&#x3D;&quot;ms-Breadcrumb-itemLink&quot; tabindex&#x3D;&quot;0&quot;&gt;Folder 3&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;
-      &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-Breadcrumb-listItem&quot;&gt;
-        &lt;a class&#x3D;&quot;ms-Breadcrumb-itemLink&quot; tabindex&#x3D;&quot;0&quot;&gt;Folder 4&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;
-      &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-Breadcrumb-listItem&quot;&gt;
-        &lt;a class&#x3D;&quot;ms-Breadcrumb-itemLink&quot; tabindex&#x3D;&quot;0&quot;&gt;Folder 5&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;
-      &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-Breadcrumb-listItem&quot;&gt;
-        &lt;a class&#x3D;&quot;ms-Breadcrumb-itemLink&quot; tabindex&#x3D;&quot;0&quot;&gt;Folder 6&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;
-      &lt;/li&gt;
-      &lt;li class&#x3D;&quot;ms-Breadcrumb-listItem&quot;&gt;
-        &lt;a class&#x3D;&quot;ms-Breadcrumb-itemLink&quot; tabindex&#x3D;&quot;0&quot;&gt;Folder 7&lt;/a&gt;
-        &lt;i class&#x3D;&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight&quot;&gt;&lt;/i&gt;
-      &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-    </code>
-</pre>
+	```
+    <div class="ms-Breadcrumb">
+        <div class="ms-Breadcrumb-overflow">
+            <div class="ms-Breadcrumb-overflowButton ms-Icon ms-Icon--More" tabindex="1"></div>
+            <div class="ms-Breadcrumb-overflowMenu">
+                <ul class="ms-ContextualMenu is-open"></ul>
+            </div>
+        </div>
+        <ul class="ms-Breadcrumb-list">
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Files</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 1</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 2</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 3</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 4</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 5</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 6</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+            <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink" tabindex="0">Folder 7</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+            </li>
+        </ul>
+    </div>
+	```
 
 3. Add the following `<script>` tag to your page, below the references to Fabric's JS, to instantiate all Breadcrumb components on the page:
 
-<pre>
-    <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-    var BreadcrumbHTML &#x3D; document.querySelector(&#x27;.ms-Breadcrumb&#x27;);
-    var Breadcrumb &#x3D; new fabric[&#x27;Breadcrumb&#x27;](BreadcrumbHTML);
-&lt;/script&gt;
-    </code>
-</pre>
+	```
+    <script type="text/javascript">
+        var BreadcrumbHTML = document.querySelector('.ms-Breadcrumb');
+        var Breadcrumb = new fabric['Breadcrumb'](BreadcrumbHTML);
+    </script>
+	```
 
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content (such as the `.ms-Breadcrumb-listItem` elements) with your content.
@@ -99,9 +96,3 @@ ContextualMenu
 
 ## Accessibility
 The component's JavaScript will apply the correct `tabindex` values to ensure keyboard accessibility.
-
-
-<script type="text/javascript">
-    var BreadcrumbHTML = document.querySelector('.ms-Breadcrumb');
-    var Breadcrumb = new fabric['Breadcrumb'](BreadcrumbHTML);
-</script>

@@ -70,52 +70,40 @@ State | Applied to | Result
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page:
-    ```
+
+	```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
         <script src="fabric.min.js"></script>
     </head>
-    ```
+	```
+
 2. Copy the HTML from one of the samples above into your page. For example:
 
-<pre>
-    <code>
- 
-&lt;div class&#x3D;&quot;ms-CommandButton    &quot;&gt;
-  &lt;button class&#x3D;&quot;ms-CommandButton-button&quot;  &gt;
-      &lt;span class&#x3D;&quot;ms-CommandButton-icon ms-fontColor-themePrimary&quot;&gt;&lt;i class&#x3D;&quot;ms-Icon ms-Icon--CircleRing&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;ms-CommandButton-label&quot;&gt;Command&lt;/span&gt;  &lt;/button&gt;
-&lt;/div&gt;
-    </code>
-</pre>
+	```
+    <div class="ms-CommandButton">
+        <button class="ms-CommandButton-button">
+            <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--CircleRing"></i></span>
+            <span class="ms-CommandButton-label">Command</span>
+        </button>
+    </div>
+	```
 
 3. Replace the sample HTML content (such as the content of `.ms-CommandButton-label`) with your content.
 4. If you are using any of CommandButton's variants that use a dropdown, the below JavaScript is required.
 
-<pre>
-    <code>
- &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-  var CommandButtonElements &#x3D; document.querySelectorAll(&quot;.ms-CommandButton&quot;);
-  for(var i &#x3D; 0; i &lt; CommandButtonElements.length; i++) {
-    new fabric[&#x27;CommandButton&#x27;](CommandButtonElements[i]);
-  }
-&lt;/script&gt;
-
-    </code>
-</pre>
-
-
+	```
+    <script type="text/javascript">
+        var CommandButtonElements = document.querySelectorAll(".ms-CommandButton");
+        for (var i = 0; i < CommandButtonElements.length; i++) {
+            new fabric['CommandButton'](CommandButtonElements[i]);
+        }
+    </script>
+	```
 
 ## Dependencies
 ContextualMenu, ContextualHost
 
 ## Accessibility
 Focus styles are included for keyboard navigation.
-
-
-<script type="text/javascript">
-  var CommandButtonElements = document.querySelectorAll(".ms-CommandButton");
-  for(var i = 0; i < CommandButtonElements.length; i++) {
-    new fabric['CommandButton'](CommandButtonElements[i]);
-  }
-</script>

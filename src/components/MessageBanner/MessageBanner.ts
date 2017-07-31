@@ -53,8 +53,29 @@ namespace fabric {
     /**
      * shows banner if the banner is hidden
      */
-    public showBanner(): void {
+    public show(): void {
       this._errorBanner.className = "ms-MessageBanner";
+    }
+
+    /**
+   * shows banner if the banner is hidden (deprecated)
+   */
+    public showBanner(): void {
+        this.show();
+    }
+
+    /**
+     * hides banner when close button is clicked
+     */
+    public hide(): void {
+        if (this._errorBanner.className.indexOf("hide") === -1) {
+            this._errorBanner.className += " hide";
+            setTimeout(this._hideMessageBanner.bind(this), 500);
+        }
+    }
+
+    private _hideMessageBanner(): void {
+        this._errorBanner.className = "ms-MessageBanner is-hidden";
     }
 
     /**
@@ -137,27 +158,13 @@ namespace fabric {
       }
     }
 
-    private _hideMessageBanner(): void {
-      this._errorBanner.className = "ms-MessageBanner is-hidden";
-    }
-
-    /**
-     * hides banner when close button is clicked
-     */
-    private _hideBanner(): void {
-      if (this._errorBanner.className.indexOf("hide") === -1) {
-        this._errorBanner.className += " hide";
-        setTimeout(this._hideMessageBanner.bind(this), 500);
-      }
-    }
-
     /**
      * sets handlers for resize and button click events
      */
     private _setListeners(): void {
       window.addEventListener("resize", this._onResize.bind(this), false);
       this._chevronButton.addEventListener("click", this._toggleExpansion.bind(this), false);
-      this._closeButton.addEventListener("click", this._hideBanner.bind(this), false);
+      this._closeButton.addEventListener("click", this.hide.bind(this), false);
     }
   }
 } // end fabric namespace
