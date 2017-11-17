@@ -37,7 +37,7 @@ gulp.task('ComponentJS-typescript', function() {
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
 
         // Typescript project is set to give us both definitions and javascript
-        .pipe(Plugins.tsc(Config.typescriptProjectTwo));
+        .pipe(Plugins.tsc(Config.typescriptProject));
 
     return Plugins.mergeStream([
 
