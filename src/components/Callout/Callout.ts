@@ -76,16 +76,15 @@ namespace fabric {
       this._openContextMenu();
     }
 
-    private _keydownHandler(event: KeyboardEvent): void {       
+    private _keydownHandler(event: KeyboardEvent): void {
       if (event.keyCode === 32) {
         event.stopPropagation();
         event.preventDefault();
         this._openContextMenu();
       }
-      else
-      {
+      else {
         this._closeHandler(event);
       }
-    }   
+    }
   }
 }
