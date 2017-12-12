@@ -36,6 +36,7 @@ namespace fabric {
 
     private _setOpener() {
       this._addTarget.addEventListener("click", this._clickHandler.bind(this), true);
+      this._addTarget.addEventListener("keydown", this._keydownHandler.bind(this), true);
     }
 
     private _openContextMenu() {
@@ -55,6 +56,7 @@ namespace fabric {
 
       if (this._closeButton) {
         this._closeButton.addEventListener("click", this._closeHandler.bind(this), false);
+        this._closeButton.addEventListener("keydown", this._keydownHandler.bind(this), true);
       }
     }
 
@@ -66,10 +68,24 @@ namespace fabric {
       this._contextualHost.disposeModal();
       this._closeButton.removeEventListener("click", this._closeHandler.bind(this), false);
       this._addTarget.removeEventListener("click", this._clickHandler.bind(this), true);
+      this._closeButton.removeEventListener("keydown", this._keydownHandler.bind(this), false);       
+      this._addTarget.removeEventListener("keydown", this._keydownHandler.bind(this), true);   
     }
 
     private _clickHandler(e) {
       this._openContextMenu();
     }
+
+    private _keydownHandler(event: KeyboardEvent): void {       
+      if (event.keyCode === 32) {         
+        event.stopPropagation();         
+        event.preventDefault();         
+        this._openContextMenu();       
+      }
+      else
+      {
+        this._closeHandler(event);
+      }
+    }   
   }
 }
