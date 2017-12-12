@@ -81,8 +81,7 @@ namespace fabric {
         event.stopPropagation();
         event.preventDefault();
         this._openContextMenu();
-      }
-      else {
+      } else {
         this._closeHandler(event);
       }
     }
