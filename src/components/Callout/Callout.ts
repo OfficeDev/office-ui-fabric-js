@@ -68,8 +68,8 @@ namespace fabric {
       this._contextualHost.disposeModal();
       this._closeButton.removeEventListener("click", this._closeHandler.bind(this), false);
       this._addTarget.removeEventListener("click", this._clickHandler.bind(this), true);
-      this._closeButton.removeEventListener("keydown", this._keydownHandler.bind(this), false);       
-      this._addTarget.removeEventListener("keydown", this._keydownHandler.bind(this), true);   
+      this._closeButton.removeEventListener("keydown", this._keydownHandler.bind(this), false);
+      this._addTarget.removeEventListener("keydown", this._keydownHandler.bind(this), true);
     }
 
     private _clickHandler(e) {
@@ -77,10 +77,10 @@ namespace fabric {
     }
 
     private _keydownHandler(event: KeyboardEvent): void {       
-      if (event.keyCode === 32) {         
-        event.stopPropagation();         
-        event.preventDefault();         
-        this._openContextMenu();       
+      if (event.keyCode === 32) {
+        event.stopPropagation();
+        event.preventDefault();
+        this._openContextMenu();
       }
       else
       {
