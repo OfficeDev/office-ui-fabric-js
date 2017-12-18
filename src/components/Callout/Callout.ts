@@ -36,6 +36,7 @@ namespace fabric {
 
     private _setOpener() {
       this._addTarget.addEventListener("click", this._clickHandler.bind(this), true);
+      this._addTarget.addEventListener("keyup", this._keyupHandler.bind(this), true);
     }
 
     private _openContextMenu() {
@@ -63,13 +64,26 @@ namespace fabric {
     }
 
     private _closeHandler(e) {
-      this._contextualHost.disposeModal();
+      if (this._contextualHost != null) {
+        this._contextualHost.disposeModal();
+      }
       this._closeButton.removeEventListener("click", this._closeHandler.bind(this), false);
       this._addTarget.removeEventListener("click", this._clickHandler.bind(this), true);
+      this._addTarget.removeEventListener("keyup", this._keyupHandler.bind(this), true);
     }
 
     private _clickHandler(e) {
       this._openContextMenu();
+    }
+
+    private _keyupHandler(event: KeyboardEvent): void {
+      if (event.keyCode === 32) {
+        event.stopPropagation();
+        event.preventDefault();
+        this._openContextMenu();
+      } else {
+        this._closeHandler(event);
+      }
     }
   }
 }
