@@ -1,0 +1,15 @@
+/**
+ * Office UI Fabric JS 1.5.0
+ * The JavaScript front-end framework for building experiences for Office 365.
+ **/
+.ms-DialogHost {
+  @include ms-baseFont;
+  @include drop-shadow;
+  background-color: $ms-color-white;
+  box-sizing: border-box;
+  line-height: 1.35;
+  width: 288px;
+  position: relative;
+  text-align: left;
+  outline: 1px solid transparent;
+}

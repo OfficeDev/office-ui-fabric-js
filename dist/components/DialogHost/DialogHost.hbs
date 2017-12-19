@@ -1,0 +1,10 @@
+<!--
+Office UI Fabric JS 1.5.0
+The JavaScript front-end framework for building experiences for Office 365.
+-->
+<div class="ms-DialogHost 
+    {{#if props.modifier}} ms-DialogHost--{{props.modifier}} {{/if}} {{props.state}}">
+  <div class="ms-DialogHost-main">
+      {{#if @partial-block}} {{> @partial-block }} {{/if}}
+  </div>
+</div>

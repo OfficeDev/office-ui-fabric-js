@@ -1,0 +1,18 @@
+<!--
+Office UI Fabric JS 1.5.0
+The JavaScript front-end framework for building experiences for Office 365.
+-->
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!-- Future implementation to be discussed -->
+<div class="ms-Dropdown
+{{~#if props.modifier}} ms-Dropdown--{{props.modifier}}{{/if~}}
+{{~#if props.state}} {{props.state}}{{/if~}}" tabindex="0">
+  <label class="ms-Label">{{props.label}}</label>
+  <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"></i>
+  <select class="ms-Dropdown-select">
+    {{#each props.items}}
+    <option>{{name}}</option>
+    {{/each}}
+  </select>
+</div>

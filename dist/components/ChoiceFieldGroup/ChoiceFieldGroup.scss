@@ -1,0 +1,17 @@
+/**
+ * Office UI Fabric JS 1.5.0
+ * The JavaScript front-end framework for building experiences for Office 365.
+ **/
+//== Component: Choicefield group
+//
+// Choice field groups contain multiple radio buttons or checkboxes
+.ms-ChoiceFieldGroup {
+  @include ms-baseFont;
+  margin-bottom: 4px;
+
+  .ms-ChoiceFieldGroup-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}

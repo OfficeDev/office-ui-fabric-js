@@ -1,0 +1,18 @@
+/**
+ * Office UI Fabric JS 1.5.0
+ * The JavaScript front-end framework for building experiences for Office 365.
+ **/
+// The panel covers the entire screen.
+.ms-PanelHost {
+  @include ms-baseFont;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: $ms-zIndex-front;
+}
+
+.ms-PanelHost .ms-Overlay {
+  cursor: pointer;
+}

@@ -1,0 +1,24 @@
+<!--
+Office UI Fabric JS 1.5.0
+The JavaScript front-end framework for building experiences for Office 365.
+-->
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-MessageBanner">
+  <div class="ms-MessageBanner-content">
+    <div class="ms-MessageBanner-text">
+      <div class="ms-MessageBanner-clipper">
+        {{props.message}}
+      </div>
+    </div>
+    <button class="ms-MessageBanner-expand">
+      <i class="ms-Icon ms-Icon--ChevronDown"></i>
+    </button>
+    <div class="ms-MessageBanner-action">
+      {{renderPartial props.button.name props.button.props}}
+    </div>
+  </div>
+  <button class="ms-MessageBanner-close">
+    <i class="ms-Icon ms-Icon--Clear"></i>
+  </button>
+</div>

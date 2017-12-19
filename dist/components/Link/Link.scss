@@ -1,0 +1,34 @@
+/**
+ * Office UI Fabric JS 1.5.0
+ * The JavaScript front-end framework for building experiences for Office 365.
+ **/
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Link (anchor) styles
+
+
+@mixin ms-Link {
+  @include ms-baseFont;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+  color: $ms-color-themePrimary;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    color: $ms-color-themeDarker;
+  }
+
+  &:active {
+    color: $ms-color-themePrimary;
+  }
+}
+
+.ms-Link {
+  @include ms-Link;
+}

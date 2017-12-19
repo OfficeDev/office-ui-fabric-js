@@ -1,0 +1,7 @@
+{
+  "name": "ChoiceFieldGroup",
+  "dependencies": [
+    "Label",
+    "CheckBox"
+  ]
+}

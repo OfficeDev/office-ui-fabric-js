@@ -1,0 +1,6 @@
+{
+  "name": "ListItem",
+  "dependencies": [
+    "List"
+  ]
+}

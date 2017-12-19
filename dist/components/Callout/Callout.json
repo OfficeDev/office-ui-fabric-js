@@ -1,0 +1,10 @@
+{
+  "name": "Callout",
+  "dependencies": [
+    "Button",
+    "Label",
+    "Link",
+    "ContextualHost",
+    "CommandButton"
+  ]
+}
