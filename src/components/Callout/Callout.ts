@@ -30,7 +30,7 @@ namespace fabric {
       this._container = container;
       this._addTarget = addTarget;
       this._position = position;
-      this._closeButton = document.querySelector(CLOSE_BUTTON_CLASS);
+      this._closeButton = container.querySelector(CLOSE_BUTTON_CLASS);
       this._setOpener();
     }
 
