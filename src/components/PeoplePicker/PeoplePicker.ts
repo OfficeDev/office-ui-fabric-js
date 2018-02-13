@@ -107,7 +107,7 @@ namespace fabric {
     }
 
     private _findElement(childObj: Element, className: string ) {
-      let currentElement: Element = <Element>childObj.parentNode;
+      let currentElement: Element = childObj;
 
       while (!currentElement.classList.contains(className)) {
           currentElement = <Element>currentElement.parentNode;
