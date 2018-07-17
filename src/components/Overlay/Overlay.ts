@@ -17,7 +17,9 @@ namespace fabric {
     }
 
     public remove() {
-      this.overlayElement.parentElement.removeChild(this.overlayElement);
+      if(this.overlayElement.parentElement) {
+        this.overlayElement.parentElement.removeChild(this.overlayElement);
+      }
     }
 
     public show(): void {
