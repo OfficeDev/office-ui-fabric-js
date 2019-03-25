@@ -1,5 +1,7 @@
 # [Office UI Fabric JS](http://dev.office.com/fabric)
 
+> **Note:** Microsoft no longer supports this content and will not be responding to bugs or issues. We recommend that you use the newer version, [Office UI Fabric](https://developer.microsoft.com/fabric), with React as your front-end framework. If you still need assistance with Fabric.js, visit [Stack Overflow/office-ui-fabric](https://stackoverflow.com/questions/tagged/office-ui-fabric).
+
 ##### The JavaScript front-end framework for building experiences for Office and Office 365.
 
 Fabric JS is a JavaScript front-end framework which provides visuals-focused [components](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/COMPONENTSLIST.md) to extend, re-work and use in your Office and Office 365 experiences. Fabric JS uses styles from the [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core/) project. Fabric JS is a collection of responsive, mobile-first styles and tools designed to make it quick and simple for you to create web experiences using the Office Design Language. 
