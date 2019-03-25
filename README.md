@@ -1,6 +1,6 @@
 # [Office UI Fabric JS](http://dev.office.com/fabric)
 
-> **Note:** Microsoft no longer supports this content and will not be responding to bugs or issues. We recommend that you use the newer version, [Office UI Fabric](https://developer.microsoft.com/fabric), with React as your front-end framework. We are closing this issue; if you still need assistance with Fabric.js, visit [Stack Overflow/office-ui-fabric](https://stackoverflow.com/questions/tagged/office-ui-fabric).
+> **Note:** Microsoft no longer supports this content and will not be responding to bugs or issues. We recommend that you use the newer version, [Office UI Fabric](https://developer.microsoft.com/fabric), with React as your front-end framework. If you still need assistance with Fabric.js, visit [Stack Overflow/office-ui-fabric](https://stackoverflow.com/questions/tagged/office-ui-fabric).
 
 ##### The JavaScript front-end framework for building experiences for Office and Office 365.
 
